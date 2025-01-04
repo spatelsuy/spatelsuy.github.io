@@ -13,7 +13,7 @@
         }
         .container {
             display: flex;
-            width: 60%; /* 100% - 20% left margin - 20% right margin */
+            width: 70%; /* 100% - 20% left margin - 20% right margin */
             margin: 0 auto; /* Center the container */
         }
         .column {
@@ -21,23 +21,28 @@
         }
         .column-1 {
             flex: 0 0 40%; /* 40% width */
-            background-color: #f4f4f4;
         }
         .column-2 {
             flex: 0 0 60%; /* 60% width */
-            background-color: #eaeaea;
+        }
+        a {
+            text-decoration: none;
+            color: blue; /* Optional: Set a custom color for links */
+        }
+        /* Add hover effect for better UX */
+        a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="column column-1">
-          <header>
-            <h1><a href="https://spatelsuy.github.io/"><p align="center"> Suyash Patel </p></a></h1>
+            <h2><a href="https://spatelsuy.github.io/"><p align="center"> Suyash Patel</p></a></h2>
               <p>This site is maintained by <a href="https://github.com/spatesuy">Sunil</a></p>
-          </header>
         </div>
         <div class="column column-2">
+		<h2>Learning and Projects Portfolio</p></a></h2>
             <p>This is the second column (60%).</p>
         </div>
     </div>
