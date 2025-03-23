@@ -3,7 +3,6 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="CSS/MyStyle.css">
 	<title>Meet Sunil</title>
 	<script>
 		function loadCSS() {
@@ -15,7 +14,7 @@
 			// Detect general mobile devices
 			const isMobile = window.innerWidth <= 768 || /Mobi|Android/i.test(navigator.userAgent) || isiOS;
 			// Load the appropriate CSS
-            		link.href = isMobile ? "mobile.css" : "MyStyle.css";
+            		link.href = isMobile ? "Mobile.css" : "MyStyle.css";
             		document.head.appendChild(link);
         	}
 		loadCSS();
