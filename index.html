@@ -4,7 +4,23 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="CSS/MyStyle.css">
-	<title>What I’ve Built & Contributed | Sunil</title>
+	<title>Meet Sunil</title>
+	<script>
+		function loadCSS() {
+			let link = document.createElement("link");
+			link.rel = "stylesheet";
+			link.type = "text/css";
+			// Detect if the device is iOS
+			const isiOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+			// Detect general mobile devices
+			const isMobile = window.innerWidth <= 768 || /Mobi|Android/i.test(navigator.userAgent) || isiOS;
+			// Load the appropriate CSS
+            		link.href = isMobile ? "mobile.css" : "MyStyle.css";
+            		document.head.appendChild(link);
+        	}
+		loadCSS();
+	</script>
+	
 	<!-- Jekyll SEO Tag -->
 </head>
 <body>
