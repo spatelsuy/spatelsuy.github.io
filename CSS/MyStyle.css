@@ -41,12 +41,11 @@ a:hover {
 }
 
 .social-icons {
-    display: flex;
     gap: 8px;
 }
 .social-icons a img {
-    width: 16px; /* Adjust size as needed */
-    height: 16px;
+    width: 24px; /* Adjust size as needed */
+    height: 24px;
     transition: transform 0.2s ease-in-out;
 }
 .social-icons a img:hover {
