@@ -21,11 +21,11 @@ body {
   flex: 0 0 70%; /* 70% width */
 }
 .column-A {
-  flex: 0 0 30%; /* 30% width */
+  flex: 0 0 50%; /* 50% width */
 }
 
 .column-B {
-  flex: 0 0 70%; /* 70% width */
+  flex: 0 0 50%; /* 50% width */
 }
 a {
   text-decoration: none;
