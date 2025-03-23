@@ -20,6 +20,13 @@ body {
 .column-2 {
   flex: 0 0 70%; /* 70% width */
 }
+.column-A {
+  flex: 0 0 30%; /* 30% width */
+}
+
+.column-B {
+  flex: 0 0 70%; /* 70% width */
+}
 a {
   text-decoration: none;
   color: blue; /* Optional: Set a custom color for links */
