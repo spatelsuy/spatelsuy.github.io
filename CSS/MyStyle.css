@@ -27,6 +27,9 @@ body {
 .column-B {
   flex: 0 0 50%; /* 50% width */
 }
+.column-C {
+  flex: 0 0 100%; /* 50% width */
+}
 a {
   text-decoration: none;
   color: blue; /* Optional: Set a custom color for links */
