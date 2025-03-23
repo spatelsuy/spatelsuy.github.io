@@ -42,11 +42,11 @@ a:hover {
 
 .social-icons {
     display: flex;
-    gap: 10px;
+    gap: 8px;
 }
 .social-icons a img {
-    width: 32px; /* Adjust size as needed */
-    height: 32px;
+    width: 16px; /* Adjust size as needed */
+    height: 16px;
     transition: transform 0.2s ease-in-out;
 }
 .social-icons a img:hover {
