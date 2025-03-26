@@ -17,9 +17,21 @@
             		link.href = isMobile ? "CSS/Mobile.css" : "CSS/MyStyle.css";
             		document.head.appendChild(link);
         	}
+		function openCity(evt, cityName) {
+			var i, tabcontent, tablinks;
+			tabcontent = document.getElementsByClassName("tabcontent");
+			for (i = 0; i < tabcontent.length; i++) {
+				tabcontent[i].style.display = "none";
+			}
+			tablinks = document.getElementsByClassName("tablinks");
+			for (i = 0; i < tablinks.length; i++) {
+				tablinks[i].className = tablinks[i].className.replace(" active", "");
+			}
+			document.getElementById(cityName).style.display = "block";
+			evt.currentTarget.className += " active";
+		}
 		loadCSS();
 	</script>
-	
 	<!-- Jekyll SEO Tag -->
 </head>
 <body>
@@ -49,16 +61,16 @@
 			<br>			
 		</div>
 	</div>
+	
 	<div class="tab">
-		<button class="tablinks">Technology</button>
-		<button class="tablinks">Process</button>
-		<button class="tablinks">Social</button>
-		<button class="tablinks">Blogs</button>
+		<button class="tablinks" onclick="openCity(event, 'Technology')">Technology</button>
+		<button class="tablinks" onclick="openCity(event, 'Process')">Process</button>
+		<button class="tablinks" onclick="openCity(event, 'Social')">Social</button>
+		<button class="tablinks"vonclick="openCity(event, 'Blogs')">Blogs</button>
 	</div>
-	<div class="container">
-
-		
-		<div class="column column-C">
+	
+	<div class="container">	
+		<div class="column column-C" id="Technology" class="tabcontent">
 			<h3>audio-to-text-to-summary conversion system</h3>
 			<text>
 			An audio-to-text conversion system using <b>Whisper</b> and <b>FFmpeg</b> on Windows. 
@@ -82,6 +94,10 @@
 			Evolving with standards like C++23, it remains a versatile choice for embedded systems and advanced software development.
 			<a href="https://github.com/spatelsuy/C_Plus_Plus">Pointers in C and fundamental of C/C++</a>				
 			</text>
+		</div>
+		<div class="column column-C" id="Social" class="tabcontent">
+		</div>
+		<div class="column column-C" id="Blog" class="tabcontent">
 		</div>
 	
 	</div>
