@@ -1,1 +1,115 @@
 
+.container {
+  display: flex;
+  width: 90%; /* 100% - 10% left margin - 10% right margin */
+  margin: 20px auto 0; /* Center the container */
+}
+
+.column {
+  padding: 0px;
+}
+.column-1 {
+  flex: 0 0 30%; /* 30% width */
+}
+
+.column-2 {
+  flex: 0 0 70%; /* 70% width */
+}
+.column-A {
+  flex: 0 0 50%; /* 50% width */
+}
+
+.column-B {
+  flex: 0 0 50%; /* 50% width */
+}
+.column-C {
+  flex: 0 0 100%; /* 50% width */
+}
+.column-D {
+  flex: 0 0 20%; /* 50% width */
+}
+.column-E {
+  flex: 0 0 20%%; /* 50% width */
+}
+.column-F {
+  flex: 0 0 60%%; /* 50% width */
+}
+
+a {
+  text-decoration: none;
+  color: blue; /* Optional: Set a custom color for links */
+}
+/* Add hover effect for better UX */
+a:hover {
+  text-decoration: underline;
+}
+
+.ImgCenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.social-icons {
+    gap: 8px;
+}
+.social-icons a img {
+    width: 24px; /* Adjust size as needed */
+    height: 24px;
+    transition: transform 0.2s ease-in-out;
+}
+.social-icons a img:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+
+.tab {
+  overflow: hidden;
+  background-color: #f1f1f1;  
+
+  display: flex;
+  width: 90%; /* 100% - 10% left margin - 10% right margin */
+  margin: 20px auto 0; /* Center the container */
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 10px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ccc;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border-top: none;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+.label {
+    width: 100px;
+    font-weight: bold;
+}
+.value {
+    flex-grow: 1;
+}
