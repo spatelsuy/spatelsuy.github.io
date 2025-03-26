@@ -56,6 +56,10 @@ a:hover {
 .tab {
   overflow: hidden;
   background-color: #f1f1f1;  
+
+  display: flex;
+  width: 90%; /* 100% - 10% left margin - 10% right margin */
+  margin: 20px auto 0; /* Center the container */
 }
 
 /* Style the buttons inside the tab */
