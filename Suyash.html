@@ -17,26 +17,6 @@
             		link.href = isMobile ? "CSS/SuyashStyle.css" : "CSS/SuyashStyle.css";
             		document.head.appendChild(link);
         	}
-		function openSection(evt, sectionName) {
-			var i, tabcontent, tablinks;
-			tabcontent = document.getElementsByClassName("tabcontent");
-			for (i = 0; i < tabcontent.length; i++) {
-				tabcontent[i].style.display = "none";
-			}
-			tablinks = document.getElementsByClassName("tablinks");
-			for (i = 0; i < tablinks.length; i++) {
-				tablinks[i].className = tablinks[i].className.replace(" active", "");
-				name = tablinks[i].textContent;
-				if(name == sectionName){
-					tablinks[i].style.backgroundColor = "#ccc";
-				}
-				else{
-					tablinks[i].style.backgroundColor = "#f1f1f1";
-				}
-			}
-			document.getElementById(sectionName).style.display = "block";
-			evt.currentTarget.className += " active";
-		}
 		loadCSS();
 	</script>
 	<!-- Jekyll SEO Tag -->
@@ -70,15 +50,9 @@
 			<br>			
 		</div>
 	</div>
-	
-	<div class="tab">
-		<button class="tablinks" onclick="openSection(event, 'Personal Information')">Personal Information</button>
-		<button class="tablinks" onclick="openSection(event, 'Education & Certifications')">Education & Certifications</button>
-		<button class="tablinks" onclick="openSection(event, 'Projects & Patent')">Projects & Patent</button>
-	</div>
-	
 	<div class="container">	
-		<div class="column column-C tabcontent" id="Personal Information">
+		<div class="column column-D tabcontent" id="Personal Information">
+			<h3 style="background-color: #f1f1f1;">Personal Information</h3>
 			<div class="row">
 				<div class="label">Full Name:</div>
 				<div class="value">Suyash Patel</div>
@@ -94,6 +68,22 @@
 			<div class="row">
 				<div class="label">Location:</div>
 				<div class="value">North Carilina, USA</div>
+			</div>
+		</div>
+		<div class="column column-E tabcontent">
+			<h3 style="background-color: #f1f1f1;">Education and coursework</h3>
+			<div class="row">
+				<text>Bachelor’s degree in Computer Science Major, Mathematics Minor, North Carolina State University</text>
+			</div>
+			<div class="row">
+				Expected year of graduation: Fall 2027
+			</div>
+			<div class="row">
+				GPA (3.6/4)
+			</div>
+			<div class="row">
+				<div class="label">Relevant coursework:</div>
+				<div class="value">Data structures, Algorithms, Calculus I, II, and III, Linear Algebra, Statistics, Software development with programming languages, Mathematics, Automata and Grammars, Computability</div>
 			</div>
 		</div>
 		
