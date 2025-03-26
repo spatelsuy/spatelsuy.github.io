@@ -17,7 +17,7 @@
             		link.href = isMobile ? "CSS/Mobile.css" : "CSS/MyStyle.css";
             		document.head.appendChild(link);
         	}
-		function openCity(evt, cityName) {
+		function openSection(evt, cityName) {
 			var i, tabcontent, tablinks;
 			tabcontent = document.getElementsByClassName("tabcontent");
 			for (i = 0; i < tabcontent.length; i++) {
@@ -63,10 +63,10 @@
 	</div>
 	
 	<div class="tab">
-		<button class="tablinks" onclick="openCity(event, 'Technology')">Technology</button>
-		<button class="tablinks" onclick="openCity(event, 'Process')">Process</button>
-		<button class="tablinks" onclick="openCity(event, 'Social')">Social</button>
-		<button class="tablinks"vonclick="openCity(event, 'Blogs')">Blogs</button>
+		<button class="tablinks" onclick="openSection(event, 'Technology')">Technology</button>
+		<button class="tablinks" onclick="openSection(event, 'Process')">Process</button>
+		<button class="tablinks" onclick="openSection(event, 'Social')">Social</button>
+		<button class="tablinks" onclick="openSection(event, 'Blogs')">Blogs</button>
 	</div>
 	
 	<div class="container">	
