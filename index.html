@@ -26,11 +26,19 @@
 			tablinks = document.getElementsByClassName("tablinks");
 			for (i = 0; i < tablinks.length; i++) {
 				tablinks[i].className = tablinks[i].className.replace(" active", "");
+				name = tablinks[i].textContent;
+				if(name == sectionName){
+					tablinks[i].style.backgroundColor = "#ccc";
+				}
+				else{
+					tablinks[i].style.backgroundColor = "#f1f1f1";
+				}
 			}
 			document.getElementById(sectionName).style.display = "block";
 			evt.currentTarget.className += " active";
 		}
 		loadCSS();
+		openSection(event, 'Technology');
 	</script>
 	<!-- Jekyll SEO Tag -->
 </head>
