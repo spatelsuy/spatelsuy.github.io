@@ -26,10 +26,10 @@
   flex: 0 0 100%; /* 50% width */
 }
 .column-D {
-  flex: 0 0 50%; /* 50% width */
+  flex: 0 0 30%; /* 50% width */
 }
 .column-E {
-  flex: 0 0 50%%; /* 50% width */
+  flex: 0 0 70%%; /* 50% width */
 }
 .column-F {
   flex: 0 0 60%%; /* 50% width */
