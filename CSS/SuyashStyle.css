@@ -1,3 +1,13 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;  /* Optimal for readability on mobile */
+  line-height: 1.5; /* Improves spacing between lines */
+  color: #333;      /* Dark gray for better contrast */
+  background-color: #fff; /*#fff;  Clean white background */
+}
+
 
 .container {
   display: flex;
