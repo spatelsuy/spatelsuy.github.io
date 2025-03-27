@@ -117,5 +117,5 @@ a:hover {
 ul.no-bullets {
   list-style-position: outside;
   margin: 10px;
-  padding: 10px;
+  padding: 0px;
 }
