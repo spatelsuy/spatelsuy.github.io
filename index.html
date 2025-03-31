@@ -112,22 +112,9 @@
         });
         
         function loadAboutMe() {
-            fetch('./AboutMe.html')
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.text();
-                })
-                .then(html => {
-                    document.getElementById('content-area').innerHTML = html;
-                })
-                .catch(error => {
-                    document.getElementById('content-area').innerHTML = `
-                        <h2>About Me</h2>
-                        <p>Error loading about me content: ${error.message}</p>
-                    `;
-                });
+            document.getElementById('content-area').innerHTML = `
+                <iframe id="about-me-iframe" src="./AboutMe.html" title="About Me"></iframe>
+            `;
         }
         
         function loadMyWork() {
