@@ -1,6 +1,6 @@
 [
-    { "title": "Text-Audio-Summarization-GenAI", "description": "A web app for task management.", "link": "https://github.com/spatelsuy/Text-Audio-Summarization-GenAI" },
-    { "title": "HAR file", "description": "An AI-powered chatbot.", "link": "#" },
+    { "title": "Text-Audio Summarization (GenAI)", "description": "Offline mode of Gen AI-powered Text-Audio summarization, best fit for meeting summary", "link": "https://github.com/spatelsuy/Text-Audio-Summarization-GenAI" },
+    { "title": "Audio To Text Conversion", "description": "Gen AI-powered Audio to Text Conversion using Whisper.", "link": "https://github.com/spatelsuy/Audio_To_Text_Conversion" },
     { "title": "CPP Pointer", "description": "hello", "link": "https://github.com/spatelsuy/Text-Audio-Summarization-GenAI" },
     { "title": "Magic", "description": "An online learning platform.", "link": "#" },
     { "title": "good excellent", "description": "A real-time collaboration tool.", "link": "#" },
