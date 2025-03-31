@@ -35,6 +35,7 @@
         
         .content-area {
             padding: 20px;
+            min-height: 300px;
         }
         
         .thumbnails-container {
@@ -72,6 +73,12 @@
             color: #555;
         }
         
+        #about-me-iframe {
+            width: 100%;
+            border: none;
+            display: block;
+        }
+        
         @media (max-width: 1200px) {
             .thumbnail {
                 width: calc(25% - 20px);
@@ -103,8 +110,8 @@
     
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Load About Me by default
-            loadAboutMe();
+            // Load loadMyWork by default
+            loadMyWork();
             
             // Set up event listeners for menu items
             document.getElementById('about-me-link').addEventListener('click', loadAboutMe);
@@ -113,12 +120,12 @@
         
         function loadAboutMe() {
             document.getElementById('content-area').innerHTML = `
-                <iframe id="about-me-iframe" src="./AboutMe.html" title="About Me"></iframe>
+                <iframe id="about-me-iframe" src="aboutMe.html" title="About Me" onload="resizeIframe(this)"></iframe>
             `;
         }
         
         function loadMyWork() {
-            fetch('./thumbnails.json?' + new Date().getTime())
+            fetch(`./thumbnails.json?t=${Date.now()}`)
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('Network response was not ok');
@@ -150,6 +157,26 @@
             
             html += '</div>';
             document.getElementById('content-area').innerHTML = html;
+        }
+        
+        function resizeIframe(iframe) {
+            // Wait a brief moment to ensure content is loaded
+            setTimeout(() => {
+                try {
+                    // Get the content document
+                    const doc = iframe.contentDocument || iframe.contentWindow.document;
+                    
+                    // Set iframe height based on content
+                    iframe.style.height = doc.body.scrollHeight + 'px';
+                    
+                    // Add event listener for future resizes
+                    iframe.contentWindow.addEventListener('resize', () => {
+                        iframe.style.height = doc.body.scrollHeight + 'px';
+                    });
+                } catch (e) {
+                    console.log('Error resizing iframe:', e);
+                }
+            }, 100);
         }
     </script>
 </body>
