@@ -1,5 +1,5 @@
 [
-    { "title": "Project A", "description": "A web app for task management.", "link": "#" },
+    { "title": "Text-Audio-Summarization-GenAI", "description": "A web app for task management.", "link": "https://github.com/spatelsuy/Text-Audio-Summarization-GenAI" },
     { "title": "Project B", "description": "An AI-powered chatbot.", "link": "#" },
     { "title": "Project C", "description": "A finance tracking tool.", "link": "#" },
     { "title": "Project D", "description": "An online learning platform.", "link": "#" },
