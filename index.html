@@ -7,166 +7,134 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
-            line-height: 1.6;
         }
-        
         .menu-bar {
+            position: fixed;
+            top: 0;
+            width: 100%;
             background-color: #333;
-            overflow: hidden;
-            padding: 10px 20px;
+            padding: 10px 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
-        
         .menu-bar a {
             color: white;
-            text-align: center;
-            padding: 14px 16px;
             text-decoration: none;
             font-size: 18px;
-            margin-right: 10px;
-            cursor: pointer;
+            padding: 10px 20px;
         }
-        
-        .menu-bar a:hover {
-            background-color: #ddd;
-            color: black;
+        .menu-bar a:hover, .menu-bar a.active {
+            background-color: #555;
+            border-radius: 5px;
         }
-        
-        .content-area {
+        .content {
+            margin-top: 60px;
             padding: 20px;
         }
-        
-        .thumbnails-container {
+        .thumbnail-container {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
             justify-content: center;
         }
-        
         .thumbnail {
-            width: calc(16.666% - 20px);
-            min-width: 150px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 15px;
-            box-sizing: border-box;
-            transition: transform 0.3s;
-            text-decoration: none;
-            color: inherit;
+            width: 200px;
+            height: 250px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px;
         }
-        
-        .thumbnail:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        
-        .thumbnail-title {
+        .thumbnail h3 {
             font-weight: bold;
-            margin-bottom: 8px;
-            font-size: 16px;
         }
-        
-        .thumbnail-desc {
+        .thumbnail p {
             font-size: 14px;
             color: #555;
-        }
-        
-        @media (max-width: 1200px) {
-            .thumbnail {
-                width: calc(25% - 20px);
-            }
-        }
-        
-        @media (max-width: 800px) {
-            .thumbnail {
-                width: calc(33.333% - 20px);
-            }
-        }
-        
-        @media (max-width: 600px) {
-            .thumbnail {
-                width: calc(50% - 20px);
-            }
         }
     </style>
 </head>
 <body>
     <div class="menu-bar">
-        <a id="about-me-link">About Me</a>
-        <a id="my-work-link">My Work</a>
+        <a href="#" class="active" onclick="showSection('myWork')">My Work</a>
+        <a href="#" onclick="showSection('aboutMe')">About Me</a>
     </div>
-    
-    <div class="content-area" id="content-area">
-        <!-- Content will be loaded here dynamically -->
+
+    <div class="content">
+        <div id="myWork" class="section active">
+            <h1>My Work Showcase</h1>
+            <p>Here is a selection of my projects that showcase my skills and experience...</p>
+            <div id="thumbnailGallery" class="thumbnail-container"></div>
+        </div>
+        <div id="aboutMe" class="section">
+            <h1>About Me</h1>
+            <p>Hi, I’m [Your Name], a passionate developer...</p>
+        </div>
     </div>
-    
+
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Load About Me by default
-            loadAboutMe();
-            
-            // Set up event listeners for menu items
-            document.getElementById('about-me-link').addEventListener('click', loadAboutMe);
-            document.getElementById('my-work-link').addEventListener('click', loadMyWork);
-        });
-        
-        function loadAboutMe() {
-            fetch('aboutMe.html')
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.text();
-                })
-                .then(html => {
-                    document.getElementById('content-area').innerHTML = html;
-                })
-                .catch(error => {
-                    document.getElementById('content-area').innerHTML = `
-                        <h2>About Me</h2>
-                        <p>Error loading about me content: ${error.message}</p>
-                    `;
-                });
-        }
-        
-        function loadMyWork() {
-            fetch('thumbnails.json')
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    alert(data);
-                    displayThumbnails(data);
-                })
-                .catch(error => {
-                    document.getElementById('content-area').innerHTML = `
-                        <h2>My Work</h2>
-                        <p>Error loading thumbnails: ${error.message}</p>
-                    `;
-                });
-        }
-        
-        function displayThumbnails(thumbnails) {
-            let html = '<h2>My Work</h2><div class="thumbnails-container">';
-            
-            thumbnails.forEach(thumbnail => {
-                html += `
-                    <a href="${thumbnail.link}" class="thumbnail" target="_blank">
-                        <div class="thumbnail-title">${thumbnail.title}</div>
-                        <div class="thumbnail-desc">${thumbnail.description}</div>
-                    </a>
-                    ;
+        async function loadThumbnails() {
+            try {
+                // Fetch the JSON data
+                const response = await fetch('./thumbnails.json');
+                alert(response);
+                const thumbnails = await response.json(); // Parse the JSON data
+                alert(thumbnails);
+
+                const galleryContainer = document.getElementById('thumbnailGallery');
+                galleryContainer.innerHTML = ""; // Clear any previous content
+
+                // Loop through each thumbnail and create HTML elements
+                thumbnails.forEach(thumbnail => {
+                    const thumbnailDiv = document.createElement('div');
+                    thumbnailDiv.classList.add('thumbnail');
                     
-            });
-            
-            html += '</div>';
-            alert(html);
-            document.getElementById('content-area').innerHTML = html;
+                    // Create title and description
+                    const title = document.createElement('h3');
+                    title.innerText = thumbnail.title;
+                    const description = document.createElement('p');
+                    description.innerText = thumbnail.description;
+
+                    // Create a link for the thumbnail
+                    const link = document.createElement('a');
+                    link.href = thumbnail.link;
+                    link.appendChild(title);
+
+                    // Append elements
+                    thumbnailDiv.appendChild(link);
+                    thumbnailDiv.appendChild(description);
+                    galleryContainer.appendChild(thumbnailDiv);
+                });
+            } catch (error) {
+                console.error("Error loading thumbnails:", error);
+            }
         }
+
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Show the selected section
+            document.getElementById(sectionId).classList.add('active');
+
+            if (sectionId === 'myWork') {
+                loadThumbnails(); // Load thumbnails when "My Work" is selected
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Load "My Work" thumbnails when the page loads
+            loadThumbnails();
+        });
     </script>
 </body>
 </html>
