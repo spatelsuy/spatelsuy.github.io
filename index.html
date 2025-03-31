@@ -90,7 +90,7 @@
         }
 
         async function loadThumbnails() {
-            const response = await fetch('thumbnails.json');
+            const response = await fetch('./thumbnails.json');
             const thumbnails = await response.json();
             const gallery = document.getElementById('gallery');
             gallery.innerHTML = '';
