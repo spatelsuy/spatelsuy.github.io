@@ -89,7 +89,7 @@
         #about-me-iframe {
             width: 100%;
             border: none;
-            min-height: 300px;
+            display: block;
         }
         
         h2 {
@@ -109,7 +109,6 @@
     </div>
 
     <script>
-        // Simple working version
         document.addEventListener('DOMContentLoaded', function() {
             // Set click handlers
             document.getElementById('about-me-link').onclick = loadAboutMe;
@@ -121,7 +120,8 @@
 
         function loadAboutMe() {
             document.getElementById('content-area').innerHTML = `
-                <iframe id="about-me-iframe" src="./AboutMe.html" title="About Me"></iframe>
+                <iframe id="about-me-iframe" src="./AboutMe.html" title="About Me" 
+                    onload="resizeIframe(this)"></iframe>
             `;
         }
 
@@ -155,6 +155,25 @@
                     `;
                     console.error('Error:', error);
                 });
+        }
+
+        function resizeIframe(iframe) {
+            // Check if iframe is loaded
+            setTimeout(function() {
+                try {
+                    const doc = iframe.contentDocument || iframe.contentWindow.document;
+                    iframe.style.height = doc.body.scrollHeight + 'px';
+                    
+                    // Add resize observer for dynamic content changes
+                    new ResizeObserver(function() {
+                        iframe.style.height = doc.body.scrollHeight + 'px';
+                    }).observe(doc.body);
+                } catch (e) {
+                    console.log('Resize error:', e);
+                    // Fallback for cross-origin iframes
+                    iframe.style.height = '1000px'; // Set a reasonable default height
+                }
+            }, 100);
         }
     </script>
 </body>
