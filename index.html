@@ -158,11 +158,13 @@
                     <a href="${thumbnail.link}" class="thumbnail" target="_blank">
                         <div class="thumbnail-title">${thumbnail.title}</div>
                         <div class="thumbnail-desc">${thumbnail.description}</div>
-                    </a>;
-                    alert(thumbnail.title);
+                    </a>
+                    ;
+                    
             });
             
             html += '</div>';
+            alert(html);
             document.getElementById('content-area').innerHTML = html;
         }
     </script>
