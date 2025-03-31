@@ -7,7 +7,6 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            text-align: center;
             background-color: #f4f4f4;
             margin: 0;
             padding: 0;
@@ -37,93 +36,103 @@
             margin-top: 60px;
             padding: 20px;
         }
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 15px;
-            padding: 20px;
-            justify-items: center;
-        }
-        .gallery a {
+        .thumbnail-container {
             display: flex;
-            flex-direction: column;
+            flex-wrap: wrap;
+            gap: 20px;
             justify-content: center;
-            align-items: center;
-            width: 150px;
-            height: 200px;
-            padding: 15px;
-            background-color: white;
-            border: 2px solid #ddd;
-            border-radius: 10px;
-            text-decoration: none;
-            color: black;
-            transition: transform 0.3s ease-in-out;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
         }
-        .gallery a:hover {
-            transform: scale(1.05);
+        .thumbnail {
+            width: 200px;
+            height: 250px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px;
         }
-        .gallery .thumb-title {
+        .thumbnail h3 {
             font-weight: bold;
-            font-size: 16px;
-            margin-bottom: 5px;
-            text-align: center;
         }
-        .gallery .thumb-description {
-            font-size: 12px;
+        .thumbnail p {
+            font-size: 14px;
             color: #555;
-            text-align: center;
-        }
-        .section {
-            display: none;
-        }
-        .section.active {
-            display: block;
         }
     </style>
-    <script>
-        function showSection(sectionId) {
-            document.querySelectorAll('.section').forEach(section => {
-                section.classList.remove('active');
-            });
-            document.getElementById(sectionId).classList.add('active');
-        }
-
-        async function loadThumbnails() {
-            const response = await fetch('./thumbnails.json');
-            const thumbnails = await response.json();
-            const gallery = document.getElementById('gallery');
-            gallery.innerHTML = '';
-            thumbnails.forEach(thumb => {
-                const link = document.createElement('a');
-                link.href = thumb.link;
-                link.target = '_blank';
-                link.innerHTML = `
-                    <span class="thumb-title">${thumb.title}</span>
-                    <span class="thumb-description">${thumb.description}</span>
-                `;
-                gallery.appendChild(link);
-            });
-        }
-
-        document.addEventListener("DOMContentLoaded", loadThumbnails);
-    </script>
 </head>
 <body>
     <div class="menu-bar">
         <a href="#" class="active" onclick="showSection('myWork')">My Work</a>
         <a href="#" onclick="showSection('aboutMe')">About Me</a>
     </div>
+
     <div class="content">
         <div id="myWork" class="section active">
             <h1>My Work Showcase</h1>
-            <p>Welcome to my portfolio! Here, you’ll find a selection of my projects that showcase my skills and experience. Each project represents a unique challenge that I have worked on and solved with creativity and technical expertise.</p>
-            <div id="gallery" class="gallery"></div>
+            <p>Here is a selection of my projects that showcase my skills and experience...</p>
+            <div id="thumbnailGallery" class="thumbnail-container"></div>
         </div>
         <div id="aboutMe" class="section">
             <h1>About Me</h1>
-            <p>Hi, I’m [Your Name], a passionate developer with a keen interest in building innovative and efficient solutions. I specialize in web development, problem-solving, and creative design. I love turning ideas into reality through code and continuously learning new technologies to improve my skill set. Welcome to my portfolio, where I showcase some of my best work!</p>
+            <p>Hi, I’m [Your Name], a passionate developer...</p>
         </div>
     </div>
+
+    <script>
+        async function loadThumbnails() {
+            try {
+                // Fetch the JSON data
+                const response = await fetch('thumbnails.json');
+                const thumbnails = await response.json(); // Parse the JSON data
+
+                const galleryContainer = document.getElementById('thumbnailGallery');
+                galleryContainer.innerHTML = ""; // Clear any previous content
+
+                // Loop through each thumbnail and create HTML elements
+                thumbnails.forEach(thumbnail => {
+                    const thumbnailDiv = document.createElement('div');
+                    thumbnailDiv.classList.add('thumbnail');
+                    
+                    // Create title and description
+                    const title = document.createElement('h3');
+                    title.innerText = thumbnail.title;
+                    const description = document.createElement('p');
+                    description.innerText = thumbnail.description;
+
+                    // Create a link for the thumbnail
+                    const link = document.createElement('a');
+                    link.href = thumbnail.link;
+                    link.appendChild(title);
+
+                    // Append elements
+                    thumbnailDiv.appendChild(link);
+                    thumbnailDiv.appendChild(description);
+                    galleryContainer.appendChild(thumbnailDiv);
+                });
+            } catch (error) {
+                console.error("Error loading thumbnails:", error);
+            }
+        }
+
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Show the selected section
+            document.getElementById(sectionId).classList.add('active');
+
+            if (sectionId === 'myWork') {
+                loadThumbnails(); // Load thumbnails when "My Work" is selected
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Load "My Work" thumbnails when the page loads
+            loadThumbnails();
+        });
+    </script>
 </body>
 </html>
