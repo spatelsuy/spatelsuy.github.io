@@ -6,94 +6,151 @@
     <title>My Portfolio</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
             line-height: 1.6;
+            background-color: #f5f5f5;
+            color: #333;
         }
         
         .menu-bar {
-            background-color: #333;
+            background: linear-gradient(135deg, #6e48aa 0%, #9d50bb 100%);
             overflow: hidden;
             padding: 10px 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         
         .menu-bar a {
             color: white;
             text-align: center;
-            padding: 14px 16px;
+            padding: 12px 20px;
             text-decoration: none;
-            font-size: 18px;
-            margin-right: 10px;
+            font-size: 16px;
+            margin-right: 5px;
             cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            font-weight: 500;
         }
         
         .menu-bar a:hover {
-            background-color: #ddd;
-            color: black;
+            background-color: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
         }
         
         .content-area {
-            padding: 20px;
-            min-height: 300px;
+            padding: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
         
         .thumbnails-container {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 25px;
             justify-content: center;
+            margin-top: 20px;
         }
         
         .thumbnail {
-            width: calc(16.666% - 20px);
-            min-width: 150px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 15px;
+            width: calc(16.666% - 25px);
+            min-width: 160px;
+            background: white;
+            border-radius: 8px;
+            padding: 0;
             box-sizing: border-box;
-            transition: transform 0.3s;
+            transition: all 0.3s ease;
             text-decoration: none;
             color: inherit;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            position: relative;
         }
         
         .thumbnail:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+        
+        .thumbnail-image {
+            height: 120px;
+            background: linear-gradient(135deg, #6e48aa 0%, #9d50bb 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 40px;
+        }
+        
+        .thumbnail-content {
+            padding: 15px;
         }
         
         .thumbnail-title {
-            font-weight: bold;
+            font-weight: 600;
             margin-bottom: 8px;
             font-size: 16px;
+            color: #444;
         }
         
         .thumbnail-desc {
             font-size: 14px;
-            color: #555;
+            color: #666;
+            line-height: 1.4;
+        }
+        
+        .thumbnail-link {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
         }
         
         #about-me-iframe {
             width: 100%;
             border: none;
             display: block;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            background: white;
+        }
+        
+        .section-title {
+            color: #6e48aa;
+            font-size: 28px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+            text-align: center;
         }
         
         @media (max-width: 1200px) {
             .thumbnail {
-                width: calc(25% - 20px);
+                width: calc(25% - 25px);
             }
         }
         
         @media (max-width: 800px) {
             .thumbnail {
-                width: calc(33.333% - 20px);
+                width: calc(33.333% - 25px);
             }
         }
         
         @media (max-width: 600px) {
             .thumbnail {
-                width: calc(50% - 20px);
+                width: calc(50% - 25px);
+            }
+            
+            .menu-bar {
+                text-align: center;
+            }
+            
+            .menu-bar a {
+                display: inline-block;
+                margin: 5px;
             }
         }
     </style>
@@ -110,8 +167,8 @@
     
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Load loadMyWork by default
-            loadMyWork();
+            // Load About Me by default
+            loadAboutMe();
             
             // Set up event listeners for menu items
             document.getElementById('about-me-link').addEventListener('click', loadAboutMe);
@@ -137,21 +194,30 @@
                 })
                 .catch(error => {
                     document.getElementById('content-area').innerHTML = `
-                        <h2>My Work</h2>
+                        <h2 class="section-title">My Work</h2>
                         <p>Error loading thumbnails: ${error.message}</p>
                     `;
                 });
         }
         
         function displayThumbnails(thumbnails) {
-            let html = '<h2>My Work</h2><div class="thumbnails-container">';
+            let html = '<h2 class="section-title">My Work</h2><div class="thumbnails-container">';
             
-            thumbnails.forEach(thumbnail => {
+            thumbnails.forEach((thumbnail, index) => {
+                const colors = ['#6e48aa', '#9d50bb', '#4776E6', '#8E54E9'];
+                const color = colors[index % colors.length];
+                
                 html += `
-                    <a href="${thumbnail.link}" class="thumbnail" target="_blank">
-                        <div class="thumbnail-title">${thumbnail.title}</div>
-                        <div class="thumbnail-desc">${thumbnail.description}</div>
-                    </a>
+                    <div class="thumbnail">
+                        <div class="thumbnail-image" style="background: linear-gradient(135deg, ${color} 0%, ${adjustColor(color, 20)} 100%)">
+                            ${thumbnail.title.charAt(0).toUpperCase()}
+                        </div>
+                        <div class="thumbnail-content">
+                            <div class="thumbnail-title">${thumbnail.title}</div>
+                            <div class="thumbnail-desc">${thumbnail.description}</div>
+                        </div>
+                        <a href="${thumbnail.link}" class="thumbnail-link" target="_blank"></a>
+                    </div>
                 `;
             });
             
@@ -175,8 +241,15 @@
                     });
                 } catch (e) {
                     console.log('Error resizing iframe:', e);
+                    // Fallback to auto height if cross-origin
+                    iframe.style.height = 'auto';
                 }
             }, 100);
+        }
+        
+        function adjustColor(color, amount) {
+            return '#' + color.replace(/^#/, '').replace(/../g, color => 
+              ('0' + Math.min(255, Math.max(0, parseInt(color, 16) + amount).toString(16)).substr(-2));
         }
     </script>
 </body>
