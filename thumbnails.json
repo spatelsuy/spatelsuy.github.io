@@ -1,0 +1,12 @@
+[
+    { "title": "Project A", "description": "A web app for task management.", "link": "#" },
+    { "title": "Project B", "description": "An AI-powered chatbot.", "link": "#" },
+    { "title": "Project C", "description": "A finance tracking tool.", "link": "#" },
+    { "title": "Project D", "description": "An online learning platform.", "link": "#" },
+    { "title": "Project E", "description": "A real-time collaboration tool.", "link": "#" },
+    { "title": "Project F", "description": "A custom CMS for bloggers.", "link": "#" },
+    { "title": "Project G", "description": "A health monitoring app.", "link": "#" },
+    { "title": "Project H", "description": "An e-commerce analytics tool.", "link": "#" },
+    { "title": "Project I", "description": "A travel itinerary planner.", "link": "#" },
+    { "title": "Project J", "description": "An IoT-based home automation system.", "link": "#" }
+]
