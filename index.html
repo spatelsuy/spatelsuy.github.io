@@ -41,40 +41,43 @@
             flex-wrap: wrap;
             gap: 20px;
             justify-content: center;
-            perspective: 1000px;
         }
         
         .thumbnail {
             width: 150px;
             height: 120px;
             position: relative;
-            transform-style: preserve-3d;
-            transition: transform 0.6s;
-            cursor: pointer;
+            perspective: 1000px;
         }
         
-        .thumbnail:hover {
+        .thumbnail-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        
+        .thumbnail:hover .thumbnail-inner {
             transform: rotateY(180deg);
         }
         
-        .thumbnail-face {
+        .thumbnail-front, .thumbnail-back {
             position: absolute;
             width: 100%;
             height: 100%;
             backface-visibility: hidden;
             border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             display: flex;
             align-items: center;
             justify-content: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         
         .thumbnail-front {
             background: #6e48aa;
             color: white;
-            transform: rotateY(0deg);
-            z-index: 2;
         }
         
         .thumbnail-back {
@@ -88,7 +91,6 @@
         .thumbnail-title {
             font-size: 12px;
             font-weight: bold;
-            text-align: center;
             padding: 10px;
             word-break: break-word;
         }
@@ -98,6 +100,14 @@
             color: #666;
             line-height: 1.3;
             word-break: break-word;
+        }
+        
+        .thumbnail-link {
+            display: block;
+            width: 100%;
+            height: 100%;
+            text-decoration: none;
+            color: inherit;
         }
         
         #about-me-iframe {
@@ -149,14 +159,15 @@
                     data.forEach((item, index) => {
                         html += `
                             <div class="thumbnail">
-                                <a href="${item.link}" target="_blank" class="thumbnail-link">
-                                    <div class="thumbnail-face thumbnail-front">
+                                <div class="thumbnail-inner">
+                                    <div class="thumbnail-front">
                                         <div class="thumbnail-title">${item.title}</div>
                                     </div>
-                                    <div class="thumbnail-face thumbnail-back">
+                                    <div class="thumbnail-back">
                                         <div class="thumbnail-desc">${item.description}</div>
                                     </div>
-                                </a>
+                                </div>
+                                <a href="${item.link}" target="_blank" class="thumbnail-link"></a>
                             </div>
                         `;
                     });
