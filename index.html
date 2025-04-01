@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.4;
+        }
+        
+        .menu-bar {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        .menu-bar a {
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            margin: 0 5px;
+            display: inline-block;
+        }
+        
+        .menu-bar a:hover {
+            background-color: #555;
+        }
+        
+        .content-area {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .thumbnails-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            perspective: 1000px;
+        }
+        
+        .thumbnail {
+            width: 150px;
+            height: 120px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+            cursor: pointer;
+        }
+        
+        .thumbnail:hover {
+            transform: rotateY(180deg);
+        }
+        
+        .thumbnail-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .thumbnail-front {
+            background: #6e48aa;
+            color: white;
+            transform: rotateY(0deg);
+            z-index: 2;
+        }
+        
+        .thumbnail-back {
+            background: white;
+            color: #333;
+            transform: rotateY(180deg);
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        
+        .thumbnail-title {
+            font-size: 12px;
+            font-weight: bold;
+            text-align: center;
+            padding: 10px;
+            word-break: break-word;
+        }
+        
+        .thumbnail-desc {
+            font-size: 10px;
+            color: #666;
+            line-height: 1.3;
+            word-break: break-word;
+        }
+        
+        #about-me-iframe {
+            width: 100%;
+            border: none;
+            display: block;
+        }
+        
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-bar">
+        <a id="about-me-link">About Me</a>
+        <a id="my-work-link">My Work</a>
+    </div>
+    
+    <div class="content-area" id="content-area">
+        <!-- Content loads here -->
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set click handlers
+            document.getElementById('about-me-link').onclick = loadAboutMe;
+            document.getElementById('my-work-link').onclick = loadMyWork;
+            
+            // Load About Me by default
+            loadAboutMe();
+        });
+
+        function loadAboutMe() {
+            document.getElementById('content-area').innerHTML = `
+                <iframe id="about-me-iframe" src="./AboutMe.html" title="About Me" 
+                    onload="resizeIframe(this)"></iframe>
+            `;
+        }
+
+        function loadMyWork() {
+            fetch('./thumbnails.json?' + new Date().getTime())
+                .then(response => response.json())
+                .then(data => {
+                    let html = '<h2>My Work</h2><div class="thumbnails-container">';
+                    
+                    data.forEach((item, index) => {
+                        html += `
+                            <div class="thumbnail">
+                                <a href="${item.link}" target="_blank" class="thumbnail-link">
+                                    <div class="thumbnail-face thumbnail-front">
+                                        <div class="thumbnail-title">${item.title}</div>
+                                    </div>
+                                    <div class="thumbnail-face thumbnail-back">
+                                        <div class="thumbnail-desc">${item.description}</div>
+                                    </div>
+                                </a>
+                            </div>
+                        `;
+                    });
+                    
+                    html += '</div>';
+                    document.getElementById('content-area').innerHTML = html;
+                })
+                .catch(error => {
+                    document.getElementById('content-area').innerHTML = `
+                        <h2>Error Loading Content</h2>
+                        <p>Please check if thumbnails.json exists and is valid JSON.</p>
+                    `;
+                    console.error('Error:', error);
+                });
+        }
+
+        function resizeIframe(iframe) {
+            setTimeout(function() {
+                try {
+                    const doc = iframe.contentDocument || iframe.contentWindow.document;
+                    iframe.style.height = doc.body.scrollHeight + 'px';
+                    
+                    new ResizeObserver(function() {
+                        iframe.style.height = doc.body.scrollHeight + 'px';
+                    }).observe(doc.body);
+                } catch (e) {
+                    console.log('Resize error:', e);
+                    iframe.style.height = '1000px';
+                }
+            }, 100);
+        }
+    </script>
+</body>
+</html>
