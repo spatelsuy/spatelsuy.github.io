@@ -2,5 +2,5 @@
     { "title": "Text-Audio Summarization (GenAI)", "description": "Offline mode of Gen AI-powered Text-Audio summarization, best fit for meeting summary", "link": "https://github.com/spatelsuy/Text-Audio-Summarization-GenAI" },
     { "title": "Audio To Text Conversion", "description": "Gen AI-powered Audio to Text Conversion using Whisper.", "link": "https://github.com/spatelsuy/Audio_To_Text_Conversion" },
     { "title": "CPP Pointer", "description": "Enhance foundation in programming concepts for system and embedded programming and performance optimization.", "link": "https://github.com/spatelsuy/C_Plus_Plus" },
-    { "title": "HAR file analysis", "description": "Analyze HAR file A HAR (HTTP Archive) file for web application development, debugging, and troubleshooting", "link": "https://github.com/spatelsuy/HAR-file-analysis" }
+    { "title": "HAR file analysis", "description": "Analyze HAR (HTTP Archive) file for web application development, debugging, and troubleshooting", "link": "https://github.com/spatelsuy/HAR-file-analysis" }
 ]
