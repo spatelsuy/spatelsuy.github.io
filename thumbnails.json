@@ -1,7 +1,30 @@
 [
-    { "type":"tech", "title": "Text-Audio Summarization (GenAI)", "description": "Offline mode of Gen AI-powered Text-Audio summarization, best fit for meeting summary", "link": "https://github.com/spatelsuy/Text-Audio-Summarization-GenAI" },
-    { "type":"tech", "title": "Audio To Text Conversion", "description": "Gen AI-powered Audio to Text Conversion using Whisper.", "link": "https://github.com/spatelsuy/Audio_To_Text_Conversion" },
-    { "type":"tech", "title": "CPP Pointer", "description": "Enhance foundation in programming concepts for system and embedded programming and performance optimization.", "link": "https://github.com/spatelsuy/C_Plus_Plus" },
-    { "type":"tech", "title": "HAR file analysis", "description": "Analyze HAR (HTTP Archive) file for web application development, debugging, and troubleshooting", "link": "https://github.com/spatelsuy/HAR-file-analysis" },
-    { "type":"blog", "title": "QR Code System to Combat Scammers", "description": "just an idea—Could a QR code-based verification system be a practical solution to combat government impersonation scams?", "link": "https://www.linkedin.com/pulse/qr-code-system-combat-scammers-sunil-patel-egzne" }
+    { 
+        "type":"tech", 
+        "title": "Text-Audio Summarization (GenAI)", 
+        "description": "Offline mode of Gen AI-powered Text-Audio summarization, best fit for meeting summary", 
+        "link": "https://github.com/spatelsuy/Text-Audio-Summarization-GenAI" 
+    },
+    { "type":"tech", 
+        "title": "Audio To Text Conversion", 
+        "description": "Gen AI-powered Audio to Text Conversion using Whisper.", 
+        "link": "https://github.com/spatelsuy/Audio_To_Text_Conversion" 
+    },
+    { "type":"tech", 
+        "title": "CPP Pointer", 
+        "description": "Enhance foundation in programming concepts for system and embedded programming and performance optimization.", 
+        "link": "https://github.com/spatelsuy/C_Plus_Plus"
+    },
+    { "type":"tech", 
+        "title": "HAR file analysis", 
+        "description": "Analyze HAR (HTTP Archive) file for web application development, debugging, and troubleshooting", 
+        "link": "https://github.com/spatelsuy/HAR-file-analysis", 
+        "img": ""
+    },
+    { "type":"blog", 
+        "title": "QR Code System to Combat Scammers", 
+        "description": "just an idea—Could a QR code-based verification system be a practical solution to combat government impersonation scams?", 
+        "link": "https://www.linkedin.com/pulse/qr-code-system-combat-scammers-sunil-patel-egzne", 
+        "img": ".IMG/QRCode.jpg"
+    }
 ]
