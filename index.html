@@ -159,17 +159,16 @@
                         'If there is a specific topic that I need to explore further, feel free to let me know—I would be happy to dive in.</p><div class="thumbnails-container">';
                     
                     data.forEach((item, index) => {
-                        html += `
+                    html += `
                             <div class="thumbnail">
-                                <div class="thumbnail-inner">
+                                <a href="${item.link}" target="_blank" class="thumbnail-link">
                                     <div class="thumbnail-front">
                                         <div class="thumbnail-title">${item.title}</div>
                                     </div>
                                     <div class="thumbnail-back">
                                         <div class="thumbnail-desc">${item.description}</div>
                                     </div>
-                                </div>
-                                <a href="${item.link}" target="_blank" class="thumbnail-link"></a>
+                                </a>
                             </div>
                         `;
                     });
