@@ -26,5 +26,13 @@
         "description": "just an idea—Could a QR code-based verification system be a practical solution to combat government impersonation scams?", 
         "link": "https://www.linkedin.com/pulse/qr-code-system-combat-scammers-sunil-patel-egzne", 
         "img": "IMG/QRCode.jpg"
-    }
+    },
+    { "type":"blog", 
+        "title": "A Layered Security Approach with CSP, CORS, and CSRF", 
+        "description": "Comprehensive protection is essential to secure all system touchpoints—gateways, applications, and client-side interactions. Strong governance and processes are key to ensure the effectiveness of these measures.", 
+        "link": "https://www.linkedin.com/pulse/securing-modern-enterprise-architectures-layered-security-sunil-patel-1nz0e", 
+        "img": "IMG/ModernEA.jpg"
+    }    
 ]
+
+
