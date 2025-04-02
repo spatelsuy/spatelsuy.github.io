@@ -154,9 +154,9 @@
             fetch('./thumbnails.json?' + new Date().getTime())
                 .then(response => response.json())
                 .then(data => {
-                    let html = '<h3>My contributions and interests lie in IT operations, cybersecurity, identity & access management, and software development.' + 
+                    let html = '<h3>My Workcontributions and interests lie in IT operations, cybersecurity, identity & access management, and software development.' + 
                         'Through my blogs and technical work, I share practical insights and real-world applications. Check them out and share your thoughts!' +
-                        'If there's a specific topic that I need to explore further, feel free to let me know—I would be happy to dive in.</h3><div class="thumbnails-container">';
+                        'If there is a specific topic that I need to explore further, feel free to let me know—I would be happy to dive in.</h3><div class="thumbnails-container">';
                     
                     data.forEach((item, index) => {
                         html += `
