@@ -91,7 +91,7 @@
             bottom: 0;
             left: 0;
             width: 100%; /* Full width */
-            height: 30%; /* 30% of thumbnail height */
+            height: 40%; /* 40% of thumbnail height */
             background: rgba(0, 0, 0, 0.7);
             display: flex;
             align-items: center; /* Center title vertically */
@@ -101,15 +101,16 @@
         }  
         
         .thumbnail-title {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 8px;
             font-size: 12px;
             font-weight: bold;
+            color: white;
+            width: 100%;
+            display: -webkit-box;
+            -webkit-line-clamp: 3; /* Allow text to wrap up to 3 lines */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
             text-align: center;
+            line-height: 1.3;
         }
 
         .thumbnail-title {
