@@ -78,6 +78,18 @@
         .thumbnail-front {
             background: #6e48aa;
             color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .thumbnail-front.with-image {
+            background: none;
+        }
+        
+        .thumbnail-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         
         .thumbnail-back {
@@ -89,10 +101,15 @@
         }
         
         .thumbnail-title {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 8px;
             font-size: 12px;
             font-weight: bold;
-            padding: 10px;
-            word-break: break-word;
+            text-align: center;
         }
         
         .thumbnail-desc {
@@ -154,6 +171,52 @@
             fetch('./thumbnails.json?' + new Date().getTime())
                 .then(response => response.json())
                 .then(data => {
+                    let html = '<h2>My Work</h2><div class="thumbnails-container">';
+                    
+                    data.forEach((item, index) => {
+                        // Check if image exists in JSON
+                        const frontContent = item.img 
+                            ? `<img src="${item.img}" class="thumbnail-image" alt="${item.title}">
+                               <div class="thumbnail-title">${item.title}</div>`
+                            : `<div class="thumbnail-title">${item.title}</div>`;
+                        
+                        // Add image class if image exists
+                        const frontClass = item.img ? 'thumbnail-front with-image' : 'thumbnail-front';
+                        
+                        html += `
+                            <div class="thumbnail">
+                                <a href="${item.link}" target="_blank" class="thumbnail-link">
+                                    <div class="thumbnail-inner">
+                                        <div class="${frontClass}">
+                                            ${frontContent}
+                                        </div>
+                                        <div class="thumbnail-back">
+                                            <div class="thumbnail-desc">${item.description}</div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        `;
+                    });
+                    
+                    html += '</div>';
+                    document.getElementById('content-area').innerHTML = html;
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    document.getElementById('content-area').innerHTML = `
+                        <h2>Error Loading Content</h2>
+                        <p>Please check if thumbnails.json exists.</p>
+                    `;
+                });
+        }
+
+
+        
+        function loadMyWorkOLD() {
+            fetch('./thumbnails.json?' + new Date().getTime())
+                .then(response => response.json())
+                .then(data => {
                     let html = '<p align="center">My Workcontributions and interests lie in IT operations, cybersecurity, identity & access management, and software development.<br>' + 
                         'Through my blogs and technical work, I share practical insights and real-world applications.<br>Check them out and share your thoughts!<br><br>' +
                         'If there is a specific topic that I need to explore further, feel free to let me know—I would be happy to dive in.</p><div class="thumbnails-container">';
@@ -172,7 +235,7 @@
                                  </div>
                                  </a>
                              </div>
-                         `;                     
+                         `;
                     });
                     
                     html += '</div>';
