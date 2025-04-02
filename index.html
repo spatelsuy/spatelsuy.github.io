@@ -85,15 +85,20 @@
             height: 100%;
             object-fit: cover;
         }
+        
         .title-bar {
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 30%;  /* Consistent 30% width */
+            width: 100%; /* Full width */
+            height: 30%; /* 30% of thumbnail height */
             background: rgba(0, 0, 0, 0.7);
-            padding: 6px;
+            display: flex;
+            align-items: center; /* Center title vertically */
+            justify-content: center; /* Center title horizontally */
+            padding: 0 8px;
             box-sizing: border-box;
-        }        
+        }  
         
         .thumbnail-title {
             position: absolute;
@@ -110,9 +115,12 @@
         .thumbnail-title {
             font-size: 12px;
             font-weight: bold;
+            color: white;
+            width: 100%;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+            text-align: center;
         }
 
         .thumbnail-back {
@@ -216,8 +224,6 @@
                     document.getElementById('content-area').innerHTML = html;
                 });
         }
-
-
         
         function loadMyWorkOLD() {
             fetch('./thumbnails.json?' + new Date().getTime())
