@@ -54,7 +54,6 @@
             position: relative;
             width: 100%;
             height: 100%;
-            text-align: center;
             transition: transform 0.6s;
             transform-style: preserve-3d;
         }
@@ -69,17 +68,12 @@
             height: 100%;
             backface-visibility: hidden;
             border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            overflow: hidden;
         }
         
         .thumbnail-front {
             background: #6e48aa;
             color: white;
-            position: relative;
-            overflow: hidden;
         }
 
         .thumbnail-front.with-image {
@@ -91,14 +85,15 @@
             height: 100%;
             object-fit: cover;
         }
-        
-        .thumbnail-back {
-            background: white;
-            color: #333;
-            transform: rotateY(180deg);
-            padding: 10px;
+        .title-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 30%;  /* Consistent 30% width */
+            background: rgba(0, 0, 0, 0.7);
+            padding: 6px;
             box-sizing: border-box;
-        }
+        }        
         
         .thumbnail-title {
             position: absolute;
@@ -110,6 +105,25 @@
             font-size: 12px;
             font-weight: bold;
             text-align: center;
+        }
+
+        .thumbnail-title {
+            font-size: 12px;
+            font-weight: bold;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .thumbnail-back {
+            background: white;
+            color: #333;
+            transform: rotateY(180deg);
+            display: flex;
+            align-items: center;  /* Center description vertically */
+            justify-content: center;  /* Center description horizontally */
+            padding: 15px;
+            box-sizing: border-box;
         }
         
         .thumbnail-desc {
@@ -171,24 +185,23 @@
             fetch('./thumbnails.json?' + new Date().getTime())
                 .then(response => response.json())
                 .then(data => {
-                    let html = '<h2>My Work</h2><div class="thumbnails-container">';
+                    let html = '<div class="thumbnails-container">';
                     
-                    data.forEach((item, index) => {
-                        // Check if image exists in JSON
-                        const frontContent = item.img 
-                            ? `<img src="${item.img}" class="thumbnail-image" alt="${item.title}">
-                               <div class="thumbnail-title">${item.title}</div>`
-                            : `<div class="thumbnail-title">${item.title}</div>`;
-                        
-                        // Add image class if image exists
-                        const frontClass = item.img ? 'thumbnail-front with-image' : 'thumbnail-front';
+                    data.forEach((item) => {
+                        const hasImage = item.img;
                         
                         html += `
                             <div class="thumbnail">
                                 <a href="${item.link}" target="_blank" class="thumbnail-link">
                                     <div class="thumbnail-inner">
-                                        <div class="${frontClass}">
-                                            ${frontContent}
+                                        <div class="thumbnail-front">
+                                            ${hasImage ? 
+                                                `<img src="${item.img}" class="thumbnail-image" alt="${item.title}">` 
+                                                : ''
+                                            }
+                                            <div class="title-bar">
+                                                <div class="thumbnail-title">${item.title}</div>
+                                            </div>
                                         </div>
                                         <div class="thumbnail-back">
                                             <div class="thumbnail-desc">${item.description}</div>
@@ -201,13 +214,6 @@
                     
                     html += '</div>';
                     document.getElementById('content-area').innerHTML = html;
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    document.getElementById('content-area').innerHTML = `
-                        <h2>Error Loading Content</h2>
-                        <p>Please check if thumbnails.json exists.</p>
-                    `;
                 });
         }
 
