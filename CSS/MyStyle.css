@@ -1,8 +1,8 @@
 
 .container {
   display: flex;
-  width: 90%; /* 100% - 10% left margin - 10% right margin */
-  margin: 20px auto 0; /* Center the container */
+  width: 100%; /* 100% - 10% left margin - 10% right margin */
+  margin: 10px auto 0; /* Center the container */
 }
 
 .column {
