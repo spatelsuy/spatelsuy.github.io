@@ -109,18 +109,18 @@ a:hover {
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
     background-color: #f5f5f5;
-    padding: 20px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
 }
 
 /* Post-It Note Style */
 .post-it {
     background-color: #fffd98;
     width: 300px;
-    padding: 25px;
+    padding: 20px;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
     position: relative;
     transform: rotate(-2deg);
@@ -137,7 +137,7 @@ body {
     padding: 30px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     border-radius: 4px;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.6;
     color: #333;
 }
@@ -146,12 +146,12 @@ body {
 .newspaper {
     background-color: #f8f8f8;
     width: 350px;
-    padding: 25px;
+    padding: 20px;
     border: 1px solid #ddd;
     transform: rotate(3deg);
     position: relative;
     font-family: Georgia, serif;
-    font-size: 15px;
+    font-size: 13px;
     line-height: 1.5;
     color: #222;
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
