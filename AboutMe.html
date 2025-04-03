@@ -1,133 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Profile</title>
-    <style>
-        body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            background-color: #f5f5f5;
-            padding: 40px;
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-            background-image: radial-gradient(#ddd 1px, transparent 1px);
-            background-size: 20px 20px;
-        }
-
-        .about-me {
-            background-color: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            font-size: 16px;
-            line-height: 1.6;
-            color: #333;
-        }
-
-        .content-row {
-            display: flex;
-            gap: 40px;
-            justify-content: space-between;
-        }
-
-        /* Post-It Note */
-        .post-it {
-            background-color: #fffd98;
-            width: 300px;
-            padding: 25px;
-            box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
-            transform: rotate(-2deg);
-            border-bottom: 15px solid #f5f490;
-            font-family: 'Reenie Beanie', cursive;
-            font-size: 22px;
-            line-height: 1.4;
-            position: relative;
-            flex-shrink: 0;
-        }
-
-        .post-it::after {
-            content: "";
-            position: absolute;
-            bottom: -15px;
-            right: 10px;
-            width: 30px;
-            height: 30px;
-            background-color: #fffd98;
-            transform: rotate(45deg);
-            z-index: -1;
-        }
-
-        /* Shadowed Paragraph */
-        .shadowed {
-            background-color: white;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            border-radius: 4px;
-            font-size: 16px;
-            line-height: 1.6;
-            color: #333;
-            position: relative;
-            flex-grow: 1;
-        }
-
-        .shadowed::before {
-            content: "";
-            position: absolute;
-            bottom: -10px;
-            right: 20px;
-            width: 90%;
-            height: 20px;
-            background: rgba(0,0,0,0.03);
-            filter: blur(10px);
-            z-index: -1;
-        }
-
-        .shadowed h2 {
-            color: #6e48aa;
-            margin-top: 0;
-        }
-
-        .youtube-icon {
-            margin-top: 20px;
-            display: block;
-            transition: transform 0.3s;
-        }
-
-        .youtube-icon:hover {
-            transform: scale(1.05);
-        }
-
-        @import url('https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap');
-    </style>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Meet Sunil</title>
+	<script>
+		function loadCSS() {
+			let link = document.createElement("link");
+			link.rel = "stylesheet";
+			link.type = "text/css";
+			// Detect if the device is iOS
+			const isiOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+			// Detect general mobile devices
+			const isMobile = window.innerWidth <= 768 || /Mobi|Android/i.test(navigator.userAgent) || isiOS;
+			// Load the appropriate CSS
+            		link.href = isMobile ? "CSS/Mobile.css" : "CSS/MyStyle.css";
+            		document.head.appendChild(link);
+        	}
+		function openSection(evt, sectionName) {
+			var i, tabcontent, tablinks;
+			tabcontent = document.getElementsByClassName("tabcontent");
+			for (i = 0; i < tabcontent.length; i++) {
+				tabcontent[i].style.display = "none";
+			}
+			tablinks = document.getElementsByClassName("tablinks");
+			for (i = 0; i < tablinks.length; i++) {
+				tablinks[i].className = tablinks[i].className.replace(" active", "");
+				name = tablinks[i].textContent;
+				if(name == sectionName){
+					tablinks[i].style.backgroundColor = "#ccc";
+				}
+				else{
+					tablinks[i].style.backgroundColor = "#f1f1f1";
+				}
+			}
+			document.getElementById(sectionName).style.display = "block";
+			evt.currentTarget.className += " active";
+		}
+		loadCSS();
+	</script>
+	<!-- Jekyll SEO Tag -->
 </head>
 <body>
-    <!-- About Me Section -->
-    <div class="about-me">
-        <p>A passionate technology professional with a deep interest in software development, IT operations, and cybersecurity. With a strong foundation in coding and a commitment to continuous learning, always exploring new technologies and tackling real-world challenges. Bringing a blend of creativity and problem-solving, contributing valuable insights to the tech community. Continuously embracing new challenges, dedicated to innovation, and making meaningful contributions in the ever-evolving world of technology.</p>
-    </div>
-
-    <!-- Content Row -->
-    <div class="content-row">
-        <!-- Post-It Note (Left Side) -->
-        <div class="post-it">
-            <p>This is your important reminder! Don't forget to complete the project by Friday. The client is waiting for the final deliverables.</p>
-        </div>
-
-        <!-- Shadowed Content (Right Side) -->
-        <div class="shadowed">
-            <h2>My Creativity & Hobby</h2>
-            <p>Creativity isn't just about coding—it extends into everything I do. Whether it's crafting insightful blogs, finding innovative solutions, or expressing myself through music, I enjoy bringing a fresh perspective. Singing is one of my favorite ways to unwind—not as a professional, but purely for the joy of it.</p>
-
-            <!-- YouTube Icon with Link -->
-            <a href="https://www.youtube.com/YOUR_CHANNEL_LINK" target="_blank" class="youtube-icon">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" 
-                     alt="YouTube Channel" width="120">
-            </a>
-        </div>
-    </div>
+	<div class="container">
+		<div class="column column-1">
+		    <div style="text-align: center;">
+		        <img src="/assets1/Picture1.jpg" alt="Logo" style="width:75px;height:75px;" class="ImgCenter"/>
+		    </div>
+		    <h4 style="text-align: center;">Diligently Committed</h4>
+			<p align="center">
+			<div class="social-icons" align="center">
+				<a href="https://www.linkedin.com/in/spatelsuy/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn"/>
+				</a>&nbsp;&nbsp;
+				<a href="https://github.com/spatelsuy/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub"/>
+				</a>&nbsp;&nbsp;
+				<a href="https://www.youtube.com/@SecuNotes/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube"/>
+				</a>								
+			</div>
+			</p>
+		</div>
+		<div class="column column-2">
+			<h3>&#x2728;Meet SUNIL&#x2728;</h3>
+			<text>A passionate technology professional with a deep interest in software development, IT operations, and cybersecurity. 
+				With a strong foundation in coding and a commitment to continuous learning, always exploring new technologies and tackling real-world challenges. 
+				Bringing a blend of creativity and problem-solving, contributing valuable insights to the tech community. Continuously embracing new challenges, 
+				dedicated to innovation, and making meaningful contributions in the ever-evolving world of technology.
+			</text>
+			<br>			
+		</div>
+	</div>
+	<div class="container">
+		<H2>hello testing</H2>
+		<div class="post-it">
+			<p>This is your important reminder! Don't forget to complete the project by Friday. The client is waiting for the final deliverables.</p>
+		</div>
+		
+		<!-- Shadowed Paragraph -->
+	        <div class="shadowed">
+	            <h2>My Creativity & Hobby</h2>
+	            <p>Creativity isn't just about coding—it extends into everything I do. Whether it's crafting insightful blogs, finding innovative solutions, or expressing myself through music, I enjoy bringing a fresh perspective. Singing is one of my favorite ways to unwind—not as a professional, but purely for the joy of it.</p>
+	
+	            <!-- YouTube Icon with Link -->
+	            <a href="https://www.youtube.com/YOUR_CHANNEL_LINK" target="_blank" class="youtube-icon">
+	                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" 
+	                     alt="YouTube Channel" width="120">
+	            </a>
+	        </div>
+			
+		<!-- Newspaper Clipping -->
+		<div class="newspaper">
+			<p>In a stunning turn of events, the local community gathered to celebrate the annual festival. Witnesses reported record attendance this year, with visitors coming from all over the country to participate in the week-long festivities.</p>
+		</div>		
+	</div>
 </body>
 </html>
