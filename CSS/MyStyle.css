@@ -9,11 +9,11 @@
   padding: 0px;
 }
 .column-1 {
-  flex: 0 0 30%; /* 30% width */
+  flex: 0 0 20%; /* 30% width */
 }
 
 .column-2 {
-  flex: 0 0 70%; /* 70% width */
+  flex: 0 0 80%; /* 70% width */
 }
 .column-A {
   flex: 0 0 50%; /* 50% width */
