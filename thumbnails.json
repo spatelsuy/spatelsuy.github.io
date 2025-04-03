@@ -38,7 +38,13 @@
         "description": "A tread-off. Strong security measures might complicate user journey, while prioritizing user convenience could expose vulnerabilities", 
         "link": "https://www.linkedin.com/pulse/balancing-user-experience-security-sunil-patel-hhbde", 
         "img": "IMG/BalanceExperience.jpg"
-    }
+    },
+    { "type":"blog", 
+        "title": "Enhance security - segregate inactive accounts", 
+        "description": "Moving inactive accounts to a separate OU, can enhance security posture, improve operational efficiency and remains resilient against evolving cyber threats", 
+        "link": "https://www.linkedin.com/pulse/enhance-security-segregating-inactive-accounts-separate-sunil-patel-xqjfe", 
+        "img": "IMG/SeparateOU.jpg"
+    }    
 ]
 
 
