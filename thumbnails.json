@@ -28,11 +28,17 @@
         "img": "IMG/QRCode.jpg"
     },
     { "type":"blog", 
-        "title": "A Layered Security Approach with CSP, CORS, and CSRF", 
+        "title": "A Layered Security approach with CSP, CORS, and CSRF", 
         "description": "Comprehensive protection is essential to secure all system touchpoints—gateways, applications, and client-side interactions. Enable strong governance and processes for effectiveness.", 
         "link": "https://www.linkedin.com/pulse/securing-modern-enterprise-architectures-layered-security-sunil-patel-1nz0e", 
         "img": "IMG/ModernEA.jpg"
-    }    
+    },
+    { "type":"blog", 
+        "title": "Balancing user experience and security", 
+        "description": "A tread-off. Strong security measures might complicate user journey, while prioritizing user convenience could expose vulnerabilities", 
+        "link": "https://www.linkedin.com/pulse/balancing-user-experience-security-sunil-patel-hhbde", 
+        "img": "IMG/BalanceExperience.jpg"
+    }
 ]
 
 
