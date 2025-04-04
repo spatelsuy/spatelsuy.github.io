@@ -145,13 +145,6 @@ body {
 /* Newspaper Clipping */
 .newspaper {
     background-color: #f8f8f8;
-    width: 350px;
-    border: 1px solid #ddd;
-    position: relative;
-    font-family: Georgia, serif;
-    font-size: 13px;
-    line-height: 1.5;
-    color: #222;
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
