@@ -146,7 +146,6 @@ body {
 .newspaper {
     background-color: #f8f8f8;
     width: 350px;
-    padding: 20px;
     border: 1px solid #ddd;
     transform: rotate(3deg);
     position: relative;
