@@ -191,7 +191,7 @@
             fetch('./thumbnails_blogs.json?' + new Date().getTime())
                 .then(response => response.json())
                 .then(data => {
-                    let html = '<p align="center"><i>Learning by Doing. Exploring Ideas. Writing to Reflect.<i>' + 
+                    let html = '<p align="center"><i>Learning by Doing. Exploring Ideas. Writing to Reflect.<i><br>' + 
                         '<br>These blogs are inspired by lessons learned, hands-on experiences in live IT environments, and reflections on forward-thinking ideas.'+
                         '<br>Whether it&#39;s Cybersecurity, Identity & Access Management, delivery transformation, strategic outcomes, or leadership topics — these posts aim to inform, inspire, and spark meaningful conversations.</p><div class="thumbnails-container">';
                     data.forEach((item) => {
@@ -228,7 +228,7 @@
             fetch('./thumbnails_work_and_project.json?' + new Date().getTime())
                 .then(response => response.json())
                 .then(data => {
-                    let html = '<p align="center"><i>A collection of tools and projects driven by curiosity and creativity.</i>' +
+                    let html = '<p align="center"><i>A collection of tools and projects driven by curiosity and creativity.</i><br><br>' +
                          'These are simple tools and utilities built to explore new ideas, solve problems, and share practical solutions with the community.<br><br>' +
                          'I share them through GitHub so others can use, learn from, or extend them further...</p><div class="thumbnails-container">';
                     
