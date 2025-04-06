@@ -1,15 +1,4 @@
 [
-    { 
-        "type":"tech", 
-        "title": "Text-Audio Summarization (GenAI)", 
-        "description": "Offline mode of Gen AI-powered Text-Audio summarization, best fit for meeting summary", 
-        "link": "https://github.com/spatelsuy/Text-Audio-Summarization-GenAI" 
-    },
-    { "type":"tech", 
-        "title": "Audio To Text Conversion", 
-        "description": "Gen AI-powered Audio to Text Conversion using Whisper.", 
-        "link": "https://github.com/spatelsuy/Audio_To_Text_Conversion" 
-    },
     { "type":"tech", 
         "title": "CPP Pointer", 
         "description": "Enhance foundation in programming concepts for system and embedded programming and performance optimization.", 
@@ -44,11 +33,5 @@
         "description": "Moving inactive accounts to a separate OU, can enhance security posture, improve operational efficiency and remains resilient against evolving cyber threats", 
         "link": "https://www.linkedin.com/pulse/enhance-security-segregating-inactive-accounts-separate-sunil-patel-xqjfe", 
         "img": "IMG/SeparateOU.jpg"
-    },
-    { "type":"tech", 
-        "title": "PDF merger", 
-        "description": "Merge your PDF files securely — all processing happens right in your browser, so your files never leave your computer. Keep your confidential documents safe and private.", 
-        "link": "https://spatelsuy.github.io/PDFMerger/", 
-        "img": "IMG/PDFMerger.png"
-    }      
+    }   
 ]
