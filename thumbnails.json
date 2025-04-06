@@ -47,7 +47,7 @@
     },
     { "type":"tech", 
         "title": "PDF merger", 
-        "description": "Merge PDF. All processing happens in your browser - your files never leave your computer. Keep your confidential files secure.", 
+        "description": "Merge your PDF files securely — all processing happens right in your browser, so your files never leave your computer. Keep your confidential documents safe and private.", 
         "link": "https://spatelsuy.github.io/PDFMerger/", 
         "img": "IMG/PDFMerger.png"
     }      
