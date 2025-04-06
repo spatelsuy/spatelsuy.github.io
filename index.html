@@ -191,9 +191,10 @@
             fetch('./thumbnails_blogs.json?' + new Date().getTime())
                 .then(response => response.json())
                 .then(data => {
-                    let html = '<p align="center"><i>Learning by Doing. Exploring Ideas. Writing to Reflect.<i><br>' + 
+                    let html = '<p align="center"><i>Learning by Doing. Exploring Ideas. Writing to Reflect.</i><br>' + 
                         '<br>These blogs are inspired by lessons learned, hands-on experiences in live IT environments, and reflections on forward-thinking ideas.'+
-                        '<br>Whether it&#39;s Cybersecurity, Identity & Access Management, delivery transformation, strategic outcomes, or leadership topics — these posts aim to inform, inspire, and spark meaningful conversations.</p><div class="thumbnails-container">';
+                        '<br>Whether it&#39;s Cybersecurity, Identity & Access Management, delivery transformation, strategic outcomes, ' + 
+                        'or leadership topics — these posts aim to inform, inspire, and spark meaningful conversations.</p><div class="thumbnails-container">';
                     data.forEach((item) => {
                         const hasImage = item.img;
                         
