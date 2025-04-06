@@ -1,1 +1,54 @@
-
+[
+    { 
+        "type":"tech", 
+        "title": "Text-Audio Summarization (GenAI)", 
+        "description": "Offline mode of Gen AI-powered Text-Audio summarization, best fit for meeting summary", 
+        "link": "https://github.com/spatelsuy/Text-Audio-Summarization-GenAI" 
+    },
+    { "type":"tech", 
+        "title": "Audio To Text Conversion", 
+        "description": "Gen AI-powered Audio to Text Conversion using Whisper.", 
+        "link": "https://github.com/spatelsuy/Audio_To_Text_Conversion" 
+    },
+    { "type":"tech", 
+        "title": "CPP Pointer", 
+        "description": "Enhance foundation in programming concepts for system and embedded programming and performance optimization.", 
+        "link": "https://github.com/spatelsuy/C_Plus_Plus"
+    },
+    { "type":"tech", 
+        "title": "HAR file analysis", 
+        "description": "Analyze HAR (HTTP Archive) file for web application development, debugging, and troubleshooting", 
+        "link": "https://github.com/spatelsuy/HAR-file-analysis", 
+        "img": ""
+    },
+    { "type":"blog", 
+        "title": "QR Code System to Combat Scammers", 
+        "description": "just an idea—Could a QR code-based verification system be a practical solution to combat government impersonation scams?", 
+        "link": "https://www.linkedin.com/pulse/qr-code-system-combat-scammers-sunil-patel-egzne", 
+        "img": "IMG/QRCode.jpg"
+    },
+    { "type":"blog", 
+        "title": "A Layered Security approach with CSP, CORS, and CSRF", 
+        "description": "Comprehensive protection is essential to secure all system touchpoints—gateways, applications, and client-side interactions. Enable strong governance and processes for effectiveness.", 
+        "link": "https://www.linkedin.com/pulse/securing-modern-enterprise-architectures-layered-security-sunil-patel-1nz0e", 
+        "img": "IMG/ModernEA.jpg"
+    },
+    { "type":"blog", 
+        "title": "Balancing user experience and security", 
+        "description": "A tread-off. Strong security measures might complicate user journey, while prioritizing user convenience could expose vulnerabilities", 
+        "link": "https://www.linkedin.com/pulse/balancing-user-experience-security-sunil-patel-hhbde", 
+        "img": "IMG/BalanceExperience.jpg"
+    },
+    { "type":"blog", 
+        "title": "Enhance security - segregate inactive accounts", 
+        "description": "Moving inactive accounts to a separate OU, can enhance security posture, improve operational efficiency and remains resilient against evolving cyber threats", 
+        "link": "https://www.linkedin.com/pulse/enhance-security-segregating-inactive-accounts-separate-sunil-patel-xqjfe", 
+        "img": "IMG/SeparateOU.jpg"
+    },
+    { "type":"tech", 
+        "title": "PDF merger", 
+        "description": "Merge your PDF files securely — all processing happens right in your browser, so your files never leave your computer. Keep your confidential documents safe and private.", 
+        "link": "https://spatelsuy.github.io/PDFMerger/", 
+        "img": "IMG/PDFMerger.png"
+    }      
+]
