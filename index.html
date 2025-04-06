@@ -156,7 +156,9 @@
 <body>
     <div class="menu-bar">
         <a id="about-me-link">About Me</a>
-        <a id="my-work-link">My Work</a>
+        <a id="my-work-link">Work and Project</a>
+        <a id="my-blog">Blog</a>
+        <a id="beyond">Beyond the Keyboard</a>
     </div>
     
     <div class="content-area" id="content-area">
@@ -181,7 +183,7 @@
         }
 
         function loadMyWork() {
-            fetch('./thumbnails.json?' + new Date().getTime())
+            fetch('./thumbnails_work_and_project.json?' + new Date().getTime())
                 .then(response => response.json())
                 .then(data => {
                     let html = '<p align="center">My contributions and interests lie in IT operations, cybersecurity, identity & access management, and software development.<br>' + 
