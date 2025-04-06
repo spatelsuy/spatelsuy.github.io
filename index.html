@@ -228,9 +228,9 @@
             fetch('./thumbnails_work_and_project.json?' + new Date().getTime())
                 .then(response => response.json())
                 .then(data => {
-                    let html = '<p align="center"><i>A collection of tools and projects built with curiosity, code, and creativity. </i><br>' + 
-                         'These are simple tools and utilities I’ve built to solve everyday problems or automate tasks.<br>' +
-                         'I share them through GitHub so others can use, learn from, or extend them further..</p><div class="thumbnails-container">';
+                    let html = '<p align="center"><i>A collection of tools and projects driven by curiosity and creativity.</i>' +
+                         'These are simple tools and utilities built to explore new ideas, solve problems, and share practical solutions with the community.<br><br>' +
+                         'I share them through GitHub so others can use, learn from, or extend them further...</p><div class="thumbnails-container">';
                     
                     data.forEach((item) => {
                         const hasImage = item.img;
