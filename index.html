@@ -187,7 +187,40 @@
         function loadBeyond(){
         }
         
-        function loadMyBlogs(){         
+        function loadMyBlogs(){
+            fetch('./thumbnails_blogs.json?' + new Date().getTime())
+                .then(response => response.json())
+                .then(data => {
+                    let html = '<p align="center">These blogs are inspired by lessons learned, hands-on experiences in live IT environments, and reflections on forward-thinking ideas.'+
+                        <br>Whether it's Cybersecurity, Identity & Access Management, delivery transformation, strategic outcomes, or leadership topics — these posts aim to inform, inspire, and spark meaningful conversations.</p><div class="thumbnails-container">';
+                    data.forEach((item) => {
+                        const hasImage = item.img;
+                        
+                        html += `
+                            <div class="thumbnail">
+                                <a href="${item.link}" target="_blank" class="thumbnail-link">
+                                    <div class="thumbnail-inner">
+                                        <div class="thumbnail-front">
+                                            ${hasImage ? 
+                                                `<img src="${item.img}" class="thumbnail-image" alt="${item.title}">` 
+                                                : ''
+                                            }
+                                            <div class="title-bar">
+                                                <div class="thumbnail-title">${item.title}</div>
+                                            </div>
+                                        </div>
+                                        <div class="thumbnail-back">
+                                            <div class="thumbnail-desc">${item.description}</div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        `;
+                    });
+                    
+                    html += '</div>';
+                    document.getElementById('content-area').innerHTML = html;
+                });   
         }
         
         function loadMyWork() {
