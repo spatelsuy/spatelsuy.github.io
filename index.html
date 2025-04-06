@@ -185,6 +185,10 @@
         }
         
         function loadBeyond(){
+            document.getElementById('content-area').innerHTML = `
+                <iframe id="about-me-iframe" src="./Beyond.html" title="Creativity" 
+                    onload="resizeIframe(this)"></iframe>
+            `;
         }
         
         function loadMyBlogs(){
