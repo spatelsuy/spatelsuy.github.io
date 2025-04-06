@@ -227,9 +227,9 @@
             fetch('./thumbnails_work_and_project.json?' + new Date().getTime())
                 .then(response => response.json())
                 .then(data => {
-                    let html = '<p align="center">My contributions and interests lie in IT operations, cybersecurity, identity & access management, and software development.<br>' + 
-                         'Through my blogs and technical work, I share practical insights and real-world applications.<br>Check them out and share your thoughts!<br><br>' +
-                         'If there is a specific topic that I need to explore further, feel free to let me know—I would be happy to dive in.</p><div class="thumbnails-container">';
+                    let html = '<p align="center"><i>A collection of tools and projects built with curiosity, code, and creativity. </i><br>' + 
+                         'These are simple tools and utilities I’ve built to solve everyday problems or automate tasks. ' +
+                         'I share them through GitHub so others can use, learn from, or extend them further..</p><div class="thumbnails-container">';
                     
                     data.forEach((item) => {
                         const hasImage = item.img;
