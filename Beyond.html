@@ -1,1 +1,40 @@
-
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Sunil's Creativity</title>
+	<script>
+		function loadCSS() {
+			let link = document.createElement("link");
+			link.rel = "stylesheet";
+			link.type = "text/css";
+			// Detect if the device is iOS
+			const isiOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+			// Detect general mobile devices
+			const isMobile = window.innerWidth <= 768 || /Mobi|Android/i.test(navigator.userAgent) || isiOS;
+			// Load the appropriate CSS
+            		link.href = isMobile ? "CSS/Mobile.css" : "CSS/MyStyle.css";
+            		document.head.appendChild(link);
+        	}
+		loadCSS();
+	</script>
+	<!-- Jekyll SEO Tag -->
+</head>
+<body>
+	<div class="container">
+	        <div class="shadowed">
+	            <h2>My Creativity & Hobby</h2>
+	            <p>Life goes beyond the horizon. There are many things to explore—some unusual, some playful.
+			            All part of <strong><a href="https://www.youtube.com/@SecuNotes" target="_blank">@SecuNotes</a></strong>, 
+			            listen to my <strong><a href="https://www.youtube.com/playlist?list=PLRnWQmtgZdoJJDojnkjyvi7o8HTloxvQQ" target="_blank">Vocal Journey</a></strong>
+              </p>
+              <p>I enjoy making bite-sized educational content on cybersecurity to increase awareness and share insights from the field. 
+                Check out these <a href="https://www.youtube.com/playlist?list=PLRnWQmtgZdoL-kWyYOUmN8HUBMxZaS944" target="_blank">Shorts on IT Cybersecurity</a>.
+              </p>
+	            <!-- YouTube Icon with Link -->
+	            <div class="youtube-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" alt="YouTube Channel" width="120"></div>
+	        </div>	
+</div>
+</body>
+</html>
