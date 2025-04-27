@@ -180,26 +180,24 @@
             loadMyWork();
         });
 
-        function loadSocial() {
-            html += `
-            	<div>
-				<p style="margin:2px;"><i class="fa fa-linkedin-square contactIcon" aria-hidden="true"></i>
-				<a href="https://www.linkedin.com/in/spatelsuy/">in/spatelsuy</a></p>
-				
-				<p style="margin:2px;"><i class="fa fa-github contactIcon" aria-hidden="true"></i>
-				<a href="https://github.com/spatelsuy/">Github/spatelsuy</a></p>
-
-				<p style="margin:2px;"><i class="fa fa-youtube contactIcon" aria-hidden="true"></i>
-				<a href="https://www.youtube.com/@SecuNotes/">@SecuNotes</a></p>
-
-                <p style="margin:2px;"><i class="fa fa-globe contactIcon" aria-hidden="true"></i>
-				<a href="https://www.udemy.com/user/sunil-patel-334/">Udemy</a></p>
-			    </div>
-                `;
-            html += '</div>';
-            document.getElementById('content-area').innerHTML = html;
-        }
-
+	function loadSocial() {
+	    html += `
+		<div>
+		    <p style="margin:2px;"><i class="fa fa-linkedin-square contactIcon" aria-hidden="true"></i>
+		    <a href="https://www.linkedin.com/in/spatelsuy/">in/spatelsuy</a></p>
+		    
+		    <p style="margin:2px;"><i class="fa fa-github contactIcon" aria-hidden="true"></i>
+		    <a href="https://github.com/spatelsuy/">Github/spatelsuy</a></p>
+	
+		    <p style="margin:2px;"><i class="fa fa-youtube contactIcon" aria-hidden="true"></i>
+		    <a href="https://www.youtube.com/@SecuNotes/">@SecuNotes</a></p>
+	
+		    <p style="margin:2px;"><i class="fa fa-globe contactIcon" aria-hidden="true"></i>
+		    <a href="https://www.udemy.com/user/sunil-patel-334/">Udemy</a></p>
+		</div>
+	    `;
+	    document.getElementById('content-area').innerHTML = html;
+	}
         
         function loadAboutMe() {
             document.getElementById('content-area').innerHTML = `
