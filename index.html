@@ -159,6 +159,7 @@
         <a id="my-work-link">Work and Project</a>
         <a id="my-blog">Blog</a>
         <a id="beyond">Beyond the Keyboard</a>
+         <a id="social">Social and Other Platfoems</a>
     </div>
     
     <div class="content-area" id="content-area">
@@ -172,11 +173,17 @@
             document.getElementById('my-work-link').onclick = loadMyWork;
             document.getElementById('my-blog').onclick = loadMyBlogs;
             document.getElementById('beyond').onclick = loadBeyond;
+             document.getElementById('social').onclick = loadSocial;
             
             // Load About Me by default
             loadMyWork();
         });
 
+        function loadSocial() {
+            alert("coming up");
+        }
+
+        
         function loadAboutMe() {
             document.getElementById('content-area').innerHTML = `
                 <iframe id="about-me-iframe" src="./AboutMe.html" title="About Me" 
