@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <title>My Portfolio</title>
     <style>
         body {
@@ -159,7 +160,7 @@
         <a id="my-work-link">Work and Project</a>
         <a id="my-blog">Blog</a>
         <a id="beyond">Beyond the Keyboard</a>
-         <a id="social">Social and Other Platfoems</a>
+         <a id="social">Social and Other Platforms</a>
     </div>
     
     <div class="content-area" id="content-area">
@@ -180,7 +181,23 @@
         });
 
         function loadSocial() {
-            alert("coming up");
+            html += `
+            	<div>
+				<p style="margin:2px;"><i class="fa fa-linkedin-square contactIcon" aria-hidden="true"></i>
+				<a href="https://www.linkedin.com/in/spatelsuy/">in/spatelsuy</a></p>
+				
+				<p style="margin:2px;"><i class="fa fa-github contactIcon" aria-hidden="true"></i>
+				<a href="https://github.com/spatelsuy/">Github/spatelsuy</a></p>
+
+				<p style="margin:2px;"><i class="fa fa-youtube contactIcon" aria-hidden="true"></i>
+				<a href="https://www.youtube.com/@SecuNotes/">@SecuNotes</a></p>
+
+                <p style="margin:2px;"><i class="fa fa-globe contactIcon" aria-hidden="true"></i>
+				<a href="https://www.udemy.com/user/sunil-patel-334/">Udemy</a></p>
+			    </div>
+                `;
+            html += '</div>';
+            document.getElementById('content-area').innerHTML = html;
         }
 
         
