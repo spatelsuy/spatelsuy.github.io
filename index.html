@@ -181,7 +181,7 @@
         });
 
 	function loadSocial() {
-	    html += `
+	    let html = `
 		<div>
 		    <p style="margin:2px;"><i class="fa fa-linkedin-square contactIcon" aria-hidden="true"></i>
 		    <a href="https://www.linkedin.com/in/spatelsuy/">in/spatelsuy</a></p>
@@ -196,6 +196,7 @@
 		    <a href="https://www.udemy.com/user/sunil-patel-334/">Udemy</a></p>
 		</div>
 	    `;
+	    alert(html);
 	    document.getElementById('content-area').innerHTML = html;
 	}
         
