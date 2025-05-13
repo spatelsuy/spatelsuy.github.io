@@ -15,7 +15,13 @@
         "description": "Merge your PDF files securely — all processing happens right in your browser, so your files never leave your computer. Keep your confidential documents safe and private.", 
         "link": "https://spatelsuy.github.io/PDFMerger/", 
         "img": "IMG/PDFMerger.png"
-    }      
+    },
+    { "type":"tech", 
+        "title": "Machine Learning Model", 
+        "description": "Machine Learning Models Learn: A Perspective for Traditional Programmers", 
+        "link": "https://machinelearning-dynamicmodelselector.streamlit.app/", 
+        "img": "IMG/PDFMerger.png"
+    }  
 ]
 
 
