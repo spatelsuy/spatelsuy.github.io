@@ -6,7 +6,7 @@
         "link": "https://github.com/spatelsuy/Text-Audio-Summarization-GenAI" 
     },
     { "type":"tech", 
-        "title": "Audio To Text Conversion", 
+        "title": "Audio To Text Conversion and Summarization", 
         "description": "Gen AI-powered Audio to Text conversion and summarization.", 
         "link": "https://text-audio-summarization.streamlit.app/",
         "img": "IMG/TextSummarization.jpg"
