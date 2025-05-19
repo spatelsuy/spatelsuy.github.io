@@ -7,7 +7,7 @@
     },
     { "type":"tech", 
         "title": "Audio To Text Conversion", 
-        "description": "Gen AI-powered Audio to Text Conversion using Whisper.", 
+        "description": "Gen AI-powered Audio to Text conversion and summarization.", 
         "link": "https://text-audio-summarization.streamlit.app/",
         "img": "IMG/TextSummarization.jpg"
     },
