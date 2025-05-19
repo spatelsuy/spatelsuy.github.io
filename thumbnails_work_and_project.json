@@ -8,7 +8,8 @@
     { "type":"tech", 
         "title": "Audio To Text Conversion", 
         "description": "Gen AI-powered Audio to Text Conversion using Whisper.", 
-        "link": "https://github.com/spatelsuy/Audio_To_Text_Conversion" 
+        "link": "https://text-audio-summarization.streamlit.app/" 
+        "img": "IMG/TextSummarization.jpg"
     },
     { "type":"tech", 
         "title": "PDF merger", 
