@@ -201,12 +201,6 @@
 	    document.getElementById('content-area').innerHTML = html;
 	}
         
-        function loadAboutMe111() {
-            document.getElementById('content-area').innerHTML = `
-                <iframe id="about-me-iframe" src="./AboutMe.html" title="About Me" 
-                    onload="resizeIframe(this)"></iframe>
-            `;
-        }
 	async function loadAboutMe() {
 		const contentArea = document.getElementById('content-area');
 		try {
@@ -219,13 +213,25 @@
 		}
 	}
         
-        function loadBeyond(){
+        function loadBeyond111(){
             document.getElementById('content-area').innerHTML = `
                 <iframe id="about-me-iframe" src="./Beyond.html" title="Creativity" 
                     onload="resizeIframe(this)"></iframe>
             `;
         }
-        
+
+	async function loadBeyond() {
+		const contentArea = document.getElementById('content-area');
+		try {
+			const response = await fetch('./Beyond.html');
+			const html = await response.text();
+			contentArea.innerHTML = html;
+		} catch (error) {
+			contentArea.innerHTML = '<p>Error loading content.</p>';
+			console.error('Error loading AboutMe.html:', error);
+		}
+	}
+	    
         function loadMyBlogs(){
             fetch('./thumbnails_blogs.json?' + new Date().getTime())
                 .then(response => response.json())
