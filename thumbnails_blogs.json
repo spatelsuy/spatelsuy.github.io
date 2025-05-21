@@ -10,6 +10,12 @@
         "link": "https://github.com/spatelsuy/HAR-file-analysis" 
     },
     { "type":"tech", 
+        "title": "DevSecOps for Retail Cybersecurity in the Era of Digital Commerce", 
+        "description": "As retail goes digital—are we securing it enough? This article explores cyber risks in retail and how DevSecOps can protect consumer data and trust.", 
+        "link": "https://www.linkedin.com/pulse/retail-security-devsecops-sunil-patel", 
+        "img": "IMG/RetailSecurity.jpg"
+    },
+    { "type":"tech", 
         "title": "IT support level (L1, L2, L3, L4) and shared resource model", 
         "description": "This article explains L1–L4 IT support roles, highlights challenges in L2/L3, and emphasizes adopting shared resource models to enhance service quality and operational efficiency.", 
         "link": "https://medium.com/@spatelsuy/it-support-level-l1-l2-l3-l4-and-shared-resource-model-799d85931fff", 
