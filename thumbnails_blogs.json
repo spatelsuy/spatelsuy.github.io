@@ -5,6 +5,12 @@
         "link": "https://github.com/spatelsuy/C_Plus_Plus"
     },
     { "type":"tech", 
+        "title": "Cybersecurity and Human Psychology — Hacking the Mind, Not the Machine", 
+        "description": "Cybersecurity isn’t just technical—it’s deeply human. Hackers exploit human psychology through urgency, trust, and fear. Awareness, behavior, and smart tech adoption are key defenses.", 
+        "link": "https://medium.com/@spatelsuy/cybersecurity-human-psychology-49ebf58c6e8d", 
+         "img": "IMG/HumanPsychology.jpg"        
+    },    
+    { "type":"tech", 
         "title": "Trust No One, Verify Everyone — The Power of Zero Trust Security", 
         "description": "Never assume trust — Zero Trust security enforces strict verification, micro-segmentation, and continuous monitoring to protect dynamic IT environments against evolving cyber threats.", 
         "link": "https://medium.com/@spatelsuy/trust-no-one-suspect-everyone-zero-trust-1b4f1f526623", 
