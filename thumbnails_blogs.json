@@ -7,11 +7,11 @@
     { "type":"tech", 
         "title": "HAR file analysis", 
         "description": "Analyze HAR (HTTP Archive) file for web application development, debugging, and troubleshooting", 
-        "link": "https://github.com/spatelsuy/HAR-file-analysis", 
+        "link": "https://github.com/spatelsuy/HAR-file-analysis" 
     },
     { "type":"tech", 
         "title": "IT support level (L1, L2, L3, L4) and shared resource model", 
-        "description": "IT support (also known as IT operation) service is not new. But the expectation is changing due to varying business needs and conditions. Business organizations want to provide best and instant service to their customers through 24x7 support model.", 
+        "description": "This article explains L1–L4 IT support roles, highlights challenges in L2/L3 differentiation, and emphasizes adopting shared resource models with automation and clear responsibilities to enhance service quality and operational efficiency.", 
         "link": "https://medium.com/@spatelsuy/it-support-level-l1-l2-l3-l4-and-shared-resource-model-799d85931fff", 
         "img": "IMG/IncidentManagement.jpg"
     },    
