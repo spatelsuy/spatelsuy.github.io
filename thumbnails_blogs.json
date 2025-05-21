@@ -5,6 +5,12 @@
         "link": "https://github.com/spatelsuy/C_Plus_Plus"
     },
     { "type":"tech", 
+        "title": "Trust No One, Verify Everyone — The Power of Zero Trust Security", 
+        "description": "Never assume trust — Zero Trust security enforces strict verification, micro-segmentation, and continuous monitoring to protect dynamic IT environments against evolving cyber threats.", 
+        "link": "https://medium.com/@spatelsuy/trust-no-one-suspect-everyone-zero-trust-1b4f1f526623", 
+        "img": "IMG/ZeroTrust.jpg"
+    },
+    { "type":"tech", 
         "title": "HAR file analysis", 
         "description": "Analyze HAR (HTTP Archive) file for web application development, debugging, and troubleshooting", 
         "link": "https://github.com/spatelsuy/HAR-file-analysis" 
