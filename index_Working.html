@@ -212,6 +212,21 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             cursor: pointer;
             transition: all 0.3s;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .notification-image {
+            width: 75px;
+            height: 75px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .notification-content {
+            flex-grow: 1;
         }
         
         .notification-item:hover {
@@ -222,17 +237,24 @@
         .notification-title {
             font-weight: bold;
             margin-bottom: 5px;
+            color: #333;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .notification-title:hover {
+            text-decoration: underline;
         }
         
         .notification-desc {
             font-size: 14px;
             color: #666;
+            margin-bottom: 5px;
         }
         
         .notification-time {
             font-size: 12px;
             color: #999;
-            margin-top: 5px;
         }
         
         .section-title {
@@ -253,6 +275,19 @@
             content: "";
             display: table;
             clear: both;
+        }
+        
+        .default-notification-image {
+            width: 75px;
+            height: 75px;
+            background-color: #6e48aa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            border-radius: 4px;
+            margin-right: 15px;
         }
     </style>
 </head>
@@ -356,16 +391,16 @@
                 <div class="section-title">Social and Other Platforms</div>
                 <div style="margin-top: 15px;">
                     <p style="margin:10px 0;"><i class="fa fa-linkedin-square contactIcon" aria-hidden="true"></i>
-                    <a href="https://www.linkedin.com/in/spatelsuy/">in/spatelsuy</a></p>
+                    <a href="https://www.linkedin.com/in/spatelsuy/" target="_blank">in/spatelsuy</a></p>
                     
                     <p style="margin:10px 0;"><i class="fa fa-github contactIcon" aria-hidden="true"></i>
-                    <a href="https://github.com/spatelsuy/">Github/spatelsuy</a></p>
+                    <a href="https://github.com/spatelsuy/" target="_blank">Github/spatelsuy</a></p>
             
                     <p style="margin:10px 0;"><i class="fa fa-youtube contactIcon" aria-hidden="true"></i>
-                    <a href="https://www.youtube.com/@SecuNotes/">@SecuNotes</a></p>
+                    <a href="https://www.youtube.com/@SecuNotes/" target="_blank">@SecuNotes</a></p>
             
                     <p style="margin:10px 0;"><i class="fa fa-globe contactIcon" aria-hidden="true"></i>
-                    <a href="https://www.udemy.com/user/sunil-patel-334/">Udemy</a></p>
+                    <a href="https://www.udemy.com/user/sunil-patel-334/" target="_blank">Udemy</a></p>
                 </div>
             `;
             document.getElementById('right-column').innerHTML = rightHtml;
@@ -410,12 +445,19 @@
                             `${randomDays} day${randomDays > 1 ? 's' : ''} ago` : 
                             `${randomHours} hour${randomHours !== 1 ? 's' : ''} ago`;
                         
+                        const imageElement = item.img ? 
+                            `<img src="${item.img}" class="notification-image" alt="${item.title}">` :
+                            `<div class="default-notification-image"><i class="fa fa-file-text"></i></div>`;
+                        
                         html += `
-                            <div class="notification-item">
-                                <div class="notification-title">${item.title}</div>
-                                <div class="notification-desc">${item.description}</div>
-                                <div class="notification-time">${timeText}</div>
-                            </div>
+                            <a href="${item.link}" target="_blank" class="notification-item">
+                                ${imageElement}
+                                <div class="notification-content">
+                                    <span class="notification-title">${item.title}</span>
+                                    <div class="notification-desc">${item.description}</div>
+                                    <div class="notification-time">${timeText}</div>
+                                </div>
+                            </a>
                         `;
                     });
                     
@@ -436,12 +478,19 @@
                             `${Math.floor(randomDays/7)} week${Math.floor(randomDays/7) > 1 ? 's' : ''} ago` : 
                             `${randomDays} day${randomDays > 1 ? 's' : ''} ago`;
                         
+                        const imageElement = item.img ? 
+                            `<img src="${item.img}" class="notification-image" alt="${item.title}">` :
+                            `<div class="default-notification-image"><i class="fa fa-briefcase"></i></div>`;
+                        
                         html += `
-                            <div class="notification-item">
-                                <div class="notification-title">${item.title}</div>
-                                <div class="notification-desc">${item.description}</div>
-                                <div class="notification-time">${timeText}</div>
-                            </div>
+                            <a href="${item.link}" target="_blank" class="notification-item">
+                                ${imageElement}
+                                <div class="notification-content">
+                                    <span class="notification-title">${item.title}</span>
+                                    <div class="notification-desc">${item.description}</div>
+                                    <div class="notification-time">${timeText}</div>
+                                </div>
+                            </a>
                         `;
                     });
                     
