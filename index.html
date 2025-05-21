@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />
+  <link href="CSS/MyStyle.css" rel="stylesheet" />
+  <title>Sunil's Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+    }
+    .menu-bar {
+      background-color: #333;
+      padding: 10px;
+      text-align: center;
+    }
+    .menu-bar a {
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      margin: 0 5px;
+      display: inline-block;
+    }
+    .menu-bar a:hover {
+      background-color: #555;
+      cursor: pointer;
+    }
+    .view-toggle {
+      text-align: center;
+      margin: 10px;
+    }
+    .view-toggle button {
+      padding: 8px 16px;
+      margin: 0 5px;
+      cursor: pointer;
+    }
+    .layout-container {
+      display: flex;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .left-column, .right-column {
+      width: 20%;
+    }
+    .middle-column {
+      width: 50%;
+    }
+    .notification-item {
+      display: flex;
+      margin-bottom: 10px;
+      background-color: #fff;
+      padding: 10px;
+      border-radius: 6px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    .notification-item img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      margin-right: 10px;
+      border-radius: 4px;
+    }
+    .notification-item .text {
+      flex-grow: 1;
+    }
+    .notification-item .text .title {
+      font-weight: bold;
+    }
+    .notification-item .text .description {
+      color: #555;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="menu-bar">
+    <a id="about-me-link">About</a>
+    <a id="my-work-link">Work and Project</a>
+    <a id="my-blog">Blog</a>
+    <a id="beyond">Beyond the Keyboard</a>
+    <a id="social">Social and Other Platforms</a>
+  </div>
+
+  <div class="view-toggle">
+    <button onclick="switchToThumbnails()">Thumbnails View</button>
+    <button onclick="switchToNotifications()">Notification View</button>
+  </div>
+
+  <div class="layout-container">
+    <div class="left-column" id="left-column"></div>
+    <div class="middle-column" id="content-area"></div>
+    <div class="right-column" id="right-column"></div>
+  </div>
+
+  <script>
+    let currentView = 'thumbnails';
+
+    function switchToThumbnails() {
+      currentView = 'thumbnails';
+      loadMyBlogs();
+    }
+
+    function switchToNotifications() {
+      currentView = 'notifications';
+      loadMyBlogs();
+    }
+
+    function loadMyBlogs() {
+      fetch('./thumbnails_blogs.json')
+        .then(response => response.json())
+        .then(data => {
+          if (currentView === 'thumbnails') {
+            document.getElementById('content-area').innerHTML = data.map(item => `
+              <div class="thumbnail">
+                <a href="${item.link}" target="_blank" class="thumbnail-link">
+                  <div class="thumbnail-inner">
+                    <div class="thumbnail-front">
+                      ${item.img ? `<img src="${item.img}" class="thumbnail-image" alt="${item.title}">` : ''}
+                      <div class="title-bar">
+                        <div class="thumbnail-title">${item.title}</div>
+                      </div>
+                    </div>
+                    <div class="thumbnail-back">
+                      <div class="thumbnail-desc">${item.description}</div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            `).join('');
+          } else {
+            document.getElementById('content-area').innerHTML = data.map(item => `
+              <div class="notification-item">
+                <img src="${item.img || 'https://via.placeholder.com/60'}" alt="${item.title}" />
+                <div class="text">
+                  <div class="title">${item.title}</div>
+                  <div class="description">${item.description}</div>
+                </div>
+              </div>
+            `).join('');
+          }
+        });
+    }
+
+    function loadAboutMe() {
+      document.getElementById('left-column').innerText = 'About';
+      document.getElementById('content-area').innerText = 'Loading About...';
+    }
+
+    function loadBeyond() {
+      document.getElementById('left-column').innerText = 'Beyond the Keyboard';
+    }
+
+    function loadSocial() {
+      document.getElementById('right-column').innerHTML = `
+        <p><i class="fa fa-linkedin-square"></i> <a href="https://www.linkedin.com/in/spatelsuy/">LinkedIn</a></p>
+        <p><i class="fa fa-github"></i> <a href="https://github.com/spatelsuy/">GitHub</a></p>
+        <p><i class="fa fa-youtube"></i> <a href="https://www.youtube.com/@SecuNotes/">YouTube</a></p>
+        <p><i class="fa fa-globe"></i> <a href="https://www.udemy.com/user/sunil-patel-334/">Udemy</a></p>
+      `;
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      document.getElementById('about-me-link').onclick = loadAboutMe;
+      document.getElementById('beyond').onclick = loadBeyond;
+      document.getElementById('social').onclick = loadSocial;
+      document.getElementById('my-blog').onclick = loadMyBlogs;
+      document.getElementById('my-work-link').onclick = loadMyBlogs;
+      loadMyBlogs();
+      loadAboutMe();
+      loadBeyond();
+      loadSocial();
+    });
+  </script>
+</body>
+</html>
