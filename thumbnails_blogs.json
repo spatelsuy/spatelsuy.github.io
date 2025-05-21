@@ -11,7 +11,7 @@
         "img": "IMG/ZeroTrust.jpg"
     },
     { "type":"tech", 
-        "title": "HAR file analysis", 
+        "title": "HAR (HTTP Archive) file analysis", 
         "description": "Analyze HAR (HTTP Archive) file for web application development, debugging, and troubleshooting", 
         "link": "https://github.com/spatelsuy/HAR-file-analysis" 
     },
