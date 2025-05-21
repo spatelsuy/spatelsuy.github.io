@@ -213,14 +213,7 @@
 			console.error('Error loading AboutMe.html:', error);
 		}
 	}
-        
-        function loadBeyond111(){
-            document.getElementById('content-area').innerHTML = `
-                <iframe id="about-me-iframe" src="./Beyond.html" title="Creativity" 
-                    onload="resizeIframe(this)"></iframe>
-            `;
-        }
-
+	    
 	async function loadBeyond() {
 		const contentArea = document.getElementById('content-area');
 		try {
