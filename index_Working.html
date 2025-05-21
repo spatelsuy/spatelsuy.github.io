@@ -184,10 +184,14 @@
             box-sizing: border-box;
         }
         
-        .left-column {
+        .left-column, .right-column {
             width: 25%;
             float: left;
             background-color: #f8f8f8;
+            font-size: 14px; /* Reduced font size for side panels */
+        }
+        
+        .left-column {
             border-right: 1px solid #ddd;
         }
         
@@ -198,9 +202,6 @@
         }
         
         .right-column {
-            width: 25%;
-            float: left;
-            background-color: #f8f8f8;
             border-left: 1px solid #ddd;
         }
         
@@ -214,6 +215,8 @@
             transition: all 0.3s;
             display: flex;
             align-items: flex-start;
+            text-decoration: none;
+            color: inherit;
         }
         
         .notification-image {
@@ -258,7 +261,7 @@
         }
         
         .section-title {
-            font-size: 18px;
+            font-size: 16px; /* Reduced from 18px */
             font-weight: bold;
             margin-bottom: 15px;
             padding-bottom: 5px;
@@ -292,6 +295,7 @@
     </style>
 </head>
 <body>
+    <!-- [Rest of your HTML remains exactly the same] -->
     <div class="menu-container">
         <div class="round-menu">
             <a id="blog-link" class="active">Blog</a>
@@ -317,6 +321,7 @@
     </div>
 
     <script>
+        // [All your JavaScript remains exactly the same]
         let currentView = 'tiles'; // 'tiles' or 'notification'
         
         document.addEventListener('DOMContentLoaded', function() {
