@@ -1,181 +1,359 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />
-  <link href="CSS/MyStyle.css" rel="stylesheet" />
-  <title>Sunil's Portfolio</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f4f4f4;
-    }
-    .menu-bar {
-      background-color: #333;
-      padding: 10px;
-      text-align: center;
-    }
-    .menu-bar a {
-      color: white;
-      padding: 10px 20px;
-      text-decoration: none;
-      margin: 0 5px;
-      display: inline-block;
-    }
-    .menu-bar a:hover {
-      background-color: #555;
-      cursor: pointer;
-    }
-    .view-toggle {
-      text-align: center;
-      margin: 10px;
-    }
-    .view-toggle button {
-      padding: 8px 16px;
-      margin: 0 5px;
-      cursor: pointer;
-    }
-    .layout-container {
-      display: flex;
-      justify-content: space-between;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-    .left-column, .right-column {
-      width: 20%;
-    }
-    .middle-column {
-      width: 50%;
-    }
-    .notification-item {
-      display: flex;
-      margin-bottom: 10px;
-      background-color: #fff;
-      padding: 10px;
-      border-radius: 6px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    }
-    .notification-item img {
-      width: 60px;
-      height: 60px;
-      object-fit: cover;
-      margin-right: 10px;
-      border-radius: 4px;
-    }
-    .notification-item .text {
-      flex-grow: 1;
-    }
-    .notification-item .text .title {
-      font-weight: bold;
-    }
-    .notification-item .text .description {
-      color: #555;
-      font-size: 14px;
-    }
-  </style>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="CSS/MyStyle.css" rel="stylesheet">
+	<title>Sunil's Portfolio</title>
+	<style>
+	body {
+		margin: 0;
+		padding: 0;
+		line-height: 1.4;
+		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		font-size: 16px;
+		background-color: #f4f4f4;
+	}        
+        .menu-bar {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        .menu-bar a {
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            margin: 0 5px;
+            display: inline-block;
+        }
+        
+        .menu-bar a:hover {
+		background-color: #555;
+		cursor: pointer;
+	}
+        
+        .content-area {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .thumbnails-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        .thumbnail {
+            width: 150px;
+            height: 120px;
+            position: relative;
+            perspective: 1000px;
+        }
+        
+        .thumbnail-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        
+        .thumbnail:hover .thumbnail-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .thumbnail-front, .thumbnail-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .thumbnail-front {
+            background: #6e48aa;
+            color: white;
+        }
+
+        .thumbnail-front.with-image {
+            background: none;
+        }
+        
+        .thumbnail-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .title-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%; /* Full width */
+            height: 40%; /* 40% of thumbnail height */
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center; /* Center title vertically */
+            justify-content: center; /* Center title horizontally */
+            padding: 0 8px;
+            box-sizing: border-box;
+        }  
+        
+        .thumbnail-title {
+            font-size: 12px;
+            font-weight: bold;
+            color: white;
+            width: 100%;
+            display: -webkit-box;
+            -webkit-line-clamp: 3; /* Allow text to wrap up to 3 lines */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-align: center;
+            line-height: 1.3;
+        }
+
+
+        .thumbnail-back {
+            background: white;
+            color: #333;
+            transform: rotateY(180deg);
+            display: flex;
+            align-items: center;  /* Center description vertically */
+            justify-content: center;  /* Center description horizontally */
+            padding: 15px;
+            box-sizing: border-box;
+        }
+        
+        .thumbnail-desc {
+            font-size: 10px;
+            color: #666;
+            line-height: 1.3;
+            word-break: break-word;
+        }
+        
+        .thumbnail-link {
+            display: block;
+            width: 100%;
+            height: 100%;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        #about-me-iframe {
+            width: 100%;
+            border: none;
+            display: block;
+        }
+        
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
-  <div class="menu-bar">
-    <a id="about-me-link">About</a>
-    <a id="my-work-link">Work and Project</a>
-    <a id="my-blog">Blog</a>
-    <a id="beyond">Beyond the Keyboard</a>
-    <a id="social">Social and Other Platforms</a>
-  </div>
+    <div class="menu-bar">
+        <a id="about-me-link">About</a>
+        <a id="my-work-link">Work and Project</a>
+        <a id="my-blog">Blog</a>
+        <a id="beyond">Beyond the Keyboard</a>
+         <a id="social">Social and Other Platforms</a>
+    </div>
+    
+    <div class="content-area" id="content-area">
+        <!-- Content loads here -->
+    </div>
 
-  <div class="view-toggle">
-    <button onclick="switchToThumbnails()">Thumbnails View</button>
-    <button onclick="switchToNotifications()">Notification View</button>
-  </div>
-
-  <div class="layout-container">
-    <div class="left-column" id="left-column"></div>
-    <div class="middle-column" id="content-area"></div>
-    <div class="right-column" id="right-column"></div>
-  </div>
-
-  <script>
-    let currentView = 'thumbnails';
-
-    function switchToThumbnails() {
-      currentView = 'thumbnails';
-      loadMyBlogs();
-    }
-
-    function switchToNotifications() {
-      currentView = 'notifications';
-      loadMyBlogs();
-    }
-
-    function loadMyBlogs() {
-      fetch('./thumbnails_blogs.json')
-        .then(response => response.json())
-        .then(data => {
-          if (currentView === 'thumbnails') {
-            document.getElementById('content-area').innerHTML = data.map(item => `
-              <div class="thumbnail">
-                <a href="${item.link}" target="_blank" class="thumbnail-link">
-                  <div class="thumbnail-inner">
-                    <div class="thumbnail-front">
-                      ${item.img ? `<img src="${item.img}" class="thumbnail-image" alt="${item.title}">` : ''}
-                      <div class="title-bar">
-                        <div class="thumbnail-title">${item.title}</div>
-                      </div>
-                    </div>
-                    <div class="thumbnail-back">
-                      <div class="thumbnail-desc">${item.description}</div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            `).join('');
-          } else {
-            document.getElementById('content-area').innerHTML = data.map(item => `
-              <div class="notification-item">
-                <img src="${item.img || 'https://via.placeholder.com/60'}" alt="${item.title}" />
-                <div class="text">
-                  <div class="title">${item.title}</div>
-                  <div class="description">${item.description}</div>
-                </div>
-              </div>
-            `).join('');
-          }
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set click handlers
+            document.getElementById('about-me-link').onclick = loadAboutMe;
+            document.getElementById('my-work-link').onclick = loadMyWork;
+            document.getElementById('my-blog').onclick = loadMyBlogs;
+            document.getElementById('beyond').onclick = loadBeyond;
+             document.getElementById('social').onclick = loadSocial;
+            
+            // Load About Me by default
+            loadMyBlogs();
         });
-    }
 
-    function loadAboutMe() {
-      document.getElementById('left-column').innerText = 'About';
-      document.getElementById('content-area').innerText = 'Loading About...';
-    }
+	function loadSocial() {
+	    let html = `
+		<div>
+		    <p style="margin:2px;"><i class="fa fa-linkedin-square contactIcon" aria-hidden="true"></i>
+		    <a href="https://www.linkedin.com/in/spatelsuy/">in/spatelsuy</a></p>
+		    
+		    <p style="margin:2px;"><i class="fa fa-github contactIcon" aria-hidden="true"></i>
+		    <a href="https://github.com/spatelsuy/">Github/spatelsuy</a></p>
+	
+		    <p style="margin:2px;"><i class="fa fa-youtube contactIcon" aria-hidden="true"></i>
+		    <a href="https://www.youtube.com/@SecuNotes/">@SecuNotes</a></p>
+	
+		    <p style="margin:2px;"><i class="fa fa-globe contactIcon" aria-hidden="true"></i>
+		    <a href="https://www.udemy.com/user/sunil-patel-334/">Udemy</a></p>
+		</div>
+	    `;
+	    document.getElementById('content-area').innerHTML = html;
+	}
+        
+	async function loadAboutMe() {
+		const contentArea = document.getElementById('content-area');
+		try {
+			const response = await fetch('./AboutMe.html');
+			const html = await response.text();
+			contentArea.innerHTML = html;
+		} catch (error) {
+			contentArea.innerHTML = '<p>Error loading content.</p>';
+			console.error('Error loading AboutMe.html:', error);
+		}
+	}
+	    
+	async function loadBeyond() {
+		const contentArea = document.getElementById('content-area');
+		try {
+			const response = await fetch('./Beyond.html');
+			const html = await response.text();
+			contentArea.innerHTML = html;
+		} catch (error) {
+			contentArea.innerHTML = '<p>Error loading content.</p>';
+			console.error('Error loading AboutMe.html:', error);
+		}
+	}
+	    
+        function loadMyBlogs(){
+            fetch('./thumbnails_blogs.json?' + new Date().getTime())
+                .then(response => response.json())
+                .then(data => {
+                    let html = '<p align="center"><i>Learning by Doing. Exploring Ideas. Writing to Reflect.</i><br>' + 
+                        '<br>These blogs are inspired by lessons learned, hands-on experiences in live IT environments, and reflections on forward-thinking ideas.'+
+                        '<br>Whether it&#39;s Cybersecurity, Identity & Access Management, delivery transformation, strategic outcomes, ' + 
+                        'or leadership topics — these posts aim to inform, inspire, and spark meaningful conversations.</p><div class="thumbnails-container">';
+                    data.forEach((item) => {
+                        const hasImage = item.img;
+                        
+                        html += `
+                            <div class="thumbnail">
+                                <a href="${item.link}" target="_blank" class="thumbnail-link">
+                                    <div class="thumbnail-inner">
+                                        <div class="thumbnail-front">
+                                            ${hasImage ? 
+                                                `<img src="${item.img}" class="thumbnail-image" alt="${item.title}">` 
+                                                : ''
+                                            }
+                                            <div class="title-bar">
+                                                <div class="thumbnail-title">${item.title}</div>
+                                            </div>
+                                        </div>
+                                        <div class="thumbnail-back">
+                                            <div class="thumbnail-desc">${item.description}</div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        `;
+                    });
+                    
+                    html += '</div>';
+                    document.getElementById('content-area').innerHTML = html;
+                });   
+        }
+        
+        function loadMyWork() {
+            fetch('./thumbnails_work_and_project.json?' + new Date().getTime())
+                .then(response => response.json())
+                .then(data => {
+                    let html = '<p align="center"><i>A collection of tools and projects driven by curiosity and creativity.</i><br><br>' +
+                         'These are simple tools and utilities built to explore new ideas, solve problems, and share practical solutions with the community.<br>' +
+                         'I share them through GitHub so others can use, learn from, or extend them further...</p><div class="thumbnails-container">';
+                    
+                    data.forEach((item) => {
+                        const hasImage = item.img;
+                        
+                        html += `
+                            <div class="thumbnail">
+                                <a href="${item.link}" target="_blank" class="thumbnail-link">
+                                    <div class="thumbnail-inner">
+                                        <div class="thumbnail-front">
+                                            ${hasImage ? 
+                                                `<img src="${item.img}" class="thumbnail-image" alt="${item.title}">` 
+                                                : ''
+                                            }
+                                            <div class="title-bar">
+                                                <div class="thumbnail-title">${item.title}</div>
+                                            </div>
+                                        </div>
+                                        <div class="thumbnail-back">
+                                            <div class="thumbnail-desc">${item.description}</div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        `;
+                    });
+                    
+                    html += '</div>';
+                    document.getElementById('content-area').innerHTML = html;
+                });
+        }
+        
+        function loadMyWorkOLD() {
+            fetch('./thumbnails.json?' + new Date().getTime())
+                .then(response => response.json())
+                .then(data => {
+                    let html = '<p align="center">My Workcontributions and interests lie in IT operations, cybersecurity, identity & access management, and software development.<br>' + 
+                        'Through my blogs and technical work, I share practical insights and real-world applications.<br>Check them out and share your thoughts!<br><br>' +
+                        'If there is a specific topic that I need to explore further, feel free to let me know—I would be happy to dive in.</p><div class="thumbnails-container">';
+                    
+                    data.forEach((item, index) => {
+                        html += `
+                             <div class="thumbnail">
+                                <a href="${item.link}" target="_blank" class="thumbnail-link">
+                                 <div class="thumbnail-inner">
+                                     <div class="thumbnail-front">
+                                         <div class="thumbnail-title">${item.title}</div>
+                                     </div>
+                                     <div class="thumbnail-back">
+                                         <div class="thumbnail-desc">${item.description}</div>
+                                     </div>
+                                 </div>
+                                 </a>
+                             </div>
+                         `;
+                    });
+                    
+                    html += '</div>';
+                    document.getElementById('content-area').innerHTML = html;
+                })
+                .catch(error => {
+                    document.getElementById('content-area').innerHTML = `
+                        <h2>Error Loading Content</h2>
+                        <p>Please check if thumbnails.json exists and is valid JSON.</p>
+                    `;
+                    console.error('Error:', error);
+                });
+        }
 
-    function loadBeyond() {
-      document.getElementById('left-column').innerText = 'Beyond the Keyboard';
-    }
-
-    function loadSocial() {
-      document.getElementById('right-column').innerHTML = `
-        <p><i class="fa fa-linkedin-square"></i> <a href="https://www.linkedin.com/in/spatelsuy/">LinkedIn</a></p>
-        <p><i class="fa fa-github"></i> <a href="https://github.com/spatelsuy/">GitHub</a></p>
-        <p><i class="fa fa-youtube"></i> <a href="https://www.youtube.com/@SecuNotes/">YouTube</a></p>
-        <p><i class="fa fa-globe"></i> <a href="https://www.udemy.com/user/sunil-patel-334/">Udemy</a></p>
-      `;
-    }
-
-    document.addEventListener('DOMContentLoaded', function () {
-      document.getElementById('about-me-link').onclick = loadAboutMe;
-      document.getElementById('beyond').onclick = loadBeyond;
-      document.getElementById('social').onclick = loadSocial;
-      document.getElementById('my-blog').onclick = loadMyBlogs;
-      document.getElementById('my-work-link').onclick = loadMyBlogs;
-      loadMyBlogs();
-      loadAboutMe();
-      loadBeyond();
-      loadSocial();
-    });
-  </script>
+        function resizeIframe(iframe) {
+            setTimeout(function() {
+                try {
+                    const doc = iframe.contentDocument || iframe.contentWindow.document;
+                    iframe.style.height = doc.body.scrollHeight + 'px';
+                    
+                    new ResizeObserver(function() {
+                        iframe.style.height = doc.body.scrollHeight + 'px';
+                    }).observe(doc.body);
+                } catch (e) {
+                    console.log('Resize error:', e);
+                    iframe.style.height = '1000px';
+                }
+            }, 100);
+        }
+    </script>
 </body>
 </html>
