@@ -20,7 +20,13 @@
         "description": "This article explains L1–L4 IT support roles, highlights challenges in L2/L3, and emphasizes adopting shared resource models to enhance service quality and operational efficiency.", 
         "link": "https://medium.com/@spatelsuy/it-support-level-l1-l2-l3-l4-and-shared-resource-model-799d85931fff", 
         "img": "IMG/IncidentManagement.jpg"
-    },    
+    },  
+    { "type":"tech", 
+        "title": "Housekeeping in IT Operations: A Key to Stable IAM Services", 
+        "description": "Housekeeping in IT operations ensures stability and availability. A structured checklist for IAM services helps proactively identify issues, ensure compliance, and support continuous improvement.", 
+        "link": "https://medium.com/@spatelsuy/housekeeping-in-iam-managed-security-service-2ca988d9b5e1", 
+        "img": "IMG/Housekeeping.jpg"
+    },      
     { "type":"blog", 
         "title": "QR Code System to Combat Scammers", 
         "description": "just an idea—Could a QR code-based verification system be a practical solution to combat government impersonation scams?", 
