@@ -80,6 +80,7 @@
             height: 120px;
             position: relative;
             perspective: 1000px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
         
         .thumbnail-inner {
@@ -90,9 +91,15 @@
             transform-style: preserve-3d;
         }
         
-        .thumbnail:hover .thumbnail-inner {
+        .thumbnail-inner {
             transform: rotateY(180deg);
         }
+        .thumbnail:hover {
+            transform: rotateY(180deg);
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }        
+
         
         .thumbnail-front, .thumbnail-back {
             position: absolute;
@@ -224,6 +231,7 @@
             align-items: flex-start;
             text-decoration: none;
             color: inherit;
+            border-left: 4px solid #6e48aa;
         }
         
         .notification-image {
@@ -303,17 +311,81 @@
             border-radius: 4px;
             margin-right: 10px;
         }
+        
+        /* Round Menu with Icons */
+        .round-menu a {
+            color: white;
+            padding: 10px 15px; /* Reduced padding for icons */
+            margin: 0 2px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px; /* Fixed width for circular buttons */
+            height: 40px; /* Fixed height */
+        }
+        
+        .round-menu a i {
+            font-size: 18px; /* Icon size */
+        }
+        
+        .round-menu a.active {
+            background-color: #777;
+            transform: scale(1.1); /* Slight zoom effect */
+        }
+        
+        /* View Toggle Button with Icon */
+        .view-toggle {
+            color: white;
+            background-color: #555;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .view-toggle i {
+            font-size: 16px;
+        }
+
+        .round-menu a::after {
+            content: attr(title);
+            position: absolute;
+            top: 100%;
+            background: #333;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .round-menu a:hover::after {
+            opacity: 1;
+        }        
+        
     </style>
 </head>
 <body>
     <!-- [Rest of your HTML remains exactly the same] -->
     <div class="menu-container">
         <div class="round-menu">
-            <a id="blog-link" class="active">Blog</a>
-            <a id="work-link">Work and Project</a>
+            <a id="blog-link" class="active" title="Blog">
+                <i class="fa fa-file-text-o"></i> <!-- Blog icon -->
+            </a>
+            <a id="work-link" title="Work & Projects">
+                <i class="fa fa-briefcase"></i> <!-- Work icon -->
+            </a>
         </div>
-        <button class="view-toggle" id="view-toggle">Switch to Tiles View</button>
+        <button class="view-toggle" id="view-toggle">
+            <i class="fa fa-th-list"></i> <!-- Default is notification view icon -->
+        </button>
     </div>
+    
     
     <div class="content-area" id="content-area">
         <!-- Tiles view loads here by default -->
@@ -368,12 +440,12 @@
         });
 
         
-        function toggleView() {
+        function toggleView() {            
             if(currentView === 'tiles') {
                 currentView = 'notification';
                 document.getElementById('content-area').style.display = 'none';
                 document.getElementById('notification-view').style.display = 'block';
-                document.getElementById('view-toggle').textContent = 'Switch to Tiles View';
+                document.getElementById('view-toggle').innerHTML = '<i class="fa fa-th-large"></i>'; // Tiles icon
                 
                 // Load appropriate content based on active tab
                 if(document.getElementById('blog-link').classList.contains('active')) {
@@ -385,8 +457,7 @@
                 currentView = 'tiles';
                 document.getElementById('content-area').style.display = 'block';
                 document.getElementById('notification-view').style.display = 'none';
-                document.getElementById('view-toggle').textContent = 'Switch to Notification View';
-                
+                document.getElementById('view-toggle').innerHTML = '<i class="fa fa-th-list"></i>'; // List icon                
                 // Load appropriate content based on active tab
                 if(document.getElementById('blog-link').classList.contains('active')) {
                     loadMyBlogs();
