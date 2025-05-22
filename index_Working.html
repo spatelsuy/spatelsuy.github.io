@@ -358,11 +358,15 @@
             };
             
             document.getElementById('view-toggle').onclick = toggleView;
-            
-            // Load Blogs by default
-            loadMyBlogs();
-            loadNotificationContent(); // Preload notification content
+
+            // Load Notification View by default
+            document.getElementById('content-area').style.display = 'none';
+            document.getElementById('notification-view').style.display = 'block';
+            loadNotificationContent();
+            loadNotificationBlogs(); // This will load blog notifications first
+
         });
+
         
         function toggleView() {
             if(currentView === 'tiles') {
