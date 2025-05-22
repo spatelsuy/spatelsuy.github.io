@@ -1,21 +1,16 @@
 [
-    { "type":"tech", 
-        "title": "CPP Pointer", 
-        "description": "Enhance foundation in programming concepts for system and embedded programming and performance optimization.", 
-        "link": "https://github.com/spatelsuy/C_Plus_Plus"
-    },
+    { "type":"blog", 
+        "title": "Machine Learning Model", 
+        "description": "Machine Learning Models Learn: A Perspective for Traditional Programmers", 
+        "link": "https://www.linkedin.com/pulse/how-machine-learning-models-learn-perspective-sunil-patel-90iye", 
+        "img": "IMG/ML_1.jpg"
+    },    
     { "type":"tech", 
         "title": "Cybersecurity and Human Psychology — Hacking the Mind, Not the Machine", 
         "description": "Cybersecurity isn’t just technical—it’s deeply human. Hackers exploit human psychology through urgency, trust, and fear. Awareness, behavior, and smart tech adoption are key defenses.", 
         "link": "https://medium.com/@spatelsuy/cybersecurity-human-psychology-49ebf58c6e8d", 
          "img": "IMG/HumanPsychology.jpg"        
-    },  
-    { "type":"tech", 
-        "title": "What happen when you sing-up to Azure?", 
-        "description": "Signing up to Azure creates a unique Azure AD tenant with your ID as Global Admin; a subscription is then needed to deploy and manage resources.", 
-        "link": "https://medium.com/@spatelsuy/microsoft-azure-basic-part-1-efacc4be1595", 
-         "img": "IMG/Azure1.jpg"        
-    },       
+    },      
     { "type":"tech", 
         "title": "Trust No One, Verify Everyone — The Power of Zero Trust Security", 
         "description": "Never assume trust — Zero Trust security enforces strict verification, micro-segmentation, and continuous monitoring to protect dynamic IT environments against evolving cyber threats.", 
@@ -69,10 +64,15 @@
         "link": "https://www.linkedin.com/pulse/enhance-security-segregating-inactive-accounts-separate-sunil-patel-xqjfe", 
         "img": "IMG/SeparateOU.jpg"
     },
-    { "type":"blog", 
-        "title": "Machine Learning Model", 
-        "description": "Machine Learning Models Learn: A Perspective for Traditional Programmers", 
-        "link": "https://www.linkedin.com/pulse/how-machine-learning-models-learn-perspective-sunil-patel-90iye", 
-        "img": "IMG/ML_1.jpg"
-    }  
+    { "type":"tech", 
+        "title": "What happen when you sing-up to Azure?", 
+        "description": "Signing up to Azure creates a unique Azure AD tenant with your ID as Global Admin; a subscription is then needed to deploy and manage resources.", 
+        "link": "https://medium.com/@spatelsuy/microsoft-azure-basic-part-1-efacc4be1595", 
+         "img": "IMG/Azure1.jpg"        
+    },     
+    { "type":"tech", 
+        "title": "CPP Pointer", 
+        "description": "Enhance foundation in programming concepts for system and embedded programming and performance optimization.", 
+        "link": "https://github.com/spatelsuy/C_Plus_Plus"
+    }
 ]
