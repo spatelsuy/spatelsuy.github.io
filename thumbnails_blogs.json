@@ -52,6 +52,13 @@
         "link": "https://www.linkedin.com/pulse/securing-modern-enterprise-architectures-layered-security-sunil-patel-1nz0e", 
         "img": "IMG/ModernEA.jpg"
     },
+    Beyond the painter's brushstrokes: proactive measures in cybersecurity
+    { "type":"blog", 
+        "title": "Beyond the painter's brushstrokes: proactive measures in cybersecurity", 
+        "description": "Although proactive efforts prevent issues before they happen, they often go unnoticed. This is common in cybersecurity, where actions quietly stop threats that never make it to headlines.", 
+        "link": "https://www.linkedin.com/pulse/beyond-painters-brushstrokes-proactive-measures-sunil-patel-ifzue", 
+        "img": "IMG/PainterAndCybersecurity.jpg"
+    },
     { "type":"blog", 
         "title": "Balancing user experience and security", 
         "description": "A tread-off. Strong security measures might complicate user journey, while prioritizing user convenience could expose vulnerabilities", 
