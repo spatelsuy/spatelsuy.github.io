@@ -80,7 +80,6 @@
             height: 120px;
             position: relative;
             perspective: 1000px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
         
         .thumbnail-inner {
@@ -91,16 +90,10 @@
             transform-style: preserve-3d;
         }
         
-        .thumbnail-inner {
+        .thumbnail-inner, .thumbnail:hover {
             transform: rotateY(180deg);
         }
-        .thumbnail:hover {
-            transform: rotateY(180deg);
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-        }        
-
-        
+              
         .thumbnail-front, .thumbnail-back {
             position: absolute;
             width: 100%;
