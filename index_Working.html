@@ -522,9 +522,6 @@
                     data.forEach((item) => {
                         const randomHours = Math.floor(Math.random() * 24);
                         const randomDays = Math.floor(Math.random() * 7);
-                        const timeText = randomDays > 0 ? 
-                            `${randomDays} day${randomDays > 1 ? 's' : ''} ago` : 
-                            `${randomHours} hour${randomHours !== 1 ? 's' : ''} ago`;
                         
                         const imageElement = item.img ? 
                             `<img src="${item.img}" class="notification-image" alt="${item.title}">` :
@@ -536,7 +533,6 @@
                                 <div class="notification-content">
                                     <span class="notification-title">${item.title}</span>
                                     <div class="notification-desc">${item.description}</div>
-                                    <div class="notification-time">${timeText}</div>
                                 </div>
                             </a>
                         `;
@@ -555,9 +551,6 @@
                     data.forEach((item) => {
                         const randomHours = Math.floor(Math.random() * 24);
                         const randomDays = Math.floor(Math.random() * 30) + 1;
-                        const timeText = randomDays > 7 ? 
-                            `${Math.floor(randomDays/7)} week${Math.floor(randomDays/7) > 1 ? 's' : ''} ago` : 
-                            `${randomDays} day${randomDays > 1 ? 's' : ''} ago`;
                         
                         const imageElement = item.img ? 
                             `<img src="${item.img}" class="notification-image" alt="${item.title}">` :
@@ -569,7 +562,6 @@
                                 <div class="notification-content">
                                     <span class="notification-title">${item.title}</span>
                                     <div class="notification-desc">${item.description}</div>
-                                    <div class="notification-time">${timeText}</div>
                                 </div>
                             </a>
                         `;
