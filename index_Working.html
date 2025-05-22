@@ -74,12 +74,16 @@
             gap: 20px;
             justify-content: center;
         }
+          
+        .thumbnail:hover .thumbnail-inner {
+            transform: rotateY(180deg);
+        }
         
         .thumbnail {
             width: 150px;
             height: 120px;
             position: relative;
-            perspective: 1000px;
+            perspective: 1000px; /* 3D perspective */
         }
         
         .thumbnail-inner {
@@ -87,22 +91,13 @@
             width: 100%;
             height: 100%;
             transition: transform 0.6s;
-            transform-style: preserve-3d;
+            transform-style: preserve-3d; /* Maintain 3D */
         }
         
-        .thumbnail-inner, .thumbnail:hover {
-            transform: rotateY(180deg);
-        }
-              
         .thumbnail-front, .thumbnail-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        
+            backface-visibility: hidden; /* Hides the back during flip */
+        }        
+    
         .thumbnail-front {
             background: #6e48aa;
             color: white;
