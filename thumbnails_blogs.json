@@ -75,6 +75,12 @@
         "description": "Signing up to Azure creates a unique Azure AD tenant with your ID as Global Admin; a subscription is then needed to deploy and manage resources.", 
         "link": "https://medium.com/@spatelsuy/microsoft-azure-basic-part-1-efacc4be1595", 
          "img": "IMG/Azure1.jpg"        
+    },
+    { "type":"tech", 
+        "title": "What is strategy, plan, process and framework?", 
+        "description": "In the corporate world, terms like strategy, plan, process, and framework are often used interchangeably, leading to confusion. This write-up clarifies that strategy defines what you aim to achieve, plan outlines how to do it, process is the structured execution of the plan, and framework is a reusable, proven model to implement the process efficiently.", 
+        "link": "https://spatelsuy.github.io/Blogs/Strategy_Plan_Process.html", 
+         "img": "IMG/Strategy.jpg"        
     },     
     { "type":"tech", 
         "title": "CPP Pointer", 
