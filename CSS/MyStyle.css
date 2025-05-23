@@ -122,11 +122,6 @@ body {
   box-sizing: border-box; /* Ensure padding and border don't cause overflow */
   max-height: 100%;
   overflow: auto;
-  
-  font: normal normal 12px Arial, Tahoma, Helvetica, FreeSans, sans-serif;
-  color: #222222;
-  background: #66bbdd none repeat scroll top left;
-  padding: 0 40px 40px 40px;
 }
 
 /* Post-It Note Style */
