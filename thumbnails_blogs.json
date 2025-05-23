@@ -81,7 +81,13 @@
         "description": "In the corporate world, terms like strategy, plan, process, and framework are often used interchangeably, leading to confusion. This write-up clarifies that strategy defines what you aim to achieve, plan outlines how to do it, process is the structured execution of the plan, and framework is a reusable, proven model to implement the process efficiently.", 
         "link": "https://spatelsuy.github.io/Blogs/Strategy_Plan_Process.html", 
          "img": "IMG/Strategy.jpg"        
-    },     
+    },   
+    { "type":"tech", 
+        "title": "Statistics Matters – Small or Big Data", 
+        "description": "Statistics touch every part of daily life, knowingly or unknowingly we use statistics almost in everything. If I ask you the question “What time usually you reach office?” you do not answer based on the time you arrived in office today, but you consider past few days or weeks to arrive a suitable answer.", 
+        "link": "https://spatelsuy.github.io/Blogs/StatisticsMatter.html", 
+         "img": "IMG/Statistics.jpg"        
+    },      
     { "type":"tech", 
         "title": "CPP Pointer", 
         "description": "Enhance foundation in programming concepts for system and embedded programming and performance optimization.", 
