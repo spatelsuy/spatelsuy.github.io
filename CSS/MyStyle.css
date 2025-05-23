@@ -115,8 +115,8 @@ body {
   align-items: center;
   gap: 5px;
   box-sizing: border-box; /* Ensure padding and border don't cause overflow */
-  max-height: 100vh; /* Prevent body content from exceeding viewport */
-  overflow: hidden; /* Hide overflow if any */
+  max-height: 100%;
+  overflow: auto;
 }
 
 /* Post-It Note Style */
