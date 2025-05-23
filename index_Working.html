@@ -517,7 +517,8 @@
             fetch('./thumbnails_blogs.json?' + new Date().getTime())
                 .then(response => response.json())
                 .then(data => {
-                    let html = '<div class="section-title">Recent Blog Posts</div>';
+                    const count = data.length;
+                    let html = '<div class="section-title">Recent Blog Posts (${count})</div>';
                     
                     data.forEach((item) => {
                         const randomHours = Math.floor(Math.random() * 24);
@@ -546,8 +547,8 @@
             fetch('./thumbnails_work_and_project.json?' + new Date().getTime())
                 .then(response => response.json())
                 .then(data => {
-                    let html = '<div class="section-title">Recent Work & Projects</div>';
-                    
+                    const count = data.length;
+                    let html = '<div class="section-title">Recent Work & Projects (${count})</div>';
                     data.forEach((item) => {
                         const randomHours = Math.floor(Math.random() * 24);
                         const randomDays = Math.floor(Math.random() * 30) + 1;
