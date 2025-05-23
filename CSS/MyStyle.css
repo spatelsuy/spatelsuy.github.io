@@ -112,16 +112,16 @@ a:hover {
 
 /* styles.css */
 body {
-/*  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
   background-color: #f5f5f5;
-  padding: 0; /* No padding to prevent overflow
+  padding: 0; /* No padding to prevent overflow */
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 5px;
-  box-sizing: border-box; /* Ensure padding and border don't cause overflow
+  box-sizing: border-box; /* Ensure padding and border don't cause overflow */
   max-height: 100%;
-  overflow: auto;*/
+  overflow: auto;
   
   font: normal normal 12px Arial, Tahoma, Helvetica, FreeSans, sans-serif;
   color: #222222;
