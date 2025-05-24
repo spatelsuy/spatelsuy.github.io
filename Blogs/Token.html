@@ -70,6 +70,20 @@
       margin-top: 40px;
       padding-bottom: 20px;
     }
+.vl {
+  border-left: 4px solid lightgray;
+  height: 80px;
+}
+.vl-text {
+  margin-left: 15px; /* space between the line and the text */
+  padding-top: 5px;   /* optional, adjust vertical alignment */
+}
+.vl-container {
+  position: relative;
+  display: flex;
+  align-items: flex-start; /* or center if you want vertical alignment */
+}
+
   </style>
   
 </head>
@@ -85,7 +99,12 @@
 <p>Imagine you visit a bank to withdraw money. You fill out a withdrawal form by providing necessary details like your account number and the withdrawal amount. You sign the form and hand it over to the clerk. The clerk verifies your identity (you need to show an identity card) and matches the signature to ensure that you are the rightful account holder. <em>(This process is called request and verification.)</em></p>
 <p>Instead of directly handing over the money, the clerk gives you a token with a number - this represents an <strong>access token</strong> in the digital world.</p>
 <p>You then approach the cashier and present the token. At this point, the cashier does not verify your identity again; instead, they match the token number with the details already received from the clerk. After verifying the token, the requested amount is handed over to you.</p>
-<p>Note: There is a security flaw in this process. Anyone possessing the token can approach the cashier to withdraw the money, because the cashier trusts only the token, not your identity.</p>
+
+<div class="vl-container">
+  <div class="vl"></div>
+  <div class="vl-text"><strong>Note:</strong> There is a security flaw in this process. Anyone possessing the token can approach the cashier to withdraw the money, because the cashier trusts only the token, not your identity.</div>
+</div>		
+		
 <p>Similarly, in the digital world, an <strong>access token</strong> grants access without requiring re-authentication. If a hacker gets hold of your access token, they can access services as you &mdash; without needing your credentials.</p>
 <p>Understanding this analogy highlights the importance of <strong>token security -&nbsp;</strong>tokens must be kept safe and are often short-lived to minimize risk.</p>
 <hr />
