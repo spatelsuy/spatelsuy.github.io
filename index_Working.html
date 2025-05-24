@@ -373,7 +373,7 @@
     </style>
 </head>
 <body>
-    <!-- [Rest of your HTML remains exactly the same] -->
+    <!-- Menu at the top -->
     <div class="menu-container">
         <div class="round-menu">
             <a id="blog-link" class="active" title="Blog">
@@ -388,10 +388,13 @@
         </button>
     </div>
         
-    
+    <!-- I can have content-area or  notification-view
+        content-area to show my data in tiles whereas notification view in lines
+    -->
     <div class="content-area" id="content-area">
         <!-- Tiles view loads here by default -->
     </div>
+
     
     <div class="notification-view clearfix" id="notification-view">
         <div class="notification-column left-column" id="left-column">
@@ -406,14 +409,16 @@
     </div>
 
     <script>
-        // [All your JavaScript remains exactly the same]
+        // by default set current view as notification
         let currentView = 'notification'; // 'tiles' or 'notification'
-        
+
+        //add required listner
         document.addEventListener('DOMContentLoaded', function() {
             // Set click handlers
             document.getElementById('blog-link').onclick = function() {
                 document.getElementById('blog-link').classList.add('active');
                 document.getElementById('work-link').classList.remove('active');
+                // display depends on which view to show..
                 if(currentView === 'tiles') {
                     loadMyBlogs();
                 } else {
