@@ -81,23 +81,30 @@
 		<div class="image-center">
 			<img src="/IMG/SecuNotes.jpg"/>
 		</div>
-<p data-start="114" data-end="191"><strong data-start="114" data-end="191">The difference between an authorization code and an access token</strong></p>
-<p data-start="193" data-end="325">Let&rsquo;s try to understand the authorization flow to&nbsp;know about an authorization code and access token, and their relation.</p>
-<p data-start="327" data-end="401">There are four components or parties involved in the authorization flow:</p>
-<ul data-start="402" data-end="771">
-<li data-start="402" data-end="428"><strong data-start="404" data-end="426">User or user agent</strong></li>
-<li data-start="429" data-end="526"><strong data-start="431" data-end="455">Client (Application)</strong> &ndash; the requester that wants to access a service on behalf of the user</li>
-<li data-start="527" data-end="671"><strong data-start="529" data-end="553">Authorization Server</strong> (OAuth Provider, possibly the same as the Identity Provider) &ndash; issues tokens after authentication and authorization</li>
-<li data-start="672" data-end="771"><strong data-start="674" data-end="694">Service Provider</strong> (Resource Server, API, or Protected Service) &ndash; provides the actual service</li>
+<p><strong data-start="114" data-end="191">The difference between an authorization code and an access token</strong></p>
+<p>Let&rsquo;s try to understand the authorization flow to&nbsp;know about an authorization code and access token, and their relation.</p>
+<p>There are four components or parties involved in the authorization flow:</p>
+<ul>
+<li><strong>User or user agent</strong></li>
+<li><strong>Client (Application)</strong> &ndash; the requester that wants to access a service on behalf of the user</li>
+<li><strong>Authorization Server</strong> (OAuth Provider, possibly the same as the Identity Provider) &ndash; issues tokens after authentication and authorization</li>
+<li><strong>Service Provider</strong> (Resource Server, API, or Protected Service) &ndash; provides the actual service</li>
 </ul>
-<p data-start="773" data-end="1164">Let&rsquo;s look at the flow in detail. The user agent (typically a browser) initiates the flow and redirects the user to the authorization server for authentication. If authentication succeeds, the authorization server issues an <strong data-start="997" data-end="1019">authorization code</strong> - a temporary secret. During this step, the <code data-start="1062" data-end="1073">client_id</code> and redirect URL are used to validate that the request is coming from a legitimate client.</p>
-<p data-start="1166" data-end="1424">The goal is to obtain an <strong data-start="1191" data-end="1207">access token</strong> to access the actual service or API.<br data-start="1244" data-end="1247" /> To get the access token, the client sends the authorization code, along with the client ID and secret, to an API endpoint on the authorization server using an HTTP POST request.</p>
-<p data-start="1426" data-end="1568">The authorization server validates the request and issues an <strong data-start="1487" data-end="1503">access token</strong>, which can be either an opaque string or a JWT (JSON Web Token).</p>
-<p data-start="1570" data-end="1933">To access the actual service or API, the client includes the access token in the Authorization header as a <strong data-start="1677" data-end="1693">bearer token</strong>.<br data-start="1694" data-end="1697" /> The service provider verifies the access token. If it is a JWT, it can be verified locally using the authorization server&rsquo;s public key. If it is an opaque token, the service provider must validate it by calling the authorization server.</p>
-<p data-start="1935" data-end="2065">If the token is valid and contains the required permissions (scopes), the service provider grants access to the requested service.</p>
-<p data-start="2067" data-end="2374">From a security standpoint, even if an attacker intercepts the authorization code, they cannot exchange it for an access token without the client credentials. However, if an attacker steals an access token, they can use it until it expires. To reduce this risk, access tokens are designed to be short-lived.</p>
-<p data-start="2376" data-end="2562"><strong data-start="2376" data-end="2390">In summary</strong>, the authorization code is a temporary credential used to obtain the access token securely, while the access token is what allows the client to access protected resources.</p>
-<p data-start="2564" data-end="2707"><strong data-start="2564" data-end="2582">Best practices</strong> such as token encryption, secure storage, and refresh token rotation should be implemented to further protect access tokens.</p>
+<p>Let&rsquo;s look at the flow in detail. The user agent (typically a browser) initiates the flow and redirects the user to the authorization server for authentication. 
+	If authentication succeeds, the authorization server issues an <strong>authorization code</strong> - a temporary secret. 
+	During this step, the <code>client_id</code> and redirect URL are used to validate that the request is coming from a legitimate client.</p>
+<p>The goal is to obtain an <strong>access token</strong> to access the actual service or API.<br/> To get the access token, the client sends the authorization code, 
+	along with the client ID and secret, to an API endpoint on the authorization server using an HTTP POST request.</p>
+<p>The authorization server validates the request and issues an <strong>access token</strong>, which can be either an opaque string or a JWT (JSON Web Token).</p>
+<p>To access the actual service or API, the client includes the access token in the Authorization header as a <strong>bearer token</strong>.
+	<br/> The service provider verifies the access token. If it is a JWT, it can be verified locally using the authorization server&rsquo;s public key. 
+	If it is an opaque token, the service provider must validate it by calling the authorization server.</p>
+<p>If the token is valid and contains the required permissions (scopes), the service provider grants access to the requested service.</p>
+<p>From a security standpoint, even if an attacker intercepts the authorization code, they cannot exchange it for an access token without the client credentials. 
+	However, if an attacker steals an access token, they can use it until it expires. To reduce this risk, access tokens are designed to be short-lived.</p>
+<p><strong>In summary</strong>, the authorization code is a temporary credential used to obtain the access token securely, 
+	while the access token is what allows the client to access protected resources.</p>
+<p><strong>Best practices</strong> such as token encryption, secure storage, and refresh token rotation should be implemented to further protect access tokens.</p>
   </div>
   <footer>
 
