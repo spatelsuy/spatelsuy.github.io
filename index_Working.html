@@ -368,28 +368,23 @@
 </head>
 <body>
     <!-- [Rest of your HTML remains exactly the same] -->
-    <div class="menu-container">
-        <!-- Left Section -->
-        <div class="menu-section menu-left">
-        </div>
 
-        <!-- Center Section -->
-        <div class="menu-center round-menu">
+    <div class="menu-container">
+        <div class="left-column">
+        </div>
+        <div class="round-menu middle-column">
             <a id="blog-link" class="active" title="Blog">
-                <i class="fa fa-file-text-o"></i>
+                <i class="fa fa-file-text-o"></i> <!-- Blog icon -->
             </a>
             <a id="work-link" title="Work & Projects">
-                <i class="fa fa-briefcase"></i>
+                <i class="fa fa-briefcase"></i> <!-- Work icon -->
             </a>
         </div>
-
-        <!-- Right Section -->
-        <div class="menu-right">
-            <button class="view-toggle" id="view-toggle">
-                <i class="fa fa-th-list"></i>
-            </button>
-        </div>
+        <button class="view-toggle right-column" id="view-toggle">
+            <i class="fa fa-th-list"></i> <!-- Default is notification view icon -->
+        </button>
     </div>
+    
     
     
     <div class="content-area" id="content-area">
