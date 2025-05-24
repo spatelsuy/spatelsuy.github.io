@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Security - Short Note</title>
+    <style>
+    body {
+      font-family: 'segoe ui', Arial, sans-serif;
+      font-size: 10pt;
+      line-height: 1.7;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+      color: #222;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .container {
+      width: 40%;
+      margin: 30px auto; /* Centers it horizontally */
+      background-color: #ffffff;
+      padding: 30px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      border: 1px solid #ddd;
+    }
+	img {
+	  max-width: 100%;
+	  height: auto;
+	  display: block;
+	  margin: 0 auto;
+	}
+	.image-center {
+  		text-align: center;
+	}
+	    
+    h1, h2 {
+      color: #333;
+      font-weight: normal;
+    }
+
+    h2 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin-bottom: 1em;
+    }
+
+    a {
+      color: #1a0dab;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 13px;
+      color: #777;
+      margin-top: 40px;
+      padding-bottom: 20px;
+    }
+  </style>
+  
+</head>
+<body>
+	<div class="container">
+		<h2>
+			Token in IAM
+		</h2>
+		<div class="image-center">
+			<img src="/IMG/SecuNotes.jpg"/>
+		</div>
+<p>Let&rsquo;s try to understand it in a simple way.</p>
+<p>Imagine you visit a bank to withdraw money. You fill out a withdrawal form by providing necessary details like your account number and the withdrawal amount. You sign the form and hand it over to the clerk. The clerk verifies your identity (you need to show an identity card) and matches the signature to ensure that you are the rightful account holder. <em>(This process is called request and verification.)</em></p>
+<p>Instead of directly handing over the money, the clerk gives you a token with a number - this represents an <strong>access token</strong> in the digital world.</p>
+<p>You then approach the cashier and present the token. At this point, the cashier does not verify your identity again; instead, they match the token number with the details already received from the clerk. After verifying the token, the requested amount is handed over to you.</p>
+<p>Note: There is a security flaw in this process. Anyone possessing the token can approach the cashier to withdraw the money, because the cashier trusts only the token, not your identity.</p>
+<p>Similarly, in the digital world, an <strong>access token</strong> grants access without requiring re-authentication. If a hacker gets hold of your access token, they can access services as you &mdash; without needing your credentials.</p>
+<p>Understanding this analogy highlights the importance of <strong>token security -&nbsp;</strong>tokens must be kept safe and are often short-lived to minimize risk.</p>
+<hr />
+<p>&nbsp;</p>
+<h2>Quick Definitions:</h2>
+<ul>
+<li><strong>Access Token:</strong> A credential issued by the Authorization Server after successful authentication and authorization. It allows a client to access protected resources on behalf of the user. These tokens are typically short-lived for security reasons.</li>
+</ul>
+<ul>
+<li><strong>ID Token:</strong> Used in OpenID Connect (OIDC). It contains user identity information like name, roles, and authentication timestamp. It is used by client applications to identify the authenticated user.</li>
+</ul>
+<ul>
+<li><strong>Refresh Token:</strong> A long-lived token used to obtain new access tokens without requiring the user to log in again. Used in OAuth 2.0, it is stored securely on the client-side and not sent to APIs, but exchanged with the Authorization Server.</li>
+</ul>
+<ul>
+<li><strong>JWT (JSON Web Token):</strong> A compact, self-contained format for encoding user information or authorization data. JWTs are commonly used for ID Tokens and Access Tokens in OAuth 2.0, OIDC, and Single Sign-On. They can be verified locally using a public key, without needing to call the Authorization Server.</li>
+</ul>
+<ul>
+<li><strong>Bearer Token:</strong> A method of sending an access token in API requests. The term implies that the "bearer" (whoever holds the token) is authorized to access protected resources without further authentication.</li>
+</ul>
+<p>&nbsp;</p>
+  </div>
+  <footer>
+
+  </footer>
+
+</body>
+</html>
