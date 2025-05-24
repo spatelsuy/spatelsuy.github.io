@@ -85,11 +85,9 @@
 <p data-start="193" data-end="325">Let&rsquo;s try to understand the authorization flow to&nbsp;know about an authorization code and access token, and their relation.</p>
 <p data-start="327" data-end="401">There are four components or parties involved in the authorization flow:</p>
 <ul data-start="402" data-end="771">
-<li data-start="402" data-end="428">
-<p data-start="404" data-end="428"><strong data-start="404" data-end="426">User or user agent</strong></p>
+<li data-start="402" data-end="428"><strong data-start="404" data-end="426">User or user agent</strong>
 </li>
-<li data-start="429" data-end="526">
-<p data-start="431" data-end="526"><strong data-start="431" data-end="455">Client (Application)</strong> &ndash; the requester that wants to access a service on behalf of the user</p>
+<li data-start="429" data-end="526"><strong data-start="431" data-end="455">Client (Application)</strong> &ndash; the requester that wants to access a service on behalf of the user
 </li>
 <li data-start="527" data-end="671">
 <p data-start="529" data-end="671"><strong data-start="529" data-end="553">Authorization Server</strong> (OAuth Provider, possibly the same as the Identity Provider) &ndash; issues tokens after authentication and authorization</p>
@@ -98,7 +96,7 @@
 <p data-start="674" data-end="771"><strong data-start="674" data-end="694">Service Provider</strong> (Resource Server, API, or Protected Service) &ndash; provides the actual service</p>
 </li>
 </ul>
-<p data-start="773" data-end="1164">Let&rsquo;s look at the flow in detail. The user agent (typically a browser) initiates the flow and redirects the user to the authorization server for authentication. If authentication succeeds, the authorization server issues an <strong data-start="997" data-end="1019">authorization code</strong>&mdash;a temporary secret. During this step, the <code data-start="1062" data-end="1073">client_id</code> and redirect URL are used to validate that the request is coming from a legitimate client.</p>
+<p data-start="773" data-end="1164">Let&rsquo;s look at the flow in detail. The user agent (typically a browser) initiates the flow and redirects the user to the authorization server for authentication. If authentication succeeds, the authorization server issues an <strong data-start="997" data-end="1019">authorization code</strong> - a temporary secret. During this step, the <code data-start="1062" data-end="1073">client_id</code> and redirect URL are used to validate that the request is coming from a legitimate client.</p>
 <p data-start="1166" data-end="1424">The goal is to obtain an <strong data-start="1191" data-end="1207">access token</strong> to access the actual service or API.<br data-start="1244" data-end="1247" /> To get the access token, the client sends the authorization code, along with the client ID and secret, to an API endpoint on the authorization server using an HTTP POST request.</p>
 <p data-start="1426" data-end="1568">The authorization server validates the request and issues an <strong data-start="1487" data-end="1503">access token</strong>, which can be either an opaque string or a JWT (JSON Web Token).</p>
 <p data-start="1570" data-end="1933">To access the actual service or API, the client includes the access token in the Authorization header as a <strong data-start="1677" data-end="1693">bearer token</strong>.<br data-start="1694" data-end="1697" /> The service provider verifies the access token. If it is a JWT, it can be verified locally using the authorization server&rsquo;s public key. If it is an opaque token, the service provider must validate it by calling the authorization server.</p>
