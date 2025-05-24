@@ -22,6 +22,12 @@
             background-color: #333;
             padding: 10px 20px;
         }
+        .menu-section {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
         
         .round-menu {
             display: flex;
@@ -363,17 +369,26 @@
 <body>
     <!-- [Rest of your HTML remains exactly the same] -->
     <div class="menu-container">
-        <div class="round-menu">
+        <!-- Left Section -->
+        <div class="menu-section menu-left">
             <a id="blog-link" class="active" title="Blog">
-                <i class="fa fa-file-text-o"></i> <!-- Blog icon -->
-            </a>
-            <a id="work-link" title="Work & Projects">
-                <i class="fa fa-briefcase"></i> <!-- Work icon -->
+                <i class="fa fa-file-text"></i>
             </a>
         </div>
-        <button class="view-toggle" id="view-toggle">
-            <i class="fa fa-th-list"></i> <!-- Default is notification view icon -->
-        </button>
+
+        <!-- Center Section -->
+        <div class="menu-section menu-center">
+            <a id="work-link" title="Work & Projects">
+                <i class="fa fa-briefcase"></i>
+            </a>
+        </div>
+
+        <!-- Right Section -->
+        <div class="menu-section menu-right">
+            <button class="view-toggle" id="view-toggle">
+                <i class="fa fa-th-list"></i>
+            </button>
+        </div>
     </div>
     
     
