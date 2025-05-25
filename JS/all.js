@@ -1,4 +1,3 @@
-@@ -1 +1,277 @@
         // by default set current view as notification
         let currentView = 'notification'; // 'tiles' or 'notification'
 
