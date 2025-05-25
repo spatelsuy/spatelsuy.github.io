@@ -373,21 +373,23 @@
           }
 
 
-@media screen and (max-width: 768px) {
+/* Mobile layout */
+@media (max-width: 768px) {
     .notification-view {
         flex-direction: column;
     }
 
-    .left-column,
-    .middle-column,
-    .right-column {
+    .middle-column {
+        order: 1;
         width: 100%;
-        order: unset;
     }
 
-    .middle-column-menu,
-    .right-column-menu {
-        flex-basis: 100%;
-        justify-content: center;
+    .left-column {
+        order: 2;
+        width: 100%;
+    }
+
+    .right-column {
+        display: none;
     }
 }
