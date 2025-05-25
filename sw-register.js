@@ -1,7 +1,7 @@
 // sw-register.js
 
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/service-worker.js')
+if (window.isSecureContext && 'serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/offline-worker.js')
     .then(function (reg) {
       console.log('Service Worker registered successfully.', reg);
     })
@@ -9,3 +9,4 @@ if ('serviceWorker' in navigator) {
       console.error('Service Worker registration failed:', err);
     });
 }
+
