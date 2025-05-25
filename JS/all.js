@@ -68,9 +68,9 @@
             let leftHtml = `
                 <div class="section-title">About</div>
                 <div id="about-me-content">Loading...</div>
-                <div class="section-title" style="margin-top: 30px;" nonce="internal">Beyond the Keyboard</div>
+                <div class="section-title" class="section-title30">Beyond the Keyboard</div>
                 <div id="beyond-content">Loading...</div>
-                <div class="section-title" style="margin-top: 30px;" nonce="internal">Social and Other Platforms</div>
+                <div class="section-title" class="section-title30">Social and Other Platforms</div>
                 <div id="my-social-content">Loading...</div>
             `;
             document.getElementById('left-column').innerHTML = leftHtml;
@@ -78,17 +78,17 @@
             // Right column content
             let rightHtml = `
                 <div class="section-title">Social and Other Platforms</div>
-                <div class="section-title-top">
-                    <p class="section-title"><i class="fa fa-linkedin-square contactIcon" aria-hidden="true"></i>
+                <div class="section-title15">
+                    <p class="section-title10"><i class="fa fa-linkedin-square contactIcon" aria-hidden="true"></i>
                     <a href="https://www.linkedin.com/in/spatelsuy/" target="_blank">in/spatelsuy</a></p>
                     
-                    <p class="section-title"><i class="fa fa-github contactIcon" aria-hidden="true"></i>
+                    <p class="section-title10"><i class="fa fa-github contactIcon" aria-hidden="true"></i>
                     <a href="https://github.com/spatelsuy/" target="_blank">Github/spatelsuy</a></p>
             
-                    <p class="section-title"><i class="fa fa-youtube contactIcon" aria-hidden="true"></i>
+                    <p class="section-title10"><i class="fa fa-youtube contactIcon" aria-hidden="true"></i>
                     <a href="https://www.youtube.com/@SecuNotes/" target="_blank">@SecuNotes</a></p>
             
-                    <p class="section-title"><i class="fa fa-globe contactIcon" aria-hidden="true"></i>
+                    <p class="section-title10"><i class="fa fa-globe contactIcon" aria-hidden="true"></i>
                     <a href="https://www.udemy.com/user/sunil-patel-334/" target="_blank">Udemy</a></p>
                 </div>
             `;
