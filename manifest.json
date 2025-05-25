@@ -1,11 +1,34 @@
 {
+  "id": "/index.html",
   "name": "Sunil Blog",
   "short_name": "SunilBlog",
+  "description": "Sunil's Blog, Profile, Proects and Beyond Kayboard activity",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#317EFB",
   "orientation": "portrait",
+    "launch_handler": {
+    "client_mode": "navigate-existing"
+  },
+  "window": {
+    "controls_overlay": {
+      "titlebar_color": "#ffffff"
+    }
+  },
+  "edge_side_panel": {
+    "preferred_width": 330
+  },
+  "file_handlers": [
+    {
+      "action": "/index.html",
+      "accept": {
+        "text/plain": [".txt"],
+        "application/json": [".json"]
+      },
+      "name": "Open with Sunil's App"
+    }
+  ],
   "icons": [
     {
       "src": "secunotes-192x192.png",
