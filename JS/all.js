@@ -73,7 +73,7 @@
                 <div class="section-title section-title30">Social and Other Platforms</div>
                 <div id="my-social-content">Loading...</div>
             `;
-            document.getElementById('left-column').innerHTML = leftHtml;
+            document.getElementById('right-column').innerHTML = leftHtml;
             
             // Right column content
             let rightHtml = `
@@ -92,7 +92,7 @@
                     <a href="https://www.udemy.com/user/sunil-patel-334/" target="_blank">Udemy</a></p>
                 </div>
             `;
-            //document.getElementById('right-column').innerHTML = rightHtml;
+            //document.getElementById('left-column').innerHTML = rightHtml;
             
             // Load About Me and Beyond content
             loadAboutMeForNotification();
