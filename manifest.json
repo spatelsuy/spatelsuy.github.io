@@ -2,7 +2,7 @@
   "id": "/index.html",
   "name": "Sunil Blog",
   "short_name": "SunilBlog",
-  "description": "Sunil's Blog, Profile, Proects and Beyond Kayboard activity",
+  "description": "Sunil's Blog, Projects and Beyond Kayboard activity",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#ffffff",
