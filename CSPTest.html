@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSP Test</title>
+
+  <!-- Content Security Policy -->
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'none';
+    script-src 'self';
+    style-src 'self';
+    img-src 'self';
+    connect-src 'self';
+    font-src 'self';
+    object-src 'none';
+    frame-src 'none';
+    base-uri 'self';
+    form-action 'none';
+    report-to csp-endpoint;">
+
+  <!-- Reporting Endpoint -->
+  <meta http-equiv="Report-To" content='{
+    "group":"csp-endpoint",
+    "max_age":10886400,
+    "endpoints":[{"url":"https://spatelsuy.github.io/CSPTest.html"}],
+    "include_subdomains": true
+  }'>
+
+  <style>
+    body { font-family: Arial; margin: 2em; }
+    .box { border: 1px solid #ccc; padding: 1em; background: #f9f9f9; }
+  </style>
+</head>
+<body>
+  <h1>CSP Test Page</h1>
+  <div class="box">
+    Hello, <span id="output">Guest</span>!
+  </div>
+  <div id="csp-warning" class="warning"></div>
+
+  <script>
+    const params = new URLSearchParams(location.search);
+    document.getElementById("output").innerHTML = params.get("name") || "Guest";
+  </script>
+
+  <script>
+  // Show warning message if CSP violation event is fired (supported in modern browsers)
+  window.addEventListener('securitypolicyviolation', e => {
+    const warning = document.getElementById('csp-warning');
+    warning.textContent = `Warning: CSP violation detected! Directive: ${e.violatedDirective}, Blocked URI: ${e.blockedURI}`;
+  });
+  </script>
+
+
+  
+  <p>Try loading this page with a malicious query like:<br>
+  <code>?name=&lt;script&gt;alert('XSS')&lt;/script&gt;</code></p>
+
+  <p>If CSP is working, the browser will block it and send a report.</p>
+</body>
+</html>
