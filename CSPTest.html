@@ -4,7 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CSP Test</title>
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'none';
+    script-src 'self';
+    style-src 'self';
+    img-src 'self';
+    report-to csp-endpoint;">
 
+  <meta http-equiv="Report-To" content='{
+    "group":"csp-endpoint",
+    "max_age":10886400,
+    "endpoints":[{"url":"https://spatelsuy.github.io/CSPReporting.html"}],
+    "include_subdomains": true
+  }'>
+  
   <style>
     body { font-family: Arial; margin: 2em; }
     .box { border: 1px solid #ccc; padding: 1em; background: #f9f9f9; }
