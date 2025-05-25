@@ -68,9 +68,9 @@
             let leftHtml = `
                 <div class="section-title">About</div>
                 <div id="about-me-content">Loading...</div>
-                <div class="section-title" style="margin-top: 30px;">Beyond the Keyboard</div>
+                <div class="section-title" style="margin-top: 30px;" nonce="internal">Beyond the Keyboard</div>
                 <div id="beyond-content">Loading...</div>
-                <div class="section-title" style="margin-top: 30px;">Social and Other Platforms</div>
+                <div class="section-title" style="margin-top: 30px;" nonce="internal">Social and Other Platforms</div>
                 <div id="my-social-content">Loading...</div>
             `;
             document.getElementById('left-column').innerHTML = leftHtml;
