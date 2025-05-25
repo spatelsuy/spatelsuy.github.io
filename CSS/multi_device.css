@@ -351,24 +351,22 @@
 /* Desktop layout */
 
 .left-column {
-order: 1;      /* First visually */
-flex: 0 0 20%; /* Fixed 20% width */
-display: block;
-font-size: 10px;
+        order: 1;      /* First visually */
+        flex: 0 0 20%; /* Fixed 20% width */
+        display: block;
+        font-size: 10px;
 }
 
 .middle-column {
-          order: 2;      /* Second visually */
-  flex: 0 0 60%; /* Fixed 60% width */
-  display: block;
-    width: 75%;
+        order: 2;      /* Second visually */
+        flex: 0 0 75%; /* Fixed 60% width */
+        display: block;
 }
 
 .right-column {
-          order: 3;      /* Third visually */
-  flex: 0 0 20%; /* Fixed 20% width */
-  display: block;
-    width: 5%;
+        order: 3;      /* Third visually */
+        flex: 0 0 5%; /* Fixed 20% width */
+        display: block;
 }
 
 /* Mobile styles */
