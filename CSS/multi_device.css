@@ -349,36 +349,51 @@
 }
 
 /* Desktop layout */
+
 .left-column {
-    width: 20%;
-    font-size: 10px;
+order: 1;      /* First visually */
+flex: 0 0 20%; /* Fixed 20% width */
+display: block;
+font-size: 10px;
 }
 
 .middle-column {
+          order: 2;      /* Second visually */
+  flex: 0 0 60%; /* Fixed 60% width */
+  display: block;
     width: 75%;
 }
 
 .right-column {
+          order: 3;      /* Third visually */
+  flex: 0 0 20%; /* Fixed 20% width */
+  display: block;
     width: 5%;
 }
 
-/* Mobile layout */
+/* Mobile styles */
 @media (max-width: 768px) {
-    .notification-view {
-        flex-direction: column;
-    }
+  .notification-view {
+    flex-wrap: wrap;
+    flex-direction: column; /* stack columns vertically */
+    height: auto; /* adjust height */
+  }
 
-    .middle-column {
-        order: 1;
-        width: 100%;
-    }
+  .left-column {
+    order: 2;     /* Show after middle column */
+    flex: 0 0 auto;
+    width: 100%;
+    display: block;
+  }
 
-    .left-column {
-        order: 2;
-        width: 100%;
-    }
+  .middle-column {
+    order: 1;     /* Show first */
+    flex: 0 0 auto;
+    width: 100%;
+    display: block;
+  }
 
-    .right-column {
-        display: none;
-    }
+  .right-column {
+    display: none; /* Hide right column on mobile */
+  }
 }
