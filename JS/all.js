@@ -78,7 +78,7 @@
             // Right column content
             let rightHtml = `
                 <div class="section-title">Social and Other Platforms</div>
-                <div style="margin-top: 15px;">
+                <div class="section-title15">
                     <p class="section-title10"><i class="fa fa-linkedin-square contactIcon" aria-hidden="true"></i>
                     <a href="https://www.linkedin.com/in/spatelsuy/" target="_blank">in/spatelsuy</a></p>
                     
@@ -102,7 +102,7 @@
 
         async function loadSocialInfo(){
             let rightHtml = `
-                <div style="margin-top: 15px;">
+                <div class="section-title15">
                     <p class="section-title10"><i class="fa fa-linkedin-square contactIcon" aria-hidden="true"></i>
                     <a href="https://www.linkedin.com/in/spatelsuy/" target="_blank">in/spatelsuy</a></p>
                     
