@@ -190,13 +190,13 @@
             box-sizing: border-box;
         }
         
-        .left-column {
+        .left-column { /*using it for right*/
             width: 20%;
             float: left;
             font-size: 10px; /* Reduced font size for side panels */
         }
-        .right-column {
-            width: 5%;
+        .right-column { /*using it for left*/
+            width: 2%;
             float: left;
             font-size: 10px; /* Reduced font size for side panels */
         }        
@@ -206,7 +206,7 @@
         }*/
         
         .middle-column {
-            width: 75%;
+            width: 78%;
             float: left;
         }
         /*
