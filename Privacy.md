@@ -5,7 +5,7 @@
 
 ## 1. Overview
 
-Our apps and tools are built primarily for educational and informational purposes. They are made publicly accessible to help users explore concepts such as blogging, PDF merging, text summarization, audio transcription, and other learning-based utilities. We do not require login or authentication, and we do not intentionally collect, store, or share any personal data.
+The apps and tools are built primarily for educational and informational purposes. They are made publicly accessible to help users explore concepts such as blogging, PDF merging, text summarization, audio transcription, and other learning-based utilities. It does not require login or authentication, and do not intentionally collect, store, or share any personal data.
 
 ## 2. What Data We Collect
 
