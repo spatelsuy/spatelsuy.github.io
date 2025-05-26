@@ -10,12 +10,13 @@
                 width:auto;
                 float:left;
                 padding:40px 60px;
-                color:#0d0d0d;
+                color:#ffffff;
                 font-family: Source Sans Pro, sans-serif;
                 text-align: center;
                 font-size: 10px;
                 margin-top: 40px;
-                padding-bottom: 20px;     
+                padding-bottom: 20px;
+                background-color: #0d0d0d;
         }
 
         .menu-container {
