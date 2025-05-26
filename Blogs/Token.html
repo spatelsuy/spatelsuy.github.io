@@ -89,35 +89,38 @@
     margin-left: 15px;
     padding-top: 5px;
   }
+@media (max-width: 600px) {
+  .container {
+    margin: 10px 0 0 0;
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+    background: none;
+    box-shadow: none;
+    border: none;
+  }
 
-  @media (max-width: 600px) {
-
-	.container {
-  	}
   header {
-    background-color: #333;
-    color: #fff;
+    padding: 15px;
     text-align: center;
-  }	  
-    .vl-container {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    .vl {
-      border-left: none;
-      width: 100%;
-      height: auto;
-    }
-
-    .vl-text {
-      margin-left: 0;
-    }
   }
-h2 {
-    font-size: 22px;
-    margin-bottom: 5px;
+
+  .vl-container {
+    flex-direction: column;
+    align-items: flex-start;
   }
+
+  .vl {
+    border-left: none;
+    width: 100%;
+    height: auto;
+  }
+
+  .vl-text {
+    margin-left: 0;
+  }
+}
+
 </style>
 
   
