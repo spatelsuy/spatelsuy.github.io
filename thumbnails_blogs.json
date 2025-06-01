@@ -1,4 +1,10 @@
 [
+	{ "type":"blog", 
+        "title": "How Passkey Works: A Step-by-Step Walkthrough with Windows Hello and TPM", 
+        "description": "A passkey is a digital credential used for passwordless authentication on websites and applications. It lets you log in without a password, in a secure and easy-to-use manner. Let’s explore how passkeys work from registration to login.", 
+        "link": "https://spatelsuy.github.io/Blogs/Passkey.html", 
+        "img": "IMG/Passkey.jpg"
+    },
     { "type":"blog", 
         "title": "Enforcement in IAM", 
         "description": "The process of ensuring that security policies, access controls, and authentication mechanisms are correctly applied to protect systems, data, and identities. It ensures that only authorized users can access the right resources under the right conditions.", 
