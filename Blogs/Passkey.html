@@ -113,7 +113,6 @@
 		  <img src="/IMG/SecuNotes.jpg"/>
 	  </div>
 <p class="demoTitle">&nbsp;</p>
-<p>Subject: How Passkey Works: A Step-by-Step Walkthrough with Windows Hello and Trusted Platform Module (TPM)</p>
 <p>The scenario is: I have a personal laptop for home use. At this point I am the only user of the laptop, having a local admin account &ldquo;accountA&rdquo;. Recently bank (bank.com) has mandated to use Passkey replacing traditional username and password.</p>
 <p>Curious about how the process works end-to-end, from passkey registration to actual login? What happens behind the scenes with <strong>Windows Hello</strong>, the <strong>Trusted Platform Module (TPM)</strong>, and the <strong>browser</strong>?</p>
 <p>There are two phases:</p>
@@ -121,8 +120,7 @@
 <li>Registration Phase &ndash; where the passkey is created.</li>
 <li>Authentication Phase &ndash; where the passkey is used to log in.</li>
 </ol>
-<p>Registration Flow</p>
-<ol>
+<p><strong>Registration Flow</strong></p>
 <ol>
 <li>I have Windows laptop with a local account &ldquo;accountA&rdquo;.</li>
 <li>I have a bank account in bank (bank.com).</li>
@@ -146,12 +144,9 @@
 <li>Chrome forwards the public key and Credential ID to the bank backend.</li>
 <li>The bank stores them, linking this passkey to the user account for future authentication.</li>
 <li>Registration is complete. I can now log in to bank using the passkey, without a password.</li>
-</ol>
 (I log out from the bank and shut down my laptop.)
-<ol><!-- Comments are visible in the HTML source only --></ol>
 </ol>
-<p><strong>Authentication Flow (Next Day)</strong></p>
-<ol>
+<p><strong>Authentication Flow</strong></p>
 <ol start="18">
 <li>Log-in into the laptop using my local account (accountA).</li>
 <li>I launch Chrome (still not connected to a Google account).</li>
@@ -174,7 +169,6 @@
 <li>Chrome sends both to the bank backend</li>
 <li>The backend:<br />a. Uses the Credential ID to look up the stored public key<br /> b. Verifies the signature on the challenge</li>
 <li>If the signature is valid and Credential ID matches, authentication succeeds.</li>
-</ol>
 </ol>
 
 </div>
