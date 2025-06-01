@@ -42,26 +42,24 @@ Chrome -> Bank : Send public key + Credential ID
 Bank -> Bank : Store Credential ID and public key (by user)
 
 == Registration Complete ==
-== Authentication Next Day ==
-
+== Authentication Day ==
 User -> Hello : Login to laptop (local accountA)
 User -> Chrome : Launch Chrome (no Google login)
 User -> Chrome : Open bank.com
 Chrome -> Bank : Request login with passkey
 Bank -> Chrome : Send challenge string (e.g., "123456abcd")
 
-Chrome -> Hello : Start WebAuthn assertion
-(Pass challenge)
+Chrome -> Hello : Start WebAuthn assertion (Pass challenge)
 Hello -> User : Prompt biometric (fingerprint/FaceID/PIN)
 User -> Hello : Provide fingerprint
 
-Hello -> Hello : Hash fingerprint
-Match stored template
+Hello -> Hello : Hash fingerprint Match stored template
+Hello -> Hello : Verify user (biometric/PIN)
 Hello -> Hello : Identify enrolled user and verify
 Hello -> Hello : Look up credential ID for RP (bank.com)
+Hello -> Hello : Validate Credential ID and RP scope
 
-Hello -> TPM : Sign challenge with key handle
-activate TPM policy check
+Hello -> TPM : Sign challenge with key handle activate TPM policy check
 
 TPM -> TPM : Validate:\n- Credential ID is valid\n- RP matches (scoped)\n- User verification done
 
@@ -86,5 +84,3 @@ Private key never leaves TPM.
 All signing operations done internally.
 Credential ID ensures key scoping per RP.
 end note
-
-@enduml
