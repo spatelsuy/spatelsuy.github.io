@@ -170,7 +170,63 @@
 <li>The backend:<br />a. Uses the Credential ID to look up the stored public key<br /> b. Verifies the signature on the challenge</li>
 <li>If the signature is valid and Credential ID matches, authentication succeeds.</li>
 </ol>
-
+<p><strong>Definitions and Clarifications</strong></p>
+<p><strong>Credential ID</strong></p>
+<ul>
+<li>A random handle generated during registration</li>
+<li>Helps bank backend find the right public key</li>
+<li>Helps Windows Hello find the right private key</li>
+<li>Unique per RP; not the same as username</li>
+</ul>
+<p><strong>Relying Party (RP)</strong></p>
+<ul>
+<li>The service requesting authentication (e.g., bank.com, bankabc.com)</li>
+</ul>
+<p><strong>Authenticator</strong></p>
+<ul>
+<li>Module or device that performs user verification and signs the challenge</li>
+<li>In this scenario: Windows Hello (platform authenticator)</li>
+</ul>
+<p><strong>User Verification (UV)</strong></p>
+<ul>
+<li>Biometric (fingerprint/face) or PIN</li>
+<li>Ensures user presence and legitimacy</li>
+<li>Verified by Windows Hello, enforced again by TPM</li>
+</ul>
+<p><strong>Key Handle / Reference</strong></p>
+<ul>
+<li>A reference passed to TPM to locate the correct private key</li>
+</ul>
+<p><strong>Assertion</strong></p>
+<ul>
+<li>The signed response to the challenge</li>
+<li>Contains RP ID, user handle, authenticator metadata, and signature</li>
+<li>Proves user presence and cryptographic ownership</li>
+</ul>
+<p><strong>Challenge</strong></p>
+<ul>
+<li>A random nonce issued by RP</li>
+<li>Ensures freshness of the authentication request</li>
+</ul>
+<p><strong>TPM (Trusted Platform Module)</strong></p>
+<ul>
+<li>Secure hardware/firmware for storing keys and performing cryptographic operations</li>
+<li>Enforces policies like UV and RP binding</li>
+<li>Equivalent in Apple world: Secure Enclave</li>
+</ul>
+<p><strong>Passkey</strong></p>
+<ul>
+<li>A private-public key pair scoped to a specific RP</li>
+<li>Stored securely on device or synced across devices</li>
+<li>Used instead of passwords</li>
+</ul>
+<p><strong>Optional Features and scenarios to explore.&nbsp;</strong></p>
+<ul style="list-style-type: square;">
+<li>Credential Storage &amp; Sync</li>
+<li>Passkey in shared system</li>
+<li>Multi-biometrics</li>
+<li>Multi-RP</li>
+</ul>
 </div>
 
   <footer>
