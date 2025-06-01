@@ -1,0 +1,90 @@
+
+@startuml
+title Passkey Registration and Authentication using Windows Hello, Chrome, TPM
+
+actor User
+participant "Chrome Browser" as Chrome
+participant "Windows Hello (Platform Authenticator)" as Hello
+participant "TPM (Crypto Module)" as TPM
+participant "Bank Backend (RP)" as Bank
+
+== Passkey Registration ==
+
+User -> Chrome : Open bank.com (not logged in)
+Chrome -> Bank : Access bank.com (registration)
+Bank -> Chrome : Request passkey registration
+Chrome -> User : Prompt: Use passkey?
+User -> Chrome : Clicks "Yes"
+
+note right of Chrome
+Chrome starts WebAuthn registration
+using platform authenticator (Windows Hello)
+end note
+
+Chrome -> Hello : Begin WebAuthn registration
+Hello -> User : Prompt biometric (e.g., fingerprint)
+User -> Hello : Provide fingerprint
+Hello -> Hello : Generate hash of fingerprint template
+Hello -> Hello : Store hashed biometric (Windows Hello Store)
+
+Hello -> TPM : Generate key pair
+TPM --> Hello : Private key sealed internally Public key returned
+
+Hello -> Hello : Generate Credential ID (key handle)
+note right of Hello
+Biometric hash is not linked to RP or Credential ID.
+Used only for user verification.
+end note
+
+Hello --> Chrome : Return public key + Credential ID
+Chrome -> Bank : Send public key + Credential ID
+
+Bank -> Bank : Store Credential ID and public key (by user)
+
+== Registration Complete ==
+== Authentication Next Day ==
+
+User -> Hello : Login to laptop (local accountA)
+User -> Chrome : Launch Chrome (no Google login)
+User -> Chrome : Open bank.com
+Chrome -> Bank : Request login with passkey
+Bank -> Chrome : Send challenge string (e.g., "123456abcd")
+
+Chrome -> Hello : Start WebAuthn assertion
+(Pass challenge)
+Hello -> User : Prompt biometric (fingerprint/FaceID/PIN)
+User -> Hello : Provide fingerprint
+
+Hello -> Hello : Hash fingerprint
+Match stored template
+Hello -> Hello : Identify enrolled user and verify
+Hello -> Hello : Look up credential ID for RP (bank.com)
+
+Hello -> TPM : Sign challenge with key handle
+activate TPM policy check
+
+TPM -> TPM : Validate:\n- Credential ID is valid\n- RP matches (scoped)\n- User verification done
+
+TPM -> TPM : Use private key (internal signing only)
+TPM --> Hello : Signed challenge (assertion)
+
+Hello --> Chrome : Return signed assertion + credential ID
+Chrome -> Bank : Send signed assertion + credential ID
+Bank -> Bank : Lookup public key via Credential ID
+Bank -> Bank : Verify signature on challenge
+Bank -> User : Authentication successful
+
+== Notes ==
+
+note right of Hello
+Biometric used can differ at login time.
+Any UV-satisfying method (FaceID, PIN, fingerprint) works.
+end note
+
+note right of TPM
+Private key never leaves TPM.
+All signing operations done internally.
+Credential ID ensures key scoping per RP.
+end note
+
+@enduml
