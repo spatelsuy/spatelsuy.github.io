@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self' blob:;
+    worker-src 'self' blob:;
+    style-src 'self' https://maxcdn.bootstrapcdn.com;
+    img-src 'self' https://upload.wikimedia.org;
+    connect-src 'self';
+    font-src 'self' https://maxcdn.bootstrapcdn.com;
+    object-src 'none';
+    frame-src 'none';
+    base-uri 'self';
+    form-action 'none';
+    script-src-elem 'self' blob:;
+    script-src-attr 'none'">
+    
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="CSS/multi_device.css" rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
+    <title>Sunil's Portfolio</title>
+    
+
+</head>
+<body>
+  <div class="notification-column middle-column" id="middle-column">
+            <!-- Blog and Work notifications will load here -->
+  </div>  
+  
+    <!-- Menu at the top -->
+    <div class="menu-container">
+        <div class="round-menu">
+            <a id="blog-link" class="active" title="Blog">
+                <i class="fa fa-file-text-o"></i> <!-- Blog icon -->
+            </a>
+            <a id="work-link" title="Work & Projects">
+                <i class="fa fa-briefcase"></i> <!-- Work icon -->
+            </a>
+        </div>
+        <button class="view-toggle" id="view-toggle">
+            <i class="fa fa-th-large"></i> <!-- Default is tiles view icon -->
+        </button>
+    </div>
+        
+    <!-- I can have content-area or  notification-view
+        content-area to show my data in tiles whereas notification view in lines
+    -->
+    <div class="content-area" id="content-area">
+        <!-- Tiles view loads here by default -->
+    </div>
+
+    
+    <div class="notification-view" id="notification-view">
+        <div class="notification-column left-column" id="left-column">
+            <!-- keeping it blank and placeholder -->
+        </div>    
+        <div class="notification-column right-column" id="right-column">
+            <!-- About Me and Beyond the Keyboard and social content will load here -->
+        </div>        
+    </div>
+    <footer>
+        <p>The site is maintained by Sunil</p>
+        <a href="/Privacy.html">Privacy Statement</a>
+    </footer>
+    <script src="JS/all.js"></script>
+    <script src="/sw-register.js"></script>
+</body>
+</html>
