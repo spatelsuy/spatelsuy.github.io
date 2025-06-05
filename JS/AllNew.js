@@ -1,201 +1,33 @@
-        // by default set current view as notification
-        let currentView = 'notification'; // 'tiles' or 'notification'
+// by default set current view as notification
+let currentView = 'notification'; // 'tiles' or 'notification'
 
-        //add required listner
-        document.addEventListener('DOMContentLoaded', function() {
-            // Set click handlers
-            document.getElementById('blog-link').onclick = function() {
-                document.getElementById('blog-link').classList.add('active');
-                document.getElementById('work-link').classList.remove('active');
-                // display depends on which view to show..
-                if(currentView === 'tiles') {
-                    loadMyBlogs();
-                } else {
-                    loadNotificationBlogs();
-                }
-            };
-            
-            document.getElementById('work-link').onclick = function() {
-                document.getElementById('work-link').classList.add('active');
-                document.getElementById('blog-link').classList.remove('active');
-                if(currentView === 'tiles') {
-                    loadMyWork();
-                } else {
-                    loadNotificationWork();
-                }
-            };
-            
-            document.getElementById('view-toggle').onclick = toggleView;
-
-            // Load Notification View by default
-            document.getElementById('content-area').style.display = 'none';
-            document.getElementById('notification-view').style.display = 'block';
-            loadNotificationContent();
-            loadNotificationBlogs(); // This will load blog notifications first
-
-        });
-
-        
-        function toggleView() {            
-            if(currentView === 'tiles') {
-                currentView = 'notification';
-                document.getElementById('content-area').style.display = 'none';
-                document.getElementById('notification-view').style.display = 'block';
-                document.getElementById('view-toggle').innerHTML = '<i class="fa fa-th-large"></i>'; // Tiles icon
+function loadNotificationWork() {
+    fetch('./thumbnails_work_and_project.json?' + new Date().getTime())
+        .then(response => response.json())
+        .then(data => {
+            const count = data.length;
+            let html = `<div class="section-title">Recent Work & Projects (${count})</div>`;
+            data.forEach((item) => {
+                const randomHours = Math.floor(Math.random() * 24);
+                const randomDays = Math.floor(Math.random() * 30) + 1;
                 
-                // Load appropriate content based on active tab
-                if(document.getElementById('blog-link').classList.contains('active')) {
-                    loadNotificationBlogs();
-                } else {
-                    loadNotificationWork();
-                }
-            } else {
-                currentView = 'tiles';
-                document.getElementById('content-area').style.display = 'block';
-                document.getElementById('notification-view').style.display = 'none';
-                document.getElementById('view-toggle').innerHTML = '<i class="fa fa-th-list"></i>'; // List icon                
-                // Load appropriate content based on active tab
-                if(document.getElementById('blog-link').classList.contains('active')) {
-                    loadMyBlogs();
-                } else {
-                    loadMyWork();
-                }
-            }
-        }
-        
-        function loadNotificationContent() {
-            // Left column content
-            let leftHtml = `
-                <div class="section-title">About</div>
-                <div id="about-me-content">Loading...</div>
-                <div class="section-title section-title30">Beyond the Keyboard</div>
-                <div id="beyond-content">Loading...</div>
-                <div class="section-title section-title30">Social and Other Platforms</div>
-                <div id="my-social-content">Loading...</div>
-            `;
-            document.getElementById('right-column').innerHTML = leftHtml;
+                const imageElement = item.img ? 
+                    `<img src="${item.img}" class="notification-image" alt="${item.title}">` :
+                    `<div class="default-notification-image"><i class="fa fa-briefcase"></i></div>`;
+                
+                html += `
+                    <a href="${item.link}" target="_blank" class="notification-item">
+                        ${imageElement}
+                        <div class="notification-content">
+                            <span class="notification-title">${item.title}</span>
+                            <div class="notification-desc">${item.description}</div>
+                        </div>
+                    </a>
+                `;
+            });
             
-            // Right column content
-            let rightHtml = `
-                <div class="section-title">Social and Other Platforms</div>
-                <div class="section-title15">
-                    <p class="section-title10"><i class="fa fa-linkedin-square contactIcon" aria-hidden="true"></i>
-                    <a href="https://www.linkedin.com/in/spatelsuy/" target="_blank">in/spatelsuy</a></p>
-                    
-                    <p class="section-title10"><i class="fa fa-github contactIcon" aria-hidden="true"></i>
-                    <a href="https://github.com/spatelsuy/" target="_blank">Github/spatelsuy</a></p>
-            
-                    <p class="section-title10"><i class="fa fa-youtube contactIcon" aria-hidden="true"></i>
-                    <a href="https://www.youtube.com/@SecuNotes/" target="_blank">@SecuNotes</a></p>
-            
-                    <p class="section-title10"><i class="fa fa-globe contactIcon" aria-hidden="true"></i>
-                    <a href="https://www.udemy.com/user/sunil-patel-334/" target="_blank">Udemy</a></p>
-                </div>
-            `;
-            //document.getElementById('left-column').innerHTML = rightHtml;
-            
-            // Load About Me and Beyond content
-            loadAboutMeForNotification();
-            loadBeyondForNotification();
-            loadSocialInfo();
-        }
-
-        async function loadSocialInfo(){
-            let rightHtml = `
-                <div class="section-title15">
-                    <p class="section-title10"><i class="fa fa-linkedin-square contactIcon" aria-hidden="true"></i>
-                    <a href="https://www.linkedin.com/in/spatelsuy/" target="_blank">in/spatelsuy</a></p>
-                    
-                    <p class="section-title10"><i class="fa fa-github contactIcon" aria-hidden="true"></i>
-                    <a href="https://github.com/spatelsuy/" target="_blank">Github/spatelsuy</a></p>
-            
-                    <p class="section-title10"><i class="fa fa-youtube contactIcon" aria-hidden="true"></i>
-                    <a href="https://www.youtube.com/@SecuNotes/" target="_blank">@SecuNotes</a></p>
-            
-                    <p class="section-title10"><i class="fa fa-globe contactIcon" aria-hidden="true"></i>
-                    <a href="https://www.udemy.com/user/sunil-patel-334/" target="_blank">Udemy</a></p>
-                </div>
-            `;
-            document.getElementById('my-social-content').innerHTML = rightHtml;
-        }
-        async function loadAboutMeForNotification() {
-            try {
-                const response = await fetch('./AboutMe.html');
-                const html = await response.text();
-                document.getElementById('about-me-content').innerHTML = html;
-            } catch (error) {
-                document.getElementById('about-me-content').innerHTML = '<p>Error loading content.</p>';
-                console.error('Error loading AboutMe.html:', error);
-            }
-        }
-        
-        async function loadBeyondForNotification() {
-            try {
-                const response = await fetch('./Beyond.html');
-                const html = await response.text();
-                document.getElementById('beyond-content').innerHTML = html;
-            } catch (error) {
-                document.getElementById('beyond-content').innerHTML = '<p>Error loading content.</p>';
-                console.error('Error loading Beyond.html:', error);
-            }
-        }
-        
-        function loadNotificationBlogs() {
-            fetch('./thumbnails_blogs.json?' + new Date().getTime())
-                .then(response => response.json())
-                .then(data => {
-                    const count = data.length;
-                    let html = `<div class="section-title">Recent Blog Posts (${count})</div>`;
-                    
-                    data.forEach((item) => {
-                        const randomHours = Math.floor(Math.random() * 24);
-                        const randomDays = Math.floor(Math.random() * 7);
-                        
-                        const imageElement = item.img ? 
-                            `<img src="${item.img}" class="notification-image" alt="${item.title}">` :
-                            `<div class="default-notification-image"><i class="fa fa-file-text"></i></div>`;
-                        
-                        html += `
-                            <a href="${item.link}" target="_blank" class="notification-item">
-                                ${imageElement}
-                                <div class="notification-content">
-                                    <span class="notification-title">${item.title}</span>
-                                    <div class="notification-desc">${item.description}</div>
-                                </div>
-                            </a>
-                        `;
-                    });
-                    
-                    document.getElementById('middle-column').innerHTML = html;
-                });   
-        }
-        
-        function loadNotificationWork() {
-            fetch('./thumbnails_work_and_project.json?' + new Date().getTime())
-                .then(response => response.json())
-                .then(data => {
-                    const count = data.length;
-                    let html = `<div class="section-title">Recent Work & Projects (${count})</div>`;
-                    data.forEach((item) => {
-                        const randomHours = Math.floor(Math.random() * 24);
-                        const randomDays = Math.floor(Math.random() * 30) + 1;
-                        
-                        const imageElement = item.img ? 
-                            `<img src="${item.img}" class="notification-image" alt="${item.title}">` :
-                            `<div class="default-notification-image"><i class="fa fa-briefcase"></i></div>`;
-                        
-                        html += `
-                            <a href="${item.link}" target="_blank" class="notification-item">
-                                ${imageElement}
-                                <div class="notification-content">
-                                    <span class="notification-title">${item.title}</span>
-                                    <div class="notification-desc">${item.description}</div>
-                                </div>
-                            </a>
-                        `;
-                    });
-                    
-                    document.getElementById('middle-column').innerHTML = html;
-                });
-        }
+            document.getElementById('middle-column').innerHTML = html;
+        });
+}
+loadNotificationWork();
 
