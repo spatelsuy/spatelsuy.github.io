@@ -75,3 +75,13 @@ h1 {
   font-size: 2rem;
   color: var(--accent-color);
 }
+h2 {
+  margin-bottom: 1rem;
+  font-size: 1.7rem;
+  color: var(--accent-color);
+}
+h3 {
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  color: var(--accent-color);
+}
