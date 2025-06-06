@@ -1,46 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Security-Policy" content="
-    default-src 'self';
-    script-src 'self' blob:;
-    worker-src 'self' blob:;
-    style-src 'self' https://maxcdn.bootstrapcdn.com;
-    img-src 'self' https://upload.wikimedia.org;
-    connect-src 'self';
-    font-src 'self' https://maxcdn.bootstrapcdn.com;
-    object-src 'none';
-    frame-src 'none';
-    base-uri 'self';
-    form-action 'none';
-    script-src-elem 'self' blob:;
-    script-src-attr 'none'">
-    
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="CSS/multi_device.css" rel="stylesheet">
-    <link rel="manifest" href="manifest.json">
-    <title>Sunil's Portfolio</title>
-    
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sunil Patel – Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
 </head>
 <body>
-<p>
-    <p class="middle-column" id="middle-column">
-    </p>
-    <p class="left-column" id="left-column">
-    </p>
-    <p class="right-column" id="right-column">
-    </p> 
-</p>
-<p>
-        <div>
-        <p>The site is maintained by Sunil</p>
-        <a href="/Privacy.html">Privacy Statement</a>
-        </div>
-</p>
-<script src="JS/AllNew.js"></script>
-<script src="/sw-register.js"></script>
+  <header class="nav-header">
+    <div class="nav-left">
+      <span class="logo">Sunil Patel</span>
+    </div>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#blogs">Blogs</a>
+      <a href="#projects">Projects & Applications</a>
+    </nav>
+    <button class="theme-toggle" id="theme-toggle">🌙</button>
+  </header>
+
+  <main>
+    <section id="about">
+      <h1>About</h1>
+      <p>This is where your About Me content will go.</p>
+    </section>
+
+    <section id="blogs">
+      <h1>Blogs</h1>
+      <p>This is where your Blogs section will appear.</p>
+    </section>
+
+    <section id="projects">
+      <h1>Projects & Applications</h1>
+      <p>This is where your Projects & Applications info goes.</p>
+    </section>
+  </main>
 </body>
 </html>
