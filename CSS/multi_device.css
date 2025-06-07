@@ -187,13 +187,11 @@ body {
     box-sizing: border-box;
 }
 footer {
-        text-align: center;
-        font-size: 13px;
-        color: #777;
-        font-family: Source Sans Pro, sans-serif;
-        margin-top: 40px;
-        padding: 5px;
-        padding-bottom: 20px;
+    height: 100%;
+    width: 50%;
+    margin: 0 auto;
+    padding: 5px;
+    box-sizing: border-box;
 }
 
 .left-column { /*using it for left*/
