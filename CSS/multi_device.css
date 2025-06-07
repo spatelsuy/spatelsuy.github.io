@@ -189,11 +189,12 @@ footer {
         
 .notification-column {
     height: 100%;
-    width: 100%;    
-    overflow-y: auto;
+    width: 50%;
+    margin: 0 auto;
     padding: 5px;
     box-sizing: border-box;
 }
+
 .left-column { /*using it for left*/
     width: 20%;
     float: left;
