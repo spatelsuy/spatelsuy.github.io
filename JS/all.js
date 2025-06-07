@@ -65,7 +65,7 @@
         
         function loadNotificationContent() {
             // Left column content
-            let leftHtml = `
+       /*     let leftHtml = `
                 <div class="section-title">About</div>
                 <div id="about-me-content">Loading...</div>
                 <div class="section-title section-title30">Beyond the Keyboard</div>
@@ -74,7 +74,7 @@
                 <div id="my-social-content">Loading...</div>
             `;
             document.getElementById('right-column').innerHTML = leftHtml;
-            
+       */     
             // Right column content
             let rightHtml = `
                 <div class="section-title">Social and Other Platforms</div>
