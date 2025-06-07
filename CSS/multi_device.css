@@ -187,7 +187,7 @@ footer {
         .notification-view {
             display: block;
             width: 100%;
-            height: calc(100vh - 100px);
+           /* height: calc(100vh - 100px);*/
         }
         
         .notification-column {
