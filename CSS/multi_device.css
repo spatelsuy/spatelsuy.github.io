@@ -198,12 +198,12 @@ footer {
         }
         
         .right-column { /*using it for right*/
-            width: 30%;
+            width: 20%;
             float: left;
             font-size: 10px; /* Reduced font size for side panels */
         }
         .left-column { /*using it for left*/
-            width: 2%;
+            width: 20%;
             float: left;
             font-size: 10px; /* Reduced font size for side panels */
         }        
@@ -213,7 +213,7 @@ footer {
         }*/
         
         .middle-column {
-            width: 68%;
+            width: 60%;
             float: left;
         }
         /*
