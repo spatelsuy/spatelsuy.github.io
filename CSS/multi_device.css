@@ -377,11 +377,7 @@ footer {
     height: auto; /* adjust height */
   }
 .notification-column {
-    height: 100%;
-    width: 100%;
-    margin: 0 auto;
     padding: 5px;
-    box-sizing: border-box;
 }        
   .left-column {
     display: none; /* Hide right column on mobile */
