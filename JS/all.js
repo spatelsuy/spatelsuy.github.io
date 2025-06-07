@@ -65,7 +65,7 @@
         
         function loadNotificationContent() {
             // Left column content
-       /*     let leftHtml = `
+            let leftHtml = `
                 <div class="section-title">About</div>
                 <div id="about-me-content">Loading...</div>
                 <div class="section-title section-title30">Beyond the Keyboard</div>
@@ -73,26 +73,7 @@
                 <div class="section-title section-title30">Social and Other Platforms</div>
                 <div id="my-social-content">Loading...</div>
             `;
-            document.getElementById('right-column').innerHTML = leftHtml;
-       */     
-            // Right column content
-            let rightHtml = `
-                <div class="section-title">Social and Other Platforms</div>
-                <div class="section-title15">
-                    <p class="section-title10"><i class="fa fa-linkedin-square contactIcon" aria-hidden="true"></i>
-                    <a href="https://www.linkedin.com/in/spatelsuy/" target="_blank">in/spatelsuy</a></p>
-                    
-                    <p class="section-title10"><i class="fa fa-github contactIcon" aria-hidden="true"></i>
-                    <a href="https://github.com/spatelsuy/" target="_blank">Github/spatelsuy</a></p>
-            
-                    <p class="section-title10"><i class="fa fa-youtube contactIcon" aria-hidden="true"></i>
-                    <a href="https://www.youtube.com/@SecuNotes/" target="_blank">@SecuNotes</a></p>
-            
-                    <p class="section-title10"><i class="fa fa-globe contactIcon" aria-hidden="true"></i>
-                    <a href="https://www.udemy.com/user/sunil-patel-334/" target="_blank">Udemy</a></p>
-                </div>
-            `;
-            //document.getElementById('left-column').innerHTML = rightHtml;
+            document.getElementById('middle-column-1').innerHTML = leftHtml;
             
             // Load About Me and Beyond content
             loadAboutMeForNotification();
