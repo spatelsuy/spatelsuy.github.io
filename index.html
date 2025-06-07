@@ -26,11 +26,12 @@
 
 </head>
 <body>
-    <div class="content-area1">
-        <text>This contain tiles</text>
-    </div>
-    <div class="notification-view">
-        <text>This contain notification view</text>
+    <div class="notification-view" id="notification-view">
+        <div class="notification-column middle-column" >
+            <!-- Blog and Work notifications will load here -->
+        <div id="middle-column"> </div>
+        <div id="middle-column-1"> </div>           
+        </div> 
     </div>
     <footer>
         <p>The site is maintained by Sunil</p>
@@ -50,26 +51,16 @@
             <i class="fa fa-th-large"></i> <!-- Default is tiles view icon -->
         </button>
     </div>
-        
-    <!-- I can have content-area or  notification-view
-        content-area to show my data in tiles whereas notification view in lines
-    -->
     <div class="content-area" id="content-area">
         <!-- Tiles view loads here by default -->
     </div>
 
     
-    <div class="notification-view"> 
-      <div id="notification-view">
+    <div class="notification-view" id="notification-view1"> 
         <div class="notification-column left-column">
             <!-- keeping it blank and placeholder -->
             <div id="left-column"> </div>
         </div>   
-        <div class="notification-column middle-column" >
-            <!-- Blog and Work notifications will load here -->
-            <div id="middle-column"> </div>
-             <div id="middle-column-1"> </div>           
-        </div> 
         <div class="notification-column right-column">
             <!-- Blog and Work notifications will load here -->
             <div id="right-column"></div>
