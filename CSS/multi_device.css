@@ -14,8 +14,6 @@ body {
         justify-content: space-between;
         align-items: center;
         padding: 10px 20px;
-        width: 50%;
-        margin: 0 auto;
 }
 .menu-section {
         flex: 1;
