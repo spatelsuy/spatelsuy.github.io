@@ -358,7 +358,7 @@ footer {
   }
 
 /* Mobile styles */
-@media (max-width: 813px) {
+@media (max-width: 1800px) {
   .notification-view {
     flex-wrap: wrap;
     flex-direction: column; /* stack columns vertically */
