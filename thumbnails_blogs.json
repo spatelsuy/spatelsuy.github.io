@@ -57,7 +57,8 @@
     { "type":"tech", 
         "title": "HAR (HTTP Archive) file analysis", 
         "description": "Analyze HAR (HTTP Archive) file for web application development, debugging, and troubleshooting", 
-        "link": "https://github.com/spatelsuy/HAR-file-analysis" 
+        "link": "https://github.com/spatelsuy/HAR-file-analysis", 
+	"img": "IMG/default.jpg"
     },
     { "type":"tech", 
         "title": "DevSecOps for Retail Cybersecurity in the Era of Digital Commerce", 
@@ -128,6 +129,7 @@
     { "type":"tech", 
         "title": "CPP Pointer", 
         "description": "Enhance foundation in programming concepts for system and embedded programming and performance optimization.", 
-        "link": "https://github.com/spatelsuy/C_Plus_Plus"
+        "link": "https://github.com/spatelsuy/C_Plus_Plus", 
+	"img": "IMG/default.jpg"
     }
 ]
