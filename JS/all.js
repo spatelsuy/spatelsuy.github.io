@@ -103,7 +103,6 @@
             try {
                 const response = await fetch('./AboutMe.html');
                 const html = await response.text();
-                    alert(html);
                 document.getElementById('about-me-content').innerHTML = html;
             } catch (error) {
                 document.getElementById('about-me-content').innerHTML = '<p>Error loading content.</p>';
