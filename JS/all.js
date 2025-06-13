@@ -30,7 +30,7 @@
             // Load Notification View by default
             document.getElementById('content-area').style.display = 'none';
             document.getElementById('notification-view').style.display = 'block';
-            loadNotificationContent();
+            loadAbountMeBeyondSocial();
             loadNotificationBlogs(); // This will load blog notifications first
 
         });
@@ -63,7 +63,7 @@
             }
         }
         
-        function loadNotificationContent() {
+        function loadAbountMeBeyondSocial() {
             // Left column content
             let leftHtml = `
                 <div class="section-title">About</div>
