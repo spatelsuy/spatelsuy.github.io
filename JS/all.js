@@ -65,7 +65,7 @@
         
         function loadAbountMeBeyondSocial() {
             // Left column content
-            let leftHtml = `
+            let myHTML = `
                 <div class="section-title">About</div>
                 <div id="about-me-content">Loading...</div>
                 <div class="section-title section-title30">Beyond the Keyboard</div>
@@ -73,7 +73,7 @@
                 <div class="section-title section-title30">Social and Other Platforms</div>
                 <div id="my-social-content">Loading...</div>
             `;
-            document.getElementById('middle-column-1').innerHTML = leftHtml;
+            document.getElementById('middle-column-1').innerHTML = myHTML;
             
             // Load About Me and Beyond content
             loadAboutMeForNotification();
@@ -82,7 +82,7 @@
         }
 
         async function loadSocialInfo(){
-            let rightHtml = `
+            let socialHtml = `
                 <div class="section-title15">
                     <i class="fa fa-linkedin-square contactIcon" aria-hidden="true"></i>
                     <a href="https://www.linkedin.com/in/spatelsuy/" target="_blank">in/spatelsuy</a>&nbsp;&nbsp;
@@ -97,12 +97,13 @@
                     <a href="https://www.udemy.com/user/sunil-patel-334/" target="_blank">Udemy</a>
                 </div>
             `;
-            document.getElementById('my-social-content').innerHTML = rightHtml;
+            document.getElementById('my-social-content').innerHTML = socialHtml;
         }
         async function loadAboutMeForNotification() {
             try {
                 const response = await fetch('./AboutMe.html');
                 const html = await response.text();
+                    alert(html);
                 document.getElementById('about-me-content').innerHTML = html;
             } catch (error) {
                 document.getElementById('about-me-content').innerHTML = '<p>Error loading content.</p>';
