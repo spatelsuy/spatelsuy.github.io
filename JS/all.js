@@ -67,7 +67,13 @@
             // Left column content
             let myHTML = `
                 <div class="section-title">About</div>
-                <div id="about-me-content">Loading...</div>
+                <div id="about-me-content">
+                        I’m a tech enthusiast with a strong interest in software development, 
+                        IT operations, and cybersecurity - always exploring, learning, and staying adaptable in the fast-changing tech world.
+                        This site, maintained by me and hosted on GitHub. It serves as a personal space where I publish blogs to share my thoughts, 
+                        experiences, and learnings. In addition, the site showcases some of my personal applications and projects. 
+                        My goal is to keep the content fresh and relevant, reflecting both my ongoing work and continuous learning.
+                </div>
                 <div class="section-title section-title30">Beyond the Keyboard</div>
                 <div id="beyond-content">Loading...</div>
                 <div class="section-title section-title30">Social and Other Platforms</div>
@@ -76,7 +82,6 @@
             document.getElementById('middle-column-1').innerHTML = myHTML;
             
             // Load About Me and Beyond content
-            loadAboutMeForNotification();
             loadBeyondForNotification();
             loadSocialInfo();
         }
