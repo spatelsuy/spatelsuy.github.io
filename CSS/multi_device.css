@@ -368,7 +368,7 @@ about {
         font-weight: 400;
         line-height: 1.7;
         margin: 0 auto;
-        font-size: 15px;
+        font-size: 13px;
         max-width: 50%;
         letter-spacing: -0.01em;
 }
@@ -386,12 +386,13 @@ about {
                 width: 100%;
         }
         about {
+                display: block;
                 font-family: 'Metropolis', -apple-system, BlinkMacSystemFont, sans-serif;
                 font-weight: 400;
                 line-height: 1.7;
                 margin: 0 auto;
                 font-size: 15px;
-                max-width: 100%;
+                max-width: 95%;
                 letter-spacing: -0.01em;
 }
 }
