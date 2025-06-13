@@ -30,7 +30,7 @@
             // Load Notification View by default
             document.getElementById('content-area').style.display = 'none';
             document.getElementById('notification-view').style.display = 'block';
-            //loadAbountMeBeyondSocial();
+            loadAbountMeBeyondSocial();
             loadNotificationBlogs(); // This will load blog notifications first
 
         });
