@@ -1,0 +1,62 @@
+<h2 id="implementing-secure-authentication-with-okta-in-angular-a-step-toward-passkey-integration">Implementing Secure Authentication with Okta in Angular — A Step Toward Passkey Integration</h2>
+<p>Passkeys are becoming the future of secure login experiences.<br>The long-term goal is to adopt passkeys within our Angular application. However, as a first step and jurney towards security maturity implementing a robust, standards-based authentication (username and password) flow using Okta and PKCE.  </p>
+<p>For this implementtion using OIDC (OpenID Connect) with PKCE (Proof Key for Code Exchange) for secure authentication in the Angular SPA.  </p>
+<ul>
+<li>Okta as the IAM provider</li>
+<li>PKCE (Proof Key for Code Exchange)</li>
+<li>Angular standalone components and routing</li>
+</ul>
+<h3 id="1-setup-okta-and-register-a-spa-application-for-oidc-authentication">1. Setup Okta and register a SPA application for OIDC authentication</h3>
+<h3 id="2-setup-okta-in-angular">2. Setup Okta in Angular</h3>
+<pre><code><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> oktaConfig = {
+  clientId: <span class="hljs-string">'YOUR_CLIENT_ID'</span>,
+  issuer: <span class="hljs-string">'https://YOUR_OKTA_DOMAIN/oauth2/default'</span>,
+  redirectUri: <span class="hljs-built_in">window</span>.location.origin + <span class="hljs-string">'/login/callback'</span>,
+  scopes: [<span class="hljs-string">'openid'</span>, <span class="hljs-string">'profile'</span>, <span class="hljs-string">'email'</span>],
+  pkce: <span class="hljs-keyword">true</span>,
+  tokenManager: {
+    storage: <span class="hljs-string">'localStorage'</span>
+  }
+};  
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> oktaAuth = <span class="hljs-keyword">new</span> OktaAuth(oktaConfig);
+</code></pre><h3 id="3-authentication-flow">3. Authentication flow</h3>
+<p>Since PKCE is enabled, we had two options to perform login:  </p>
+<ul>
+<li>signInWithRedirect(): Directly redirects to Okta for login.</li>
+<li>signInWithCredentials(): Authenticates using provided credentials and returns a session token.</li>
+</ul>
+<p>I chose the signInWithCredentials() approach because</p>
+<ul>
+<li>This method validates the username and password.</li>
+<li>Upon successful authentication, it returns a sessionToken.</li>
+</ul>
+<p>Then manually invoke signInWithRedirect({ sessionToken, originalUri: &#39;/welcome&#39; }) to initiate the redirect-based authorization code flow.</p>
+<pre><code><span class="hljs-keyword">const</span> transaction = <span class="hljs-keyword">await</span> <span class="hljs-keyword">this</span>.oktaAuth.signInWithCredentials({
+  username: <span class="hljs-keyword">this</span>.loginId,
+  password: <span class="hljs-keyword">this</span>.password
+});
+<span class="hljs-keyword">const</span> sessionToken = transaction.sessionToken;
+<span class="hljs-keyword">await</span> <span class="hljs-keyword">this</span>.oktaAuth.signInWithRedirect({ sessionToken, originalUri: <span class="hljs-string">'/welcome'</span> });
+</code></pre><h3 id="4-callback-handling">4. Callback Handling</h3>
+<p>After redirection, Okta calls the redirect URI defined in both:</p>
+<ul>
+<li>the oktaConfig.redirectUri in code</li>
+<li>and the application settings on the Okta Developer Console.<br>Example:<pre><code>http:<span class="hljs-regexp">//</span>localhost:<span class="hljs-number">4200</span><span class="hljs-regexp">/login/</span>callback
+</code></pre></li>
+</ul>
+<h3 id="5-routing-setup">5. Routing Setup</h3>
+<p>In our Angular route configuration (app.routes.ts), we defined the following routes:</p>
+<pre><code>export const <span class="hljs-string">routes:</span> Routes = [
+  { <span class="hljs-string">path:</span> <span class="hljs-string">''</span>, <span class="hljs-string">component:</span> SunilProfile },
+  { <span class="hljs-string">path:</span> <span class="hljs-string">'login'</span>, <span class="hljs-string">component:</span> Login },
+  { <span class="hljs-string">path:</span> <span class="hljs-string">'login/callback'</span>, <span class="hljs-string">component:</span> OktaCallbackComponent },
+  { <span class="hljs-string">path:</span> <span class="hljs-string">'welcome'</span>, <span class="hljs-string">component:</span> Welcome }
+];
+</code></pre><p>OktaCallbackComponent is the built-in component provided by the @okta/okta-angular SDK.<br>After processing the authentication tokens, OktaCallbackComponent automatically redirects the user to the path defined by originalUri, in our case: /welcome.  </p>
+<h3 id="6-accessed-tokens-and-claims">6. Accessed Tokens and Claims</h3>
+<p>On the welcome page for learning purpose and to understand the format of ID Token, Acces Token and expiry duration of the tokens, displaying the user&#39;s ID token, Access token, and claims such as email and name. This ensures the identity of the logged-in user is available for secure API access.</p>
+<pre><code><span class="hljs-keyword">this</span>.idToken = <span class="hljs-keyword">await</span> oktaAuth.tokenManager.<span class="hljs-keyword">get</span>(<span class="hljs-string">'idToken'</span>);
+<span class="hljs-keyword">this</span>.accessToken = <span class="hljs-keyword">await</span> oktaAuth.tokenManager.<span class="hljs-keyword">get</span>(<span class="hljs-string">'accessToken'</span>);
+</code></pre><h2 id="sequence-of-flow">Sequence of flow</h2>
+<p><img src="Angular_SPA_Okta_Authentication_Flow.png" alt="App Screenshot"></p>
