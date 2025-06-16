@@ -394,7 +394,8 @@ about {
                 line-height: 1.7;
                 margin: 0 auto;
                 font-size: 15px;
-                max-width: 95%;
+                max-width: 98%;
+                 padding: 5px;
                 letter-spacing: -0.01em;
 }
 }
