@@ -1,5 +1,11 @@
 [
 	{ "type":"blog", 
+        "title": "Implementing Secure Authentication with Okta in Angular - A Step Toward Passkey Integration", 
+        "description": "The long-term goal is to adopt passkeys within the Angular application. However, as a first step and jurney towards security maturity implementing a robust, standards-based authentication (username and password) flow using Okta and PKCE.(Proof Key for Code Exchange)", 
+        "link": "https://spatelsuy.github.io/Blogs/OktaAuthentication_PKCE.html", 
+        "img": "IMG/secunotes_profile.jpg"
+    	},	
+	{ "type":"blog", 
         "title": "How Passkey Works: A Step-by-Step Walkthrough with Windows Hello and TPM", 
         "description": "A passkey is a digital credential used for passwordless authentication on websites and applications. It lets you log in without a password, in a secure and easy-to-use manner. Let’s explore how passkeys work from registration to login.", 
         "link": "https://spatelsuy.github.io/Blogs/Passkey.html", 
