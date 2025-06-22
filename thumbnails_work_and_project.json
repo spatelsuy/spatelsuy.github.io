@@ -1,6 +1,13 @@
 [
     { 
         "type":"tech", 
+        "title": "Introducing MultiCopy Tool - Built to Do One Thing Well", 
+        "description": "MultiCopy (a lightweight clipboard assistant) is my personal solution to solve a problem. A focused utility that helps me gather multiple snippets and paste them exactly once and in one go, cleanly and efficiently.", 
+        "link": "Blogs/Multicopy.html",
+        "img": "IMG/Multicopy.png"
+    },    
+    { 
+        "type":"tech", 
         "title": "Text-Audio Summarization (GenAI)", 
         "description": "Offline mode of Gen AI-powered Text-Audio summarization, best fit for meeting summary", 
         "link": "https://github.com/spatelsuy/Text-Audio-Summarization-GenAI" 
