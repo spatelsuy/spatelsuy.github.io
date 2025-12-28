@@ -1151,25 +1151,6 @@ to your industry, regulatory exposure, and risk posture.
 </tr>
 
 <tr>
-<td>Geographic Presence</td>
-<td>
-<label><input type="checkbox" value="US"> US</label>
-<label><input type="checkbox" value="EU"> EU</label>
-<label><input type="checkbox" value="APAC"> APAC</label>
-</td>
-</tr>
-
-<tr>
-<td>Regulatory Scope</td>
-<td>
-<label><input type="checkbox" value="SOX"> SOX</label>
-<label><input type="checkbox" value="GLBA"> GLBA</label>
-<label><input type="checkbox" value="GDPR"> GDPR</label>
-<label><input type="checkbox" value="HIPAA"> HIPAA</label>
-</td>
-</tr>
-
-<tr>
 <td>Risk Tolerance</td>
 <td>
 <select id="riskTolerance">
@@ -1182,6 +1163,39 @@ to your industry, regulatory exposure, and risk posture.
 </tr>
 </table>
 
+<h4>Geographic Presence</h4>
+<p>Select all regions where your organization operates:</p>
+
+<label>
+  <input type="checkbox" name="geography" value="US"> United States
+</label><br>
+
+<label>
+  <input type="checkbox" name="geography" value="EU"> Europe (EU)
+</label><br>
+
+<label>
+  <input type="checkbox" name="geography" value="APAC"> Asia-Pacific (APAC)
+</label>
+
+<h4>Regulatory Scope</h4>
+<p>Select applicable regulatory or compliance requirements:</p>
+
+<label>
+  <input type="checkbox" name="regulatory" value="SOX"> SOX
+</label><br>
+
+<label>
+  <input type="checkbox" name="regulatory" value="GLBA"> GLBA
+</label><br>
+
+<label>
+  <input type="checkbox" name="regulatory" value="GDPR"> GDPR
+</label><br>
+
+<label>
+  <input type="checkbox" name="regulatory" value="HIPAA"> HIPAA
+</label>	
 	
 
 <button onclick="calculate()">Calculate Maturity</button>
