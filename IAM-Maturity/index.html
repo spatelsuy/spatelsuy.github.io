@@ -448,22 +448,173 @@ from onboarding (Joiner) through role changes (Mover) to termination (Leaver).
 </select>
 </td>
 </tr>
-
 </table>
 
 
 <h3>2. Access Governance</h3>
+<p>
+This domain assesses how access rights are requested, approved, reviewed, and governed
+across the organization. It focuses on ensuring that access is appropriate, authorized,
+reviewed regularly, and aligned with business roles, policies, and compliance requirements.
+</p>
+
 <table>
-<tr><th>Question</th><th>Score (1–5)</th></tr>
 <tr>
-<td>Are access reviews performed regularly?</td>
-<td><input type="number" min="1" max="5" class="iga"></td>
+  <th style="width:35%">Question</th>
+  <th>Maturity Description (Select One)</th>
 </tr>
+
+<!-- Q1 -->
 <tr>
-<td>Are approvals role-based?</td>
-<td><input type="number" min="1" max="5" class="iga"></td>
+<td>How are access requests initiated and approved?</td>
+<td>
+<select class="iga" data-weight="1">
+  <option value="">-- Select --</option>
+  <option value="1">Requests are informal or handled manually without approvals</option>
+  <option value="2">Basic approvals exist but vary by team or application</option>
+  <option value="3">Standard approval workflows are defined and documented</option>
+  <option value="4">Role-based approvals are consistently enforced</option>
+  <option value="5">Automated, policy-driven, and risk-aware approvals</option>
+</select>
+</td>
+</tr>
+
+<!-- Q2 -->
+<tr>
+<td>How are access reviews (certifications) performed?</td>
+<td>
+<select class="iga" data-weight="1">
+  <option value="">-- Select --</option>
+  <option value="1">No formal access reviews are conducted</option>
+  <option value="2">Reviews are manual and limited to few systems</option>
+  <option value="3">Periodic access reviews are defined and documented</option>
+  <option value="4">Reviews are enforced with tracking and escalation</option>
+  <option value="5">Continuous, automated, and risk-based access reviews</option>
+</select>
+</td>
+</tr>
+
+<!-- Q3 -->
+<tr>
+<td>How are roles and entitlements defined?</td>
+<td>
+<select class="iga" data-weight="1">
+  <option value="">-- Select --</option>
+  <option value="1">Access is assigned individually without role structure</option>
+  <option value="2">Some roles exist but are inconsistently used</option>
+  <option value="3">Business and IT roles are formally defined</option>
+  <option value="4">Roles are governed, reviewed, and optimized</option>
+  <option value="5">Dynamic, risk-aware roles with continuous improvement</option>
+</select>
+</td>
+</tr>
+
+<!-- Q4 -->
+<tr>
+<td>How is segregation of duties (SoD) managed?</td>
+<td>
+<select class="iga" data-weight="1">
+  <option value="">-- Select --</option>
+  <option value="1">SoD conflicts are not identified or managed</option>
+  <option value="2">SoD is checked manually in limited cases</option>
+  <option value="3">SoD rules are defined and documented</option>
+  <option value="4">Preventive and detective SoD controls are enforced</option>
+  <option value="5">Automated, continuous, and risk-based SoD enforcement</option>
+</select>
+</td>
+</tr>
+
+<!-- Q5 -->
+<tr>
+<td>How consistently is access governance applied across applications?</td>
+<td>
+<select class="iga" data-weight="1">
+  <option value="">-- Select --</option>
+  <option value="1">Only a few critical applications are governed</option>
+  <option value="2">Governance is applied inconsistently</option>
+  <option value="3">Most applications follow standard governance processes</option>
+  <option value="4">Governance is enforced across enterprise systems</option>
+  <option value="5">Governance spans cloud, SaaS, and on-prem environments</option>
+</select>
+</td>
+</tr>
+
+<!-- Q6 -->
+<tr>
+<td>How are access policy exceptions handled?</td>
+<td>
+<select class="iga" data-weight="1">
+  <option value="">-- Select --</option>
+  <option value="1">Exceptions are unmanaged and undocumented</option>
+  <option value="2">Exceptions are approved but rarely reviewed</option>
+  <option value="3">Exception processes are defined and documented</option>
+  <option value="4">Exceptions are tracked and periodically reviewed</option>
+  <option value="5">Risk-scored, time-bound, and continuously reviewed exceptions</option>
+</select>
+</td>
+</tr>
+
+<!-- Q7 -->
+<tr>
+<td>How are access governance policies documented and maintained?</td>
+<td>
+<select class="iga" data-weight="1">
+  <option value="">-- Select --</option>
+  <option value="1">Policies are informal or undocumented</option>
+  <option value="2">Basic policies exist but are outdated</option>
+  <option value="3">Policies are documented and communicated</option>
+  <option value="4">Policies are reviewed and enforced regularly</option>
+  <option value="5">Policies are continuously improved and framework-aligned</option>
+</select>
+</td>
+</tr>
+
+<!-- Q8 -->
+<tr>
+<td>How does access governance support audits and compliance?</td>
+<td>
+<select class="iga" data-weight="1">
+  <option value="">-- Select --</option>
+  <option value="1">Audit support is reactive and manual</option>
+  <option value="2">Limited evidence is available for audits</option>
+  <option value="3">Audit evidence is collected consistently</option>
+  <option value="4">Compliance reporting is centralized and reliable</option>
+  <option value="5">Continuous compliance with audit-ready reporting</option>
+</select>
+</td>
+</tr>
+
+<!-- Q9 -->
+<tr>
+<td>How is ownership for access governance defined?</td>
+<td>
+<select class="iga" data-weight="1">
+  <option value="">-- Select --</option>
+  <option value="1">Ownership is unclear or undefined</option>
+  <option value="2">Ownership exists but is inconsistent</option>
+  <option value="3">Clear ownership is defined per application</option>
+  <option value="4">Ownership is enforced and accountable</option>
+  <option value="5">Ownership is embedded into governance and KPIs</option>
+</select>
+</td>
+</tr>
+
+<!-- Q10 -->
+<tr>
+<td>How is the effectiveness of access governance measured?</td>
+<td>
+<select class="iga" data-weight="1">
+  <option value="">-- Select --</option>
+  <option value="1">No metrics or reporting exist</option>
+  <option value="2">Basic metrics are tracked manually</option>
+  <option value="3">Standard KPIs are defined and reported</option>
+  <option value="4">Metrics are used to drive improvements</option>
+  <option value="5">Predictive, risk-driven governance metrics</option>
+</select>
+</td>
 </tr>
 </table>
+	
 
 <h3>3. Authentication & MFA</h3>
 <table>
