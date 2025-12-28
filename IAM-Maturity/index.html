@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>IAM Maturity Assessment</title>
+<style>
+  body { font-family: Arial, sans-serif; margin: 30px; line-height: 1.6; color: #2c3e50; }
+  h1, h2 { color: #1abc9c; }
+  table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+  th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+  th { background-color: #f4f4f4; }
+  .result { font-weight: bold; margin-top: 20px; font-size: 1.2em; }
+  .definition { background-color: #ecf0f1; padding: 10px; margin-bottom: 20px; border-left: 4px solid #1abc9c; }
+  input[type="number"] { width: 60px; }
+</style>
+</head>
+<body>
+
+<h1>IAM Maturity Assessment</h1>
+
+<div class="definition">
+<h2>What is IAM?</h2>
+<p>Identity and Access Management (IAM) is the framework of policies, processes, and technologies used to manage digital identities and control access to systems, applications, and data. It ensures that the right people have the right access at the right time.</p>
+</div>
+
+<div class="definition">
+<h2>What is IAM Maturity & Why it Matters?</h2>
+<p>IAM Maturity measures how effectively an organization manages identities and access. Higher maturity means consistent, predictable, and risk-aware IAM processes. Assessing maturity helps organizations:</p>
+<ul>
+  <li>Identify gaps and risks in identity management</li>
+  <li>Plan improvements and automation</li>
+  <li>Align IAM with industry frameworks (NIST, CRI, ISO)</li>
+  <li>Support audits and compliance efforts</li>
+</ul>
+</div>
+
+<div class="definition">
+<h2>How IAM Maturity is Calculated</h2>
+<p>Maturity is calculated by:</p>
+<ol>
+  <li>Defining IAM domains (areas of IAM capability)</li>
+  <li>Assessing each domain through specific questions</li>
+  <li>Scoring each question from 1 to 5</li>
+  <li>Calculating the average score per domain</li>
+  <li>Calculating overall IAM maturity by averaging domain scores</li>
+  <li>Mapping the score to a maturity level (Level 1–5)</li>
+</ol>
+</div>
+
+<div class="definition">
+<h2>Domains Considered in IAM Maturity</h2>
+<ul>
+  <li>Identity Lifecycle Management (Joiner-Mover-Leaver)</li>
+  <li>Access Governance (IGA, approvals, access reviews)</li>
+  <li>Authentication & MFA</li>
+  <li>Privileged Access Management (PAM)</li>
+  <li>Monitoring & Logging</li>
+</ul>
+</div>
+
+<div class="definition">
+<h2>Maturity Score Measurement</h2>
+<p>Each question is scored 1–5. Definitions:</p>
+<table>
+<tr><th>Score</th><th>Meaning</th></tr>
+<tr><td>1</td><td>Ad-hoc, manual, inconsistent</td></tr>
+<tr><td>2</td><td>Partially implemented, limited consistency</td></tr>
+<tr><td>3</td><td>Defined, documented, repeatable</td></tr>
+<tr><td>4</td><td>Managed, measured, enforced</td></tr>
+<tr><td>5</td><td>Optimized, automated, continuously improved</td></tr>
+</table>
+</div>
+
+<hr>
+
+<h2>Interactive IAM Maturity Scoring</h2>
+
+<h3>1. Identity Lifecycle Management</h3>
+<table>
+<tr><th>Question</th><th>Score (1–5)</th></tr>
+<tr>
+<td>Are Joiner-Mover-Leaver processes defined?</td>
+<td><input type="number" min="1" max="5" class="ilm"></td>
+</tr>
+<tr>
+<td>Is access automatically provisioned/deprovisioned?</td>
+<td><input type="number" min="1" max="5" class="ilm"></td>
+</tr>
+</table>
+
+<h3>2. Access Governance</h3>
+<table>
+<tr><th>Question</th><th>Score (1–5)</th></tr>
+<tr>
+<td>Are access reviews performed regularly?</td>
+<td><input type="number" min="1" max="5" class="iga"></td>
+</tr>
+<tr>
+<td>Are approvals role-based?</td>
+<td><input type="number" min="1" max="5" class="iga"></td>
+</tr>
+</table>
+
+<h3>3. Authentication & MFA</h3>
+<table>
+<tr><th>Question</th><th>Score (1–5)</th></tr>
+<tr>
+<td>Is MFA enforced for critical systems?</td>
+<td><input type="number" min="1" max="5" class="auth"></td>
+</tr>
+</table>
+
+<h3>4. Privileged Access</h3>
+<table>
+<tr><th>Question</th><th>Score (1–5)</th></tr>
+<tr>
+<td>Are privileged accounts centrally managed?</td>
+<td><input type="number" min="1" max="5" class="pam"></td>
+</tr>
+</table>
+
+<h3>5. Monitoring & Logging</h3>
+<table>
+<tr><th>Question</th><th>Score (1–5)</th></tr>
+<tr>
+<td>Are IAM activities logged and reviewed?</td>
+<td><input type="number" min="1" max="5" class="log"></td>
+</tr>
+</table>
+
+<button onclick="calculate()">Calculate Maturity</button>
+
+<div class="result" id="output"></div>
+
+<script>
+function avg(className) {
+  let items = document.getElementsByClassName(className);
+  let sum = 0, count = 0;
+  for (let i of items) {
+    if (i.value) {
+      sum += parseInt(i.value);
+      count++;
+    }
+  }
+  return count ? (sum / count) : 0;
+}
+
+function level(score) {
+  if (score < 2) return "Level 1 – Initial";
+  if (score < 3) return "Level 2 – Repeatable";
+  if (score < 4) return "Level 3 – Defined";
+  if (score < 4.6) return "Level 4 – Managed";
+  return "Level 5 – Optimized";
+}
+
+function calculate() {
+  let scores = [
+    avg("ilm"),
+    avg("iga"),
+    avg("auth"),
+    avg("pam"),
+    avg("log")
+  ];
+
+  let overall = scores.reduce((a,b)=>a+b,0) / scores.length;
+
+  document.getElementById("output").innerHTML =
+    "Overall IAM Maturity Score: " + overall.toFixed(2) +
+    "<br>Maturity Level: " + level(overall);
+}
+</script>
+
+</body>
+</html>
