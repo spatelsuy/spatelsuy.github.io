@@ -616,32 +616,502 @@ reviewed regularly, and aligned with business roles, policies, and compliance re
 </table>
 	
 
-<h3>3. Authentication & MFA</h3>
+<h3>3. Authentication & Multi-Factor Authentication (MFA)</h3>
+<p>
+This domain assesses how users are authenticated and how additional factors are used
+to protect access to systems and data. It focuses on credential strength, MFA adoption,
+adaptive authentication, and alignment with risk and business criticality.
+</p>
+
 <table>
-<tr><th>Question</th><th>Score (1–5)</th></tr>
 <tr>
-<td>Is MFA enforced for critical systems?</td>
-<td><input type="number" min="1" max="5" class="auth"></td>
+  <th style="width:35%">Question</th>
+  <th>Maturity Description (Select One)</th>
 </tr>
+
+<!-- Q1 -->
+<tr>
+<td>How are user authentication methods implemented?</td>
+<td>
+<select class="auth" data-weight="1">
+  <option value="">-- Select --</option>
+  <option value="1">Single-factor authentication with weak controls</option>
+  <option value="2">Passwords enforced with basic complexity rules</option>
+  <option value="3">Strong password policies are defined and enforced</option>
+  <option value="4">Multi-factor authentication for critical systems</option>
+  <option value="5">Passwordless or phishing-resistant authentication</option>
+</select>
+</td>
+</tr>
+
+<!-- Q2 -->
+<tr>
+<td>How consistently is MFA applied across applications?</td>
+<td>
+<select class="auth" data-weight="1">
+  <option value="">-- Select --</option>
+  <option value="1">MFA is rarely or never used</option>
+  <option value="2">MFA is used for a few high-risk applications</option>
+  <option value="3">MFA is applied to most business-critical systems</option>
+  <option value="4">MFA is enforced consistently across the enterprise</option>
+  <option value="5">MFA coverage is comprehensive and risk-adaptive</option>
+</select>
+</td>
+</tr>
+
+<!-- Q3 -->
+<tr>
+<td>How are authentication policies defined and managed?</td>
+<td>
+<select class="auth" data-weight="1">
+  <option value="">-- Select --</option>
+  <option value="1">Policies are informal or undocumented</option>
+  <option value="2">Basic policies exist but are inconsistently applied</option>
+  <option value="3">Policies are documented and standardized</option>
+  <option value="4">Policies are enforced and periodically reviewed</option>
+  <option value="5">Policies are adaptive and continuously optimized</option>
+</select>
+</td>
+</tr>
+
+<!-- Q4 -->
+<tr>
+<td>How is authentication risk evaluated?</td>
+<td>
+<select class="auth" data-weight="1">
+  <option value="">-- Select --</option>
+  <option value="1">No risk evaluation is performed</option>
+  <option value="2">Risk is evaluated manually or case-by-case</option>
+  <option value="3">Basic risk indicators are considered</option>
+  <option value="4">Contextual and behavioral signals are used</option>
+  <option value="5">AI-driven, continuous risk-based authentication</option>
+</select>
+</td>
+</tr>
+
+<!-- Q5 -->
+<tr>
+<td>How are privileged or high-risk users authenticated?</td>
+<td>
+<select class="auth" data-weight="1">
+  <option value="">-- Select --</option>
+  <option value="1">Same authentication as regular users</option>
+  <option value="2">Some additional controls for privileged users</option>
+  <option value="3">Stronger authentication for privileged access</option>
+  <option value="4">MFA is mandatory for all privileged access</option>
+  <option value="5">Phishing-resistant MFA with session monitoring</option>
+</select>
+</td>
+</tr>
+
+<!-- Q6 -->
+<tr>
+<td>How are authentication credentials protected?</td>
+<td>
+<select class="auth" data-weight="1">
+  <option value="">-- Select --</option>
+  <option value="1">Credentials are weakly protected</option>
+  <option value="2">Basic encryption and storage controls exist</option>
+  <option value="3">Industry-standard credential protection is used</option>
+  <option value="4">Advanced protections and monitoring are in place</option>
+  <option value="5">Credential compromise prevention and detection</option>
+</select>
+</td>
+</tr>
+
+<!-- Q7 -->
+<tr>
+<td>How is authentication monitored and logged?</td>
+<td>
+<select class="auth" data-weight="1">
+  <option value="">-- Select --</option>
+  <option value="1">Authentication events are not logged</option>
+  <option value="2">Limited logging with minimal review</option>
+  <option value="3">Authentication logs are collected centrally</option>
+  <option value="4">Logs are actively monitored and analyzed</option>
+  <option value="5">Real-time detection of authentication anomalies</option>
+</select>
+</td>
+</tr>
+
+<!-- Q8 -->
+<tr>
+<td>How are MFA exceptions managed?</td>
+<td>
+<select class="auth" data-weight="1">
+  <option value="">-- Select --</option>
+  <option value="1">Exceptions are unmanaged</option>
+  <option value="2">Exceptions are approved informally</option>
+  <option value="3">Exceptions are documented and reviewed</option>
+  <option value="4">Exceptions are time-bound and tracked</option>
+  <option value="5">Exceptions are risk-scored and minimized</option>
+</select>
+</td>
+</tr>
+
+<!-- Q9 -->
+<tr>
+<td>How is authentication aligned with regulatory requirements?</td>
+<td>
+<select class="auth" data-weight="1">
+  <option value="">-- Select --</option>
+  <option value="1">No formal regulatory alignment</option>
+  <option value="2">Partial alignment for select systems</option>
+  <option value="3">Authentication meets regulatory requirements</option>
+  <option value="4">Controls exceed minimum compliance standards</option>
+  <option value="5">Proactive compliance and continuous assurance</option>
+</select>
+</td>
+</tr>
+
+<!-- Q10 -->
+<tr>
+<td>How is authentication continuously improved?</td>
+<td>
+<select class="auth" data-weight="1">
+  <option value="">-- Select --</option>
+  <option value="1">No improvement process exists</option>
+  <option value="2">Improvements are reactive</option>
+  <option value="3">Periodic reviews drive improvements</option>
+  <option value="4">Metrics guide optimization efforts</option>
+  <option value="5">Continuous, AI-driven authentication optimization</option>
+</select>
+</td>
+</tr>
+
 </table>
 
-<h3>4. Privileged Access</h3>
+<h3>4. Privileged Access Management (PAM)</h3>
+<p>
+This domain assesses how privileged accounts and elevated access are controlled,
+monitored, and governed. It focuses on minimizing standing privileges, enforcing
+strong controls, and reducing the risk of misuse or compromise.
+</p>
+
 <table>
-<tr><th>Question</th><th>Score (1–5)</th></tr>
 <tr>
-<td>Are privileged accounts centrally managed?</td>
-<td><input type="number" min="1" max="5" class="pam"></td>
+  <th style="width:35%">Question</th>
+  <th>Maturity Description (Select One)</th>
 </tr>
+
+<!-- Q1 -->
+<tr>
+<td>How are privileged accounts identified?</td>
+<td>
+<select class="pam" data-weight="1">
+  <option value="">-- Select --</option>
+  <option value="1">Privileged accounts are not fully identified</option>
+  <option value="2">Some privileged accounts are identified manually</option>
+  <option value="3">Privileged accounts are centrally identified</option>
+  <option value="4">Continuous discovery of privileged accounts</option>
+  <option value="5">Automated discovery with risk classification</option>
+</select>
+</td>
+</tr>
+
+<!-- Q2 -->
+<tr>
+<td>How is privileged access granted?</td>
+<td>
+<select class="pam" data-weight="1">
+  <option value="">-- Select --</option>
+  <option value="1">Standing privileged access is common</option>
+  <option value="2">Manual approvals for privileged access</option>
+  <option value="3">Controlled approval workflows exist</option>
+  <option value="4">Just-in-time privileged access is enforced</option>
+  <option value="5">Dynamic, risk-based privilege elevation</option>
+</select>
+</td>
+</tr>
+
+<!-- Q3 -->
+<tr>
+<td>How are privileged credentials managed?</td>
+<td>
+<select class="pam" data-weight="1">
+  <option value="">-- Select --</option>
+  <option value="1">Passwords are shared or unmanaged</option>
+  <option value="2">Passwords are changed manually</option>
+  <option value="3">Credentials are vaulted and rotated</option>
+  <option value="4">Automated rotation and access control</option>
+  <option value="5">Credential-less or ephemeral access</option>
+</select>
+</td>
+</tr>
+
+<!-- Q4 -->
+<tr>
+<td>How is privileged session activity monitored?</td>
+<td>
+<select class="pam" data-weight="1">
+  <option value="">-- Select --</option>
+  <option value="1">No session monitoring exists</option>
+  <option value="2">Limited logging of privileged activity</option>
+  <option value="3">Sessions are recorded and reviewed</option>
+  <option value="4">Real-time monitoring and alerting</option>
+  <option value="5">AI-driven behavioral session analytics</option>
+</select>
+</td>
+</tr>
+
+<!-- Q5 -->
+<tr>
+<td>How is privileged access reviewed?</td>
+<td>
+<select class="pam" data-weight="1">
+  <option value="">-- Select --</option>
+  <option value="1">No formal reviews are conducted</option>
+  <option value="2">Reviews are manual and infrequent</option>
+  <option value="3">Periodic access reviews are defined</option>
+  <option value="4">Reviews are enforced and audited</option>
+  <option value="5">Continuous privileged access certification</option>
+</select>
+</td>
+</tr>
+
+<!-- Q6 -->
+<tr>
+<td>How are emergency or break-glass accounts managed?</td>
+<td>
+<select class="pam" data-weight="1">
+  <option value="">-- Select --</option>
+  <option value="1">Break-glass access is uncontrolled</option>
+  <option value="2">Basic controls exist for emergencies</option>
+  <option value="3">Emergency access is documented</option>
+  <option value="4">Emergency access is monitored and reviewed</option>
+  <option value="5">Risk-controlled and auditable emergency access</option>
+</select>
+</td>
+</tr>
+
+<!-- Q7 -->
+<tr>
+<td>How is PAM integrated with IAM and IGA?</td>
+<td>
+<select class="pam" data-weight="1">
+  <option value="">-- Select --</option>
+  <option value="1">No integration exists</option>
+  <option value="2">Limited or manual integration</option>
+  <option value="3">Basic integration with IAM systems</option>
+  <option value="4">Strong integration with identity governance</option>
+  <option value="5">Unified identity and privileged access governance</option>
+</select>
+</td>
+</tr>
+
+<!-- Q8 -->
+<tr>
+<td>How is PAM aligned with compliance requirements?</td>
+<td>
+<select class="pam" data-weight="1">
+  <option value="">-- Select --</option>
+  <option value="1">No formal compliance alignment</option>
+  <option value="2">Partial compliance for select systems</option>
+  <option value="3">PAM meets compliance requirements</option>
+  <option value="4">PAM controls exceed compliance standards</option>
+  <option value="5">Continuous compliance and audit readiness</option>
+</select>
+</td>
+</tr>
+
+<!-- Q9 -->
+<tr>
+<td>How are privileged access policies maintained?</td>
+<td>
+<select class="pam" data-weight="1">
+  <option value="">-- Select --</option>
+  <option value="1">Policies are undocumented</option>
+  <option value="2">Basic policies exist</option>
+  <option value="3">Policies are documented and reviewed</option>
+  <option value="4">Policies are enforced consistently</option>
+  <option value="5">Policies are optimized and risk-driven</option>
+</select>
+</td>
+</tr>
+
+<!-- Q10 -->
+<tr>
+<td>How is PAM continuously improved?</td>
+<td>
+<select class="pam" data-weight="1">
+  <option value="">-- Select --</option>
+  <option value="1">No improvement process exists</option>
+  <option value="2">Improvements are reactive</option>
+  <option value="3">Periodic reviews drive improvements</option>
+  <option value="4">Metrics guide PAM optimization</option>
+  <option value="5">AI-driven, continuous PAM optimization</option>
+</select>
+</td>
+</tr>
+
 </table>
+
 
 <h3>5. Monitoring & Logging</h3>
+<p>
+This domain assesses how IAM-related activities are logged, monitored, and analyzed
+to detect security incidents, support audits, and improve overall identity security
+posture.
+</p>
+
 <table>
-<tr><th>Question</th><th>Score (1–5)</th></tr>
 <tr>
-<td>Are IAM activities logged and reviewed?</td>
-<td><input type="number" min="1" max="5" class="log"></td>
+  <th style="width:35%">Question</th>
+  <th>Maturity Description (Select One)</th>
 </tr>
+
+<!-- Q1 -->
+<tr>
+<td>How are IAM activities logged?</td>
+<td>
+<select class="log" data-weight="1">
+  <option value="">-- Select --</option>
+  <option value="1">IAM activities are not logged</option>
+  <option value="2">Limited logging for critical systems</option>
+  <option value="3">IAM logs are collected centrally</option>
+  <option value="4">Logs are comprehensive and standardized</option>
+  <option value="5">High-fidelity, real-time IAM logging</option>
+</select>
+</td>
+</tr>
+
+<!-- Q2 -->
+<tr>
+<td>How are logs monitored and reviewed?</td>
+<td>
+<select class="log" data-weight="1">
+  <option value="">-- Select --</option>
+  <option value="1">Logs are rarely or never reviewed</option>
+  <option value="2">Manual reviews occur sporadically</option>
+  <option value="3">Regular log reviews are defined</option>
+  <option value="4">Active monitoring with alerts</option>
+  <option value="5">AI-driven continuous log analysis</option>
+</select>
+</td>
+</tr>
+
+<!-- Q3 -->
+<tr>
+<td>How are IAM events correlated across systems?</td>
+<td>
+<select class="log" data-weight="1">
+  <option value="">-- Select --</option>
+  <option value="1">No event correlation exists</option>
+  <option value="2">Limited correlation for select systems</option>
+  <option value="3">Events are correlated centrally</option>
+  <option value="4">Cross-system correlation is enforced</option>
+  <option value="5">Advanced correlation with behavioral analytics</option>
+</select>
+</td>
+</tr>
+
+<!-- Q4 -->
+<tr>
+<td>How are IAM-related incidents detected?</td>
+<td>
+<select class="log" data-weight="1">
+  <option value="">-- Select --</option>
+  <option value="1">Incidents are detected manually</option>
+  <option value="2">Basic alerting exists</option>
+  <option value="3">Defined detection use cases exist</option>
+  <option value="4">Proactive detection and alerting</option>
+  <option value="5">Predictive, AI-driven incident detection</option>
+</select>
+</td>
+</tr>
+
+<!-- Q5 -->
+<tr>
+<td>How are IAM logs retained and protected?</td>
+<td>
+<select class="log" data-weight="1">
+  <option value="">-- Select --</option>
+  <option value="1">Logs are not retained or protected</option>
+  <option value="2">Basic retention policies exist</option>
+  <option value="3">Retention policies are defined and enforced</option>
+  <option value="4">Logs are protected against tampering</option>
+  <option value="5">Immutable, compliant log retention</option>
+</select>
+</td>
+</tr>
+
+<!-- Q6 -->
+<tr>
+<td>How is logging aligned with compliance requirements?</td>
+<td>
+<select class="log" data-weight="1">
+  <option value="">-- Select --</option>
+  <option value="1">No compliance alignment</option>
+  <option value="2">Partial compliance support</option>
+  <option value="3">Logging meets compliance requirements</option>
+  <option value="4">Logging exceeds compliance standards</option>
+  <option value="5">Continuous compliance and audit readiness</option>
+</select>
+</td>
+</tr>
+
+<!-- Q7 -->
+<tr>
+<td>How are IAM logs integrated with SIEM or analytics platforms?</td>
+<td>
+<select class="log" data-weight="1">
+  <option value="">-- Select --</option>
+  <option value="1">No SIEM integration</option>
+  <option value="2">Limited or manual integration</option>
+  <option value="3">Standard SIEM integration exists</option>
+  <option value="4">Advanced analytics and dashboards</option>
+  <option value="5">AI-driven security analytics and insights</option>
+</select>
+</td>
+</tr>
+
+<!-- Q8 -->
+<tr>
+<td>How are false positives and noise managed?</td>
+<td>
+<select class="log" data-weight="1">
+  <option value="">-- Select --</option>
+  <option value="1">No tuning or optimization</option>
+  <option value="2">Manual tuning occurs occasionally</option>
+  <option value="3">Defined tuning and review processes</option>
+  <option value="4">Continuous optimization of alerts</option>
+  <option value="5">Self-learning noise reduction</option>
+</select>
+</td>
+</tr>
+
+<!-- Q9 -->
+<tr>
+<td>How is log data used to improve IAM controls?</td>
+<td>
+<select class="log" data-weight="1">
+  <option value="">-- Select --</option>
+  <option value="1">Logs are not used for improvement</option>
+  <option value="2">Logs are reviewed after incidents</option>
+  <option value="3">Logs inform periodic improvements</option>
+  <option value="4">Logs drive proactive control enhancement</option>
+  <option value="5">Continuous, intelligence-driven improvement</option>
+</select>
+</td>
+</tr>
+
+<!-- Q10 -->
+<tr>
+<td>How is monitoring and logging continuously improved?</td>
+<td>
+<select class="log" data-weight="1">
+  <option value="">-- Select --</option>
+  <option value="1">No improvement process exists</option>
+  <option value="2">Improvements are reactive</option>
+  <option value="3">Periodic reviews drive improvements</option>
+  <option value="4">Metrics guide optimization</option>
+  <option value="5">AI-driven, continuous optimization</option>
+</select>
+</td>
+</tr>
+
 </table>
+
 
 <button onclick="calculate()">Calculate Maturity</button>
 
