@@ -1109,9 +1109,80 @@ posture.
 </select>
 </td>
 </tr>
-
 </table>
 
+<h3>Organizational Context</h3>
+<p>
+This information helps the assessment engine evaluate your IAM maturity relative
+to your industry, regulatory exposure, and risk posture.
+</p>
+
+<table>
+<tr>
+  <th style="width:35%">Attribute</th>
+  <th>Input</th>
+</tr>
+
+<tr>
+<td>Industry</td>
+<td>
+<select id="industry">
+  <option value="">-- Select --</option>
+  <option>Banking</option>
+  <option>Insurance</option>
+  <option>Retail</option>
+  <option>Healthcare</option>
+  <option>Technology</option>
+  <option>Public Sector</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>Organization Size</td>
+<td>
+<select id="orgSize">
+  <option value="">-- Select --</option>
+  <option>Small</option>
+  <option>Mid-size</option>
+  <option>Large Enterprise</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>Geographic Presence</td>
+<td>
+<label><input type="checkbox" value="US"> US</label>
+<label><input type="checkbox" value="EU"> EU</label>
+<label><input type="checkbox" value="APAC"> APAC</label>
+</td>
+</tr>
+
+<tr>
+<td>Regulatory Scope</td>
+<td>
+<label><input type="checkbox" value="SOX"> SOX</label>
+<label><input type="checkbox" value="GLBA"> GLBA</label>
+<label><input type="checkbox" value="GDPR"> GDPR</label>
+<label><input type="checkbox" value="HIPAA"> HIPAA</label>
+</td>
+</tr>
+
+<tr>
+<td>Risk Tolerance</td>
+<td>
+<select id="riskTolerance">
+  <option value="">-- Select --</option>
+  <option>Low</option>
+  <option>Medium</option>
+  <option>High</option>
+</select>
+</td>
+</tr>
+</table>
+
+	
 
 <button onclick="calculate()">Calculate Maturity</button>
 
