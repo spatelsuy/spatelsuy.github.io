@@ -93,6 +93,37 @@
     margin-bottom: 12px;
     font-size: 15px;
   }
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: help;
+  color: #1abc9c;
+  font-weight: bold;
+  margin-left: 6px;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 320px;
+  background-color: #2c3e50;
+  color: #fff;
+  text-align: left;
+  padding: 10px;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 0.9em;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}	
 @media (max-width: 600px) {
   .container {
     margin: 10px 15px 0 15px;  /* top, right, bottom, left */
