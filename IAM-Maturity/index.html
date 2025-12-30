@@ -332,105 +332,87 @@ from onboarding (Joiner) through role changes (Mover) to termination (Leaver).
 
 <!-- Q1 -->
 <tr>
-  <td style="vertical-align: top;">
-    How are new user identities created (Joiner process)?
-  </td>
+  <td colspan="2" class="question-block" data-question-id="ILM-Q1" data-weight="1">
 
-  <td>
+    <!-- Line 1: Question -->
+    <div class="question-text">
+      <strong>How are new user identities created (Joiner process)?</strong>
+    </div>
 
-    <!-- Maturity Selection (Radio Buttons) -->
-    <div class="maturity-options" data-question-id="ILM-Q1" data-weight="1">
-
-      <label>
-        <input type="radio"
-               name="ILM-Q1-maturity"
-               class="ilm maturity-selection"
-               data-question-id="ILM-Q1"
-               value="1">
-        Accounts are created manually and inconsistently
-      </label><br>
-
-      <label>
-        <input type="radio"
-               name="ILM-Q1-maturity"
-               class="ilm maturity-selection"
-               data-question-id="ILM-Q1"
-               value="2">
-        Some systems have defined onboarding steps
-      </label><br>
-
-      <label>
-        <input type="radio"
-               name="ILM-Q1-maturity"
-               class="ilm maturity-selection"
-               data-question-id="ILM-Q1"
-               value="3">
-        Standard onboarding process exists and is documented
-      </label><br>
-
-      <label>
-        <input type="radio"
-               name="ILM-Q1-maturity"
-               class="ilm maturity-selection"
-               data-question-id="ILM-Q1"
-               value="4">
-        Automated onboarding integrated with HR systems
-      </label><br>
-
-      <label>
-        <input type="radio"
-               name="ILM-Q1-maturity"
-               class="ilm maturity-selection"
-               data-question-id="ILM-Q1"
-               value="5">
-        Fully automated, policy-driven onboarding with validation
+    <!-- Line 2: Radio Tiles (Levels 1–3) -->
+    <div class="tile-row">
+      <label class="tile">
+        <input type="radio" name="ILM-Q1" value="1"
+               class="maturity-selection" data-question-id="ILM-Q1">
+        <span>Manual and inconsistent account creation</span>
       </label>
 
+      <label class="tile">
+        <input type="radio" name="ILM-Q1" value="2"
+               class="maturity-selection" data-question-id="ILM-Q1">
+        <span>Some systems have defined onboarding steps</span>
+      </label>
+
+      <label class="tile">
+        <input type="radio" name="ILM-Q1" value="3"
+               class="maturity-selection" data-question-id="ILM-Q1">
+        <span>Standard onboarding process exists and is documented</span>
+      </label>
     </div>
 
-    <!-- Additional User Context -->
-    <div style="margin-top: 12px;">
-      <label><strong>Additional Context (Optional):</strong></label><br>
-      <textarea class="additional-context"
+    <!-- Line 3: Radio Tiles (Levels 4–5) -->
+    <div class="tile-row">
+      <label class="tile">
+        <input type="radio" name="ILM-Q1" value="4"
+               class="maturity-selection" data-question-id="ILM-Q1">
+        <span>Automated onboarding integrated with HR systems</span>
+      </label>
+
+      <label class="tile">
+        <input type="radio" name="ILM-Q1" value="5"
+               class="maturity-selection" data-question-id="ILM-Q1">
+        <span>Fully automated, policy-driven onboarding with validation</span>
+      </label>
+    </div>
+
+    <!-- Line 4: Additional Clarification -->
+    <div class="input-row">
+      <label><strong>Additional Clarification (Optional)</strong></label><br>
+      <textarea rows="3" cols="80"
+                class="additional-context"
                 data-question-id="ILM-Q1"
-                rows="3"
-                cols="60"
-                placeholder="Provide any additional implementation details or constraints"></textarea>
+                placeholder="Provide any clarifications, constraints, or exceptions..."></textarea>
     </div>
 
-    <!-- Control ID and Control Description -->
-    <div style="margin-top: 12px;">
-      <label><strong>Control ID:</strong></label>
+    <!-- Line 5: Control ID + Control Details -->
+    <div class="input-row">
+      <label><strong>Control ID</strong></label>
       <input type="text"
              class="control-id"
              data-question-id="ILM-Q1"
              placeholder="CTRL-XXX"
-             style="width: 120px; margin-right: 10px;">
+             style="width:120px; margin-right:10px;">
 
       <br>
-      <label><strong>Control Description:</strong></label><br>
-      <textarea class="control-description"
+      <textarea rows="2" cols="80"
+                class="control-description"
                 data-question-id="ILM-Q1"
-                rows="2"
-                cols="60"
                 placeholder="Describe the control mapped to this question"></textarea>
     </div>
 
-    <!-- Metrics ID and Metrics Description -->
-    <div style="margin-top: 12px;">
-      <label><strong>Metrics ID:</strong></label>
+    <!-- Line 6: Metrics ID + Metrics Details -->
+    <div class="input-row">
+      <label><strong>Metrics ID</strong></label>
       <input type="text"
              class="metrics-id"
              data-question-id="ILM-Q1"
              placeholder="MET-XXX"
-             style="width: 120px; margin-right: 10px;">
+             style="width:120px; margin-right:10px;">
 
       <br>
-      <label><strong>Metrics Description:</strong></label><br>
-      <textarea class="metrics-description"
+      <textarea rows="2" cols="80"
+                class="metrics-description"
                 data-question-id="ILM-Q1"
-                rows="2"
-                cols="60"
                 placeholder="Describe metrics used to measure effectiveness"></textarea>
     </div>
 
