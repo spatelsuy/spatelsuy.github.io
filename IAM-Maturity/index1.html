@@ -463,7 +463,87 @@ This information helps the assessment engine evaluate your IAM maturity relative
 to your industry, regulatory exposure, and risk posture.
 </p>
 
-<!-- ... (keep the rest of the HTML as is, including Organizational Context) ... -->
+<table>
+<tr>
+  <th style="width:35%">Attribute</th>
+  <th>Input</th>
+</tr>
+
+<tr>
+<td>Industry</td>
+<td>
+<select id="industry">
+  <option value="">-- Select --</option>
+  <option>Banking</option>
+  <option>Insurance</option>
+  <option>Retail</option>
+  <option>Healthcare</option>
+  <option>Technology</option>
+  <option>Public Sector</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>Organization Size</td>
+<td>
+<select id="orgSize">
+  <option value="">-- Select --</option>
+  <option>Small</option>
+  <option>Mid-size</option>
+  <option>Large Enterprise</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>Risk Tolerance</td>
+<td>
+<select id="riskTolerance">
+  <option value="">-- Select --</option>
+  <option>Low</option>
+  <option>Medium</option>
+  <option>High</option>
+</select>
+</td>
+</tr>
+</table>
+
+<h4>
+Geographic Presence
+<span class="tooltip">ⓘ
+  <span class="tooltiptext">
+    AI uses geographic presence to adjust maturity expectations based on regional
+    regulations, data residency requirements, and identity risk exposure.
+    For example, IAM maturity expectations are higher for organizations operating
+    in regulated regions such as the EU.
+  </span>
+</span>
+</h4>
+<p>Select all regions where your organization operates:</p>
+
+<label> <input type="checkbox" name="geography" value="US"> United States </label>
+<label> <input type="checkbox" name="geography" value="EU"> Europe (EU) </label>
+<label> <input type="checkbox" name="geography" value="APAC"> Asia-Pacific (APAC)</label>
+
+<h4>
+Regulatory Scope
+<span class="tooltip">ⓘ
+  <span class="tooltiptext">
+    AI considers regulatory scope to calibrate IAM maturity scoring.
+    Organizations subject to regulations such as SOX, GLBA, GDPR, or HIPAA
+    are expected to have stronger access governance, monitoring, and controls.
+    This ensures scoring reflects regulatory accountability.
+  </span>
+</span>
+</h4>
+<p>Select applicable regulatory or compliance requirements:</p>
+
+<label> <input type="checkbox" name="regulatory" value="SOX"> SOX</label>
+<label> <input type="checkbox" name="regulatory" value="GLBA"> GLBA</label>
+<label> <input type="checkbox" name="regulatory" value="GDPR"> GDPR</label>
+<label> <input type="checkbox" name="regulatory" value="HIPAA"> HIPAA</label>	
+
 
 <br>
 <button onclick="calculate()">Calculate Maturity</button>
