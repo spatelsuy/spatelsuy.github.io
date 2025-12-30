@@ -1,0 +1,1389 @@
+{
+  "domains": [
+    {
+      "id": "ILM",
+      "name": "Identity Lifecycle Management (Joiner–Mover–Leaver)",
+      "description": "This domain assesses how effectively identities are created, modified, and removed across their lifecycle, from onboarding (Joiner) through role changes (Mover) to termination (Leaver).",
+      "questions": [
+        {
+          "id": "ILM-Q1",
+          "text": "How are new user identities created (Joiner process)?",
+          "weight": 1,
+          "options": [
+            {
+              "value": "1",
+              "text": "Manual and inconsistent account creation"
+            },
+            {
+              "value": "2",
+              "text": "Some systems have defined onboarding steps"
+            },
+            {
+              "value": "3",
+              "text": "Standard onboarding process exists and is documented"
+            },
+            {
+              "value": "4",
+              "text": "Automated onboarding integrated with HR systems"
+            },
+            {
+              "value": "5",
+              "text": "Fully automated, policy-driven onboarding with validation"
+            }
+          ]
+        },
+        {
+          "id": "ILM-Q2",
+          "text": "How are role or responsibility changes handled (Mover process)?",
+          "weight": 1,
+          "options": [
+            {
+              "value": "1",
+              "text": "Changes are handled manually upon request"
+            },
+            {
+              "value": "2",
+              "text": "Some role changes follow defined steps"
+            },
+            {
+              "value": "3",
+              "text": "Formal mover process is defined and repeatable"
+            },
+            {
+              "value": "4",
+              "text": "Role changes automatically update access"
+            },
+            {
+              "value": "5",
+              "text": "Dynamic access adjustment based on role and risk"
+            }
+          ]
+        },
+        {
+          "id": "ILM-Q3",
+          "text": "How is access removed when users leave (Leaver process)?",
+          "weight": 2,
+          "options": [
+            {
+              "value": "1",
+              "text": "Accounts are often left active after exit"
+            },
+            {
+              "value": "2",
+              "text": "Manual deprovisioning with delays"
+            },
+            {
+              "value": "3",
+              "text": "Leaver process is documented and followed"
+            },
+            {
+              "value": "4",
+              "text": "Automated deprovisioning across systems"
+            },
+            {
+              "value": "5",
+              "text": "Immediate, policy-driven deprovisioning with verification"
+            }
+          ]
+        },
+        {
+          "id": "ILM-Q4",
+          "text": "Is identity lifecycle integrated with authoritative sources (e.g., HR)?",
+          "weight": 1,
+          "options": [
+            {
+              "value": "1",
+              "text": "No authoritative identity source"
+            },
+            {
+              "value": "2",
+              "text": "Partial integration for some users"
+            },
+            {
+              "value": "3",
+              "text": "HR is the primary identity source"
+            },
+            {
+              "value": "4",
+              "text": "Multiple authoritative sources integrated"
+            },
+            {
+              "value": "5",
+              "text": "Real-time identity synchronization across sources"
+            }
+          ]
+        },
+        {
+          "id": "ILM-Q5",
+          "text": "How consistent are lifecycle processes across applications?",
+          "weight": 1,
+          "options": [
+            {
+              "value": "1",
+              "text": "Each application handled differently"
+            },
+            {
+              "value": "2",
+              "text": "Some standardization exists"
+            },
+            {
+              "value": "3",
+              "text": "Consistent lifecycle processes across most apps"
+            },
+            {
+              "value": "4",
+              "text": "Centralized lifecycle enforcement"
+            },
+            {
+              "value": "5",
+              "text": "Lifecycle is uniformly enforced and audited"
+            }
+          ]
+        },
+        {
+          "id": "ILM-Q6",
+          "text": "Are lifecycle processes documented and communicated?",
+          "weight": 1,
+          "options": [
+            {
+              "value": "1",
+              "text": "No formal documentation"
+            },
+            {
+              "value": "2",
+              "text": "Partial or outdated documentation"
+            },
+            {
+              "value": "3",
+              "text": "Processes are documented and accessible"
+            },
+            {
+              "value": "4",
+              "text": "Documentation is maintained and reviewed"
+            },
+            {
+              "value": "5",
+              "text": "Continuously improved with metrics"
+            }
+          ]
+        },
+        {
+          "id": "ILM-Q7",
+          "text": "How are exceptions handled (e.g., contractors, temporary users)?",
+          "weight": 1,
+          "options": [
+            {
+              "value": "1",
+              "text": "Handled manually without controls"
+            },
+            {
+              "value": "2",
+              "text": "Some exceptions tracked informally"
+            },
+            {
+              "value": "3",
+              "text": "Defined exception handling process"
+            },
+            {
+              "value": "4",
+              "text": "Exceptions managed through IAM workflows"
+            },
+            {
+              "value": "5",
+              "text": "Risk-based exception management"
+            }
+          ]
+        },
+        {
+          "id": "ILM-Q8",
+          "text": "Are lifecycle activities auditable?",
+          "weight": 1,
+          "options": [
+            {
+              "value": "1",
+              "text": "No audit trail available"
+            },
+            {
+              "value": "2",
+              "text": "Limited logging for key events"
+            },
+            {
+              "value": "3",
+              "text": "Lifecycle events are logged"
+            },
+            {
+              "value": "4",
+              "text": "Logs are reviewed and retained"
+            },
+            {
+              "value": "5",
+              "text": "Automated audit reporting available"
+            }
+          ]
+        },
+        {
+          "id": "ILM-Q9",
+          "text": "How scalable are identity lifecycle processes?",
+          "weight": 1,
+          "options": [
+            {
+              "value": "1",
+              "text": "Does not scale; manual effort increases"
+            },
+            {
+              "value": "2",
+              "text": "Limited scalability"
+            },
+            {
+              "value": "3",
+              "text": "Scales with defined processes"
+            },
+            {
+              "value": "4",
+              "text": "Automation supports growth"
+            },
+            {
+              "value": "5",
+              "text": "Designed for enterprise-scale operations"
+            }
+          ]
+        },
+        {
+          "id": "ILM-Q10",
+          "text": "How often are lifecycle processes reviewed and improved?",
+          "weight": 1,
+          "options": [
+            {
+              "value": "1",
+              "text": "Never reviewed"
+            },
+            {
+              "value": "2",
+              "text": "Reviewed reactively"
+            },
+            {
+              "value": "3",
+              "text": "Periodic reviews performed"
+            },
+            {
+              "value": "4",
+              "text": "Metrics-driven improvements"
+            },
+            {
+              "value": "5",
+              "text": "Continuous optimization"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "IGA",
+      "name": "Access Governance",
+      "description": "This domain assesses how access rights are requested, approved, reviewed, and governed across the organization. It focuses on ensuring that access is appropriate, authorized, reviewed regularly, and aligned with business roles, policies, and compliance requirements.",
+      "questions": [
+        {
+          "id": "IGA-Q1",
+          "text": "How are access requests initiated and approved?",
+          "weight": 1,
+          "options": [
+            {
+              "value": "1",
+              "text": "Requests are informal or handled manually without approvals"
+            },
+            {
+              "value": "2",
+              "text": "Basic approvals exist but vary by team or application"
+            },
+            {
+              "value": "3",
+              "text": "Standard approval workflows are defined and documented"
+            },
+            {
+              "value": "4",
+              "text": "Role-based approvals are consistently enforced"
+            },
+            {
+              "value": "5",
+              "text": "Automated, policy-driven, and risk-aware approvals"
+            }
+          ]
+        },
+        {
+          "id": "IGA-Q2",
+          "text": "How are access reviews (certifications) performed?",
+          "weight": 1,
+          "options": [
+            {
+              "value": "1",
+              "text": "No formal access reviews are conducted"
+            },
+            {
+              "value": "2",
+              "text": "Reviews are manual and limited to few systems"
+            },
+            {
+              "value": "3",
+              "text": "Periodic access reviews are defined and documented"
+            },
+            {
+              "value": "4",
+              "text": "Reviews are enforced with tracking and escalation"
+            },
+            {
+              "value": "5",
+              "text": "Continuous, automated, and risk-based access reviews"
+            }
+          ]
+        },
+        {
+          "id": "IGA-Q3",
+          "text": "How are roles and entitlements defined?",
+          "weight": 1,
+          "options": [
+            {
+              "value": "1",
+              "text": "Access is assigned individually without role structure"
+            },
+            {
+              "value": "2",
+              "text": "Some roles exist but are inconsistently used"
+            },
+            {
+              "value": "3",
+              "text": "Business and IT roles are formally defined"
+            },
+            {
+              "value": "4",
+              "text": "Roles are governed, reviewed, and optimized"
+            },
+            {
+              "value": "5",
+              "text": "Dynamic, risk-aware roles with continuous improvement"
+            }
+          ]
+        },
+        {
+          "id": "IGA-Q4",
+          "text": "How is segregation of duties (SoD) managed?",
+          "weight": 1,
+          "options": [
+            {
+              "value": "1",
+              "text": "SoD conflicts are not identified or managed"
+            },
+            {
+              "value": "2",
+              "text": "SoD is checked manually in limited cases"
+            },
+            {
+              "value": "3",
+              "text": "SoD rules are defined and documented"
+            },
+            {
+              "value": "4",
+              "text": "Preventive and detective SoD controls are enforced"
+            },
+            {
+              "value": "5",
+              "text": "Automated, continuous, and risk-based SoD enforcement"
+            }
+          ]
+        },
+        {
+          "id": "IGA-Q5",
+          "text": "How consistently is access governance applied across applications?",
+          "weight": 1,
+          "options": [
+            {
+              "value": "1",
+              "text": "Only a few critical applications are governed"
+            },
+            {
+              "value": "2",
+              "text": "Governance is applied inconsistently"
+            },
+            {
+              "value": "3",
+              "text": "Most applications follow standard governance processes"
+            },
+            {
+              "value": "4",
+              "text": "Governance is enforced across enterprise systems"
+            },
+            {
+              "value": "5",
+              "text": "Governance spans cloud, SaaS, and on-prem environments"
+            }
+          ]
+        },
+        {
+          "id": "IGA-Q6",
+          "text": "How are access policy exceptions handled?",
+          "weight": 1,
+          "options": [
+            {
+              "value": "1",
+              "text": "Exceptions are unmanaged and undocumented"
+            },
+            {
+              "value": "2",
+              "text": "Exceptions are approved but rarely reviewed"
+            },
+            {
+              "value": "3",
+              "text": "Exception processes are defined and documented"
+            },
+            {
+              "value": "4",
+              "text": "Exceptions are tracked and periodically reviewed"
+            },
+            {
+              "value": "5",
+              "text": "Risk-scored, time-bound, and continuously reviewed exceptions"
+            }
+          ]
+        },
+        {
+          "id": "IGA-Q7",
+          "text": "How are access governance policies documented and maintained?",
+          "weight": 1,
+          "options": [
+            {
+              "value": "1",
+              "text": "Policies are informal or undocumented"
+            },
+            {
+              "value": "2",
+              "text": "Basic policies exist but are outdated"
+            },
+            {
+              "value": "3",
+              "text": "Policies are documented and communicated"
+            },
+            {
+              "value": "4",
+              "text": "Policies are reviewed and enforced regularly"
+            },
+            {
+              "value": "5",
+              "text": "Policies are continuously improved and framework-aligned"
+            }
+          ]
+        },
+        {
+          "id": "IGA-Q8",
+          "text": "How does access governance support audits and compliance?",
+          "weight": 1,
+          "options": [
+            {
+              "value": "1",
+              "text": "Audit support is reactive and manual"
+            },
+            {
+              "value": "2",
+              "text": "Limited evidence is available for audits"
+            },
+            {
+              "value": "3",
+              "text": "Audit evidence is collected consistently"
+            },
+            {
+              "value": "4",
+              "text": "Compliance reporting is centralized and reliable"
+            },
+            {
+              "value": "5",
+              "text": "Continuous compliance with audit-ready reporting"
+            }
+          ]
+        },
+        {
+          "id": "IGA-Q9",
+          "text": "How is ownership for access governance defined?",
+          "weight": 1,
+          "options": [
+            {
+              "value": "1",
+              "text": "Ownership is unclear or undefined"
+            },
+            {
+              "value": "2",
+              "text": "Ownership exists but is inconsistent"
+            },
+            {
+              "value": "3",
+              "text": "Clear ownership is defined per application"
+            },
+            {
+              "value": "4",
+              "text": "Ownership is enforced and accountable"
+            },
+            {
+              "value": "5",
+              "text": "Ownership is embedded into governance and KPIs"
+            }
+          ]
+        },
+        {
+          "id": "IGA-Q10",
+          "text": "How is the effectiveness of access governance measured?",
+          "weight": 1,
+          "options": [
+            {
+              "value": "1",
+              "text": "No metrics or reporting exist"
+            },
+            {
+              "value": "2",
+              "text": "Basic metrics are tracked manually"
+            },
+            {
+              "value": "3",
+              "text": "Standard KPIs are defined and reported"
+            },
+            {
+              "value": "4",
+              "text": "Metrics are used to drive improvements"
+            },
+            {
+              "value": "5",
+              "text": "Predictive, risk-driven governance metrics"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "AUTH",
+      "name": "Authentication & Multi-Factor Authentication (MFA)",
+      "description": "This domain assesses how users are authenticated and how additional factors are used to protect access to systems and data. It focuses on credential strength, MFA adoption, adaptive authentication, and alignment with risk and business criticality.",
+      "questions": [
+        {
+          "id": "AUTH-Q1",
+          "text": "How are user authentication methods implemented?",
+          "weight": 1,
+          "options": [
+            {
+              "value": "1",
+              "text": "Single-factor authentication with weak controls"
+            },
+            {
+              "value": "2",
+              "text": "Passwords enforced with basic complexity rules"
+            },
+            {
+              "value": "3",
+              "text": "Strong password policies are defined and enforced"
+            },
+            {
+              "value": "4",
+              "text": "Multi-factor authentication for critical systems"
+            },
+            {
+              "value": "5",
+              "text": "Passwordless or phishing-resistant authentication"
+            }
+          ]
+        },
+        {
+          "id": "AUTH-Q2",
+          "text": "How consistently is MFA applied across applications?",
+          "weight": 1,
+          "options": [
+            {
+              "value": "1",
+              "text": "MFA is rarely or never used"
+            },
+            {
+              "value": "2",
+              "text": "MFA is used for a few high-risk applications"
+            },
+            {
+              "value": "3",
+              "text": "MFA is applied to most business-critical systems"
+            },
+            {
+              "value": "4",
+              "text": "MFA is enforced consistently across the enterprise"
+            },
+            {
+              "value": "5",
+              "text": "MFA coverage is comprehensive and risk-adaptive"
+            }
+          ]
+        },
+        {
+          "id": "AUTH-Q3",
+          "text": "How are authentication policies defined and managed?",
+          "weight": 1,
+          "options": [
+            {
+              "value": "1",
+              "text": "Policies are informal or undocumented"
+            },
+            {
+              "value": "2",
+              "text": "Basic policies exist but are inconsistently applied"
+            },
+            {
+              "value": "3",
+              "text": "Policies are documented and standardized"
+            },
+            {
+              "value": "4",
+              "text": "Policies are enforced and periodically reviewed"
+            },
+            {
+              "value": "5",
+              "text": "Policies are adaptive and continuously optimized"
+            }
+          ]
+        },
+        {
+          "id": "AUTH-Q4",
+          "text": "How is authentication risk evaluated?",
+          "weight": 1,
+          "options": [
+            {
+              "value": "1",
+              "text": "No risk evaluation is performed"
+            },
+            {
+              "value": "2",
+              "text": "Risk is evaluated manually or case-by-case"
+            },
+            {
+              "value": "3",
+              "text": "Basic risk indicators are considered"
+            },
+            {
+              "value": "4",
+              "text": "Contextual and behavioral signals are used"
+            },
+            {
+              "value": "5",
+              "text": "AI-driven, continuous risk-based authentication"
+            }
+          ]
+        },
+        {
+          "id": "AUTH-Q5",
+          "text": "How are privileged or high-risk users authenticated?",
+          "weight": 1,
+          "options": [
+            {
+              "value": "1",
+              "text": "Same authentication as regular users"
+            },
+            {
+              "value": "2",
+              "text": "Some additional controls for privileged users"
+            },
+            {
+              "value": "3",
+              "text": "Stronger authentication for privileged access"
+            },
+            {
+              "value": "4",
+              "text": "MFA is mandatory for all privileged access"
+            },
+            {
+              "value": "5",
+              "text": "Phishing-resistant MFA with session monitoring"
+            }
+          ]
+        },
+        {
+          "id": "AUTH-Q6",
+          "text": "How are authentication credentials protected?",
+          "weight": 1,
+          "options": [
+            {
+              "value": "1",
+              "text": "Credentials are weakly protected"
+            },
+            {
+              "value": "2",
+              "text": "Basic encryption and storage controls exist"
+            },
+            {
+              "value": "3",
+              "text": "Industry-standard credential protection is used"
+            },
+            {
+              "value": "4",
+              "text": "Advanced protections and monitoring are in place"
+            },
+            {
+              "value": "5",
+              "text": "Credential compromise prevention and detection"
+            }
+          ]
+        },
+        {
+          "id": "AUTH-Q7",
+          "text": "How is authentication monitored and logged?",
+          "weight": 1,
+          "options": [
+            {
+              "value": "1",
+              "text": "Authentication events are not logged"
+            },
+            {
+              "value": "2",
+              "text": "Limited logging with minimal review"
+            },
+            {
+              "value": "3",
+              "text": "Authentication logs are collected centrally"
+            },
+            {
+              "value": "4",
+              "text": "Logs are actively monitored and analyzed"
+            },
+            {
+              "value": "5",
+              "text": "Real-time detection of authentication anomalies"
+            }
+          ]
+        },
+        {
+          "id": "AUTH-Q8",
+          "text": "How are MFA exceptions managed?",
+          "weight": 1,
+          "options": [
+            {
+              "value": "1",
+              "text": "Exceptions are unmanaged"
+            },
+            {
+              "value": "2",
+              "text": "Exceptions are approved informally"
+            },
+            {
+              "value": "3",
+              "text": "Exceptions are documented and reviewed"
+            },
+            {
+              "value": "4",
+              "text": "Exceptions are time-bound and tracked"
+            },
+            {
+              "value": "5",
+              "text": "Exceptions are risk-scored and minimized"
+            }
+          ]
+        },
+        {
+          "id": "AUTH-Q9",
+          "text": "How is authentication aligned with regulatory requirements?",
+          "weight": 1,
+          "options": [
+            {
+              "value": "1",
+              "text": "No formal regulatory alignment"
+            },
+            {
+              "value": "2",
+              "text": "Partial alignment for select systems"
+            },
+            {
+              "value": "3",
+              "text": "Authentication meets regulatory requirements"
+            },
+            {
+              "value": "4",
+              "text": "Controls exceed minimum compliance standards"
+            },
+            {
+              "value": "5",
+              "text": "Proactive compliance and continuous assurance"
+            }
+          ]
+        },
+        {
+          "id": "AUTH-Q10",
+          "text": "How is authentication continuously improved?",
+          "weight": 1,
+          "options": [
+            {
+              "value": "1",
+              "text": "No improvement process exists"
+            },
+            {
+              "value": "2",
+              "text": "Improvements are reactive"
+            },
+            {
+              "value": "3",
+              "text": "Periodic reviews drive improvements"
+            },
+            {
+              "value": "4",
+              "text": "Metrics guide optimization efforts"
+            },
+            {
+              "value": "5",
+              "text": "Continuous, AI-driven authentication optimization"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PAM",
+      "name": "Privileged Access Management (PAM)",
+      "description": "This domain assesses how privileged accounts and elevated access are controlled, monitored, and governed. It focuses on minimizing standing privileges, enforcing strong controls, and reducing the risk of misuse or compromise.",
+      "questions": [
+        {
+          "id": "PAM-Q1",
+          "text": "How are privileged accounts identified?",
+          "weight": 1,
+          "options": [
+            {
+              "value": "1",
+              "text": "Privileged accounts are not fully identified"
+            },
+            {
+              "value": "2",
+              "text": "Some privileged accounts are identified manually"
+            },
+            {
+              "value": "3",
+              "text": "Privileged accounts are centrally identified"
+            },
+            {
+              "value": "4",
+              "text": "Continuous discovery of privileged accounts"
+            },
+            {
+              "value": "5",
+              "text": "Automated discovery with risk classification"
+            }
+          ]
+        },
+        {
+          "id": "PAM-Q2",
+          "text": "How is privileged access granted?",
+          "weight": 1,
+          "options": [
+            {
+              "value": "1",
+              "text": "Standing privileged access is common"
+            },
+            {
+              "value": "2",
+              "text": "Manual approvals for privileged access"
+            },
+            {
+              "value": "3",
+              "text": "Controlled approval workflows exist"
+            },
+            {
+              "value": "4",
+              "text": "Just-in-time privileged access is enforced"
+            },
+            {
+              "value": "5",
+              "text": "Dynamic, risk-based privilege elevation"
+            }
+          ]
+        },
+        {
+          "id": "PAM-Q3",
+          "text": "How are privileged credentials managed?",
+          "weight": 1,
+          "options": [
+            {
+              "value": "1",
+              "text": "Passwords are shared or unmanaged"
+            },
+            {
+              "value": "2",
+              "text": "Passwords are changed manually"
+            },
+            {
+              "value": "3",
+              "text": "Credentials are vaulted and rotated"
+            },
+            {
+              "value": "4",
+              "text": "Automated rotation and access control"
+            },
+            {
+              "value": "5",
+              "text": "Credential-less or ephemeral access"
+            }
+          ]
+        },
+        {
+          "id": "PAM-Q4",
+          "text": "How is privileged session activity monitored?",
+          "weight": 1,
+          "options": [
+            {
+              "value": "1",
+              "text": "No session monitoring exists"
+            },
+            {
+              "value": "2",
+              "text": "Limited logging of privileged activity"
+            },
+            {
+              "value": "3",
+              "text": "Sessions are recorded and reviewed"
+            },
+            {
+              "value": "4",
+              "text": "Real-time monitoring and alerting"
+            },
+            {
+              "value": "5",
+              "text": "AI-driven behavioral session analytics"
+            }
+          ]
+        },
+        {
+          "id": "PAM-Q5",
+          "text": "How is privileged access reviewed?",
+          "weight": 1,
+          "options": [
+            {
+              "value": "1",
+              "text": "No formal reviews are conducted"
+            },
+            {
+              "value": "2",
+              "text": "Reviews are manual and infrequent"
+            },
+            {
+              "value": "3",
+              "text": "Periodic access reviews are defined"
+            },
+            {
+              "value": "4",
+              "text": "Reviews are enforced and audited"
+            },
+            {
+              "value": "5",
+              "text": "Continuous privileged access certification"
+            }
+          ]
+        },
+        {
+          "id": "PAM-Q6",
+          "text": "How are emergency or break-glass accounts managed?",
+          "weight": 1,
+          "options": [
+            {
+              "value": "1",
+              "text": "Break-glass access is uncontrolled"
+            },
+            {
+              "value": "2",
+              "text": "Basic controls exist for emergencies"
+            },
+            {
+              "value": "3",
+              "text": "Emergency access is documented"
+            },
+            {
+              "value": "4",
+              "text": "Emergency access is monitored and reviewed"
+            },
+            {
+              "value": "5",
+              "text": "Risk-controlled and auditable emergency access"
+            }
+          ]
+        },
+        {
+          "id": "PAM-Q7",
+          "text": "How is PAM integrated with IAM and IGA?",
+          "weight": 1,
+          "options": [
+            {
+              "value": "1",
+              "text": "No integration exists"
+            },
+            {
+              "value": "2",
+              "text": "Limited or manual integration"
+            },
+            {
+              "value": "3",
+              "text": "Basic integration with IAM systems"
+            },
+            {
+              "value": "4",
+              "text": "Strong integration with identity governance"
+            },
+            {
+              "value": "5",
+              "text": "Unified identity and privileged access governance"
+            }
+          ]
+        },
+        {
+          "id": "PAM-Q8",
+          "text": "How is PAM aligned with compliance requirements?",
+          "weight": 1,
+          "options": [
+            {
+              "value": "1",
+              "text": "No formal compliance alignment"
+            },
+            {
+              "value": "2",
+              "text": "Partial compliance for select systems"
+            },
+            {
+              "value": "3",
+              "text": "PAM meets compliance requirements"
+            },
+            {
+              "value": "4",
+              "text": "PAM controls exceed compliance standards"
+            },
+            {
+              "value": "5",
+              "text": "Continuous compliance and audit readiness"
+            }
+          ]
+        },
+        {
+          "id": "PAM-Q9",
+          "text": "How are privileged access policies maintained?",
+          "weight": 1,
+          "options": [
+            {
+              "value": "1",
+              "text": "Policies are undocumented"
+            },
+            {
+              "value": "2",
+              "text": "Basic policies exist"
+            },
+            {
+              "value": "3",
+              "text": "Policies are documented and reviewed"
+            },
+            {
+              "value": "4",
+              "text": "Policies are enforced consistently"
+            },
+            {
+              "value": "5",
+              "text": "Policies are optimized and risk-driven"
+            }
+          ]
+        },
+        {
+          "id": "PAM-Q10",
+          "text": "How is PAM continuously improved?",
+          "weight": 1,
+          "options": [
+            {
+              "value": "1",
+              "text": "No improvement process exists"
+            },
+            {
+              "value": "2",
+              "text": "Improvements are reactive"
+            },
+            {
+              "value": "3",
+              "text": "Periodic reviews drive improvements"
+            },
+            {
+              "value": "4",
+              "text": "Metrics guide PAM optimization"
+            },
+            {
+              "value": "5",
+              "text": "AI-driven, continuous PAM optimization"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "LOG",
+      "name": "Monitoring & Logging",
+      "description": "This domain assesses how IAM-related activities are logged, monitored, and analyzed to detect security incidents, support audits, and improve overall identity security posture.",
+      "questions": [
+        {
+          "id": "LOG-Q1",
+          "text": "How are IAM activities logged?",
+          "weight": 1,
+          "options": [
+            {
+              "value": "1",
+              "text": "IAM activities are not logged"
+            },
+            {
+              "value": "2",
+              "text": "Limited logging for critical systems"
+            },
+            {
+              "value": "3",
+              "text": "IAM logs are collected centrally"
+            },
+            {
+              "value": "4",
+              "text": "Logs are comprehensive and standardized"
+            },
+            {
+              "value": "5",
+              "text": "High-fidelity, real-time IAM logging"
+            }
+          ]
+        },
+        {
+          "id": "LOG-Q2",
+          "text": "How are logs monitored and reviewed?",
+          "weight": 1,
+          "options": [
+            {
+              "value": "1",
+              "text": "Logs are rarely or never reviewed"
+            },
+            {
+              "value": "2",
+              "text": "Manual reviews occur sporadically"
+            },
+            {
+              "value": "3",
+              "text": "Regular log reviews are defined"
+            },
+            {
+              "value": "4",
+              "text": "Active monitoring with alerts"
+            },
+            {
+              "value": "5",
+              "text": "AI-driven continuous log analysis"
+            }
+          ]
+        },
+        {
+          "id": "LOG-Q3",
+          "text": "How are IAM events correlated across systems?",
+          "weight": 1,
+          "options": [
+            {
+              "value": "1",
+              "text": "No event correlation exists"
+            },
+            {
+              "value": "2",
+              "text": "Limited correlation for select systems"
+            },
+            {
+              "value": "3",
+              "text": "Events are correlated centrally"
+            },
+            {
+              "value": "4",
+              "text": "Cross-system correlation is enforced"
+            },
+            {
+              "value": "5",
+              "text": "Advanced correlation with behavioral analytics"
+            }
+          ]
+        },
+        {
+          "id": "LOG-Q4",
+          "text": "How are IAM-related incidents detected?",
+          "weight": 1,
+          "options": [
+            {
+              "value": "1",
+              "text": "Incidents are detected manually"
+            },
+            {
+              "value": "2",
+              "text": "Basic alerting exists"
+            },
+            {
+              "value": "3",
+              "text": "Defined detection use cases exist"
+            },
+            {
+              "value": "4",
+              "text": "Proactive detection and alerting"
+            },
+            {
+              "value": "5",
+              "text": "Predictive, AI-driven incident detection"
+            }
+          ]
+        },
+        {
+          "id": "LOG-Q5",
+          "text": "How are IAM logs retained and protected?",
+          "weight": 1,
+          "options": [
+            {
+              "value": "1",
+              "text": "Logs are not retained or protected"
+            },
+            {
+              "value": "2",
+              "text": "Basic retention policies exist"
+            },
+            {
+              "value": "3",
+              "text": "Retention policies are defined and enforced"
+            },
+            {
+              "value": "4",
+              "text": "Logs are protected against tampering"
+            },
+            {
+              "value": "5",
+              "text": "Immutable, compliant log retention"
+            }
+          ]
+        },
+        {
+          "id": "LOG-Q6",
+          "text": "How is logging aligned with compliance requirements?",
+          "weight": 1,
+          "options": [
+            {
+              "value": "1",
+              "text": "No compliance alignment"
+            },
+            {
+              "value": "2",
+              "text": "Partial compliance support"
+            },
+            {
+              "value": "3",
+              "text": "Logging meets compliance requirements"
+            },
+            {
+              "value": "4",
+              "text": "Logging exceeds compliance standards"
+            },
+            {
+              "value": "5",
+              "text": "Continuous compliance and audit readiness"
+            }
+          ]
+        },
+        {
+          "id": "LOG-Q7",
+          "text": "How are IAM logs integrated with SIEM or analytics platforms?",
+          "weight": 1,
+          "options": [
+            {
+              "value": "1",
+              "text": "No SIEM integration"
+            },
+            {
+              "value": "2",
+              "text": "Limited or manual integration"
+            },
+            {
+              "value": "3",
+              "text": "Standard SIEM integration exists"
+            },
+            {
+              "value": "4",
+              "text": "Advanced analytics and dashboards"
+            },
+            {
+              "value": "5",
+              "text": "AI-driven security analytics and insights"
+            }
+          ]
+        },
+        {
+          "id": "LOG-Q8",
+          "text": "How are false positives and noise managed?",
+          "weight": 1,
+          "options": [
+            {
+              "value": "1",
+              "text": "No tuning or optimization"
+            },
+            {
+              "value": "2",
+              "text": "Manual tuning occurs occasionally"
+            },
+            {
+              "value": "3",
+              "text": "Defined tuning and review processes"
+            },
+            {
+              "value": "4",
+              "text": "Continuous optimization of alerts"
+            },
+            {
+              "value": "5",
+              "text": "Self-learning noise reduction"
+            }
+          ]
+        },
+        {
+          "id": "LOG-Q9",
+          "text": "How is log data used to improve IAM controls?",
+          "weight": 1,
+          "options": [
+            {
+              "value": "1",
+              "text": "Logs are not used for improvement"
+            },
+            {
+              "value": "2",
+              "text": "Logs are reviewed after incidents"
+            },
+            {
+              "value": "3",
+              "text": "Logs inform periodic improvements"
+            },
+            {
+              "value": "4",
+              "text": "Logs drive proactive control enhancement"
+            },
+            {
+              "value": "5",
+              "text": "Continuous, intelligence-driven improvement"
+            }
+          ]
+        },
+        {
+          "id": "LOG-Q10",
+          "text": "How is monitoring and logging continuously improved?",
+          "weight": 1,
+          "options": [
+            {
+              "value": "1",
+              "text": "No improvement process exists"
+            },
+            {
+              "value": "2",
+              "text": "Improvements are reactive"
+            },
+            {
+              "value": "3",
+              "text": "Periodic reviews drive improvements"
+            },
+            {
+              "value": "4",
+              "text": "Metrics guide optimization"
+            },
+            {
+              "value": "5",
+              "text": "AI-driven, continuous optimization"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
