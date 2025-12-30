@@ -404,87 +404,19 @@ from onboarding (Joiner) through role changes (Mover) to termination (Leaver).
 </tr>
 
 <!-- Q1 -->
-<tr>
-  <td colspan="2"
-      class="question-block"
-      data-question-id="ILM-Q1"
-      data-weight="1">
-
-    <!-- Line 1: Question -->
-    <div class="question-text">
-      <strong>How are new user identities created (Joiner process)?</strong>
-    </div>
-
-    <!-- Line 2: Radio Tiles (Levels 1–3) -->
-    <div class="tile-row">
-      <label class="tile-radio">
-        <input type="radio" name="ILM-Q1" value="1">
-        <span>Manual and inconsistent account creation</span>
-      </label>
-
-      <label class="tile-radio">
-        <input type="radio" name="ILM-Q1" value="2">
-        <span>Some systems have defined onboarding steps</span>
-      </label>
-
-      <label class="tile-radio">
-        <input type="radio" name="ILM-Q1" value="3">
-        <span>Standard onboarding process exists and is documented</span>
-      </label>
-    </div>
-
-    <!-- Line 3: Radio Tiles (Levels 4–5) -->
-    <div class="tile-row">
-      <label class="tile-radio">
-        <input type="radio" name="ILM-Q1" value="4">
-        <span>Automated onboarding integrated with HR systems</span>
-      </label>
-
-      <label class="tile-radio">
-        <input type="radio" name="ILM-Q1" value="5">
-        <span>Fully automated, policy-driven onboarding with validation</span>
-      </label>
-    </div>
-
-    <!-- Line 4: Additional Context -->
-    <div class="input-row">
-      <label><strong>Additional Clarification (Optional)</strong></label>
-      <textarea rows="3"
-                class="additional-context"
-                data-question-id="ILM-Q1"
-                placeholder="Provide clarifications, scope, or known gaps..."></textarea>
-    </div>
-
-    <!-- Line 5: Control ID + Control Details (Same Line) -->
-    <div class="input-row inline-row">
-      <input type="text"
-             class="control-id"
-             data-question-id="ILM-Q1"
-             placeholder="Control ID (e.g., CTRL-001)">
-
-      <textarea rows="2"
-                class="control-description"
-                data-question-id="ILM-Q1"
-                placeholder="Control description"></textarea>
-    </div>
-
-    <!-- Line 6: Metrics ID + Metrics Details (Same Line) -->
-    <div class="input-row inline-row">
-      <input type="text"
-             class="metrics-id"
-             data-question-id="ILM-Q1"
-             placeholder="Metrics ID (e.g., MET-01)">
-
-      <textarea rows="2"
-                class="metrics-description"
-                data-question-id="ILM-Q1"
-                placeholder="Metrics details"></textarea>
-    </div>
-
-  </td>
-</tr>
-
-	
+<tr> 
+	<td>How are new user identities created (Joiner process)?</td> 
+	<td> 
+		<select class="ilm" data-weight="1"> 
+			<option value="">-- Select --</option> 
+			<option value="1">Accounts are created manually and inconsistently</option> 
+			<option value="2">Some systems have defined onboarding steps</option> 
+			<option value="3">Standard onboarding process exists and is documented</option> 
+			<option value="4">Automated onboarding integrated with HR systems</option> 
+			<option value="5">Fully automated, policy-driven onboarding with validation</option> 
+		</select> 
+	</td> 
+</tr>	
 <!-- Q2 -->
 <tr>
 <td>How are role or responsibility changes handled (Mover process)?</td>
