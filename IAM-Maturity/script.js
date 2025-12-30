@@ -328,11 +328,11 @@ function generateYAMLForQuestion(questionId) {
     
     // Get control ID and description
     const controlId = questionBlock.querySelector('.control-id').value || 'Not provided';
-    const controlDescription = questionBlock.querySelector('.control-description').value || 'Monthly control is established to check password rotation and its strength. Splunk monitoring is in place while MFA implementation is in progress.';
+    const controlDescription = questionBlock.querySelector('.control-description').value || 'No additional context provided';
     
     // Get metrics ID and description
     const metricsId = questionBlock.querySelector('.metrics-id').value || 'Not provided';
-    const metricsDescription = questionBlock.querySelector('.metrics-description').value || 'Security metrics on strong password policy are green for the last 6 months.';
+    const metricsDescription = questionBlock.querySelector('.metrics-description').value || 'No additional context provided';
     
     // Get organizational context from the form
     const industry = document.getElementById('industry') ? document.getElementById('industry').value : 'Banking';
