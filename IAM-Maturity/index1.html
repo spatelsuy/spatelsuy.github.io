@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>IAM Maturity Assessment</title>
+<style>
+    /* ... (keep all existing CSS styles as they are) ... */
+
+    body {
+      font-family: 'segoe ui', Arial, sans-serif;
+      font-size: 10pt;
+      line-height: 1.7;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+      color: #222;
+    }
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+  h1, h2, h3 {
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #1f3b6f;
+  }
+
+    .container {
+      width: 60%;
+      margin: 30px auto; /* Centers it horizontally */
+      background-color: #ffffff;
+      padding: 30px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      border: 1px solid #ddd;
+    }
+
+  p {
+    margin: 12px 0;
+  }
+
+  /* Section Containers */
+  .section {
+    margin: 32px 0;
+    padding: 24px;
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+
+  /* Styled Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+  }
+
+  th, td {
+    padding: 12px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  th {
+    font-weight: 600;
+    background-color: #f7f9fc;
+  }
+
+  /* Buttons */
+  button {
+    background: #1f3b6f;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    margin-top: 12px;
+  }
+
+  button:hover {
+    background: #1252a9;
+    transform: translateY(-2px);
+  }
+
+  /* Form controls */
+  select {
+    padding: 10px;
+    border: 1px solid #c1c1c1;
+    border-radius: 8px;
+    width: 100%;
+    margin-top: 6px;
+    margin-bottom: 12px;
+    font-size: 15px;
+  }
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: help;
+  color: #1abc9c;
+  font-weight: bold;
+  margin-left: 6px;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 320px;
+  background-color: #2c3e50;
+  color: #fff;
+  text-align: left;
+  padding: 10px;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 0.9em;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}	
+@media (max-width: 600px) {
+  .container {
+    margin: 10px 15px 0 15px;  /* top, right, bottom, left */
+    padding: 0;
+    width: auto;
+    max-width: 100%;
+    background: none;
+    box-shadow: none;
+    border: none;
+    box-sizing: border-box;
+  }
+
+  header {
+    padding: 15px;
+    text-align: center;
+  }
+  .table-responsive {
+	  overflow-x: auto;
+  }
+}
+
+
+/*CSS for QUESTIONS*/
+<style>
+.question-block {
+  padding: 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.question-text {
+  margin-bottom: 10px;
+}
+
+.tile-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+/* Hide native radio */
+.tile-radio input[type="radio"] {
+  display: none;
+}
+
+/* Tile appearance */
+.tile-radio {
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 12px;
+  cursor: pointer;
+  background: #f9fafb;
+  flex: 1;
+  min-width: 260px;
+  transition: all 0.2s ease;
+}
+
+/* Selected state */
+.tile-radio input[type="radio"]:checked + span {
+  font-weight: 600;
+}
+
+.tile-radio:has(input[type="radio"]:checked) {
+  border-color: #4f46e5;
+  background: #eef2ff;
+}
+
+/* Hover */
+.tile-radio:hover {
+  border-color: #6366f1;
+  background: #f0f4ff;
+}
+
+/* Inputs */
+.input-row {
+  margin-top: 12px;
+}
+
+.inline-row {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.inline-row input {
+  width: 160px;
+}
+
+.inline-row textarea {
+  flex: 1;
+}
+
+/*new CSS for JSON*/
+  
+    
+    .question-block {
+      padding: 16px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .question-text {
+      margin-bottom: 10px;
+    }
+
+    .tile-row {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+
+    /* Hide native radio */
+    .tile-radio input[type="radio"] {
+      display: none;
+    }
+
+    /* Tile appearance */
+    .tile-radio {
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      padding: 12px;
+      cursor: pointer;
+      background: #f9fafb;
+      flex: 1;
+      min-width: 260px;
+      transition: all 0.2s ease;
+    }
+
+    /* Selected state */
+    .tile-radio input[type="radio"]:checked + span {
+      font-weight: 600;
+    }
+
+    .tile-radio:has(input[type="radio"]:checked) {
+      border-color: #4f46e5;
+      background: #eef2ff;
+    }
+
+    /* Hover */
+    .tile-radio:hover {
+      border-color: #6366f1;
+      background: #f0f4ff;
+    }
+
+    /* Inputs */
+    .input-row {
+      margin-top: 12px;
+    }
+
+    .inline-row {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .inline-row input {
+      width: 160px;
+    }
+
+    .inline-row textarea {
+      flex: 1;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+<h2>IAM Maturity Assessment</h2>
+
+<!-- ... (keep all the explanatory sections as they are) ... -->
+
+<div class="definition">
+<h3>Domains Considered in IAM Maturity</h3>
+<ul>
+  <li>Identity Lifecycle Management (Joiner-Mover-Leaver)</li>
+  <li>Access Governance (IGA, approvals, access reviews)</li>
+  <li>Authentication & MFA</li>
+  <li>Privileged Access Management (PAM)</li>
+  <li>Monitoring & Logging</li>
+</ul>
+</div>
+
+<div class="definition">
+<h3>Maturity Score Measurement</h3>
+<p>Each question is scored 1–5. Definitions:</p>
+<table>
+<tr><th style="width:35%">Score</th><th>Meaning</th></tr>
+<tr><td>1</td><td>Ad-hoc, manual, inconsistent</td></tr>
+<tr><td>2</td><td>Partially implemented, limited consistency</td></tr>
+<tr><td>3</td><td>Defined, documented, repeatable</td></tr>
+<tr><td>4</td><td>Managed, measured, enforced</td></tr>
+<tr><td>5</td><td>Optimized, automated, continuously improved</td></tr>
+</table>
+</div>
+
+<!-- =========================================== -->
+<!-- DYNAMIC QUESTIONS WILL BE INSERTED HERE -->
+<!-- =========================================== -->
+<div id="questions-container">
+  <!-- JavaScript will populate this section -->
+</div>
+
+<h3>Organizational Context</h3>
+<p>
+This information helps the assessment engine evaluate your IAM maturity relative
+to your industry, regulatory exposure, and risk posture.
+</p>
+
+<!-- ... (keep the rest of the HTML as is, including Organizational Context) ... -->
+
+<br>
+<button onclick="calculate()">Calculate Maturity</button>
+
+<div class="result" id="output"></div>
+</div>
+
+<!-- Load the JavaScript -->
+<script src="script.js"></script>
+</body>
+</html>
