@@ -288,6 +288,136 @@
     .inline-row textarea {
       flex: 1;
     }
+
+
+/* YAML-specific styles */
+.yaml-button-row {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px dashed #ccc;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.generate-yaml-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.generate-yaml-btn:hover {
+    background-color: #218838;
+}
+
+.copy-status {
+    font-size: 12px;
+    color: #666;
+    margin-left: 10px;
+}
+
+.yaml-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.yaml-modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 900px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.yaml-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.yaml-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.close-yaml {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #999;
+}
+
+.close-yaml:hover {
+    color: #333;
+}
+
+.yaml-actions {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.copy-yaml-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.copy-yaml-btn:hover {
+    background-color: #0056b3;
+}
+
+.yaml-content {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    white-space: pre-wrap;
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid #dee2e6;
+    line-height: 1.4;
+}
+
+.close-yaml-btn {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.close-yaml-btn:hover {
+    background-color: #545b62;
+}
+
+	
+	
 </style>
 </head>
 <body>
