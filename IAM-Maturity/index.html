@@ -144,6 +144,79 @@
 	  overflow-x: auto;
   }
 }
+
+
+/*CSS for QUESTIONS*/
+<style>
+.question-block {
+  padding: 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.question-text {
+  margin-bottom: 10px;
+}
+
+.tile-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+/* Hide native radio */
+.tile-radio input[type="radio"] {
+  display: none;
+}
+
+/* Tile appearance */
+.tile-radio {
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 12px;
+  cursor: pointer;
+  background: #f9fafb;
+  flex: 1;
+  min-width: 260px;
+  transition: all 0.2s ease;
+}
+
+/* Selected state */
+.tile-radio input[type="radio"]:checked + span {
+  font-weight: 600;
+}
+
+.tile-radio:has(input[type="radio"]:checked) {
+  border-color: #4f46e5;
+  background: #eef2ff;
+}
+
+/* Hover */
+.tile-radio:hover {
+  border-color: #6366f1;
+  background: #f0f4ff;
+}
+
+/* Inputs */
+.input-row {
+  margin-top: 12px;
+}
+
+.inline-row {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.inline-row input {
+  width: 160px;
+}
+
+.inline-row textarea {
+  flex: 1;
+}
+</style>
+
 	
 </style>
 </head>
@@ -332,7 +405,10 @@ from onboarding (Joiner) through role changes (Mover) to termination (Leaver).
 
 <!-- Q1 -->
 <tr>
-  <td colspan="2" class="question-block" data-question-id="ILM-Q1" data-weight="1">
+  <td colspan="2"
+      class="question-block"
+      data-question-id="ILM-Q1"
+      data-weight="1">
 
     <!-- Line 1: Question -->
     <div class="question-text">
@@ -341,85 +417,74 @@ from onboarding (Joiner) through role changes (Mover) to termination (Leaver).
 
     <!-- Line 2: Radio Tiles (Levels 1–3) -->
     <div class="tile-row">
-      <label class="tile">
-        <input type="radio" name="ILM-Q1" value="1"
-               class="maturity-selection" data-question-id="ILM-Q1">
+      <label class="tile-radio">
+        <input type="radio" name="ILM-Q1" value="1">
         <span>Manual and inconsistent account creation</span>
       </label>
 
-      <label class="tile">
-        <input type="radio" name="ILM-Q1" value="2"
-               class="maturity-selection" data-question-id="ILM-Q1">
+      <label class="tile-radio">
+        <input type="radio" name="ILM-Q1" value="2">
         <span>Some systems have defined onboarding steps</span>
       </label>
 
-      <label class="tile">
-        <input type="radio" name="ILM-Q1" value="3"
-               class="maturity-selection" data-question-id="ILM-Q1">
+      <label class="tile-radio">
+        <input type="radio" name="ILM-Q1" value="3">
         <span>Standard onboarding process exists and is documented</span>
       </label>
     </div>
 
     <!-- Line 3: Radio Tiles (Levels 4–5) -->
     <div class="tile-row">
-      <label class="tile">
-        <input type="radio" name="ILM-Q1" value="4"
-               class="maturity-selection" data-question-id="ILM-Q1">
+      <label class="tile-radio">
+        <input type="radio" name="ILM-Q1" value="4">
         <span>Automated onboarding integrated with HR systems</span>
       </label>
 
-      <label class="tile">
-        <input type="radio" name="ILM-Q1" value="5"
-               class="maturity-selection" data-question-id="ILM-Q1">
+      <label class="tile-radio">
+        <input type="radio" name="ILM-Q1" value="5">
         <span>Fully automated, policy-driven onboarding with validation</span>
       </label>
     </div>
 
-    <!-- Line 4: Additional Clarification -->
+    <!-- Line 4: Additional Context -->
     <div class="input-row">
-      <label><strong>Additional Clarification (Optional)</strong></label><br>
-      <textarea rows="3" cols="80"
+      <label><strong>Additional Clarification (Optional)</strong></label>
+      <textarea rows="3"
                 class="additional-context"
                 data-question-id="ILM-Q1"
-                placeholder="Provide any clarifications, constraints, or exceptions..."></textarea>
+                placeholder="Provide clarifications, scope, or known gaps..."></textarea>
     </div>
 
-    <!-- Line 5: Control ID + Control Details -->
-    <div class="input-row">
-      <label><strong>Control ID</strong></label>
+    <!-- Line 5: Control ID + Control Details (Same Line) -->
+    <div class="input-row inline-row">
       <input type="text"
              class="control-id"
              data-question-id="ILM-Q1"
-             placeholder="CTRL-XXX"
-             style="width:120px; margin-right:10px;">
+             placeholder="Control ID (e.g., CTRL-001)">
 
-      <br>
-      <textarea rows="2" cols="80"
+      <textarea rows="2"
                 class="control-description"
                 data-question-id="ILM-Q1"
-                placeholder="Describe the control mapped to this question"></textarea>
+                placeholder="Control description"></textarea>
     </div>
 
-    <!-- Line 6: Metrics ID + Metrics Details -->
-    <div class="input-row">
-      <label><strong>Metrics ID</strong></label>
+    <!-- Line 6: Metrics ID + Metrics Details (Same Line) -->
+    <div class="input-row inline-row">
       <input type="text"
              class="metrics-id"
              data-question-id="ILM-Q1"
-             placeholder="MET-XXX"
-             style="width:120px; margin-right:10px;">
+             placeholder="Metrics ID (e.g., MET-01)">
 
-      <br>
-      <textarea rows="2" cols="80"
+      <textarea rows="2"
                 class="metrics-description"
                 data-question-id="ILM-Q1"
-                placeholder="Describe metrics used to measure effectiveness"></textarea>
+                placeholder="Metrics details"></textarea>
     </div>
 
   </td>
 </tr>
 
-
+	
 <!-- Q2 -->
 <tr>
 <td>How are role or responsibility changes handled (Mover process)?</td>
