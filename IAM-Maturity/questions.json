@@ -1,0 +1,333 @@
+{
+  "metadata": {
+    "title": "Banking Industry IAM Maturity Self-Assessment v2.1",
+    "version": "2.1",
+    "frameworkAlignment": ["FFIEC", "NIST CSF", "GLBA", "SOX", "PCI-DSS"],
+    "assessmentGuidance": "For each question, select the option that BEST describes your CURRENT state. Consider both technical implementation and governance processes. Look for specific evidence points mentioned in options to make accurate selections."
+  },
+  "domains": [
+    {
+      "id": "GOV",
+      "name": "IAM Strategy & Governance",
+      "description": "Strategic alignment, policy framework, risk integration, and organizational accountability for IAM.",
+      "questions": [
+        {
+          "id": "GOV-Q1",
+          "text": "How is the IAM program governed and aligned with enterprise strategy?",
+          "weight": 2,
+          "options": [
+            {
+              "value": "1",
+              "text": "Ad-hoc/Initial",
+              "description": "No formal IAM program. Activities are reactive, project-based, and driven by individual initiatives. No dedicated budget or resources. No steering committee. Evidence: No program charter, no roadmap, IAM work is buried in other IT projects."
+            },
+            {
+              "value": "2",
+              "text": "Defined",
+              "description": "IAM is recognized as a security function with some governance. A basic policy exists but is not widely adopted. Governance is informal with occasional meetings. Limited business engagement. Evidence: Basic IAM policy document, ad-hoc meetings with IT security team, some projects follow IAM standards."
+            },
+            {
+              "value": "3",
+              "text": "Managed",
+              "description": "Formal IAM program with defined charter, annual roadmap, and dedicated resources. Regular steering committee meetings with IT and business representation. IAM is included in technology planning. Evidence: IAM program charter, annual roadmap document, steering committee minutes, defined roles (IAM Manager)."
+            },
+            {
+              "value": "4",
+              "text": "Measured/Integrated",
+              "description": "IAM is integrated into enterprise technology and business transformation initiatives. Regular reporting to IT Risk Committee or similar. Funding is tied to risk reduction metrics. Business units actively participate in role definition and access certification. Evidence: IAM metrics in risk committee decks, business sponsors for IAM projects, IAM requirements in SDLC, budget linked to risk initiatives."
+            },
+            {
+              "value": "5",
+              "text": "Optimized/Business Enabler",
+              "description": "IAM is a strategic business enabler. Board/audit committee awareness of IAM risk posture. IAM supports digital transformation, open banking, and M&A activities seamlessly. Continuous improvement based on metrics and threat intelligence. Evidence: IAM discussed in board risk reports, IAM capabilities enable new business products (e.g., open banking APIs), predictive metrics drive investment."
+            }
+          ]
+        },
+        {
+          "id": "GOV-Q2",
+          "text": "How are IAM policies and standards maintained and enforced?",
+          "weight": 2,
+          "options": [
+            {
+              "value": "1",
+              "text": "Ad-hoc/Initial",
+              "description": "Policies are informal, undocumented, or non-existent. Enforcement is inconsistent and relies on individual knowledge. Evidence: No central policy repository, teams follow their own procedures, auditors find policy gaps."
+            },
+            {
+              "value": "2",
+              "text": "Defined",
+              "description": "Basic IAM policies exist (e.g., password policy) but are outdated. Standards are not comprehensive. Enforcement is manual and periodic. Evidence: Password policy document from several years ago, occasional manual checks for compliance."
+            },
+            {
+              "value": "3",
+              "text": "Managed",
+              "description": "Comprehensive IAM policy suite approved by management. Policies cover major domains (access request, lifecycle, authentication). Standards are documented for key technologies. Annual review cycle. Evidence: IAM policy document signed by CISO, standards for AD, mainframe, etc., policy review calendar."
+            },
+            {
+              "value": "4",
+              "text": "Measured/Integrated",
+              "description": "Policies are mapped to regulatory requirements (FFIEC, GLBA). Technical controls automatically enforce standards (e.g., password complexity via AD). Exceptions are tracked and require formal approval. Evidence: Compliance mapping matrix, automated reports on policy compliance, exception tracking database."
+            },
+            {
+              "value": "5",
+              "text": "Optimized/Business Enabler",
+              "description": "Dynamic policy management. Changes are driven by threat intelligence, regulatory updates, and business needs. Automated compliance validation provides real-time posture. Policies are adaptive based on risk context. Evidence: Policy changes after threat intel briefings, automated compliance dashboards, risk-based policy adjustments."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ILM",
+      "name": "Identity Lifecycle Management",
+      "description": "Automated provisioning, deprovisioning, and management of employee and internal identities through integration with authoritative sources.",
+      "questions": [
+        {
+          "id": "ILM-Q1",
+          "text": "How is the Joiner-Mover-Leaver (JML) process automated and integrated with HR?",
+          "weight": 3,
+          "options": [
+            {
+              "value": "1",
+              "text": "Ad-hoc/Initial",
+              "description": "Fully manual processes using email, phone calls, and spreadsheets. No integration with HR system. IT creates accounts based on forms. High error rate and delays. Evidence: HR sends email to IT helpdesk, account creation tickets, manual AD user creation."
+            },
+            {
+              "value": "2",
+              "text": "Defined",
+              "description": "Semi-automated workflows for common systems (e.g., AD auto-provisioning). HR sends periodic (daily) feed file that requires manual reconciliation. Basic joiner process documented. Evidence: HR feed file process, some automated AD provisioning, documented onboarding checklist."
+            },
+            {
+              "value": "3",
+              "text": "Managed",
+              "description": "Automated provisioning/deprovisioning from HR system of record for core applications. Workflow includes manager approval for non-standard access. Leaver process disables account within 48 hours. Regular audits of orphaned accounts. Evidence: HR-driven workflow in IAM tool, automated account disablement, quarterly orphaned account reports."
+            },
+            {
+              "value": "4",
+              "text": "Measured/Integrated",
+              "description": "Fully automated JML for on-prem, cloud (SaaS, IaaS), and mainframe. HR is the single source of truth. Role-based provisioning assigns access based on job code/department. Self-service for mover requests (role changes). Metrics on process efficiency (time-to-provision). Evidence: Integration with Workday/SAP SuccessFactors, automated SaaS provisioning (e.g., Office 365), role-based access reports, SLA dashboards."
+            },
+            {
+              "value": "5",
+              "text": "Optimized/Business Enabler",
+              "description": "Identity orchestration across hybrid ecosystem. Predictive actions (pre-onboarding access setup). Zero-touch deprovisioning with immediate access removal. Integration with physical access and building security. Continuous optimization based on analytics. Evidence: Pre-hire access workflows, integration with badge systems, analytics on provisioning patterns driving role refinement."
+            }
+          ]
+        },
+        {
+          "id": "ILM-Q2",
+          "text": "How is access guaranteed to be removed for terminated employees (leavers)?",
+          "weight": 3,
+          "options": [
+            {
+              "value": "1",
+              "text": "Ad-hoc/Initial",
+              "description": "No formal process. Relies on HR or manager to notify IT. Accounts often remain active for weeks or months. Shared accounts never change. Evidence: Audits find active accounts for former employees, no deprovisioning tickets."
+            },
+            {
+              "value": "2",
+              "text": "Defined",
+              "description": "Manual process initiated by HR notification via email/ticket. IT disables account within 5-7 business days. Process documented but not always followed. SaaS applications often missed. Evidence: HR termination checklist includes 'notify IT', ticket system shows delays, manual deprovisioning steps."
+            },
+            {
+              "value": "3",
+              "text": "Managed",
+              "description": "Automated account disablement within 24-48 hours of HR termination status. Workflow includes full deprovisioning from major systems. Regular (quarterly) attestation confirms no active accounts for leavers. Evidence: Automated disablement from HR feed, deprovisioning workflow tickets, quarterly leaver certification reports."
+            },
+            {
+              "value": "4",
+              "text": "Measured/Integrated",
+              "description": "Immediate disablement (same day). Automated deprovisioning from ALL systems including SaaS, cloud, and privileged accounts. Break-glass process for exceptions. Integration with physical access revocation. Evidence: Real-time HR integration, automated SaaS deprovisioning, integration with PAM vault, door access logs reviewed."
+            },
+            {
+              "value": "5",
+              "text": "Optimized/Business Enabler",
+              "description": "Real-time deprovisioning with verification. Automated compliance reporting confirms zero active access for all leavers. Self-healing processes detect and remediate any orphaned access. Predictive analysis flags potential leavers. Evidence: Automated compliance attestations, anomaly detection for leaver access, integration with offboarding analytics."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PAM",
+      "name": "Privileged Access Management",
+      "description": "Control, monitoring, and governance of administrative and privileged accounts for systems, databases, and applications.",
+      "questions": [
+        {
+          "id": "PAM-Q1",
+          "text": "How are privileged credentials (passwords, keys, secrets) for administrative accounts secured?",
+          "weight": 3,
+          "options": [
+            {
+              "value": "1",
+              "text": "Ad-hoc/Initial",
+              "description": "Passwords are static, known to multiple admins, stored in spreadsheets or text files, and rarely changed. Root/administrator passwords are shared. Evidence: Shared password lists, no password rotation, auditors find default passwords."
+            },
+            {
+              "value": "2",
+              "text": "Defined",
+              "description": "Some shared accounts (e.g., local admin) are vaulted in a basic password manager. Password changes are manual and infrequent. No session recording. Evidence: Basic password vault for some accounts, manual change procedures, limited coverage."
+            },
+            {
+              "value": "3",
+              "text": "Managed",
+              "description": "All privileged accounts are discovered and vaulted in a PAM solution. Automated password rotation is implemented for critical systems (e.g., domain admin, root). Access requires checkout with approval. Evidence: PAM solution inventory, automated rotation policies, checkout logs for privileged access."
+            },
+            {
+              "value": "4",
+              "text": "Measured/Integrated",
+              "description": "Just-In-Time (JIT) access is required for privilege elevation. Sessions are fully isolated, recorded, and monitored. Secrets management for applications and service accounts. Integration with SIEM for alerting on suspicious activity. Evidence: JIT elevation workflows, session recording archives, application secrets vault, SIEM alerts for PAM events."
+            },
+            {
+              "value": "5",
+              "text": "Optimized/Business Enabler",
+              "description": "Privilege delegation without password exposure (e.g., ephemeral certificates). Zero-standing-privilege model. Behavioral analytics detect insider threats during sessions. Automated response to suspicious privileged activity. Evidence: Certificate-based authentication for admins, no standing privileges, UEBA alerts on privileged sessions, automated session termination for high-risk behavior."
+            }
+          ]
+        },
+        {
+          "id": "PAM-Q2",
+          "text": "How is privileged access to critical financial systems (core banking, SWIFT, trading platforms) controlled?",
+          "weight": 3,
+          "options": [
+            {
+              "value": "1",
+              "text": "Ad-hoc/Initial",
+              "description": "Direct administrator access is common with minimal controls. Administrators use shared accounts or personal accounts with excessive rights. Logging is minimal or non-existent. Evidence: Admins log directly to production servers, shared 'admin' accounts, minimal session logs."
+            },
+            {
+              "value": "2",
+              "text": "Defined",
+              "description": "Basic jump boxes or bastion hosts are used for access. Approval is required via ticket but often bypassed for urgency. Session logging is enabled but rarely reviewed. Evidence: Jump server exists, access tickets, basic logs retained."
+            },
+            {
+              "value": "3",
+              "text": "Managed",
+              "description": "Dedicated PAM solution manages access to critical systems. Access requires formal ticket and manager approval. Sessions are recorded and stored. Privileged access reviews are conducted quarterly. Evidence: PAM solution for critical systems, approval workflows in ServiceNow, session recording storage, quarterly review reports."
+            },
+            {
+              "value": "4",
+              "text": "Measured/Integrated",
+              "description": "Dual-control or 4-eyes principle required for sensitive actions (e.g., SWIFT payment release). Time-bound access with automatic revocation. Command filtering/restriction prevents dangerous commands. Integration with SIEM for real-time alerts on critical actions. Evidence: 4-eyes approval workflows, time-bound access grants, command control policies, SIEM alerts for SWIFT admin actions."
+            },
+            {
+              "value": "5",
+              "text": "Optimized/Business Enabler",
+              "description": "Fully automated, context-aware privilege elevation. Robotic Process Automation (RPA) handles routine administrative tasks, eliminating human privileged access to production. Machine identity management for all automated processes. Evidence: RPA bots performing patching/updates, context-based elevation (e.g., only during change window), comprehensive machine identity governance."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "IGA",
+      "name": "Access Governance & Segregation of Duties",
+      "description": "Access certification, role management, and segregation of duties controls to ensure least privilege and prevent fraud.",
+      "questions": [
+        {
+          "id": "IGA-Q1",
+          "text": "How are access certifications (user access reviews) performed for critical applications and SOX systems?",
+          "weight": 3,
+          "options": [
+            {
+              "value": "1",
+              "text": "Ad-hoc/Initial",
+              "description": "No formal access reviews are performed. Managers are unaware of their team's access rights. Auditors find excessive privileges. Evidence: No review process, managers cannot attest to access, audit findings of inappropriate access."
+            },
+            {
+              "value": "2",
+              "text": "Defined",
+              "description": "Manual process using spreadsheets sent to managers annually. Low completion rates (<50%). No tracking of exceptions. Reviews focus on high-level applications only. Evidence: Annual spreadsheet emails, low response rates, no exception tracking, limited application coverage."
+            },
+            {
+              "value": "3",
+              "text": "Managed",
+              "description": "Centralized IGA tool manages quarterly/semi-annual reviews. Business owners certify via portal. Completion rates are tracked (>80%). Reports show exceptions which are followed up manually. Evidence: IGA tool certification campaigns, completion dashboards, exception reports, quarterly review cycles."
+            },
+            {
+              "value": "4",
+              "text": "Measured/Integrated",
+              "description": "Risk-based review cycles (critical=quarterly, medium=semi-annually, low=annually). Automated escalations to management for overdue certifications. SoD violations are prevented at access request time. Evidence is audit-ready. Evidence: Risk-tiered review schedule, automated escalation workflows, preventive SoD controls, audit reports generated on-demand."
+            },
+            {
+              "value": "5",
+              "text": "Optimized/Business Enabler",
+              "description": "Continuous certification via behavioral analytics. AI identifies anomalous access patterns for targeted review. Access reviews are triggered automatically by HR events (promotion, transfer). Integration with business process monitoring. Evidence: Behavioral analytics driving reviews, event-triggered certifications, access patterns aligned with business processes."
+            }
+          ]
+        },
+        {
+          "id": "IGA-Q2",
+          "text": "How are Segregation of Duties (SoD) conflicts managed and enforced?",
+          "weight": 3,
+          "options": [
+            {
+              "value": "1",
+              "text": "Ad-hoc/Initial",
+              "description": "SoD is not considered during access assignment. No SoD matrix exists. High-risk combinations (e.g., initiator-approver) are common. Evidence: No SoD documentation, audit finds conflicting roles, no preventive controls."
+            },
+            {
+              "value": "2",
+              "text": "Defined",
+              "description": "Manual checks for a few known high-risk conflicts (e.g., accounts payable: create vendor & pay invoice). Checks occur during hiring or role change. No automated enforcement. Evidence: Manual checklist for some roles, HR may check during hiring, conflicts found after the fact."
+            },
+            {
+              "value": "3",
+              "text": "Managed",
+              "description": "Defined SoD matrix for key financial systems (ERP like SAP/Oracle). Detective controls via periodic (quarterly) analysis report. Conflicts are reviewed and remediated. Evidence: SoD policy document, quarterly conflict reports, remediation tickets."
+            },
+            {
+              "value": "4",
+              "text": "Measured/Integrated",
+              "description": "Preventive SoD controls embedded in IGA tool - conflicts are blocked at request time. Risk-accepted conflicts require formal approval (CISO/CFO) and are time-bound. SoD violations are monitored via analytics. Evidence: SoD rules in IGA preventing assignments, formal exception process with expiration, monitoring dashboards."
+            },
+            {
+              "value": "5",
+              "text": "Optimized/Business Enabler",
+              "description": "Dynamic SoD based on real-time transaction context and risk. SoD rules are continuously optimized based on fraud patterns and audit findings. Compensating controls are automatically applied for necessary business exceptions. Evidence: Context-aware SoD engine, rule optimization based on machine learning, automated compensating control workflows."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "AUTH",
+      "name": "Authentication & MFA",
+      "description": "User authentication methods, MFA implementation, and adaptive controls based on risk context.",
+      "questions": [
+        {
+          "id": "AUTH-Q1",
+          "text": "How is MFA implemented for internal users accessing sensitive systems and data?",
+          "weight": 2,
+          "options": [
+            {
+              "value": "1",
+              "text": "Ad-hoc/Initial",
+              "description": "No MFA implementation. All access uses username/password only. Password policies may be weak. Evidence: No MFA tools deployed, single-factor authentication everywhere, basic password requirements."
+            },
+            {
+              "value": "2",
+              "text": "Defined",
+              "description": "MFA is required for VPN and remote access only. Implementation may use SMS or basic OTP apps. Policies are documented but not consistently enforced. Evidence: MFA for VPN only, SMS-based OTP, policy document exists but has gaps."
+            },
+            {
+              "value": "3",
+              "text": "Managed",
+              "description": "MFA is required for all cloud applications (O365, SaaS) and privileged access. Adaptive rules may prompt for MFA based on network location. Stronger authentication (certificate-based) may be used for administrators. Evidence: MFA enforced for O365/admin portals, conditional access policies, privileged users have hardware tokens."
+            },
+            {
+              "value": "4",
+              "text": "Measured/Integrated",
+              "description": "MFA is consistently enforced across all enterprise access (on-prem and cloud). Phishing-resistant methods (FIDO2/WebAuthn) are available. Risk-based authentication evaluates device, location, and behavior to step up. Evidence: Enterprise-wide MFA coverage, FIDO2 security keys issued, risk engine making authentication decisions."
+            },
+            {
+              "value": "5",
+              "text": "Optimized/Business Enabler",
+              "description": "Passwordless authentication is the default (biometrics, security keys). Continuous authentication monitors session behavior. MFA is invisible for low-risk scenarios, strict for high-risk. Supports zero-trust architecture principles. Evidence: Passwordless implementation metrics, behavioral authentication analytics, integrated with zero-trust network access."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
