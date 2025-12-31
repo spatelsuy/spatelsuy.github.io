@@ -420,6 +420,7 @@ function showYAMLModal(yamlContent, questionId) {
         copyToClipboard(yamlContent, questionId);
     });
     
+    
     // Close modal when clicking outside
     modal.addEventListener('click', (e) => {
         if (e.target === modal) {
@@ -429,47 +430,14 @@ function showYAMLModal(yamlContent, questionId) {
 }
 
 function copyToClipboard(text, questionId) {
+    // THIS FUNCTION SHOULD ONLY COPY TEXT, NOTHING ELSE
     navigator.clipboard.writeText(text).then(() => {
-        // Show success message in modal
-        const copyButton = document.querySelector(`[data-question-id="${questionId}"]`);
-        if (copyButton) {
-            copyButton.textContent = 'Copied!';
-            copyButton.style.backgroundColor = '#28a745';
-            
-            // Reset button after 2 seconds
-            setTimeout(() => {
-                copyButton.textContent = 'Copy to Clipboard';
-                copyButton.style.backgroundColor = '';
-            }, 2000);
-        }
-        
-        // Show success message in question row
-        const copyStatus = document.getElementById(`copy-status-${questionId}`);
-        if (copyStatus) {
-            copyStatus.textContent = '✓ Copied to clipboard';
-            copyStatus.style.color = '#28a745';
-            
-            // Clear message after 3 seconds
-            setTimeout(() => {
-                copyStatus.textContent = '';
-            }, 3000);
-        }
-        
-        console.log('YAML copied to clipboard');
+        console.log('YAML copied to clipboard for question:', questionId);
+        // That's it - no UI changes, no status messages
     }).catch(err => {
         console.error('Failed to copy: ', err);
-        
-        // Show error message
-        const copyStatus = document.getElementById(`copy-status-${questionId}`);
-        if (copyStatus) {
-            copyStatus.textContent = '✗ Failed to copy';
-            copyStatus.style.color = '#dc3545';
-            
-            // Clear message after 3 seconds
-            setTimeout(() => {
-                copyStatus.textContent = '';
-            }, 3000);
-        }
+        // Optional: Simple alert if copy fails
+        alert('Failed to copy to clipboard. Please select the text and copy manually.');
     });
 }
 
