@@ -109,7 +109,7 @@ function createQuestionRow(question, domain) {
         <label class="tile-radio">
             <input type="radio" name="${question.id}" value="${option.value}" 
                    data-question-id="${question.id}" data-domain="${domain.id}">
-            <span>${option.text}</span>
+            <span>${option.description}</span>
         </label>
     `).join('');
     
@@ -118,7 +118,7 @@ function createQuestionRow(question, domain) {
         <label class="tile-radio">
             <input type="radio" name="${question.id}" value="${option.value}"
                    data-question-id="${question.id}" data-domain="${domain.id}">
-            <span>${option.text}</span>
+            <span>${option.description}</span>
         </label>
     `).join('');
     
