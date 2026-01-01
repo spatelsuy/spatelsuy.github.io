@@ -215,7 +215,305 @@
 						"description": "Identity sources are authoritative, integrated, enforced, auditable, and continuously monitored. Conflicts are automatically resolved per policy, with full logging and reporting. The process is risk-aware, measurable, and optimized across the enterprise and regulated banking environment."
 					}
 				]
+			}, 
+			{
+				"id": "ILM-Q2", 
+				"text": "How are new user identities (Joiners) created and validated across systems?",  
+				"clarification": "Are identity creation processes automated or manual? Is integration with HR systems used to automatically derive roles, entitlements, or approvals? Are validation checks in place to prevent duplicate or conflicting accounts? Are timing and completion of joiner provisioning monitored and auditable? Are onboarding workflows consistent across subsidiaries and cloud/SaaS applications?", 
+				"weight": 1,
+				"options": [
+					{
+						"value": "1",
+						"text": "Ad-hoc/Initial",
+						"description": "New user accounts are manually created without consistent validation. Duplicate or conflicting accounts are common. Integration with HR or other authoritative sources is minimal or absent."
+					},
+					{
+						"value": "2",
+						"text": "Defined",
+						"description": "Joiner processes exist but are partially automated. Some HR data is leveraged for identity creation, but validation and duplicate detection are inconsistent. Auditability is limited."
+					},	
+					{
+						"value": "3",
+						"text": "Managed",
+						"description": "Joiner processes are automated for core applications, leveraging HR and authoritative sources. Validation checks exist but may not cover all systems or subsidiaries. Exceptions are manually managed."
+					},					
+					{
+						"value": "4",
+						"text": "Measured/Integrated",
+						"description": "Joiner provisioning is fully automated across all systems, including cloud/SaaS. Role and entitlement derivation from HR data is enforced. Duplicate or conflicting accounts are prevented. Auditable logs exist for all joiner activities."
+					},
+					{
+						"value": "5",
+						"text": "Optimized/Business Enabler",
+						"description": "Joiner processes are enterprise-wide, fully integrated, and auditable. Automation includes subsidiaries, affiliates, and third-party systems. Role/entitlement derivation enforces SoD, with metrics and risk monitoring continuously applied. Exceptions are rare, documented, and risk-assessed."
+					}
+				]
+			},
+			{
+				"id": "ILM-Q3", 
+				"text": "How are role or responsibility changes (Movers) applied and reconciled across all applications?", 
+				"clarification": "Are mover processes automated or manual? Are changes reflected in all connected systems, including cloud, SaaS, and affiliate applications? Is Segregation of Duties (SoD) enforced during role changes? Are conflicts between roles detected and reconciled systematically? Are exceptions documented, auditable, and risk-assessed?", 
+				"weight": 1,
+				"options": [
+					{
+						"value": "1",
+						"text": "Ad-hoc/Initial",
+						"description": "Role changes are manual, inconsistent, and often delayed. Reconciliation is ad hoc, with frequent SoD violations and undocumented conflicts."
+					},
+					{
+						"value": "2",
+						"text": "Defined",
+						"description": "Mover processes exist for core applications but are only partially automated. Conflicts and SoD violations may occur and are resolved manually. Audit coverage is limited."
+					},	
+					{
+						"value": "3",
+						"text": "Managed",
+						"description": "Mover changes are automated for primary systems, with reconciliation processes in place. SoD enforcement is partially applied. Some audit trails exist, but subsidiaries and cloud systems may be excluded."
+					},					
+					{
+						"value": "4",
+						"text": "Measured/Integrated",
+						"description": "Role changes are automated and reconciled across all applications, including affiliates. SoD violations are detected and resolved per policy. Complete auditable records exist for regulatory compliance."
+					},
+					{
+						"value": "5",
+						"text": "Optimized/Business Enabler",
+						"description": "Mover processes are enterprise-wide, automated, enforced, auditable, and risk-aware. SoD enforcement is fully integrated, conflicts are resolved automatically, and metrics/reporting enable continuous improvement."
+					}
+				]
+			}, 
+			{
+				"id": "ILM-Q4", 
+				"text": "How is access removed for departing users (Leavers) and how quickly?", 
+				"clarification": "Are leaver processes automated across all applications? Are orphaned accounts minimized or eliminated? Are deprovisioning timelines monitored against policy SLAs? Are exceptions (e.g., retained access for contractors or projects) managed and risk-scored? Are cloud/SaaS and affiliate applications included in deprovisioning?", 
+				"weight": 1,
+				"options": [
+					{
+						"value": "1",
+						"text": "Ad-hoc/Initial",
+						"description": "Access removal is manual, inconsistent, and often delayed, leaving orphaned accounts. No formal SLAs or audit logs exist."
+					},
+					{
+						"value": "2",
+						"text": "Defined",
+						"description": "Some systems have defined leaver processes, but coverage is partial. Orphaned accounts are common, and SLAs are not consistently enforced. Auditability is limited."
+					},	
+					{
+						"value": "3",
+						"text": "Managed",
+						"description": "Automated leaver processes exist for core systems. Timing and completion are monitored but may exclude subsidiaries, cloud, or SaaS applications. Exceptions require manual intervention."
+					},					
+					{
+						"value": "4",
+						"text": "Measured/Integrated",
+						"description": "Leaver processes are automated across all systems and applications. Timeliness and compliance are enforced per policy, and orphaned accounts are minimized. Audit logs are complete, including exceptions and approvals."
+					},
+					{
+						"value": "5",
+						"text": "Optimized/Business Enabler",
+						"description": "Leaver processes are fully automated, auditable, risk-aware, and measurable across the enterprise. Orphaned accounts are prevented, exceptions are rare and documented, and SLA compliance is continuously monitored."
+					}
+				]
+			},
+			{
+				"id": "ILM-Q5", 
+				"text": "Are lifecycle processes timely, standardized, and enforceable across all systems?", 
+				"clarification": "Are joiner, mover, and leaver processes standardized enterprise-wide? Are workflows enforced through IAM automation rather than relying on manual steps? Are exceptions or deviations documented and managed? Are disconnected or legacy systems flagged for monitoring or remediation? Are all processes aligned with regulatory requirements and internal risk policies?", 
+				"weight": 1,
+				"options": [
+					{
+						"value": "1",
+						"text": "Ad-hoc/Initial",
+						"description": "Lifecycle processes are ad hoc, inconsistent, and rarely enforced. Timing is unmonitored, and exceptions are unmanaged."
+					},
+					{
+						"value": "2",
+						"text": "Defined",
+						"description": "Some processes exist but are only partially standardized. Enforcement is inconsistent, and timing is irregular. Disconnected systems may be excluded."
+					},	
+					{
+						"value": "3",
+						"text": "Managed",
+						"description": "Lifecycle processes are standardized and timely for core systems. Enforcement is applied for most activities but may be inconsistent for affiliates, subsidiaries, or SaaS systems."
+					},					
+					{
+						"value": "4",
+						"text": "Measured/Integrated",
+						"description": "Processes are enterprise-wide, standardized, timely, and enforced. Exceptions are documented and risk-managed. Audit and regulatory requirements are met."
+					},
+					{
+						"value": "5",
+						"text": "Optimized/Business Enabler",
+						"description": "Processes are fully enforced, auditable, measurable, and continuously improved. Timing, standardization, and enforcement cover all systems, including cloud, SaaS, affiliates, and subsidiaries. Metrics inform risk-aware governance."
+					}
+				]
+			},
+			{
+				"id": "ILM-Q6", 
+				"text": "How are exceptions (e.g., contractors, temporary users) handled and audited?", 
+				"clarification": "Are temporary accounts time-bound, risk-rated, and policy-driven? Are approvals enforced, logged, and auditable? Are exceptions centrally tracked and periodically reviewed? Are privileged or sensitive accesses subjected to additional controls? Is the process designed to minimize risk exposure in regulated banking environments?", 
+				"weight": 1,
+				"options": [
+					{
+						"value": "1",
+						"text": "Ad-hoc/Initial",
+						"description": "Exceptions are ad hoc, undocumented, and rarely audited. Temporary accounts may persist indefinitely."
+					},
+					{
+						"value": "2",
+						"text": "Defined",
+						"description": "Some exception processes exist but are inconsistently applied. Auditing is partial, and risk assessment is limited."
+					},	
+					{
+						"value": "3",
+						"text": "Managed",
+						"description": "Exceptions are managed according to policy, with time-bound access and periodic audits. Some risk assessment exists but may not cover all applications."
+					},					
+					{
+						"value": "4",
+						"text": "Measured/Integrated",
+						"description": "Exception handling is standardized, auditable, time-bound, and risk-rated. Approvals are enforced, and documentation supports regulatory compliance."
+					},
+					{
+						"value": "5",
+						"text": "Optimized/Business Enabler",
+						"description": "Exception management is fully enforced, auditable, risk-aware, and measurable. Temporary accounts are automatically removed, approvals and deviations are tracked, and continuous improvement is applied."
+					}
+				]
+			},
+			{
+				"id": "ILM-Q7", 
+				"text": "Are there any disconnected applications requiring manual IAM actions?", 
+				"clarification": "Are these applications documented, and is their risk assessed? Are compensating controls in place (e.g., periodic access review, manual approval logs)? Is there a plan to integrate these applications into the IAM system? Are cloud, SaaS, or affiliate applications considered? How is the gap between automated and manual processes monitored and mitigated?", 
+				"weight": 1,
+				"options": [
+					{
+						"value": "1",
+						"text": "Ad-hoc/Initial",
+						"description": "Many critical applications are disconnected. IAM actions are mostly manual, untracked, and risky."
+					},
+					{
+						"value": "2",
+						"text": "Defined",
+						"description": "Some disconnected applications exist, with partial compensating controls. Manual actions are inconsistent and not fully auditable."
+					},	
+					{
+						"value": "3",
+						"text": "Managed",
+						"description": "Disconnected applications are documented, and manual actions are tracked for high-risk users. Compensating controls are partially applied."
+					},					
+					{
+						"value": "4",
+						"text": "Measured/Integrated",
+						"description": "Manual processes for disconnected systems are minimized, documented, auditable, and risk-managed. Integration plans exist for all gaps."
+					},
+					{
+						"value": "5",
+						"text": "Optimized/Business Enabler",
+						"description": "Disconnected applications are rare. Any remaining manual actions are fully auditable, risk-assessed, and integrated into enterprise governance and reporting. Continuous improvement ensures eventual automation."
+					}
+				]
+			},
+			{
+				"id": "ILM-Q8", 
+				"text": "How is identity data quality ensured, reconciled, and verified?", 
+				"clarification": "Are automated reconciliation jobs in place across systems? How are data discrepancies detected and resolved? Are audit trails maintained for reconciliation activities? Is there a defined data quality standard (e.g., completeness, accuracy, consistency) for identities? Are metrics collected and reported to management for governance and risk purposes?", 
+				"weight": 1,
+				"options": [
+					{
+						"value": "1",
+						"text": "Ad-hoc/Initial",
+						"description": "Identity data is inconsistent, manually maintained, and rarely reconciled. Errors and duplicates are common."
+					},
+					{
+						"value": "2",
+						"text": "Defined",
+						"description": "Some reconciliation exists but is partial. Auditability is limited, and errors are often corrected manually."
+					},	
+					{
+						"value": "3",
+						"text": "Managed",
+						"description": "Automated reconciliation and verification exist for core systems. Metrics exist but may not cover all subsidiaries or cloud applications."
+					},					
+					{
+						"value": "4",
+						"text": "Measured/Integrated",
+						"description": "Identity data quality is enforced, reconciled, and verified across all systems. Audit trails exist, and discrepancies are escalated and resolved."
+					},
+					{
+						"value": "5",
+						"text": "Optimized/Business Enabler",
+						"description": "Data quality is fully automated, auditable, measurable, risk-aware, and continuously improved. Reconciliation covers all applications, subsidiaries, and SaaS systems. Metrics drive governance decisions."
+					}
+				]
+			}, 
+			{
+				"id": "ILM-Q9", 
+				"text": "How are lifecycle process deviations detected, escalated, and resolved?", 
+				"clarification": "Are automated monitoring and alerts in place for joiner, mover, and leaver deviations? Are deviations risk-rated and escalated based on criticality (e.g., privileged access, high-risk users)? Are corrective actions documented and tracked to closure? Are lessons learned applied to improve future processes? Is deviation reporting auditable and presented to management or audit teams?", 
+				"weight": 1,
+				"options": [
+					{
+						"value": "1",
+						"text": "Ad-hoc/Initial",
+						"description": "Deviations are rarely detected, unmanaged, and risk exposure is high. Escalation is informal."
+					},
+					{
+						"value": "2",
+						"text": "Defined",
+						"description": "Some monitoring exists, but deviations are inconsistently detected and resolved. Audit trails are incomplete."
+					},	
+					{
+						"value": "3",
+						"text": "Managed",
+						"description": "Deviations are detected for core systems, escalated per policy, and resolved manually. Some risk assessment exists."
+					},					
+					{
+						"value": "4",
+						"text": "Measured/Integrated",
+						"description": "Deviations are automatically detected, escalated, documented, and resolved. Risk assessment is applied, and regulatory reporting is possible."
+					},
+					{
+						"value": "5",
+						"text": "Optimized/Business Enabler",
+						"description": "Deviations are fully automated, auditable, risk-aware, measurable, and reported to management. Continuous improvement reduces recurrence across all systems."
+					}
+				]
+			}, 
+			{
+				"id": "ILM-Q10", 
+				"text": "Are lifecycle processes measurable, reported, and continuously improved?", 
+				"clarification": "Are metrics defined for key lifecycle activities (e.g., time to provision, orphaned accounts, exceptions)? Are reports generated periodically and reviewed by management and audit teams? Is continuous improvement applied based on metrics, incidents, and regulatory feedback? Are lifecycle KPIs aligned with risk and compliance requirements? Are improvements implemented across all business units, subsidiaries, and cloud/SaaS systems?", 
+				"weight": 1,
+				"options": [
+					{
+						"value": "1",
+						"text": "Ad-hoc/Initial",
+						"description": "No metrics or reports exist. Continuous improvement is absent. Governance and audit are limited."
+					},
+					{
+						"value": "2",
+						"text": "Defined",
+						"description": "Some basic metrics exist but are inconsistent. Reporting is irregular, and improvement efforts are ad hoc."
+					},	
+					{
+						"value": "3",
+						"text": "Managed",
+						"description": "Key lifecycle metrics are defined and reported for core systems. Continuous improvement exists but may not cover subsidiaries or cloud/SaaS."
+					},					
+					{
+						"value": "4",
+						"text": "Measured/Integrated",
+						"description": "Lifecycle processes are measurable and reported enterprise-wide. Continuous improvement is applied based on metrics and incidents. Audit and regulatory requirements are satisfied."
+					},
+					{
+						"value": "5",
+						"text": "Optimized/Business Enabler",
+						"description": "Metrics cover all applications, subsidiaries, and SaaS/cloud systems. Reporting is automated, auditable, and risk-aware. Continuous improvement is embedded in governance and decision-making processes."
+					}
+				]
 			} 
+			
 		]
 	}	
   ]
