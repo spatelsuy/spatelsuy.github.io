@@ -42,6 +42,27 @@ function generateQuestionsHTML(domains) {
     // Create the main header for this section
     const header = document.createElement('h2');
     header.textContent = 'Interactive IAM Maturity Scoring';
+
+    // Create tooltip element
+    const tooltip = document.createElement('span');
+    tooltip.className = 'tooltip';
+
+    // Create the tooltip text/content
+    const tooltipText = document.createElement('span');
+    tooltipText.className = 'tooltiptext';
+    tooltipText.innerHTML = `
+      <strong>How to Answer This Question:</strong><br>
+      • Consider whether controls are enforced or optional<br>
+      • Check if HR is the authoritative source<br>
+      • Verify audit evidence and metrics availability<br>
+      • Think about regulatory expectations (SOX, GLBA, FFIEC)`;
+
+    // Append tooltip text to tooltip container
+    tooltip.appendChild(tooltipText);
+
+    // Append tooltip to header
+    header.appendChild(tooltip);
+    
     questionsContainer.appendChild(header);
     
     // Create a container for all domains
