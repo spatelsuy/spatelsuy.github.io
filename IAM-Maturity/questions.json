@@ -14,7 +14,7 @@
 			{
 				"id": "GEN-Q1", 
 				"text": "Is the IAM system fully integrated with the HR system to get authoritative user data such as roles, designations, employment status, and cost centers?", 
-				"clarification": "This question establishes the authoritative source of identity data. Answers here influence all ILM questions (e.g., joiner/mover/leaver processes, lifecycle enforcement), AG questions (role/SOD mapping, approvals), and PAM (privileged account assignments). Without authoritative HR integration, downstream governance, certifications, and audit evidence may be incomplete or unreliable.",
+				"clarification": "This question establishes the authoritative source of identity data. Answers here influence all ILM questions (e.g., joiner/mover/leaver processes, lifecycle enforcement), AG questions (role/SOD mapping, approvals), and PAM (privileged account assignments). Without authoritative HR integration, downstream governance, certifications, and audit evidence may be incomplete or unreliable.", 
 				"weight": 1,
 				"options": [
 					{
@@ -43,7 +43,139 @@
 						"description": "Integration is authoritative, fully enforced, auditable, and continuous. All HR-derived attributes drive SOD, entitlement assignments, lifecycle actions, and compliance. Conflicts are systematically resolved using an enforced attribute contract."
 					}
 				]
-			}	
+			}, 
+			{
+				"id": "GEN-Q2", 
+				"text": "Are there disconnected applications or systems where manual IAM actions are required (e.g., provisioning, deprovisioning, or entitlement updates)?", 
+				"clarification": "This informs scope and exception management across all domains. In ILM, it highlights potential delays or inconsistencies in lifecycle processing. In AG, it identifies gaps in access governance. For PAM and MFA, disconnected systems represent high-risk areas where automation and enforcement may not apply. This sets the risk context for auditors and regulators.", 
+				"weight": 1,
+				"options": [
+				{
+					"value": "1",
+					"text": "Ad-hoc/Initial",	
+					"description": "Most critical systems require manual IAM actions. No centralized governance exists for disconnected applications."
+				},
+				{
+					"value": "2",
+					"text": "Defined",
+					"description": "Some disconnected applications are documented, but processes remain partially manual and error-prone."
+				},
+				{
+					"value": "3",
+					"text": "Managed",
+					"description": "Manual actions exist only for a small set of low-risk applications. Exceptions are documented and risk-assessed periodically."
+				},
+				{
+					"value": "4",
+					"text": "Measured/Integrated",
+					"description": "Manual IAM actions are rare, formally documented, risk-scored, and approved. Governance ensures exceptions do not compromise compliance."
+				},
+				{
+					"value": "5",
+					"text": "Optimized/Business Enabler",
+					"description": "Disconnected applications are minimized or eliminated. Any remaining manual actions are fully auditable, risk-aware, and integrated into IAM reporting and governance processes."
+				}
+				]
+			},
+			{
+				"id": "GEN-Q3", 
+				"text": "Are user roles, entitlements, and SOD rules centrally defined and authoritative?", 
+				"clarification": "This defines the baseline governance model. Answers here directly influence AG questions on role maintenance, SoD enforcement, access certifications, and policy compliance. In ILM, it impacts mover/role-change processes. For PAM, it determines how privileged access aligns with role definitions and SoD controls.", 
+				"weight": 1,
+				"options": [
+				{
+					"value": "1",
+					"text": "Ad-hoc/Initial",	
+					"description": "Roles and entitlements are ad hoc, inconsistently applied, and SOD rules are absent."
+				},
+				{
+					"value": "2",
+					"text": "Defined",	
+					"description": "Some roles and SOD rules exist, but enforcement is weak and exceptions are frequent."
+				},
+				{
+					"value": "3",
+					"text": "Managed",	
+					"description": "Roles and SOD rules are centrally defined for most critical applications. Exceptions exist for non-core or legacy applications."
+				},
+				{
+					"value": "4",
+					"text": "Measured/Integrated",
+					"description": "Roles, entitlements, and SOD rules are authoritative, centrally maintained, enforced across most applications, and documented. Exceptions are formally managed."
+				},
+				{
+					"value": "5",
+					"text": "Optimized/Business Enabler",
+					"description": "Roles, entitlements, and SOD rules are fully authoritative, enforced, auditable, and continuously reviewed. Exceptions are risk-scored, approved, and documented in real-time."
+				}
+				]
+			},
+			{
+				"id": "GEN-Q4", 
+				"text": "Are IAM lifecycle actions (joiner, mover, leaver) driven by authoritative HR and role data?", 
+				"clarification": "This sets the automation and enforcement baseline for identity lifecycle management. It affects ILM questions on timeliness, reconciliation, and exceptions, and also informs AG questions around access request enforcement, certifications, and exception handling. For PAM, this drives privileged account creation/revocation.", 
+				"weight": 1,
+				"options": [
+				{
+					"value": "1",
+					"text": "Ad-hoc/Initial",
+					"description": "Lifecycle actions are manually triggered; HR data is rarely referenced."
+				},
+				{
+					"value": "2",
+					"text": "Defined",
+					"description": "HR data partially drives lifecycle actions, but manual reconciliation is required."
+				},
+				{
+					"value": "3",
+					"text": "Managed",
+					"description": "Most lifecycle actions use HR and role data. Some exceptions exist for contractors, subsidiaries, or affiliates."
+				},
+				{
+					"value": "4",
+					"text": "Measured/Integrated",
+					"description": "Lifecycle actions are fully driven by authoritative HR and role data, including subsidiaries and affiliates. Exceptions are documented and risk-assessed."
+				},
+				{
+					"value": "5",
+					"text": "Optimized/Business Enabler",
+					"description": "Lifecycle actions are fully automated, enforced, auditable, and risk-aware. HR, role, and employment data drive all IAM provisioning, access changes, and deprovisioning."
+				}				
+				]
+			},
+			{
+				"id": "GEN-Q5", 
+				"text": "Are periodic access certifications and governance reviews integrated with authoritative user data and role assignments?", 
+				"clarification": "This defines the audit and compliance context. Answers here influence AG questions on governance effectiveness, policy enforcement, exception handling, and regulatory compliance. It also informs Monitoring & Audit questions by establishing the baseline for log review, reporting, and exception detection.", 
+				"weight": 1,
+				"options": [
+				{
+					"value": "1",
+					"text": "Ad-hoc/Initial",
+					"description": "Access reviews are ad hoc, manual, and disconnected from HR or role data."
+				},
+				{
+					"value": "2",
+					"text": "Defined",
+					"description": "Partial reviews exist, but HR and role data are inconsistently applied, and exceptions are unmanaged."
+				},
+				{
+					"value": "3",
+					"text": "Managed",
+					"description": "Most critical access certifications integrate HR and role data. Some low-risk applications or exceptions are excluded."
+				},
+				{
+					"value": "4",
+					"text": "Measured/Integrated",
+					"description": "All access certifications integrate authoritative HR and role data, enforce policies, and exceptions are risk-assessed and documented"
+				},
+				{
+					"value": "5",
+					"text": "Optimized/Business Enabler",
+					"description": "Access certifications and governance are authoritative, auditable, risk-aware, automated where feasible, and continuously improved."
+				}				
+				]
+			}
 		]
 	},
     {
