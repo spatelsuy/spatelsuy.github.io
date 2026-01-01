@@ -154,6 +154,9 @@ function createQuestionRow(question, domain) {
             <div class="question-text">
                 <strong>${question.text}</strong>
             </div>
+            <div class="question-text">
+                <i>${question.clarification}</i>
+            </div>            
 
             <!-- Line 2: Radio Tiles (Levels 1–3) -->
             <div class="tile-row">
