@@ -424,6 +424,146 @@
 <div class="container">
 <h2>IAM Maturity Assessment</h2>
 
+<div class="definition">
+<h3>What is Identity and Access Management (IAM)?</h3>
+Identity and Access Management (IAM) is the foundation of digital trust in an organization. It is the framework of policies, processes, and technologies used to manage digital identities and control 
+who can access what, when, and how. It ensures the right people have the right access at the right time, enforces security policies, and prevents unauthorized access, protecting critical information assets.
+<br>
+IAM brings together three critical capabilities:
+<br>
+<ul>
+  <li>Identity Governance & Administration (IGA):</li>
+  Managing the lifecycle of identities and access — from onboarding (Joiner), role changes (Mover), to exit (Leaver). This includes access requests, approvals, certifications, and compliance reporting.
+  <li>Access Management:</li>
+  Controlling authentication and authorization to applications, systems, APIs, and data — including Single Sign-On (SSO), Multi-Factor Authentication (MFA), and federation.
+  <li>AAA Principles (Authentication, Authorization, Accounting):</li>
+  Verifying identity, enforcing access decisions, and recording access activity for security, audit, and investigation.
+  <br>
+  Together, IAM ensures that the right people have the right access at the right time, for the right reasons, while protecting applications, data, brand reputation, and customer trust.  
+</ul>
+</div>
+
+<div class="definition">
+<h2>What is IAM Maturity & Why it Matters?</h2>
+<p>IAM Maturity measures how effectively and consistently an organization manages identities and access across its environment and how well it is performing under real-world conditions such as:</p>
+<ul>
+  <li>Security threats and identity-based attacks</li>
+  <li>Regulatory audits and compliance requirements</li>
+  <li>Business growth, cloud adoption, and digital transformation</li>
+  <li>Mergers, acquisitions, and organizational change</li>
+</ul>
+
+A higher IAM maturity indicates that IAM processes are:
+<ul>
+	<li>Predictable instead of reactive</li>
+    <li>Consistent instead of fragmented</li>
+    <li>Risk aware</li>
+    <li>Aligned with industry frameworks and business priorities</li>
+</ul>
+Assessing IAM maturity helps organizations:
+<ul>
+<li>Identify gaps, risks, and control weaknesses</li>
+<li>Prioritize IAM investments and automation</li>
+<li>Measure progress over time</li>
+<li>Align IAM capabilities with frameworks such as NIST, CRI, ISO, and industry expectations</li>
+<li>Communicate IAM posture clearly to executives, auditors, and regulators</li>
+</ul>
+</div>
+
+<div class="definition">
+<h3>How IAM Maturity is Calculated</h3>
+IAM maturity is not measured by a single control or tool. It is calculated through a structured, domain-based assessment that evaluates how IAM capabilities are designed, 
+implemented, and operated in the organization. It is calculated using a <strong>weighted assessment model</strong>. This approach recognizes that not all IAM capabilities carry the same level of risk or business impact. 
+Each question contributes to the final maturity <strong>score</strong> and its <strong>assigned weight</strong>.
+<br>
+The calculation follows these stages:
+<ul>
+<li><strong>Defining IAM Domains (Areas of Capability)</strong>
+The first step in measuring IAM maturity is to identify the key functional areas or domains that represent the organization’s IAM capabilities. 
+These domains act as pillars of the assessment, covering both governance and operational aspects of identity and access management.
+Domains are designed to reflect how IAM actually works in real organizations, not just how it is described in standards.
+<br>
+Typical IAM domains include identity lifecycle, access governance, authentication, privileged access, and monitoring.
+</li>
+
+<li><strong>Assessing Each Domain Through Targeted Questions</strong>
+Once IAM domains are defined, the next step is to evaluate how mature each domain is by asking specific, scenario-based questions that focus on real 
+capabilities instead of asking abstract or purely technical questions. Each question presents descriptive maturity statements that reflect common real-world practices.
+</li>
+
+<li><strong>Scoring Each Question Using a 1–5 Maturity Scale and applying weightage</strong>
+Each question maps to a maturity score from 1 to 5, based on the selected description.
+The score reflects how mature, consistent, and risk-aware the capability is.
+The scale is designed to show progression, from ad-hoc practices to optimized, automated operations.
+<br>
+Each question is also assigned a weight that reflects its relative importance based on risk exposure, regulatory impact, business criticality, 
+and industry context. Higher-risk capabilities contribute more significantly to the overall maturity score than lower-risk ones.
+</li>
+
+<li><strong>Calculating weighted domain scores</strong>
+For each domain, a weighted score is calculated by multiplying each question’s score by its weight, summing the results, 
+and normalizing them against the total domain weight. This produces a single maturity score per domain.
+This score represents how mature the organization is in that specific IAM capability area.
+Domain scores make it easier to see strengths and weaknesses, rather than hiding issues in a single overall number.
+</li>
+
+<li><strong>Calculating overall IAM maturity using weighted domain scores</strong>
+The overall IAM maturity score is calculated by aggregating all weighted domain scores. 
+This provides a holistic view of the organization’s IAM capability.
+</li>
+
+<li><strong>Mapping the weighted score to a maturity level (Level 1–5)</strong>
+The final weighted score is mapped to a clearly defined maturity level, ranging from Initial to Optimized. 
+This translation makes the assessment results easy to interpret and actionable for executives, security leaders, and auditors.
+<table class="maturity-table">
+    <thead>
+      <tr>
+        <th style="width:25%">Score Range</th><th style="width:25%">Maturity Level</th><th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1.0 – 1.9</td>
+        <td>Level 1 – Initial</td>
+        <td>
+          IAM practices are ad-hoc, manual, and inconsistent. Controls are largely reactive, with limited visibility and high operational and security risk.
+        </td>
+      </tr>
+      <tr>
+        <td>2.0 – 2.9</td>
+        <td>Level 2 – Repeatable</td>
+        <td>
+          Basic IAM processes exist and are followed in some areas, but execution is inconsistent across systems, teams, or regions.
+        </td>
+      </tr>
+      <tr>
+        <td>3.0 – 3.9</td>
+        <td>Level 3 – Defined</td>
+        <td>
+          IAM processes are documented, standardized, and repeatable. Roles, responsibilities, and controls are clearly defined and consistently applied.
+        </td>
+      </tr>
+      <tr>
+        <td>4.0 – 4.5</td>
+        <td>Level 4 – Managed</td>
+        <td>
+          IAM is actively governed and measured. Controls are enforced, metrics are tracked, risks are managed, and IAM supports business objectives.
+        </td>
+      </tr>
+      <tr>
+        <td>4.6 – 5.0</td>
+        <td>Level 5 – Optimized</td>
+        <td>
+          IAM is highly automated, risk-driven, and continuously improved. The organization leverages advanced analytics, AI, and best practices to proactively manage identity risk.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</li>
+</ul>	
+</div>
+
+
 <!-- ... (keep all the explanatory sections as they are) ... -->
 
 <div class="definition">
