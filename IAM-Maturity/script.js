@@ -41,27 +41,34 @@ function generateQuestionsHTML(domains) {
     
     // Create the main header for this section
     const header = document.createElement('h2');
-    const headerText = document.createTextNode('Interactive IAM Maturity Scoring ');
-    header.appendChild(headerText);
+const headerText = document.createTextNode('Interactive IAM Maturity Scoring');
+header.appendChild(headerText);
 
-    // Create tooltip element with question mark
-    const tooltipIcon = document.createElement('span');
-    tooltipIcon.textContent = '?';
-    tooltipIcon.className = 'tooltip';
+// Create tooltip container (span inside the h2)
+const tooltip = document.createElement('span');
+tooltip.className = 'tooltip';
+tooltip.textContent = 'ⓘ'; // Information icon
 
-    // Create tooltip text
-    const tooltipText = document.createElement('span');
-    tooltipText.className = 'tooltiptext';
-    tooltipText.innerHTML = `
-      How to Answer This Question<br>
-      Consider whether controls are enforced or optional. Check if HR is the authoritative source. Verify audit evidence and metrics availability. Think about regulatory expectations (SOX, GLBA, FFIEC)`;
+// Create tooltip content
+const tooltipText = document.createElement('span');
+tooltipText.className = 'tooltiptext';
 
-    // Append tooltip text to icon
-    tooltipIcon.appendChild(tooltipText);
-    // Append tooltip to header
-    header.appendChild(tooltipIcon);
+// Create the tooltip content with proper formatting
+const tooltipContent = document.createElement('div');
+tooltipContent.className = 'tooltip-content';
+tooltipContent.innerHTML = `
+  <strong>How to Answer This Question:</strong><br>
+  • Consider whether controls are enforced or optional<br>
+  • Check if HR is the authoritative source<br>
+  • Verify audit evidence and metrics availability<br>
+  • Think about regulatory expectations (SOX, GLBA, FFIEC)
+`;
 
-    questionsContainer.appendChild(header);
+tooltipText.appendChild(tooltipContent);
+tooltip.appendChild(tooltipText);
+header.appendChild(tooltip);
+
+questionsContainer.appendChild(header);
     
     // Create a container for all domains
     const allDomainsContainer = document.createElement('div');
