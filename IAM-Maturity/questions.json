@@ -14,36 +14,36 @@
 			{
 				"id": "GEN-Q1", 
 				"text": "Is the IAM system fully integrated with the HR system to get authoritative user data such as roles, designations, employment status, and cost centers?", 
-				"clarification": "This question establishes the authoritative source of identity data. Answers here influence all ILM questions (e.g., joiner/mover/leaver processes, lifecycle enforcement), AG questions (role/SOD mapping, approvals), and PAM (privileged account assignments). Without authoritative HR integration, downstream governance, certifications, and audit evidence may be incomplete or unreliable."
+				"clarification": "This question establishes the authoritative source of identity data. Answers here influence all ILM questions (e.g., joiner/mover/leaver processes, lifecycle enforcement), AG questions (role/SOD mapping, approvals), and PAM (privileged account assignments). Without authoritative HR integration, downstream governance, certifications, and audit evidence may be incomplete or unreliable.",
 				"weight": 1,
 				"options": [
 					{
 						"value": "1",
 						"text": "Ad-hoc/Initial",
 						"description": "IAM is not integrated with HR. User data is manually maintained, leading to errors, delays, and inconsistencies."
-					}
+					},
 					{
 						"value": "2",
 						"text": "Defined",
 						"description": "Partial integration exists. Some attributes (e.g., employee ID, name) are imported, but roles, designations, and cost centers are inconsistent or delayed. Manual reconciliation is required."
-					}	
+					},	
 					{
 						"value": "3",
 						"text": "Managed",
 						"description": "Most critical HR attributes are integrated, roles and designations are partially synchronized. Exceptions exist for subsidiaries, affiliates, or contractors. Conflict resolution is ad hoc."
-					}					
+					},					
 					{
 						"value": "4",
 						"text": "Measured/Integrated",
 						"description": "Integration is robust across all business units, subsidiaries, and affiliates. Role, designation, and employment data are authoritative, synchronized, and conflicts are resolved through a defined attribute contract."
-					}
+					},
 					{
 						"value": "5",
 						"text": "Optimized/Business Enabler",
 						"description": "Integration is authoritative, fully enforced, auditable, and continuous. All HR-derived attributes drive SOD, entitlement assignments, lifecycle actions, and compliance. Conflicts are systematically resolved using an enforced attribute contract."
 					}
 				]
-			}			
+			}	
 		]
 	}    
     {
