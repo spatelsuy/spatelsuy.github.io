@@ -53,12 +53,8 @@ function generateQuestionsHTML(domains) {
     const tooltipText = document.createElement('span');
     tooltipText.className = 'tooltiptext';
     tooltipText.innerHTML = `
-      <strong>How to Answer This Question:</strong><br>
-      • Consider whether controls are enforced or optional<br>
-      • Check if HR is the authoritative source<br>
-      • Verify audit evidence and metrics availability<br>
-      • Think about regulatory expectations (SOX, GLBA, FFIEC)
-    `;
+      How to Answer This Question<br>
+      Consider whether controls are enforced or optional. Check if HR is the authoritative source. Verify audit evidence and metrics availability. Think about regulatory expectations (SOX, GLBA, FFIEC)`;
 
     // Append tooltip text to icon
     tooltipIcon.appendChild(tooltipText);
