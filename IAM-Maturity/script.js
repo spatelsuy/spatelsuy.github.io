@@ -192,11 +192,6 @@ function createQuestionRow(question, domain) {
                           placeholder="Metrics details"></textarea>
             </div>
 
-            <!-- Line 6: Metrics ID + Metrics Details -->
-            <div class="input-row inline-row">
-
-            </div>
-
             <!-- Line 7: Generate YAML Button -->
             <div class="yaml-button-row">
                 <button type="button" class="generate-yaml-btn" data-question-id="${question.id}">
