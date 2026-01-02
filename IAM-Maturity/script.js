@@ -184,16 +184,17 @@ function createQuestionRow(question, domain) {
                 <textarea rows="1" class="control-description"
                           data-question-id="${question.id}"
                           placeholder="Control description"></textarea>
-            </div>
-
-            <!-- Line 6: Metrics ID + Metrics Details -->
-            <div class="input-row inline-row">
                 <input type="text" class="metrics-id"
                        data-question-id="${question.id}"
                        placeholder="Metrics ID (e.g., MET-01)">
                 <textarea rows="1" class="metrics-description"
                           data-question-id="${question.id}"
                           placeholder="Metrics details"></textarea>
+            </div>
+
+            <!-- Line 6: Metrics ID + Metrics Details -->
+            <div class="input-row inline-row">
+
             </div>
 
             <!-- Line 7: Generate YAML Button -->
