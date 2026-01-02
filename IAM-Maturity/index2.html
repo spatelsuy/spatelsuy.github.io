@@ -50,11 +50,12 @@
             line-height: 1.6;
             color: var(--text-dark);
             background-color: var(--light-bg);
+            font-size: 10pt;
         }
         
         /* ===== Typography ===== */
         h1, h2, h3, h4 {
-            font-weight: 700;
+            font-weight: 600;
             line-height: 1.2;
             margin-bottom: var(--space-sm);
         }
@@ -205,349 +206,343 @@
             background-color: var(--accent-coral-dark);
         }
         
-        /* ===== Hero Section ===== */
-        .hero {
-            background: linear-gradient(135deg, #f5fdff 0%, #f0f9ff 100%);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 50%;
-            height: 100%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="%230A2647" opacity="0.03"/></svg>');
-            background-size: cover;
-        }
-        
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--space-xl);
-            align-items: center;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .hero-text {
-            max-width: 600px;
-        }
-        
-        .hero-subtitle {
-            font-size: 1.25rem;
-            color: var(--text-light);
-            margin-bottom: var(--space-md);
-        }
-        
-        .hero-buttons {
-            display: flex;
-            gap: var(--space-sm);
-            flex-wrap: wrap;
-            margin-top: var(--space-md);
-        }
-        
-        .hero-visual {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .dashboard-preview {
-            width: 100%;
-            max-width: 500px;
+        /* ===== Your Original Styles ===== */
+        .definition {
             background: white;
-            border-radius: var(--radius-lg);
             padding: var(--space-md);
-            box-shadow: var(--shadow-lg);
-            transform: perspective(1000px) rotateY(-10deg);
-            transition: transform 0.5s;
-        }
-        
-        .dashboard-preview:hover {
-            transform: perspective(1000px) rotateY(0deg);
-        }
-        
-        /* ===== Features Section ===== */
-        .features {
-            background-color: white;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: var(--space-xl);
-        }
-        
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: var(--space-md);
-        }
-        
-        .feature-card {
-            background: var(--light-card);
             border-radius: var(--radius-md);
-            padding: var(--space-md);
-            text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: var(--space-md);
+            box-shadow: var(--shadow-sm);
             border: 1px solid var(--border-color);
         }
         
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
+        .definition h2, .definition h3 {
+            color: var(--primary-navy);
+            margin-top: 0;
         }
         
-        .feature-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, #E3F2FD 0%, #B3E0FF 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto var(--space-sm);
-            font-size: 1.75rem;
-            color: var(--secondary-teal);
-        }
-        
-        /* ===== Assessment Preview ===== */
-        .assessment-preview {
-            background: linear-gradient(135deg, var(--primary-navy) 0%, #1a3a62 100%);
-            color: white;
-        }
-        
-        .assessment-preview h2 {
-            color: white;
-        }
-        
-        .assessment-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: var(--radius-lg);
-            padding: var(--space-lg);
-            margin-top: var(--space-lg);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .question-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: var(--space-md);
-        }
-        
-        .progress-bar {
-            width: 100%;
-            height: 8px;
-            background-color: rgba(255, 255, 255, 0.2);
-            border-radius: 4px;
-            margin: var(--space-sm) 0;
-            overflow: hidden;
-        }
-        
-        .progress-fill {
-            height: 100%;
-            background-color: var(--secondary-teal);
-            width: 15%;
-            border-radius: 4px;
-            transition: width 0.5s ease;
-        }
-        
-        .options-grid {
-            display: grid;
-            gap: var(--space-sm);
-            margin: var(--space-md) 0;
-        }
-        
-        .option {
-            background: rgba(255, 255, 255, 0.05);
-            border: 2px solid rgba(255, 255, 255, 0.1);
-            border-radius: var(--radius-sm);
-            padding: var(--space-md);
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .option:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: var(--secondary-teal);
-        }
-        
-        .option.selected {
-            background: rgba(46, 196, 182, 0.2);
-            border-color: var(--secondary-teal);
-        }
-        
-        .option input {
-            margin-right: var(--space-sm);
-        }
-        
-        .assessment-nav {
-            display: flex;
-            justify-content: space-between;
-            margin-top: var(--space-md);
-        }
-        
-        /* ===== Results Preview ===== */
-        .results-preview {
-            background-color: white;
-        }
-        
-        .score-card {
-            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-navy-light) 100%);
-            color: white;
-            border-radius: var(--radius-lg);
-            padding: var(--space-lg);
-            text-align: center;
-            max-width: 400px;
-            margin: 0 auto var(--space-xl);
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .score-value {
-            font-size: 4rem;
-            font-weight: 700;
-            margin: var(--space-sm) 0;
-        }
-        
-        .score-stars {
-            color: #FFD700;
-            font-size: 1.5rem;
+        .definition ul {
+            margin-left: var(--space-md);
             margin-bottom: var(--space-sm);
         }
         
-        .score-level {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 0.5rem 1.5rem;
-            border-radius: 50px;
-            font-weight: 600;
-        }
-        
-        .metrics-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: var(--space-md);
-            margin-bottom: var(--space-xl);
-        }
-        
-        .metric-card {
-            background: var(--light-card);
-            border-radius: var(--radius-md);
-            padding: var(--space-md);
-            text-align: center;
-            border-top: 4px solid var(--secondary-teal);
-            box-shadow: var(--shadow-sm);
-        }
-        
-        .metric-bar {
-            height: 8px;
-            background-color: var(--border-color);
-            border-radius: 4px;
-            margin: var(--space-sm) 0;
-            overflow: hidden;
-        }
-        
-        .metric-fill {
-            height: 100%;
-            background-color: var(--secondary-teal);
-            border-radius: 4px;
-        }
-        
-        /* ===== CTA Section ===== */
-        .cta-section {
-            background: linear-gradient(135deg, var(--secondary-teal) 0%, #25a89a 100%);
-            color: white;
-            text-align: center;
-        }
-        
-        .cta-section h2 {
-            color: white;
-        }
-        
-        .cta-buttons {
-            display: flex;
-            justify-content: center;
-            gap: var(--space-md);
-            margin-top: var(--space-lg);
-            flex-wrap: wrap;
-        }
-        
-        /* ===== Footer ===== */
-        footer {
-            background-color: var(--primary-navy);
-            color: white;
-            padding: var(--space-xl) 0 var(--space-md);
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: var(--space-xl);
-            margin-bottom: var(--space-lg);
-        }
-        
-        .footer-logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: var(--space-sm);
-            color: white;
-        }
-        
-        .footer-links h4 {
-            color: white;
-            margin-bottom: var(--space-sm);
-        }
-        
-        .footer-links ul {
-            list-style: none;
-        }
-        
-        .footer-links li {
+        .definition li {
             margin-bottom: var(--space-xs);
         }
         
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .footer-links a:hover {
-            color: var(--secondary-teal);
-        }
-        
-        .social-links {
-            display: flex;
-            gap: var(--space-sm);
+        /* ===== Tables ===== */
+        table {
+            width: 100%;
+            border-collapse: collapse;
             margin-top: var(--space-sm);
+            background: white;
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
         }
         
-        .social-links a {
+        th, td {
+            padding: 12px;
+            border-bottom: 1px solid var(--border-color);
+            text-align: left;
+        }
+        
+        th {
+            background-color: #f7f9fc;
+            font-weight: 600;
+            color: var(--primary-navy);
+        }
+        
+        /* ===== Form Elements ===== */
+        select {
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            width: 100%;
+            margin-top: 6px;
+            margin-bottom: 12px;
+            font-size: 15px;
+            background: white;
+        }
+        
+        label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-right: 15px;
+            margin-bottom: 10px;
+        }
+        
+        input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+        }
+        
+        /* ===== Tooltip ===== */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            cursor: help;
+            color: var(--secondary-teal);
+            font-weight: bold;
+            margin-left: 6px;
+        }
+        
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 320px;
+            background-color: var(--primary-navy);
+            color: white;
+            text-align: left;
+            padding: 10px;
+            border-radius: var(--radius-sm);
+            position: absolute;
+            z-index: 1000;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.9em;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+        
+        /* ===== Question Blocks ===== */
+        .question-block {
+            padding: 16px;
+            border-bottom: 1px solid var(--border-color);
+            background: white;
+            border-radius: var(--radius-sm);
+            margin-bottom: var(--space-sm);
+        }
+        
+        .question-text {
+            margin-bottom: 10px;
+        }
+        
+        .tile-row {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+        
+        /* Hide native radio */
+        .tile-radio input[type="radio"] {
+            display: none;
+        }
+        
+        /* Tile appearance */
+        .tile-radio {
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            padding: 12px;
+            cursor: pointer;
+            background: #f9fafb;
+            flex: 1;
+            min-width: 260px;
+            transition: all 0.2s ease;
+        }
+        
+        /* Selected state */
+        .tile-radio input[type="radio"]:checked + span {
+            font-weight: 600;
+            color: var(--primary-navy);
+        }
+        
+        .tile-radio:has(input[type="radio"]:checked) {
+            border-color: var(--secondary-teal);
+            background: #eef2ff;
+        }
+        
+        /* Hover */
+        .tile-radio:hover {
+            border-color: var(--secondary-teal);
+            background: #f0f4ff;
+        }
+        
+        /* Inputs */
+        .input-row {
+            margin-top: 12px;
+        }
+        
+        .inline-row {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+        }
+        
+        .inline-row input,
+        .inline-row textarea {
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            font-family: inherit;
+        }
+        
+        .inline-row input {
+            width: 160px;
+        }
+        
+        .inline-row textarea {
+            flex: 1;
+            min-height: 60px;
+            resize: vertical;
+        }
+        
+        /* ===== YAML Styles ===== */
+        .yaml-button-row {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px dashed #ccc;
             display: flex;
             align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
+            gap: 10px;
+        }
+        
+        .generate-yaml-btn {
+            background-color: #28a745;
             color: white;
-            transition: background 0.3s;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.2s;
         }
         
-        .social-links a:hover {
-            background: var(--secondary-teal);
+        .generate-yaml-btn:hover {
+            background-color: #218838;
         }
         
-        .copyright {
-            text-align: center;
-            padding-top: var(--space-md);
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.9rem;
+        .copy-status {
+            font-size: 12px;
+            color: #666;
+            margin-left: 10px;
+        }
+        
+        .yaml-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+        
+        .yaml-modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 20px;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 900px;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .yaml-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .yaml-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .close-yaml {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #999;
+        }
+        
+        .close-yaml:hover {
+            color: #333;
+        }
+        
+        .yaml-actions {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+        }
+        
+        .copy-yaml-btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .copy-yaml-btn:hover {
+            background-color: #0056b3;
+        }
+        
+        .yaml-content {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap;
+            max-height: 400px;
+            overflow-y: auto;
+            border: 1px solid #dee2e6;
+            line-height: 1.4;
+        }
+        
+        .close-yaml-btn {
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .close-yaml-btn:hover {
+            background-color: #545b62;
+        }
+        
+        .tooltip-content {
+            font-size: 14px;
+            font-weight: normal;
+            line-height: 1.5;
+        }
+        
+        /* ===== Results Section ===== */
+        .result {
+            background: white;
+            padding: var(--space-md);
+            border-radius: var(--radius-md);
+            margin-top: var(--space-md);
+            box-shadow: var(--shadow-md);
+        }
+        
+        /* ===== Domain Sections ===== */
+        .domain-section {
+            background: white;
+            padding: var(--space-md);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--space-md);
+            box-shadow: var(--shadow-sm);
         }
         
         /* ===== Responsive Design ===== */
@@ -560,41 +555,42 @@
                 font-size: 2rem;
             }
             
-            .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            
-            .hero::before {
-                display: none;
+            .container {
+                padding: 0 var(--space-sm);
             }
         }
         
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                padding: var(--space-md);
+                box-shadow: var(--shadow-md);
             }
             
             .mobile-menu-btn {
                 display: block;
             }
             
-            .hero-buttons, .assessment-nav, .cta-buttons {
+            .tile-row {
                 flex-direction: column;
-                align-items: center;
             }
             
-            .btn {
+            .tile-radio {
+                min-width: 100%;
+            }
+            
+            .inline-row {
+                flex-direction: column;
+            }
+            
+            .inline-row input {
                 width: 100%;
-                max-width: 300px;
-            }
-            
-            .dashboard-preview {
-                transform: none;
-            }
-            
-            section {
-                padding: var(--space-lg) 0;
             }
         }
         
@@ -607,42 +603,14 @@
                 font-size: 1.75rem;
             }
             
-            .container {
-                padding: 0 var(--space-sm);
+            section {
+                padding: var(--space-lg) 0;
             }
-            
-            .score-value {
-                font-size: 3rem;
-            }
-        }
-        
-        /* ===== Animation Classes ===== */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeIn 0.6s forwards;
-        }
-        
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .pulse {
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(46, 196, 182, 0.4); }
-            70% { box-shadow: 0 0 0 10px rgba(46, 196, 182, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(46, 196, 182, 0); }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
+    <!-- Modern Header -->
     <header>
         <div class="container header-container">
             <div class="logo">
@@ -651,10 +619,9 @@
             </div>
             <nav class="nav-links">
                 <a href="#" class="active">Assessment</a>
-                <a href="#">How It Works</a>
-                <a href="#">Resources</a>
-                <a href="#">Pricing</a>
-                <a href="#"><i class="fas fa-user"></i> Login</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#resources">Resources</a>
+                <a href="#login"><i class="fas fa-user"></i> Login</a>
             </nav>
             <button class="mobile-menu-btn">
                 <i class="fas fa-bars"></i>
@@ -663,332 +630,918 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="container hero-content">
-            <div class="hero-text fade-in">
-                <h1>Elevate Your IAM Security</h1>
-                <p class="hero-subtitle">Measure, analyze, and improve your Identity and Access Management maturity in minutes with our comprehensive assessment tool.</p>
-                <div class="hero-buttons">
-                    <a href="#assessment" class="btn btn-primary pulse">
-                        <i class="fas fa-play-circle"></i> Start Free Assessment
-                    </a>
-                    <a href="#features" class="btn btn-secondary">
-                        <i class="fas fa-info-circle"></i> See How It Works
-                    </a>
-                </div>
-                <p class="hero-note">Already started? <a href="#" style="color: var(--secondary-teal); text-decoration: none; font-weight: 600;">Continue your assessment →</a></p>
-            </div>
-            <div class="hero-visual fade-in">
-                <div class="dashboard-preview">
-                    <h3 style="color: var(--primary-navy); margin-bottom: var(--space-sm);">Your IAM Score</h3>
-                    <div style="display: flex; align-items: center; gap: var(--space-md);">
-                        <div style="font-size: 2.5rem; font-weight: 700; color: var(--secondary-teal);">72</div>
-                        <div style="flex: 1;">
-                            <div style="height: 10px; background: var(--border-color); border-radius: 5px; overflow: hidden;">
-                                <div style="width: 72%; height: 100%; background: var(--secondary-teal);"></div>
-                            </div>
-                            <div style="display: flex; justify-content: space-between; margin-top: 5px; font-size: 0.9rem; color: var(--text-light);">
-                                <span>Basic</span>
-                                <span>Advanced</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="margin-top: var(--space-md); padding-top: var(--space-sm); border-top: 1px solid var(--border-color);">
-                        <div style="display: flex; justify-content: space-between;">
-                            <span style="font-weight: 600; color: var(--text-dark);">Governance</span>
-                            <span style="color: var(--secondary-teal); font-weight: 600;">68/100</span>
-                        </div>
-                        <div style="display: flex; justify-content: space-between; margin-top: 5px;">
-                            <span style="font-weight: 600; color: var(--text-dark);">Technology</span>
-                            <span style="color: var(--secondary-teal); font-weight: 600;">75/100</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="features" id="features">
+    <section style="background: linear-gradient(135deg, #f5fdff 0%, #f0f9ff 100%);">
         <div class="container">
-            <div class="section-title">
-                <h2>Why Use Our IAM Maturity Tool</h2>
-                <p>Comprehensive assessment designed by security experts</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card fade-in">
-                    <div class="feature-icon">
-                        <i class="fas fa-bolt"></i>
-                    </div>
-                    <h3>Quick Assessment</h3>
-                    <p>Complete the 20-question assessment in under 15 minutes. No registration required to start.</p>
-                </div>
-                <div class="feature-card fade-in">
-                    <div class="feature-icon">
-                        <i class="fas fa-chart-bar"></i>
-                    </div>
-                    <h3>Data-Driven Insights</h3>
-                    <p>Get detailed analysis with benchmarks against industry standards and regulatory requirements.</p>
-                </div>
-                <div class="feature-card fade-in">
-                    <div class="feature-icon">
-                        <i class="fas fa-bullseye"></i>
-                    </div>
-                    <h3>Actionable Roadmap</h3>
-                    <p>Receive prioritized recommendations with clear steps to improve your IAM maturity.</p>
-                </div>
-                <div class="feature-card fade-in">
-                    <div class="feature-icon">
-                        <i class="fas fa-history"></i>
-                    </div>
-                    <h3>Track Progress</h3>
-                    <p>Save your results and retake assessments to measure improvements over time.</p>
-                </div>
+            <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <h1 style="margin-bottom: var(--space-sm);">IAM Maturity Assessment</h1>
+                <p style="font-size: 1.25rem; color: var(--text-light); margin-bottom: var(--space-md);">
+                    Measure, analyze, and improve your Identity and Access Management maturity with our comprehensive assessment tool
+                </p>
+                <button class="btn btn-primary" onclick="scrollToAssessment()">
+                    <i class="fas fa-play-circle"></i> Start Assessment
+                </button>
             </div>
         </div>
     </section>
 
-    <!-- Assessment Preview -->
-    <section class="assessment-preview" id="assessment">
-        <div class="container">
-            <h2>Experience the Assessment</h2>
-            <p style="color: rgba(255, 255, 255, 0.9); max-width: 600px;">Try a sample question to see how our assessment works. Each question helps evaluate a different aspect of your IAM program.</p>
-            
-            <div class="assessment-card fade-in">
-                <div class="question-header">
-                    <div>
-                        <h3>How mature is your password policy enforcement?</h3>
-                        <p style="color: rgba(255, 255, 255, 0.8);">Question 3 of 20</p>
-                    </div>
-                    <div style="text-align: right;">
-                        <div style="font-size: 1.5rem; font-weight: 700;">15%</div>
-                        <div style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.8);">Complete</div>
-                    </div>
-                </div>
-                
-                <div class="progress-bar">
-                    <div class="progress-fill"></div>
-                </div>
-                
-                <div class="options-grid">
-                    <div class="option" onclick="selectOption(this)">
-                        <input type="radio" name="question" id="option1">
-                        <label for="option1">Basic - Minimal password requirements with manual enforcement</label>
-                    </div>
-                    <div class="option" onclick="selectOption(this)">
-                        <input type="radio" name="question" id="option2">
-                        <label for="option2">Standard - Regular password updates with some automated checks</label>
-                    </div>
-                    <div class="option selected" onclick="selectOption(this)">
-                        <input type="radio" name="question" id="option3" checked>
-                        <label for="option3">Advanced - Multi-factor authentication with biometric options</label>
-                    </div>
-                    <div class="option" onclick="selectOption(this)">
-                        <input type="radio" name="question" id="option4">
-                        <label for="option4">Optimized - Adaptive, risk-based authentication across all systems</label>
-                    </div>
-                </div>
-                
-                <div class="assessment-nav">
-                    <button class="btn btn-secondary">
-                        <i class="fas fa-arrow-left"></i> Previous
-                    </button>
-                    <button class="btn btn-primary">
-                        Next <i class="fas fa-arrow-right"></i>
-                    </button>
-                </div>
-            </div>
+    <!-- Main Content Container -->
+    <div class="container" style="margin-top: var(--space-xl); margin-bottom: var(--space-xl);">
+        
+        <!-- Introduction Sections -->
+        <div class="definition" id="how-it-works">
+            <h2>What is Identity and Access Management (IAM)?</h2>
+            <p>Identity and Access Management (IAM) is the foundation of digital trust in an organization. It is the framework of policies, processes, and technologies used to manage digital identities and control 
+            who can access what, when, and how. It ensures the right people have the right access at the right time, enforces security policies, and prevents unauthorized access, protecting critical information assets.</p>
+            <br>
+            <p>IAM brings together three critical capabilities:</p>
+            <ul>
+                <li><strong>Identity Governance & Administration (IGA):</strong>
+                Managing the lifecycle of identities and access — from onboarding (Joiner), role changes (Mover), to exit (Leaver). This includes access requests, approvals, certifications, and compliance reporting.</li>
+                <li><strong>Access Management:</strong>
+                Controlling authentication and authorization to applications, systems, APIs, and data — including Single Sign-On (SSO), Multi-Factor Authentication (MFA), and federation.</li>
+                <li><strong>AAA Principles (Authentication, Authorization, Accounting):</strong>
+                Verifying identity, enforcing access decisions, and recording access activity for security, audit, and investigation.</li>
+            </ul>
+            <p>Together, IAM ensures that the right people have the right access at the right time, for the right reasons, while protecting applications, data, brand reputation, and customer trust.</p>
         </div>
-    </section>
 
-    <!-- Results Preview -->
-    <section class="results-preview">
-        <div class="container">
-            <div class="section-title">
-                <h2>Get Actionable Results</h2>
-                <p>Your personalized IAM maturity score with improvement roadmap</p>
-            </div>
-            
-            <div class="score-card fade-in">
-                <p style="color: rgba(255, 255, 255, 0.9);">Your IAM Maturity Score</p>
-                <div class="score-value">72/100</div>
-                <div class="score-stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                </div>
-                <div class="score-level">INTERMEDIATE</div>
-            </div>
-            
-            <div class="metrics-grid">
-                <div class="metric-card fade-in">
-                    <h3>Governance</h3>
-                    <div class="metric-value" style="font-size: 1.75rem; font-weight: 700; color: var(--secondary-teal);">68/100</div>
-                    <div class="metric-bar">
-                        <div class="metric-fill" style="width: 68%;"></div>
-                    </div>
-                    <p style="font-size: 0.9rem;">Policies, roles, and compliance</p>
-                </div>
-                <div class="metric-card fade-in">
-                    <h3>Technology</h3>
-                    <div class="metric-value" style="font-size: 1.75rem; font-weight: 700; color: var(--secondary-teal);">75/100</div>
-                    <div class="metric-bar">
-                        <div class="metric-fill" style="width: 75%;"></div>
-                    </div>
-                    <p style="font-size: 0.9rem;">Tools, automation, and integration</p>
-                </div>
-                <div class="metric-card fade-in">
-                    <h3>Operations</h3>
-                    <div class="metric-value" style="font-size: 1.75rem; font-weight: 700; color: var(--secondary-teal);">70/100</div>
-                    <div class="metric-bar">
-                        <div class="metric-fill" style="width: 70%;"></div>
-                    </div>
-                    <p style="font-size: 0.9rem;">Processes, monitoring, and response</p>
-                </div>
-            </div>
-            
-            <div style="text-align: center;">
-                <h3 style="margin-bottom: var(--space-md);">Top Improvement Areas</h3>
-                <div style="max-width: 600px; margin: 0 auto;">
-                    <div style="display: flex; align-items: center; background: #FFF5F5; padding: var(--space-md); border-radius: var(--radius-md); margin-bottom: var(--space-sm);">
-                        <div style="background: var(--accent-coral); color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: var(--space-sm);">1</div>
-                        <div style="flex: 1;">
-                            <div style="font-weight: 600; color: var(--text-dark);">Multi-factor Authentication Implementation</div>
-                            <div style="font-size: 0.9rem; color: var(--text-light);">Priority: High • Impact: +15 points</div>
-                        </div>
-                    </div>
-                    
-                    <div style="display: flex; align-items: center; background: #FFFBEB; padding: var(--space-md); border-radius: var(--radius-md); margin-bottom: var(--space-sm);">
-                        <div style="background: #F59E0B; color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: var(--space-sm);">2</div>
-                        <div style="flex: 1;">
-                            <div style="font-weight: 600; color: var(--text-dark);">Access Review Automation</div>
-                            <div style="font-size: 0.9rem; color: var(--text-light);">Priority: Medium • Impact: +10 points</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        <div class="definition">
+            <h3>What is IAM Maturity & Why it Matters?</h3>
+            <p>IAM Maturity measures how effectively and consistently an organization manages identities and access across its environment and how well it is performing under real-world conditions such as:</p>
+            <ul>
+                <li>Security threats and identity-based attacks</li>
+                <li>Regulatory audits and compliance requirements</li>
+                <li>Business growth, cloud adoption, and digital transformation</li>
+                <li>Mergers, acquisitions, and organizational change</li>
+            </ul>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container" style="text-align: center;">
-            <h2>Ready to Assess Your IAM Maturity?</h2>
-            <p style="max-width: 600px; margin: 0 auto; color: rgba(255, 255, 255, 0.9);">Join thousands of security professionals who have improved their IAM programs with our assessment tool.</p>
-            <div class="cta-buttons">
-                <a href="#" class="btn btn-accent" style="background: white; color: var(--secondary-teal);">
-                    <i class="fas fa-rocket"></i> Start Free Assessment
-                </a>
-                <a href="#" class="btn btn-secondary" style="background: transparent; border: 2px solid white;">
-                    <i class="fas fa-file-pdf"></i> View Sample Report
-                </a>
-            </div>
+            <p>A higher IAM maturity indicates that IAM processes are:</p>
+            <ul>
+                <li>Predictable instead of reactive</li>
+                <li>Consistent instead of fragmented</li>
+                <li>Risk aware</li>
+                <li>Aligned with industry frameworks and business priorities</li>
+            </ul>
+            
+            <p>Assessing IAM maturity helps organizations:</p>
+            <ul>
+                <li>Identify gaps, risks, and control weaknesses</li>
+                <li>Prioritize IAM investments and automation</li>
+                <li>Measure progress over time</li>
+                <li>Align IAM capabilities with frameworks such as NIST, CRI, ISO, and industry expectations</li>
+                <li>Communicate IAM posture clearly to executives, auditors, and regulators</li>
+            </ul>
         </div>
-    </section>
+
+        <div class="definition">
+            <h3>How IAM Maturity is Calculated</h3>
+            <p>IAM maturity is not measured by a single control or tool. It is calculated through a structured, domain-based assessment that evaluates how IAM capabilities are designed, 
+            implemented, and operated in the organization. It is calculated using a <strong>weighted assessment model</strong>. This approach recognizes that not all IAM capabilities carry the same level of risk or business impact. 
+            Each question contributes to the final maturity <strong>score</strong> and its <strong>assigned weight</strong>.</p>
+            
+            <p>The calculation follows these stages:</p>
+            <ul>
+                <li><strong>Defining IAM Domains (Areas of Capability)</strong>
+                The first step in measuring IAM maturity is to identify the key functional areas or domains that represent the organization's IAM capabilities. 
+                These domains act as pillars of the assessment, covering both governance and operational aspects of identity and access management.
+                Domains are designed to reflect how IAM actually works in real organizations, not just how it is described in standards.
+                <br>
+                Typical IAM domains include identity lifecycle, access governance, authentication, privileged access, and monitoring.</li>
+
+                <li><strong>Assessing Each Domain Through Targeted Questions</strong>
+                Once IAM domains are defined, the next step is to evaluate how mature each domain is by asking specific, scenario-based questions that focus on real 
+                capabilities instead of asking abstract or purely technical questions. Each question presents descriptive maturity statements that reflect common real-world practices.</li>
+
+                <li><strong>Scoring Each Question Using a 1–5 Maturity Scale and applying weightage</strong>
+                Each question maps to a maturity score from 1 to 5, based on the selected description.
+                The score reflects how mature, consistent, and risk-aware the capability is.
+                The scale is designed to show progression, from ad-hoc practices to optimized, automated operations.
+                <br>
+                Each question is also assigned a weight that reflects its relative importance based on risk exposure, regulatory impact, business criticality, 
+                and industry context. Higher-risk capabilities contribute more significantly to the overall maturity score than lower-risk ones.</li>
+
+                <li><strong>Calculating weighted domain scores</strong>
+                For each domain, a weighted score is calculated by multiplying each question's score by its weight, summing the results, 
+                and normalizing them against the total domain weight. This produces a single maturity score per domain.
+                This score represents how mature the organization is in that specific IAM capability area.
+                Domain scores make it easier to see strengths and weaknesses, rather than hiding issues in a single overall number.</li>
+
+                <li><strong>Calculating overall IAM maturity using weighted domain scores</strong>
+                The overall IAM maturity score is calculated by aggregating all weighted domain scores. 
+                This provides a holistic view of the organization's IAM capability.</li>
+
+                <li><strong>Mapping the weighted score to a maturity level (Level 1–5)</strong>
+                The final weighted score is mapped to a clearly defined maturity level, ranging from Initial to Optimized. 
+                This translation makes the assessment results easy to interpret and actionable for executives, security leaders, and auditors.</li>
+            </ul>
+            
+            <table class="maturity-table">
+                <thead>
+                    <tr>
+                        <th style="width:25%">Score Range</th>
+                        <th style="width:25%">Maturity Level</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1.0 – 1.9</td>
+                        <td>Level 1 – Initial</td>
+                        <td>
+                            IAM practices are ad-hoc, reactive, and largely manual. Controls are inconsistently applied, heavily dependent on individuals, 
+                            and lack formal governance. Limited visibility, minimal audit evidence, and high operational and security risk are present.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2.0 – 2.9</td>
+                        <td>Level 2 – Repeatable</td>
+                        <td>
+                            Basic IAM processes exist and are repeatable in some areas, but execution is inconsistent across systems, 
+                            applications, or regions. Controls may rely on manual intervention or tickets. Limited enforcement, weak measurement, and partial auditability remain.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3.0 – 3.9</td>
+                        <td>Level 3 – Defined</td>
+                        <td>
+                            IAM processes are documented, standardized, and consistently followed across most systems. Roles, responsibilities, and approval workflows are clearly defined. 
+                            However, automation, authoritative integration, enforcement, or measurement may be incomplete, limiting risk assurance in regulated environments.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4.0 – 4.5</td>
+                        <td>Level 4 – Managed</td>
+                        <td>
+                            IAM is actively governed, enforced, and measured. Controls are consistently applied, integrated with authoritative sources (e.g., HR), 
+                            and supported by metrics and reporting. Risk is explicitly managed, audit evidence is reliable, and IAM demonstrably supports regulatory and business objectives.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4.6 – 5.0</td>
+                        <td>Level 5 – Optimized</td>
+                        <td>
+                            IAM is highly automated, risk-driven, and continuously improved. The organization leverages advanced analytics, behavioral signals, 
+                            and automation to proactively manage identity risk. Optimization is controlled, explainable, and auditable, not experimental or discretionary.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="definition">
+            <h3>Domains Considered in IAM Maturity</h3>
+            <ul>
+                <li>Identity Lifecycle Management (Joiner-Mover-Leaver)</li>
+                <li>Access Governance (IGA, approvals, access reviews)</li>
+                <li>Authentication & MFA</li>
+                <li>Privileged Access Management (PAM)</li>
+                <li>Monitoring & Logging</li>
+            </ul>
+        </div>
+
+        <div class="definition">
+            <h3>Maturity Score Measurement</h3>
+            <p>Each question is scored 1–5. Definitions:</p>
+            <table>
+                <tr>
+                    <th style="width:35%">Score</th>
+                    <th>Meaning</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Ad-hoc, manual, inconsistent</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Partially implemented, limited consistency</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Defined, documented, repeatable</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Managed, measured, enforced</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Optimized, automated, continuously improved</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- =========================================== -->
+        <!-- DYNAMIC QUESTIONS WILL BE INSERTED HERE -->
+        <!-- =========================================== -->
+        <div id="questions-container">
+            <!-- JavaScript will populate this section -->
+        </div>
+
+        <!-- Organizational Context Section -->
+        <div class="definition" style="margin-top: var(--space-xl);">
+            <h3>Organizational Context</h3>
+            <p>This information helps the assessment engine evaluate your IAM maturity relative to your industry, regulatory exposure, and risk posture.</p>
+
+            <table>
+                <tr>
+                    <th style="width:35%">Attribute</th>
+                    <th>Input</th>
+                </tr>
+                <tr>
+                    <td>Industry</td>
+                    <td>
+                        <select id="industry">
+                            <option value="">-- Select --</option>
+                            <option>Banking</option>
+                            <option>Insurance</option>
+                            <option>Retail</option>
+                            <option>Healthcare</option>
+                            <option>Technology</option>
+                            <option>Public Sector</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Organization Size</td>
+                    <td>
+                        <select id="orgSize">
+                            <option value="">-- Select --</option>
+                            <option>Small</option>
+                            <option>Mid-size</option>
+                            <option>Large Enterprise</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Risk Tolerance</td>
+                    <td>
+                        <select id="riskTolerance">
+                            <option value="">-- Select --</option>
+                            <option>Low</option>
+                            <option>Medium</option>
+                            <option>High</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+
+            <h4>
+                Geographic Presence
+                <span class="tooltip">ⓘ
+                    <span class="tooltiptext">
+                        AI uses geographic presence to adjust maturity expectations based on regional
+                        regulations, data residency requirements, and identity risk exposure.
+                        For example, IAM maturity expectations are higher for organizations operating
+                        in regulated regions such as the EU.
+                    </span>
+                </span>
+            </h4>
+            <p>Select all regions where your organization operates:</p>
+
+            <label> <input type="checkbox" name="geography" value="US"> United States </label>
+            <label> <input type="checkbox" name="geography" value="EU"> Europe (EU) </label>
+            <label> <input type="checkbox" name="geography" value="APAC"> Asia-Pacific (APAC)</label>
+
+            <h4>
+                Regulatory Scope
+                <span class="tooltip">ⓘ
+                    <span class="tooltiptext">
+                        AI considers regulatory scope to calibrate IAM maturity scoring.
+                        Organizations subject to regulations such as SOX, GLBA, GDPR, or HIPAA
+                        are expected to have stronger access governance, monitoring, and controls.
+                        This ensures scoring reflects regulatory accountability.
+                    </span>
+                </span>
+            </h4>
+            <p>Select applicable regulatory or compliance requirements:</p>
+
+            <label> <input type="checkbox" name="regulatory" value="SOX"> SOX</label>
+            <label> <input type="checkbox" name="regulatory" value="GLBA"> GLBA</label>
+            <label> <input type="checkbox" name="regulatory" value="GDPR"> GDPR</label>
+            <label> <input type="checkbox" name="regulatory" value="HIPAA"> HIPAA</label>	
+            <label> <input type="checkbox" name="regulatory" value="BSA"> Bank Secrecy Act (BSA)</label>
+            <label> <input type="checkbox" name="regulatory" value="FACT"> FACT Act</label>
+            <label> <input type="checkbox" name="regulatory" value="PCI"> PCI DSS</label>
+            <label> <input type="checkbox" name="regulatory" value="SWIFT"> SWIFT</label>
+            <label> <input type="checkbox" name="regulatory" value="FedLine"> FedLine</label>
+        </div>
+
+        <!-- Calculate Button -->
+        <div style="text-align: center; margin-top: var(--space-xl);">
+            <button class="btn btn-primary" onclick="calculate()" style="padding: 15px 40px; font-size: 1.1rem;">
+                <i class="fas fa-calculator"></i> Calculate Maturity Score
+            </button>
+        </div>
+
+        <!-- Results Display -->
+        <div class="result" id="output"></div>
+    </div>
 
     <!-- Footer -->
-    <footer>
+    <footer style="background: var(--primary-navy); color: white; padding: var(--space-xl) 0 var(--space-md); margin-top: var(--space-xl);">
         <div class="container">
-            <div class="footer-content">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-xl); margin-bottom: var(--space-lg);">
                 <div>
-                    <div class="footer-logo">
+                    <div style="font-size: 1.5rem; font-weight: 700; margin-bottom: var(--space-sm); color: white;">
                         <i class="fas fa-shield-alt"></i> IAM Maturity
                     </div>
-                    <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: var(--space-sm);">Comprehensive Identity and Access Management assessment tool for modern enterprises.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
+                    <p style="color: rgba(255, 255, 255, 0.8);">Comprehensive Identity and Access Management assessment tool for modern enterprises.</p>
+                    <div style="display: flex; gap: var(--space-sm); margin-top: var(--space-sm);">
+                        <a href="#" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; color: white; transition: background 0.3s;">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; color: white; transition: background 0.3s;">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; color: white; transition: background 0.3s;">
+                            <i class="fab fa-github"></i>
+                        </a>
                     </div>
                 </div>
                 
-                <div class="footer-links">
-                    <h4>Tools</h4>
-                    <ul>
-                        <li><a href="#">Assessment</a></li>
-                        <li><a href="#">Benchmark</a></li>
-                        <li><a href="#">Roadmap Generator</a></li>
-                        <li><a href="#">Compliance Check</a></li>
+                <div>
+                    <h4 style="color: white; margin-bottom: var(--space-sm);">Tools</h4>
+                    <ul style="list-style: none;">
+                        <li><a href="#" style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">Assessment</a></li>
+                        <li><a href="#" style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">Benchmark</a></li>
+                        <li><a href="#" style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">Roadmap Generator</a></li>
+                        <li><a href="#" style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">Compliance Check</a></li>
                     </ul>
                 </div>
                 
-                <div class="footer-links">
-                    <h4>Resources</h4>
-                    <ul>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Whitepapers</a></li>
-                        <li><a href="#">Webinars</a></li>
-                        <li><a href="#">Case Studies</a></li>
+                <div>
+                    <h4 style="color: white; margin-bottom: var(--space-sm);">Resources</h4>
+                    <ul style="list-style: none;">
+                        <li><a href="#" style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">Blog</a></li>
+                        <li><a href="#" style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">Whitepapers</a></li>
+                        <li><a href="#" style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">Webinars</a></li>
+                        <li><a href="#" style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">Case Studies</a></li>
                     </ul>
                 </div>
                 
-                <div class="footer-links">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Partners</a></li>
+                <div>
+                    <h4 style="color: white; margin-bottom: var(--space-sm);">Company</h4>
+                    <ul style="list-style: none;">
+                        <li><a href="#" style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">About Us</a></li>
+                        <li><a href="#" style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">Contact</a></li>
+                        <li><a href="#" style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">Careers</a></li>
+                        <li><a href="#" style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">Partners</a></li>
                     </ul>
                 </div>
             </div>
             
-            <div class="copyright">
-                <p>© 2024 IAM Maturity Tool. All rights reserved. | <a href="#" style="color: rgba(255, 255, 255, 0.8);">Privacy Policy</a> | <a href="#" style="color: rgba(255, 255, 255, 0.8);">Terms of Service</a></p>
+            <div style="text-align: center; padding-top: var(--space-md); border-top: 1px solid rgba(255, 255, 255, 0.1); color: rgba(255, 255, 255, 0.7); font-size: 0.9rem;">
+                <p>© 2024 IAM Maturity Tool. All rights reserved. | 
+                    <a href="#" style="color: rgba(255, 255, 255, 0.8);">Privacy Policy</a> | 
+                    <a href="#" style="color: rgba(255, 255, 255, 0.8);">Terms of Service</a>
+                </p>
             </div>
         </div>
     </footer>
 
+    <!-- JavaScript (Preserved with enhancements) -->
     <script>
-        // Simple interactive functions
-        function selectOption(element) {
-            // Remove selected class from all options
-            document.querySelectorAll('.option').forEach(opt => {
-                opt.classList.remove('selected');
-                opt.querySelector('input').checked = false;
+        // Your original JavaScript with added helper functions
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded, fetching questions...');
+            
+            // Load questions from JSON file
+            fetch('questions.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok: ' + response.status);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log('Questions loaded successfully:', data);
+                    generateQuestionsHTML(data.domains);
+                    updateCalculateFunction(data.domains);
+                    // Initialize YAML buttons after questions are generated
+                    initializeYAMLButtons();
+                    // Initialize mobile menu
+                    initializeMobileMenu();
+                })
+                .catch(error => {
+                    console.error('Error loading questions:', error);
+                    document.getElementById('output').innerHTML = 
+                        '<div style="color: red; padding: var(--space-md); background: #fff5f5; border-radius: var(--radius-sm);">Error loading questions. Please check if questions.json exists and is valid JSON.</div>';
+                });
+        });
+
+        function generateQuestionsHTML(domains) {
+            console.log('Generating HTML for domains:', domains);
+            
+            // Get the container where questions should go
+            const questionsContainer = document.getElementById('questions-container');
+            
+            if (!questionsContainer) {
+                console.error('Cannot find questions-container element!');
+                return;
+            }
+            
+            // Clear any existing content
+            questionsContainer.innerHTML = '';
+            
+            // Create the main header for this section
+            const header = document.createElement('h2');
+            const headerText = document.createTextNode('Interactive IAM Maturity Scoring');
+            header.appendChild(headerText);
+
+            // Create tooltip container (span inside the h2)
+            const tooltip = document.createElement('span');
+            tooltip.className = 'tooltip';
+            tooltip.textContent = 'ⓘ';
+
+            // Create tooltip content
+            const tooltipText = document.createElement('span');
+            tooltipText.className = 'tooltiptext';
+
+            // Create the tooltip content with proper formatting
+            const tooltipContent = document.createElement('div');
+            tooltipContent.className = 'tooltip-content';
+            tooltipContent.innerHTML = `
+                <strong>How to Answer This Question:</strong><br>
+                • Consider whether controls are enforced or optional<br>
+                • Check if HR is the authoritative source<br>
+                • Verify audit evidence and metrics availability<br>
+                • Think about regulatory expectations (SOX, GLBA, FFIEC)
+            `;
+
+            tooltipText.appendChild(tooltipContent);
+            tooltip.appendChild(tooltipText);
+            header.appendChild(tooltip);
+
+            questionsContainer.appendChild(header);
+            
+            // Create a container for all domains
+            const allDomainsContainer = document.createElement('div');
+            allDomainsContainer.className = 'all-domains-container';
+            
+            // Generate HTML for each domain
+            domains.forEach(domain => {
+                const domainSection = createDomainSection(domain);
+                allDomainsContainer.appendChild(domainSection);
             });
             
-            // Add selected class to clicked option
-            element.classList.add('selected');
-            element.querySelector('input').checked = true;
+            questionsContainer.appendChild(allDomainsContainer);
+            console.log('Questions HTML generated successfully');
         }
-        
-        // Animation on scroll
-        document.addEventListener('DOMContentLoaded', function() {
-            const fadeElements = document.querySelectorAll('.fade-in');
+
+        function createDomainSection(domain) {
+            const section = document.createElement('div');
+            section.className = 'domain-section';
+            section.id = `domain-${domain.id}`;
             
-            const fadeInOnScroll = function() {
-                fadeElements.forEach(element => {
-                    const elementTop = element.getBoundingClientRect().top;
-                    const elementVisible = 150;
+            // Domain header
+            const header = document.createElement('h3');
+            header.innerHTML = `${domain.id}. ${domain.name}`;
+            
+            // Domain description
+            const description = document.createElement('p');
+            description.textContent = domain.description;
+            
+            // Create table
+            const table = document.createElement('table');
+            table.innerHTML = `
+                <thead>
+                    <tr>
+                        <th style="width:35%">Question</th>
+                        <th>Maturity Description (Select One)</th>
+                    </tr>
+                </thead>
+                <tbody id="${domain.id}-questions">
+                    <!-- Questions will be inserted here -->
+                </tbody>
+            `;
+            
+            section.appendChild(header);
+            section.appendChild(description);
+            section.appendChild(table);
+            
+            // Generate questions for this domain
+            const tbody = table.querySelector(`#${domain.id}-questions`);
+            if (tbody) {
+                domain.questions.forEach(question => {
+                    const questionRow = createQuestionRow(question, domain);
+                    tbody.appendChild(questionRow);
+                });
+            }
+            
+            return section;
+        }
+
+        function createQuestionRow(question, domain) {
+            const row = document.createElement('tr');
+            
+            // Create the first 3 options (Levels 1-3)
+            const optionsRow1 = question.options.slice(0, 3).map(option => `
+                <label class="tile-radio">
+                    <input type="radio" name="${question.id}" value="${option.value}" 
+                           data-question-id="${question.id}" data-domain="${domain.id}">
+                    <span>${option.description}</span>
+                </label>
+            `).join('');
+            
+            // Create the last 2 options (Levels 4-5)
+            const optionsRow2 = question.options.slice(3).map(option => `
+                <label class="tile-radio">
+                    <input type="radio" name="${question.id}" value="${option.value}"
+                           data-question-id="${question.id}" data-domain="${domain.id}">
+                    <span>${option.description}</span>
+                </label>
+            `).join('');
+            
+            row.innerHTML = `
+                <td colspan="2" class="question-block" data-question-id="${question.id}" data-weight="${question.weight}" data-domain-name="${domain.name}">
+                    <!-- Line 1: Question -->
+                    <div class="question-text">
+                        <strong>${question.text}</strong>
+                    </div>
+                    <div class="question-text">
+                        <i>${question.clarification}</i>
+                    </div>            
+
+                    <!-- Line 2: Radio Tiles (Levels 1–3) -->
+                    <div class="tile-row">
+                        ${optionsRow1}
+                    </div>
+
+                    <!-- Line 3: Radio Tiles (Levels 4–5) -->
+                    <div class="tile-row">
+                        ${optionsRow2}
+                    </div>
+
+                    <!-- Line 4: Additional Context -->
+                    <label><strong>Additional Clarification (Optional)</strong></label>
+                    <div class="input-row inline-row">
+                        <textarea rows="3" class="additional-context"
+                                  data-question-id="${question.id}"
+                                  placeholder="Provide clarifications, scope, or known gaps..."></textarea>
+                    </div>
+
+                    <!-- Line 5: Control ID + Control Details -->
+                    <div class="input-row inline-row">
+                        <input type="text" class="control-id"
+                               data-question-id="${question.id}"
+                               placeholder="Control ID (e.g., CTRL-001)">
+                        <textarea rows="1" class="control-description"
+                                  data-question-id="${question.id}"
+                                  placeholder="Control description"></textarea>
+                        <input type="text" class="metrics-id"
+                               data-question-id="${question.id}"
+                               placeholder="Metrics ID (e.g., MET-01)">
+                        <textarea rows="1" class="metrics-description"
+                                  data-question-id="${question.id}"
+                                  placeholder="Metrics details"></textarea>
+                    </div>
+
+                    <!-- Line 7: Generate YAML Button -->
+                    <div class="yaml-button-row">
+                        <button type="button" class="generate-yaml-btn" data-question-id="${question.id}">
+                            <i class="fas fa-code"></i> Generate YAML
+                        </button>
+                        <span class="copy-status" id="copy-status-${question.id}"></span>
+                    </div>
+                </td>
+            `;
+            
+            return row;
+        }
+
+        // Initialize YAML buttons after DOM is loaded
+        function initializeYAMLButtons() {
+            // Add event listeners to all YAML buttons
+            const yamlButtons = document.querySelectorAll('.generate-yaml-btn');
+            yamlButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const questionId = this.getAttribute('data-question-id');
+                    generateYAMLForQuestion(questionId);
+                });
+            });
+        }
+
+        function generateYAMLForQuestion(questionId) {
+            // Find the question block
+            const questionBlock = document.querySelector(`[data-question-id="${questionId}"]`);
+            if (!questionBlock) return;
+            
+            // Get question data
+            const domainName = questionBlock.getAttribute('data-domain-name');
+            const weight = questionBlock.getAttribute('data-weight');
+            const questionText = questionBlock.querySelector('.question-text strong').textContent;
+            
+            // Get selected radio button value
+            const selectedRadio = questionBlock.querySelector(`input[name="${questionId}"]:checked`);
+            const selectedValue = selectedRadio ? selectedRadio.value : 'Not selected';
+            const selectedText = selectedRadio ? selectedRadio.parentElement.querySelector('span').textContent : 'Not selected';
+            
+            // Get additional context
+            const additionalContext = questionBlock.querySelector('.additional-context').value || 'No additional context provided';
+            
+            // Get control ID and description
+            const controlId = questionBlock.querySelector('.control-id').value || 'Not provided';
+            const controlDescription = questionBlock.querySelector('.control-description').value || 'No additional context provided';
+            
+            // Get metrics ID and description
+            const metricsId = questionBlock.querySelector('.metrics-id').value || 'Not provided';
+            const metricsDescription = questionBlock.querySelector('.metrics-description').value || 'No additional context provided';
+            
+            // Get organizational context from the form
+            const industry = document.getElementById('industry') ? document.getElementById('industry').value : 'Banking';
+            const geography = Array.from(document.querySelectorAll('input[name="geography"]:checked')).map(cb => cb.value);
+            const regulatory = Array.from(document.querySelectorAll('input[name="regulatory"]:checked')).map(cb => cb.value);
+            
+            // Default values if not selected
+            const effectiveIndustry = industry || 'Banking';
+            const effectiveRegulatory = regulatory.length > 0 ? regulatory : ['SOX', 'GLBA'];
+            const effectiveGeography = geography.length > 0 ? geography : ['US', 'EU'];
+            
+            // Generate YAML
+            const yamlContent = `execution:
+  input:
+    domain: ${domainName}
+    question_id: ${questionId}
+    question_text: ${questionText}
+    selected_description: ${selectedText}
+    baseline_score: ${selectedValue}
+    question_weight: ${weight}
+    organization_context:
+      industry: ${effectiveIndustry}
+      regulatory_scope: [${effectiveRegulatory.join(', ')}]
+      geography: [${effectiveGeography.join(', ')}]
+    iam_context:
+      iam_architecture: Hybrid
+      identity_sources: [HR System]
+      user_types: [Employees, Contractors]
+      cloud_presence: true
+    frameworks_referenced: [NIST CSF PR.AA, ISO/IEC 27001 Annex A.9, CRI Identity Risk]
+    evidence_provided: false
+    additional_context:
+      user_text: ${additionalContext}
+      controls_id: ${controlId}
+      controls_description: ${controlDescription}
+      metrics_id: ${metricsId}
+      metrics_description: ${metricsDescription}`;
+            
+            // Display YAML in modal
+            showYAMLModal(yamlContent, questionId);
+        }
+
+        function showYAMLModal(yamlContent, questionId) {
+            // Remove existing modal if any
+            const existingModal = document.querySelector('.yaml-modal');
+            if (existingModal) {
+                existingModal.remove();
+            }
+            
+            // Create modal
+            const modal = document.createElement('div');
+            modal.className = 'yaml-modal';
+            modal.innerHTML = `
+                <div class="yaml-modal-content">
+                    <div class="yaml-header">
+                        <div class="yaml-title">YAML Output - ${questionId}</div>
+                        <button class="close-yaml">&times;</button>
+                    </div>
+                    <div class="yaml-content">${yamlContent}</div>
+                    <div class="yaml-actions">
+                        <button class="copy-yaml-btn" data-yaml="${encodeURIComponent(yamlContent)}" data-question-id="${questionId}">
+                            <i class="fas fa-copy"></i> Copy to Clipboard
+                        </button>
+                        <button class="close-yaml-btn">Close</button>
+                    </div>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
+            
+            // Show modal
+            modal.style.display = 'block';
+            
+            // Add event listeners
+            const closeButtons = modal.querySelectorAll('.close-yaml, .close-yaml-btn');
+            closeButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    modal.style.display = 'none';
+                });
+            });
+            
+            // Copy to clipboard button
+            const copyButton = modal.querySelector('.copy-yaml-btn');
+            copyButton.addEventListener('click', () => {
+                copyToClipboard(yamlContent, questionId);
+            });
+            
+            // Close modal when clicking outside
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        }
+
+        function copyToClipboard(text, questionId) {
+            navigator.clipboard.writeText(text).then(() => {
+                console.log('YAML copied to clipboard for question:', questionId);
+                const copyButton = document.querySelector(`[data-question-id="${questionId}"]`);
+                if (copyButton) {
+                    const statusSpan = document.getElementById(`copy-status-${questionId}`);
+                    if (statusSpan) {
+                        statusSpan.textContent = 'Copied!';
+                        setTimeout(() => {
+                            statusSpan.textContent = '';
+                        }, 2000);
+                    }
+                }
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+                alert('Failed to copy to clipboard. Please select the text and copy manually.');
+            });
+        }
+
+        function updateCalculateFunction(domains) {
+            // Override the calculate function to work with radio buttons
+            window.calculate = function() {
+                console.log('Calculating scores...');
+                
+                const scores = {};
+                const weights = {};
+                
+                // Initialize domain scores
+                domains.forEach(domain => {
+                    scores[domain.id.toLowerCase()] = { 
+                        sum: 0, 
+                        count: 0, 
+                        weightSum: 0,
+                        name: domain.name 
+                    };
+                });
+                
+                // Collect all radio buttons
+                const radioButtons = document.querySelectorAll('input[type="radio"]:checked');
+                console.log('Selected radio buttons:', radioButtons.length);
+                
+                radioButtons.forEach(radio => {
+                    const questionId = radio.getAttribute('data-question-id');
+                    const domainId = radio.getAttribute('data-domain');
+                    const value = parseInt(radio.value);
                     
-                    if (elementTop < window.innerHeight - elementVisible) {
-                        element.style.animationDelay = "0.2s";
+                    // Find the question weight
+                    const questionBlock = document.querySelector(`[data-question-id="${questionId}"]`);
+                    const weight = questionBlock ? parseInt(questionBlock.getAttribute('data-weight')) || 1 : 1;
+                    
+                    if (domainId && scores[domainId.toLowerCase()]) {
+                        scores[domainId.toLowerCase()].sum += value * weight;
+                        scores[domainId.toLowerCase()].weightSum += weight;
+                        scores[domainId.toLowerCase()].count++;
                     }
                 });
+                
+                // Calculate domain scores
+                let domainOutput = '';
+                let overallSum = 0;
+                let overallWeightSum = 0;
+                let domainCount = 0;
+                
+                domains.forEach(domain => {
+                    const domainId = domain.id.toLowerCase();
+                    const domainScore = scores[domainId];
+                    if (domainScore.count > 0) {
+                        const weightedAvg = domainScore.sum / domainScore.weightSum;
+                        const levelText = level(weightedAvg);
+                        
+                        // Create progress bar for domain
+                        const progressPercent = (weightedAvg / 5) * 100;
+                        domainOutput += `
+                            <div style="margin-bottom: 15px;">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                                    <span><strong>${domainScore.name}</strong></span>
+                                    <span>${weightedAvg.toFixed(2)}/5.0 (${levelText})</span>
+                                </div>
+                                <div style="height: 10px; background: #e2e8f0; border-radius: 5px; overflow: hidden;">
+                                    <div style="height: 100%; width: ${progressPercent}%; background: var(--secondary-teal); border-radius: 5px;"></div>
+                                </div>
+                            </div>
+                        `;
+                        overallSum += domainScore.sum;
+                        overallWeightSum += domainScore.weightSum;
+                        domainCount++;
+                    }
+                });
+                
+                // Calculate overall score
+                let overall = 0;
+                if (overallWeightSum > 0) {
+                    overall = overallSum / overallWeightSum;
+                }
+                
+                const overallProgress = (overall / 5) * 100;
+                const outputDiv = document.getElementById('output');
+                
+                // Create modern results display
+                outputDiv.innerHTML = `
+                    <div style="background: white; padding: var(--space-lg); border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); margin-top: var(--space-md);">
+                        <h3 style="color: var(--primary-navy); margin-bottom: var(--space-md);">IAM Maturity Assessment Results</h3>
+                        
+                        <div style="text-align: center; margin-bottom: var(--space-lg);">
+                            <div style="font-size: 3.5rem; font-weight: 700; color: var(--secondary-teal); margin-bottom: 10px;">${overall.toFixed(2)}</div>
+                            <div style="font-size: 1.2rem; color: var(--primary-navy); font-weight: 600; margin-bottom: 15px;">${level(overall)}</div>
+                            <div style="height: 12px; background: #e2e8f0; border-radius: 6px; margin: 0 auto 15px; max-width: 400px; overflow: hidden;">
+                                <div style="height: 100%; width: ${overallProgress}%; background: var(--secondary-teal); border-radius: 6px;"></div>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; max-width: 400px; margin: 0 auto; font-size: 0.9rem; color: var(--text-light);">
+                                <span>Level 1</span>
+                                <span>Level 5</span>
+                            </div>
+                        </div>
+                        
+                        <h4 style="color: var(--primary-navy); margin-bottom: var(--space-sm);">Domain Scores:</h4>
+                        ${domainOutput || '<p style="color: var(--text-light); text-align: center;">No scores selected yet. Please answer some questions.</p>'}
+                        
+                        ${domainCount > 0 ? 
+                            `<div style="margin-top: var(--space-md); padding-top: var(--space-md); border-top: 1px solid var(--border-color);">
+                                <p style="color: var(--text-light); text-align: center;"><em>Based on ${domainCount} domain(s) with answers</em></p>
+                            </div>` : ''
+                        }
+                        
+                        <div style="margin-top: var(--space-md); text-align: center;">
+                            <button class="btn btn-secondary" onclick="window.print()" style="margin-right: 10px;">
+                                <i class="fas fa-print"></i> Print Results
+                            </button>
+                            <button class="btn btn-primary" onclick="shareResults()">
+                                <i class="fas fa-share-alt"></i> Share Results
+                            </button>
+                        </div>
+                    </div>
+                `;
+                
+                // Scroll to results
+                outputDiv.scrollIntoView({ behavior: 'smooth' });
+                
+                console.log('Calculation complete. Overall score:', overall);
             };
+        }
+
+        // Keep the existing level function
+        function level(score) {
+            if (score < 2) return "Level 1 – Initial";
+            if (score < 3) return "Level 2 – Repeatable";
+            if (score < 4) return "Level 3 – Defined";
+            if (score < 4.6) return "Level 4 – Managed";
+            return "Level 5 – Optimized";
+        }
+
+        // Helper function for sharing results
+        function shareResults() {
+            const overallScore = document.querySelector('#output .result strong')?.textContent || 'N/A';
+            const maturityLevel = document.querySelector('#output .result p:nth-child(2) strong')?.textContent || 'N/A';
             
-            fadeInOnScroll();
-            window.addEventListener('scroll', fadeInOnScroll);
+            const shareText = `IAM Maturity Assessment Results:
+Overall Score: ${overallScore}
+Maturity Level: ${maturityLevel}
+
+Assessed using IAM Maturity Tool`;
             
-            // Mobile menu toggle
+            if (navigator.share) {
+                navigator.share({
+                    title: 'IAM Maturity Assessment Results',
+                    text: shareText,
+                    url: window.location.href
+                });
+            } else {
+                navigator.clipboard.writeText(shareText).then(() => {
+                    alert('Results copied to clipboard!');
+                });
+            }
+        }
+
+        // Mobile menu functionality
+        function initializeMobileMenu() {
             const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
             const navLinks = document.querySelector('.nav-links');
             
-            mobileMenuBtn.addEventListener('click', function() {
-                navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-                navLinks.style.flexDirection = 'column';
-                navLinks.style.position = 'absolute';
-                navLinks.style.top = '100%';
-                navLinks.style.left = '0';
-                navLinks.style.right = '0';
-                navLinks.style.background = 'white';
-                navLinks.style.padding = 'var(--space-md)';
-                navLinks.style.boxShadow = 'var(--shadow-md)';
-            });
-        });
+            if (mobileMenuBtn && navLinks) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+                });
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!navLinks.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
+                        navLinks.style.display = 'none';
+                    }
+                });
+            }
+        }
+
+        // Scroll to assessment function
+        function scrollToAssessment() {
+            const questionsContainer = document.getElementById('questions-container');
+            if (questionsContainer) {
+                questionsContainer.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
     </script>
 </body>
 </html>
