@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IAM Maturity Assessment | Modern Security Tool</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ===== CSS Reset & Variables ===== */
+        :root {
+            /* Color Palette */
+            --primary-navy: #0A2647;
+            --primary-navy-light: #1a3a62;
+            --secondary-teal: #2EC4B6;
+            --secondary-teal-dark: #25a89a;
+            --accent-coral: #FF6B6B;
+            --accent-coral-dark: #e55a5a;
+            --light-bg: #F8F9FA;
+            --light-card: #FFFFFF;
+            --text-dark: #2D3748;
+            --text-light: #718096;
+            --border-color: #E2E8F0;
+            
+            /* Spacing */
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 2rem;
+            --space-lg: 3rem;
+            --space-xl: 5rem;
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.07);
+            --shadow-lg: 0 10px 25px rgba(0,0,0,0.08);
+            
+            /* Border Radius */
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--light-bg);
+        }
+        
+        /* ===== Typography ===== */
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: var(--space-sm);
+        }
+        
+        h1 {
+            font-size: 3rem;
+            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--secondary-teal) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        h2 {
+            font-size: 2.25rem;
+            color: var(--primary-navy);
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            color: var(--primary-navy-light);
+        }
+        
+        p {
+            margin-bottom: var(--space-sm);
+            color: var(--text-light);
+        }
+        
+        /* ===== Layout ===== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-md);
+        }
+        
+        section {
+            padding: var(--space-xl) 0;
+        }
+        
+        /* ===== Header ===== */
+        header {
+            background-color: white;
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--space-sm) 0;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-navy);
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+        
+        .logo i {
+            color: var(--secondary-teal);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: var(--space-md);
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary-teal);
+        }
+        
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--secondary-teal);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary-navy);
+            cursor: pointer;
+        }
+        
+        /* ===== Buttons ===== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-xs);
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            font-size: 1rem;
+        }
+        
+        .btn-primary {
+            background-color: var(--secondary-teal);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--secondary-teal-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .btn-secondary {
+            background-color: white;
+            color: var(--primary-navy);
+            border: 2px solid var(--border-color);
+        }
+        
+        .btn-secondary:hover {
+            border-color: var(--secondary-teal);
+            color: var(--secondary-teal);
+        }
+        
+        .btn-accent {
+            background-color: var(--accent-coral);
+            color: white;
+        }
+        
+        .btn-accent:hover {
+            background-color: var(--accent-coral-dark);
+        }
+        
+        /* ===== Hero Section ===== */
+        .hero {
+            background: linear-gradient(135deg, #f5fdff 0%, #f0f9ff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="%230A2647" opacity="0.03"/></svg>');
+            background-size: cover;
+        }
+        
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-xl);
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-text {
+            max-width: 600px;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            margin-bottom: var(--space-md);
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: var(--space-sm);
+            flex-wrap: wrap;
+            margin-top: var(--space-md);
+        }
+        
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .dashboard-preview {
+            width: 100%;
+            max-width: 500px;
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: var(--space-md);
+            box-shadow: var(--shadow-lg);
+            transform: perspective(1000px) rotateY(-10deg);
+            transition: transform 0.5s;
+        }
+        
+        .dashboard-preview:hover {
+            transform: perspective(1000px) rotateY(0deg);
+        }
+        
+        /* ===== Features Section ===== */
+        .features {
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: var(--space-xl);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-md);
+        }
+        
+        .feature-card {
+            background: var(--light-card);
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid var(--border-color);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #E3F2FD 0%, #B3E0FF 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--space-sm);
+            font-size: 1.75rem;
+            color: var(--secondary-teal);
+        }
+        
+        /* ===== Assessment Preview ===== */
+        .assessment-preview {
+            background: linear-gradient(135deg, var(--primary-navy) 0%, #1a3a62 100%);
+            color: white;
+        }
+        
+        .assessment-preview h2 {
+            color: white;
+        }
+        
+        .assessment-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            margin-top: var(--space-lg);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .question-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--space-md);
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            margin: var(--space-sm) 0;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background-color: var(--secondary-teal);
+            width: 15%;
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+        
+        .options-grid {
+            display: grid;
+            gap: var(--space-sm);
+            margin: var(--space-md) 0;
+        }
+        
+        .option {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-sm);
+            padding: var(--space-md);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .option:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--secondary-teal);
+        }
+        
+        .option.selected {
+            background: rgba(46, 196, 182, 0.2);
+            border-color: var(--secondary-teal);
+        }
+        
+        .option input {
+            margin-right: var(--space-sm);
+        }
+        
+        .assessment-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: var(--space-md);
+        }
+        
+        /* ===== Results Preview ===== */
+        .results-preview {
+            background-color: white;
+        }
+        
+        .score-card {
+            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-navy-light) 100%);
+            color: white;
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            text-align: center;
+            max-width: 400px;
+            margin: 0 auto var(--space-xl);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .score-value {
+            font-size: 4rem;
+            font-weight: 700;
+            margin: var(--space-sm) 0;
+        }
+        
+        .score-stars {
+            color: #FFD700;
+            font-size: 1.5rem;
+            margin-bottom: var(--space-sm);
+        }
+        
+        .score-level {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+        
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-md);
+            margin-bottom: var(--space-xl);
+        }
+        
+        .metric-card {
+            background: var(--light-card);
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
+            text-align: center;
+            border-top: 4px solid var(--secondary-teal);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .metric-bar {
+            height: 8px;
+            background-color: var(--border-color);
+            border-radius: 4px;
+            margin: var(--space-sm) 0;
+            overflow: hidden;
+        }
+        
+        .metric-fill {
+            height: 100%;
+            background-color: var(--secondary-teal);
+            border-radius: 4px;
+        }
+        
+        /* ===== CTA Section ===== */
+        .cta-section {
+            background: linear-gradient(135deg, var(--secondary-teal) 0%, #25a89a 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            color: white;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-md);
+            margin-top: var(--space-lg);
+            flex-wrap: wrap;
+        }
+        
+        /* ===== Footer ===== */
+        footer {
+            background-color: var(--primary-navy);
+            color: white;
+            padding: var(--space-xl) 0 var(--space-md);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-xl);
+            margin-bottom: var(--space-lg);
+        }
+        
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: var(--space-sm);
+            color: white;
+        }
+        
+        .footer-links h4 {
+            color: white;
+            margin-bottom: var(--space-sm);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: var(--space-xs);
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary-teal);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: var(--space-sm);
+            margin-top: var(--space-sm);
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: background 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: var(--secondary-teal);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: var(--space-md);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+        
+        /* ===== Responsive Design ===== */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .hero::before {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero-buttons, .assessment-nav, .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .dashboard-preview {
+                transform: none;
+            }
+            
+            section {
+                padding: var(--space-lg) 0;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.75rem;
+            }
+            
+            .container {
+                padding: 0 var(--space-sm);
+            }
+            
+            .score-value {
+                font-size: 3rem;
+            }
+        }
+        
+        /* ===== Animation Classes ===== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.6s forwards;
+        }
+        
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(46, 196, 182, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(46, 196, 182, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(46, 196, 182, 0); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-shield-alt"></i>
+                IAM Maturity
+            </div>
+            <nav class="nav-links">
+                <a href="#" class="active">Assessment</a>
+                <a href="#">How It Works</a>
+                <a href="#">Resources</a>
+                <a href="#">Pricing</a>
+                <a href="#"><i class="fas fa-user"></i> Login</a>
+            </nav>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text fade-in">
+                <h1>Elevate Your IAM Security</h1>
+                <p class="hero-subtitle">Measure, analyze, and improve your Identity and Access Management maturity in minutes with our comprehensive assessment tool.</p>
+                <div class="hero-buttons">
+                    <a href="#assessment" class="btn btn-primary pulse">
+                        <i class="fas fa-play-circle"></i> Start Free Assessment
+                    </a>
+                    <a href="#features" class="btn btn-secondary">
+                        <i class="fas fa-info-circle"></i> See How It Works
+                    </a>
+                </div>
+                <p class="hero-note">Already started? <a href="#" style="color: var(--secondary-teal); text-decoration: none; font-weight: 600;">Continue your assessment →</a></p>
+            </div>
+            <div class="hero-visual fade-in">
+                <div class="dashboard-preview">
+                    <h3 style="color: var(--primary-navy); margin-bottom: var(--space-sm);">Your IAM Score</h3>
+                    <div style="display: flex; align-items: center; gap: var(--space-md);">
+                        <div style="font-size: 2.5rem; font-weight: 700; color: var(--secondary-teal);">72</div>
+                        <div style="flex: 1;">
+                            <div style="height: 10px; background: var(--border-color); border-radius: 5px; overflow: hidden;">
+                                <div style="width: 72%; height: 100%; background: var(--secondary-teal);"></div>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-top: 5px; font-size: 0.9rem; color: var(--text-light);">
+                                <span>Basic</span>
+                                <span>Advanced</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-top: var(--space-md); padding-top: var(--space-sm); border-top: 1px solid var(--border-color);">
+                        <div style="display: flex; justify-content: space-between;">
+                            <span style="font-weight: 600; color: var(--text-dark);">Governance</span>
+                            <span style="color: var(--secondary-teal); font-weight: 600;">68/100</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-top: 5px;">
+                            <span style="font-weight: 600; color: var(--text-dark);">Technology</span>
+                            <span style="color: var(--secondary-teal); font-weight: 600;">75/100</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Use Our IAM Maturity Tool</h2>
+                <p>Comprehensive assessment designed by security experts</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Quick Assessment</h3>
+                    <p>Complete the 20-question assessment in under 15 minutes. No registration required to start.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Data-Driven Insights</h3>
+                    <p>Get detailed analysis with benchmarks against industry standards and regulatory requirements.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Actionable Roadmap</h3>
+                    <p>Receive prioritized recommendations with clear steps to improve your IAM maturity.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-history"></i>
+                    </div>
+                    <h3>Track Progress</h3>
+                    <p>Save your results and retake assessments to measure improvements over time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Assessment Preview -->
+    <section class="assessment-preview" id="assessment">
+        <div class="container">
+            <h2>Experience the Assessment</h2>
+            <p style="color: rgba(255, 255, 255, 0.9); max-width: 600px;">Try a sample question to see how our assessment works. Each question helps evaluate a different aspect of your IAM program.</p>
+            
+            <div class="assessment-card fade-in">
+                <div class="question-header">
+                    <div>
+                        <h3>How mature is your password policy enforcement?</h3>
+                        <p style="color: rgba(255, 255, 255, 0.8);">Question 3 of 20</p>
+                    </div>
+                    <div style="text-align: right;">
+                        <div style="font-size: 1.5rem; font-weight: 700;">15%</div>
+                        <div style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.8);">Complete</div>
+                    </div>
+                </div>
+                
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                
+                <div class="options-grid">
+                    <div class="option" onclick="selectOption(this)">
+                        <input type="radio" name="question" id="option1">
+                        <label for="option1">Basic - Minimal password requirements with manual enforcement</label>
+                    </div>
+                    <div class="option" onclick="selectOption(this)">
+                        <input type="radio" name="question" id="option2">
+                        <label for="option2">Standard - Regular password updates with some automated checks</label>
+                    </div>
+                    <div class="option selected" onclick="selectOption(this)">
+                        <input type="radio" name="question" id="option3" checked>
+                        <label for="option3">Advanced - Multi-factor authentication with biometric options</label>
+                    </div>
+                    <div class="option" onclick="selectOption(this)">
+                        <input type="radio" name="question" id="option4">
+                        <label for="option4">Optimized - Adaptive, risk-based authentication across all systems</label>
+                    </div>
+                </div>
+                
+                <div class="assessment-nav">
+                    <button class="btn btn-secondary">
+                        <i class="fas fa-arrow-left"></i> Previous
+                    </button>
+                    <button class="btn btn-primary">
+                        Next <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Preview -->
+    <section class="results-preview">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get Actionable Results</h2>
+                <p>Your personalized IAM maturity score with improvement roadmap</p>
+            </div>
+            
+            <div class="score-card fade-in">
+                <p style="color: rgba(255, 255, 255, 0.9);">Your IAM Maturity Score</p>
+                <div class="score-value">72/100</div>
+                <div class="score-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <div class="score-level">INTERMEDIATE</div>
+            </div>
+            
+            <div class="metrics-grid">
+                <div class="metric-card fade-in">
+                    <h3>Governance</h3>
+                    <div class="metric-value" style="font-size: 1.75rem; font-weight: 700; color: var(--secondary-teal);">68/100</div>
+                    <div class="metric-bar">
+                        <div class="metric-fill" style="width: 68%;"></div>
+                    </div>
+                    <p style="font-size: 0.9rem;">Policies, roles, and compliance</p>
+                </div>
+                <div class="metric-card fade-in">
+                    <h3>Technology</h3>
+                    <div class="metric-value" style="font-size: 1.75rem; font-weight: 700; color: var(--secondary-teal);">75/100</div>
+                    <div class="metric-bar">
+                        <div class="metric-fill" style="width: 75%;"></div>
+                    </div>
+                    <p style="font-size: 0.9rem;">Tools, automation, and integration</p>
+                </div>
+                <div class="metric-card fade-in">
+                    <h3>Operations</h3>
+                    <div class="metric-value" style="font-size: 1.75rem; font-weight: 700; color: var(--secondary-teal);">70/100</div>
+                    <div class="metric-bar">
+                        <div class="metric-fill" style="width: 70%;"></div>
+                    </div>
+                    <p style="font-size: 0.9rem;">Processes, monitoring, and response</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center;">
+                <h3 style="margin-bottom: var(--space-md);">Top Improvement Areas</h3>
+                <div style="max-width: 600px; margin: 0 auto;">
+                    <div style="display: flex; align-items: center; background: #FFF5F5; padding: var(--space-md); border-radius: var(--radius-md); margin-bottom: var(--space-sm);">
+                        <div style="background: var(--accent-coral); color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: var(--space-sm);">1</div>
+                        <div style="flex: 1;">
+                            <div style="font-weight: 600; color: var(--text-dark);">Multi-factor Authentication Implementation</div>
+                            <div style="font-size: 0.9rem; color: var(--text-light);">Priority: High • Impact: +15 points</div>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; align-items: center; background: #FFFBEB; padding: var(--space-md); border-radius: var(--radius-md); margin-bottom: var(--space-sm);">
+                        <div style="background: #F59E0B; color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: var(--space-sm);">2</div>
+                        <div style="flex: 1;">
+                            <div style="font-weight: 600; color: var(--text-dark);">Access Review Automation</div>
+                            <div style="font-size: 0.9rem; color: var(--text-light);">Priority: Medium • Impact: +10 points</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container" style="text-align: center;">
+            <h2>Ready to Assess Your IAM Maturity?</h2>
+            <p style="max-width: 600px; margin: 0 auto; color: rgba(255, 255, 255, 0.9);">Join thousands of security professionals who have improved their IAM programs with our assessment tool.</p>
+            <div class="cta-buttons">
+                <a href="#" class="btn btn-accent" style="background: white; color: var(--secondary-teal);">
+                    <i class="fas fa-rocket"></i> Start Free Assessment
+                </a>
+                <a href="#" class="btn btn-secondary" style="background: transparent; border: 2px solid white;">
+                    <i class="fas fa-file-pdf"></i> View Sample Report
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-logo">
+                        <i class="fas fa-shield-alt"></i> IAM Maturity
+                    </div>
+                    <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: var(--space-sm);">Comprehensive Identity and Access Management assessment tool for modern enterprises.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Tools</h4>
+                    <ul>
+                        <li><a href="#">Assessment</a></li>
+                        <li><a href="#">Benchmark</a></li>
+                        <li><a href="#">Roadmap Generator</a></li>
+                        <li><a href="#">Compliance Check</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Whitepapers</a></li>
+                        <li><a href="#">Webinars</a></li>
+                        <li><a href="#">Case Studies</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Partners</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2024 IAM Maturity Tool. All rights reserved. | <a href="#" style="color: rgba(255, 255, 255, 0.8);">Privacy Policy</a> | <a href="#" style="color: rgba(255, 255, 255, 0.8);">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple interactive functions
+        function selectOption(element) {
+            // Remove selected class from all options
+            document.querySelectorAll('.option').forEach(opt => {
+                opt.classList.remove('selected');
+                opt.querySelector('input').checked = false;
+            });
+            
+            // Add selected class to clicked option
+            element.classList.add('selected');
+            element.querySelector('input').checked = true;
+        }
+        
+        // Animation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const fadeInOnScroll = function() {
+                fadeElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const elementVisible = 150;
+                    
+                    if (elementTop < window.innerHeight - elementVisible) {
+                        element.style.animationDelay = "0.2s";
+                    }
+                });
+            };
+            
+            fadeInOnScroll();
+            window.addEventListener('scroll', fadeInOnScroll);
+            
+            // Mobile menu toggle
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+                navLinks.style.flexDirection = 'column';
+                navLinks.style.position = 'absolute';
+                navLinks.style.top = '100%';
+                navLinks.style.left = '0';
+                navLinks.style.right = '0';
+                navLinks.style.background = 'white';
+                navLinks.style.padding = 'var(--space-md)';
+                navLinks.style.boxShadow = 'var(--shadow-md)';
+            });
+        });
+    </script>
+</body>
+</html>
