@@ -154,7 +154,7 @@ function createQuestionRow(question, domain) {
             <div class="question-text">
                 <strong>${question.text}</strong>
             </div>
-            <div class="question-text">
+            <div class="question-clarification">
                 <i>${question.clarification}</i>
             </div>            
 
@@ -212,7 +212,12 @@ function initializeYAMLButtons() {
     yamlButtons.forEach(button => {
         button.addEventListener('click', function() {
             const questionId = this.getAttribute('data-question-id');
-            generateYAMLForQuestion(questionId);
+            if(questionId.includes("GEN") == true){
+                generateYAMLForGeneralQuestion(questionId);
+            }
+            else{
+                generateYAMLForQuestion(questionId);
+            }
         });
     });
     
@@ -331,6 +336,68 @@ function initializeYAMLButtons() {
         }
     `;
     document.head.appendChild(style);
+}
+
+function generateYAMLForGeneralQuestion(questionId){
+    const questionBlock = document.querySelector(`[data-question-id="${questionId}"]`);
+    if (!questionBlock) return;   
+
+    // Get question data
+    const domainName = questionBlock.getAttribute('data-domain-name');
+    const weight = questionBlock.getAttribute('data-weight');
+    const questionText = questionBlock.querySelector('.question-text strong').textContent;
+    const questionClarification = questionBlock.querySelector('.question-clarification').textContent;
+    
+    // Get selected radio button value
+    const selectedRadio = questionBlock.querySelector(`input[name="${questionId}"]:checked`);
+    const selectedValue = selectedRadio ? selectedRadio.value : 'Not selected';
+    const selectedText = selectedRadio ? selectedRadio.parentElement.querySelector('span').textContent : 'Not selected';
+    
+    // Get additional context
+    const additionalContext = questionBlock.querySelector('.additional-context').value || 'No additional context provided';
+    
+    // Get control ID and description
+    const controlId = questionBlock.querySelector('.control-id').value || 'Not provided';
+    const controlDescription = questionBlock.querySelector('.control-description').value || 'No additional context provided';
+    
+    // Get metrics ID and description
+    const metricsId = questionBlock.querySelector('.metrics-id').value || 'Not provided';
+    const metricsDescription = questionBlock.querySelector('.metrics-description').value || 'No additional context provided';
+    
+    // Get organizational context from the form
+    const industry = document.getElementById('industry') ? document.getElementById('industry').value : 'Banking';
+    const geography = Array.from(document.querySelectorAll('input[name="geography"]:checked')).map(cb => cb.value);
+    const regulatory = Array.from(document.querySelectorAll('input[name="regulatory"]:checked')).map(cb => cb.value);
+    
+    // Default values if not selected
+    const effectiveIndustry = industry || 'Banking';
+    const effectiveRegulatory = regulatory.length > 0 ? regulatory : ['SOX', 'GLBA'];
+    const effectiveGeography = geography.length > 0 ? geography : ['US', 'EU'];
+    
+    // Generate YAML
+    const yamlContent = `general_question:
+  input:
+    domain: ${domainName}
+    question_id: ${questionId}
+    question_text: ${questionText}
+    context_usage_note: ${questionClarification}
+    user_selected_level:
+      Level: ${selectedValue}
+      description: ${selectedText}
+    question_weight: ${weight}
+    organization_context:
+      industry: ${effectiveIndustry}
+      regulatory_scope: [${effectiveRegulatory.join(', ')}]
+      geography: [${effectiveGeography.join(', ')}]
+    additional_context:
+      user_text: ${additionalContext}
+      controls_id: ${controlId}
+      controls_description: ${controlDescription}
+      metrics_id: ${metricsId}
+      metrics_description: ${metricsDescription}`;
+    
+    // Display YAML in modal
+    showYAMLModal(yamlContent, questionId);    
 }
 
 function generateYAMLForQuestion(questionId) {
