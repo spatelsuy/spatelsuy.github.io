@@ -485,6 +485,9 @@ function showYAMLModal(yamlContent, questionId) {
             </div>
             <div class="yaml-content">${yamlContent}</div>
             <div class="yaml-actions">
+                <button class="api-call-btn" data-yaml="${encodeURIComponent(yamlContent)}" data-question-id="${questionId}">
+                    Test Maturity
+                </button>
                 <button class="copy-yaml-btn" data-yaml="${encodeURIComponent(yamlContent)}" data-question-id="${questionId}">
                     Copy to Clipboard
                 </button>
@@ -512,6 +515,11 @@ function showYAMLModal(yamlContent, questionId) {
         copyToClipboard(yamlContent, questionId);
     });
     
+    // Add event listener for API call button
+    const apiCallBtn = modal.querySelector('.api-call-btn');
+    apiCallBtn.addEventListener('click', () => {
+        testMaturityAPI(yamlContent, questionId);
+    });
     
     // Close modal when clicking outside
     modal.addEventListener('click', (e) => {
@@ -520,6 +528,138 @@ function showYAMLModal(yamlContent, questionId) {
         }
     });
 }
+
+let agentGenResponse = Array(5).fill(null); // Initialize array of size 5 with null values
+
+function testMaturityAPI(yamlContent, questionId) {
+    const userName = "SunilPK";
+    const generalQuestion = yamlContent;
+    const apiUrl = "http://localhost:8000/assess";
+    
+    // Extract number from questionId (e.g., "question1" -> 1, "q5" -> 5)
+    // This handles various formats like "question1", "q2", "3", etc.
+    const match = questionId.match(/\d+/);
+    let position = -1;
+    
+    if (match) {
+        position = parseInt(match[0], 10);
+        // Ensure position is between 1 and 5
+        if (position < 1 || position > 5) {
+            console.warn(`Question ID ${questionId} resolved to position ${position}, which is outside 1-5 range. Using modulo.`);
+            position = ((position - 1) % 5) + 1; // Wrap around using modulo
+        }
+    } else {
+        // If no number found, use a default or hash-based position
+        console.warn(`No number found in questionId: ${questionId}. Using default position 1.`);
+        position = 1;
+    }
+    
+    // Adjust position for zero-based array index
+    const arrayIndex = position - 1;
+    
+    if (!generalQuestion.trim()) {
+        alert("Please provide a YAML question.");
+        return;
+    }
+
+    // Show loading state
+    const apiBtn = document.querySelector('.api-call-btn');
+    const originalText = apiBtn ? apiBtn.textContent : 'Send to API';
+    if (apiBtn) {
+        apiBtn.textContent = 'Processing...';
+        apiBtn.disabled = true;
+    }
+    
+    // Make API call
+    fetch(apiUrl, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            user_name: userName,
+            general_question: generalQuestion
+        })
+    })
+    .then(async response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const rawText = await response.text();
+        
+        // Store response in global array at the calculated position
+        agentGenResponse[arrayIndex] = {
+            questionId: questionId,
+            yamlContent: yamlContent,
+            response: rawText,
+            error: "",
+            timestamp: new Date().toISOString(),
+            position: position, 
+            isError: false
+        };
+        
+        alert(agentGenResponse[arrayIndex]);
+        
+        // Optional: Show success message with position info
+        alert(`Response received and stored at position ${position} in agentGenResponse array.`);        
+        return rawText;
+    })
+    .catch(err => {
+        console.error("Connection Error:", err);
+        
+        // Store error in array
+        agentGenResponse[arrayIndex] = {
+            questionId: questionId,
+            yamlContent: yamlContent,
+            response: null,
+            error: err.message,
+            timestamp: new Date().toISOString(),
+            position: position,
+            isError: true
+        };
+        
+        // Show error
+        document.getElementById("result").innerHTML = `
+            <h3 style="color:red">Connection Error</h3>
+            <pre>${err.message}</pre>
+        `;
+        
+        alert(`Error occurred. Error stored at position ${position} in agentGenResponse array.`);
+    })
+    .finally(() => {
+        // Reset button state
+        if (apiBtn) {
+            apiBtn.textContent = originalText;
+            apiBtn.disabled = false;
+        }
+    });
+}
+
+// Utility function to get response by questionId
+function getResponseByQuestionId(questionId) {
+    const match = questionId.match(/\d+/);
+    if (match) {
+        const position = parseInt(match[0], 10);
+        const arrayIndex = Math.min(Math.max(position - 1, 0), 4); // Clamp to 0-4
+        return agentGenResponse[arrayIndex];
+    }
+    return null;
+}
+
+// Utility function to clear a specific position or all positions
+function clearAgentResponse(position = null) {
+    if (position === null) {
+        // Clear all
+        agentGenResponse = Array(5).fill(null);
+        console.log('All agentGenResponse positions cleared');
+    } else if (position >= 1 && position <= 5) {
+        // Clear specific position
+        agentGenResponse[position - 1] = null;
+        console.log(`Position ${position} cleared in agentGenResponse array`);
+    } else {
+        console.error('Invalid position. Must be between 1 and 5, or null to clear all.');
+    }
+}
+
 
 function copyToClipboard(text, questionId) {
     // THIS FUNCTION SHOULD ONLY COPY TEXT, NOTHING ELSE
