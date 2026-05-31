@@ -1,13 +1,16 @@
 [
     { "type":"tech", 
+        "title": "Audio Editor", 
+        "description": "Listen to your track and capture real-time player timestamps to compile custom cuts", 
+        "link": "https://spatelsuy.github.io/MyTools/audio-editor/", 
+        "img": "IMG/MusicIcon.png"
+    },    
+    { "type":"tech", 
         "title": "Image Optimizer", 
         "description": "Convert and shrink high resolution pictures locally.", 
         "link": "https://spatelsuy.github.io/MyTools/image-optimizer/", 
         "img": "IMG/ImageEditorIcon.png"
     },
-    
-    
-    
     { 
         "type":"tech", 
         "title": "Introducing MultiCopy Tool - Built to Do One Thing Well", 
