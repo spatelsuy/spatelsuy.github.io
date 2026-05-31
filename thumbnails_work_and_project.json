@@ -1,4 +1,13 @@
 [
+    { "type":"tech", 
+        "title": "Image Optimizer", 
+        "description": "Convert and shrink high resolution pictures locally.", 
+        "link": "https://spatelsuy.github.io/MyTools/image-optimizer/", 
+        "img": "IMG/PDFMerger.png"
+    },
+    
+    
+    
     { 
         "type":"tech", 
         "title": "Introducing MultiCopy Tool - Built to Do One Thing Well", 
@@ -21,7 +30,7 @@
     { "type":"tech", 
         "title": "PDF merger", 
         "description": "Merge your PDF files securely — all processing happens right in your browser, so your files never leave your computer. Keep your confidential documents safe and private.", 
-        "link": "https://spatelsuy.github.io/PDFMerger/", 
+        "link": "https://spatelsuy.github.io/MyTools/PDFMerger/", 
         "img": "IMG/PDFMerger.png"
     },
     { "type":"tech", 
