@@ -3,13 +3,13 @@
         "title": "QR Code Generator", 
         "description": "Generate QR codes instantly from text, URLs, and other data with a single click.", 
         "link": "https://spatelsuy.github.io/MyTools/qrcode-generator/", 
-        "img": "IMG/MusicIcon.png"
+        "img": "IMG/QRCode.png"
     },        
     { "type":"tech", 
         "title": "Audio Editor", 
         "description": "Listen to your track and capture real-time player timestamps to compile custom cuts", 
         "link": "https://spatelsuy.github.io/MyTools/audio-editor/", 
-        "img": "IMG/QRCode.png"
+        "img": "IMG/MusicIcon.png"
     },    
     { "type":"tech", 
         "title": "Image Optimizer", 
