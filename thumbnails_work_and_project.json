@@ -22,7 +22,8 @@
         "type":"tech", 
         "title": "Text-Audio Summarization (GenAI)", 
         "description": "Offline mode of Gen AI-powered Text-Audio summarization, best fit for meeting summary", 
-        "link": "https://github.com/spatelsuy/Text-Audio-Summarization-GenAI" 
+        "link": "https://github.com/spatelsuy/Text-Audio-Summarization-GenAI",
+        "img", "IMG/AudioText.png"
     },
     { "type":"tech", 
         "title": "Audio To Text Conversion and Summarization", 
